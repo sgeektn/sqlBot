@@ -1,0 +1,30 @@
+usage : extractSites.py get dork recursiveSearch
+
+usage : extractSites.py gets recursiveSearch
+
+usage : extractSites.py exploit maxthreads
+
+usage : extractSites.py filter
+
+usage : extractSites.py recursiveSearch int
+
+usage : extractSites.py setup
+
+usage : extractSites.py all maxthreads recursiveSearch
+
+usage : extractSites.py get dork recursiveSearch
+
+usage : extractSites.py gets recursiveSearch
+
+usage : extractSites.py exploit maxthreads
+
+usage : extractSites.py filter
+
+usage : extractSites.py recursiveSearch int
+
+usage : extractSites.py setup
+
+usage : extractSites.py all maxthreads recursiveSearch
+
+mkdir: cannot create directory ‘working’: File exists
+mkdir: cannot create directory ‘finished’: File exists

