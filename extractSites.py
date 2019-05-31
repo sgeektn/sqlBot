@@ -151,25 +151,28 @@ def getRecursiveUrls(link,recuriveSearch):
 }
 	#response = requests.get('https://www.mobilefun.fr/apple/iphone-5/gadgets', headers=headers)
 	try:
+		print("recursive for "+link)
 		req = request.Request(link,headers=headers)
 		response = request.urlopen(req)
 		text=response.read().decode("utf-8")
 		#siteLen=len(pageSource)
 	except:
-		print("error opening site")
-		return []
+		print("error opening site"+link)
+		text=""
 
 	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
 	result=[]
 
 	urlsFiltered=[i for i in urls if (getDomainName(i)!=getDomainName(link) and checkExt(i))]
-	result.extend(urlsFiltered)
 	
+	print("extracted "+str(len(urlsFiltered)))
+	appendSitesOnFile(urlsFiltered, sitesFile, sitesFileLock)
+
 	for url in urlsFiltered:
-		result.extend(getRecursiveUrls(url,recuriveSearch-1))
+		getRecursiveUrls(url,recuriveSearch-1)
 	
-	result = list( dict.fromkeys(result) )	
-	return result
+	#result = list( dict.fromkeys(result) )	
+	#return result
 
 
 def extractSites(query):
@@ -631,10 +634,10 @@ def recursiveSearch(number):
 	while(sitesNumber>0):
 		link=getSite(recursiveSitesFile, recursiveSitesFileLock)
 		
-		print("recuriveSearch for "+link)
-		newListe=getRecursiveUrls(link,number)
-		print("extracted "+str(len(newListe)))
-		appendSitesOnFile(newListe, sitesFile, sitesFileLock)
+		#print("recuriveSearch for "+link)
+		#newListe=
+		getRecursiveUrls(link,number)
+		
 
 
 
@@ -693,6 +696,5 @@ def main():
 
 #print(getRecursiveUrls("http://www.epresspack.net/ibis-budget-hotels-essentiel-du-confort-petit-prix/ibis-budget-mise-sur-le-digital/", 2))
 main()
-
 
 

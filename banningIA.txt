@@ -410,7 +410,6 @@ manassystech.com:1
 ssm-einfo.my:1
 zopim.com:3
 huggamind.com:1
-yoa.st:2
 villagepeddlervt.com:1
 azure.com:1
 ancochemicals.com:1
@@ -440,3 +439,8 @@ glocorpwebdesign.com:1
 pinterest.com:1
 imperva.com:1
 onionsearchengine.com:1
+desertpublications2.com:1
+edealinfo.com:1
+zeel.com:1
+ariachou.com:1
+yoa.st:3

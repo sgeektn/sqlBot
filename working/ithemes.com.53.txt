@@ -1,0 +1,23 @@
+http://ithemes.com/purchase/backupbuddy/
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.3.5.151#dev}
+|_ -| . [)]     | .'| . |
+|___|_  [(]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 19:31:45 /2019-05-31/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[19:31:46] [WARNING] you've provided target URL without any GET parameters (e.g. 'http://www.site.com/article.php?id=1') and without providing any POST parameters through option '--data'
+do you want to try URI injections in the target URL itself? [Y/n/q] Y
+[19:31:46] [INFO] testing connection to the target URL
+sqlmap got a 301 redirect to 'https://ithemes.com/purchase/backupbuddy/'. Do you want to follow? [Y/n] Y
+[19:31:50] [INFO] checking if the target is protected by some kind of WAF/IPS
+[19:31:53] [INFO] testing if the target URL content is stable
+[19:31:56] [WARNING] URI parameter '#1*' does not appear to be dynamic
+[19:32:01] [WARNING] heuristic (basic) test shows that URI parameter '#1*' might not be injectable
+[19:32:03] [INFO] testing for SQL injection on URI parameter '#1*'
+[19:32:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[19:32:06] [WARNING] reflective value(s) found and filtering out
