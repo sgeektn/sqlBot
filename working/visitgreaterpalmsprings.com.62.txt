@@ -16,3 +16,8 @@ https://www.visitgreaterpalmsprings.com/play/things-to-do/golf/?skip=0&sort=qual
 [19:32:13] [INFO] target URL content is stable
 [19:32:13] [INFO] testing if GET parameter 'skip' is dynamic
 [19:32:20] [WARNING] GET parameter 'skip' does not appear to be dynamic
+[19:32:28] [WARNING] heuristic (basic) test shows that GET parameter 'skip' might not be injectable
+[19:32:39] [INFO] testing for SQL injection on GET parameter 'skip'
+[19:32:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[19:36:05] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[19:36:37] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'

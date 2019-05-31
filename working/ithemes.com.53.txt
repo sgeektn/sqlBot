@@ -21,3 +21,5 @@ sqlmap got a 301 redirect to 'https://ithemes.com/purchase/backupbuddy/'. Do you
 [19:32:03] [INFO] testing for SQL injection on URI parameter '#1*'
 [19:32:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
 [19:32:06] [WARNING] reflective value(s) found and filtering out
+[19:34:43] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[19:36:22] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
