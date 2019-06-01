@@ -166,7 +166,7 @@ def getRecursiveUrls(link,recuriveSearch):
 	urlsFiltered=[i for i in urls if (getDomainName(i)!=getDomainName(link) and checkExt(i))]
 	urlsFiltered=[i for i in urlsFiltered if not bool(re.match("https*:\/\/[^\/]*\/$",i)) and not bool(re.match("https*:\/\/[^\/]*$",i)) ]
 	
-	print("extracted %s filtred %d"%(str(len(urls)),str(len(urlsFiltered))))
+	print("extracted %s filtred %s"%(str(len(urls)),str(len(urlsFiltered))))
 	appendSitesOnFile(urlsFiltered, sitesFile, sitesFileLock)
 
 	for url in urlsFiltered:
