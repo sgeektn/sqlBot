@@ -164,6 +164,7 @@ def getRecursiveUrls(link,recuriveSearch):
 	result=[]
 
 	urlsFiltered=[i for i in urls if (getDomainName(i)!=getDomainName(link) and checkExt(i))]
+	urlsFiltered=[i for i in urlsFiltered if not bool(re.match("https*:\/\/[^\/]*\/$",i)) and not bool(re.match("https*:\/\/[^\/]*$",i)) ]
 	
 	print("extracted "+str(len(urlsFiltered)))
 	appendSitesOnFile(urlsFiltered, sitesFile, sitesFileLock)
@@ -642,7 +643,7 @@ def recursiveSearch(number):
 
 
 		sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
-		
+
 		#if(sitesNumber==0):
 			#recursiveBrowser.close()
 		while sitesNumber==0:
