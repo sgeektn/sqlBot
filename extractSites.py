@@ -163,8 +163,8 @@ def getRecursiveUrls(link,recuriveSearch):
 	urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
 	result=[]
 
-	urlsFiltered=[i for i in urls if (getDomainName(i)!=getDomainName(link) and checkExt(i))]
-	urlsFiltered=[i for i in urlsFiltered if not bool(re.match("https*:\/\/[^\/]*\/$",i)) and not bool(re.match("https*:\/\/[^\/]*$",i)) ]
+	urlsFiltered=[i for i in urls if (getDomainName(i)!=getDomainName(link) and checkExt(i)) and  not bool(re.match("https*:\/\/[^\/]*\/$",i)) and not bool(re.match("https*:\/\/[^\/]*$",i)) ]
+	#urlsFiltered=[i for i in urlsFiltered if]
 	
 	print("extracted %s filtred %s"%(str(len(urls)),str(len(urlsFiltered))))
 	appendSitesOnFile(urlsFiltered, sitesFile, sitesFileLock)
@@ -625,14 +625,21 @@ def setup():
 def recursiveSearch(number):
 
 	print("recuriveSearch")
-	
+	readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
 	sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
 	while sitesNumber==0:
 		print("Waiting for new sites for recursiveSearch")
 		time.sleep(60)
 		sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
+	while readyToCheckNumber>5000:
+		print("proirity to readyToCheckSites")
+		time.sleep(60)
+		readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
 	#recursiveBrowser = webdriver.Firefox()
 	while(sitesNumber>0):
+
+
+
 		link=getSite(recursiveSitesFile, recursiveSitesFileLock)
 		
 		#print("recuriveSearch for "+link)
@@ -641,15 +648,19 @@ def recursiveSearch(number):
 		
 
 
-
+		readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
 		sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
 
 		#if(sitesNumber==0):
 			#recursiveBrowser.close()
-		while sitesNumber==0:
+		while sitesNumber==0 :
 			print("Waiting for new sites for recursiveSearch")
 			time.sleep(60)
 			sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
+		while readyToCheckNumber>5000:
+			print("proirity to readyToCheckSites")
+			time.sleep(60)
+			readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
 		#recursiveBrowser = webdriver.Firefox()
 	
 	
