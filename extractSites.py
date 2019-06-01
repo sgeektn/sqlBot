@@ -642,6 +642,9 @@ def recursiveSearch(number):
 
 
 		sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
+		readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
+		if(readyToCheckNumber>5000):
+			time.sleep(60)
 		#if(sitesNumber==0):
 			#recursiveBrowser.close()
 		while sitesNumber==0:
