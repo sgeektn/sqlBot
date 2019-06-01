@@ -1,0 +1,1 @@
+filter google urls without parameters from recursive search
