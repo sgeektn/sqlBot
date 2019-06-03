@@ -631,7 +631,7 @@ def recursiveSearch(number):
 		print("Waiting for new sites for recursiveSearch")
 		time.sleep(60)
 		sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
-	while readyToCheckNumber>5000:
+	while readyToCheckNumber>1000:
 		print("proirity to readyToCheckSites")
 		time.sleep(60)
 		readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
@@ -657,7 +657,7 @@ def recursiveSearch(number):
 			print("Waiting for new sites for recursiveSearch")
 			time.sleep(60)
 			sitesNumber=getNumber(recursiveSitesFile, recursiveSitesFileLock)
-		while readyToCheckNumber>5000:
+		while readyToCheckNumber>1000:
 			print("proirity to readyToCheckSites")
 			time.sleep(60)
 			readyToCheckNumber=getNumber(sitesFile, sitesFileLock)
