@@ -1,0 +1,2 @@
+autoCOnfig ( setup)
+autoCOnfig ( setup) vnc and bashrc
