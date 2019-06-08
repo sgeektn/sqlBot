@@ -1,0 +1,158 @@
+https://sjobs.brassring.com/TGWebHost/home.aspx?partnerid=25222&siteid=5022
+        ___
+       __H__
+ ___ ___["]_____ ___ ___  {1.3.5.151#dev}
+|_ -| . [.]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 02:48:52 /2019-06-08/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[02:48:53] [INFO] testing connection to the target URL
+sqlmap got a 302 redirect to 'https://sjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=25222&siteid=5022'. Do you want to follow? [Y/n] Y
+[02:48:59] [INFO] checking if the target is protected by some kind of WAF/IPS
+[02:49:05] [INFO] testing if the target URL content is stable
+[02:49:11] [WARNING] GET parameter 'partnerid' does not appear to be dynamic
+[02:49:11] [WARNING] heuristic (basic) test shows that GET parameter 'partnerid' might not be injectable
+[02:49:12] [INFO] testing for SQL injection on GET parameter 'partnerid'
+[02:49:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:49:52] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:49:56] [INFO] GET parameter 'partnerid' appears to be 'OR boolean-based blind - WHERE or HAVING clause' injectable 
+[02:49:56] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'Microsoft Access' 
+it looks like the back-end DBMS is 'Microsoft Access'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[02:49:56] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[02:49:56] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[02:50:03] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[02:50:10] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[02:50:16] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[02:50:23] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[02:50:29] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[02:50:35] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[02:50:42] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[02:50:48] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[02:50:54] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[02:51:01] [WARNING] in OR boolean-based injection cases, please consider usage of switch '--drop-set-cookie' if you experience any problems during data retrieval
+[02:51:01] [INFO] checking if the injection point on GET parameter 'partnerid' is a false positive
+[02:51:01] [WARNING] false positive or unexploitable injection point detected
+[02:51:01] [WARNING] GET parameter 'partnerid' does not seem to be injectable
+[02:51:01] [WARNING] GET parameter 'siteid' does not appear to be dynamic
+[02:51:01] [WARNING] heuristic (basic) test shows that GET parameter 'siteid' might not be injectable
+[02:51:01] [INFO] testing for SQL injection on GET parameter 'siteid'
+[02:51:02] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:51:42] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:51:46] [INFO] GET parameter 'siteid' appears to be 'OR boolean-based blind - WHERE or HAVING clause' injectable 
+[02:51:46] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[02:51:53] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[02:51:59] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[02:52:06] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[02:52:12] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[02:52:19] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[02:52:25] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[02:52:31] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[02:52:38] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[02:52:44] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[02:52:51] [WARNING] in OR boolean-based injection cases, please consider usage of switch '--drop-set-cookie' if you experience any problems during data retrieval
+[02:52:51] [INFO] checking if the injection point on GET parameter 'siteid' is a false positive
+[02:52:51] [WARNING] false positive or unexploitable injection point detected
+[02:52:51] [WARNING] GET parameter 'siteid' does not seem to be injectable
+[02:52:51] [WARNING] parameter 'Host' does not appear to be dynamic
+[02:52:51] [WARNING] heuristic (basic) test shows that parameter 'Host' might not be injectable
+[02:52:51] [INFO] testing for SQL injection on parameter 'Host'
+[02:52:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:53:06] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:53:11] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:53:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[02:53:35] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[02:53:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[02:53:41] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[02:53:42] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[02:53:44] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[02:53:50] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[02:53:53] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[02:53:53] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[02:53:53] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[02:53:54] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[02:53:54] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[02:53:54] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[02:53:54] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[02:53:55] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[02:53:55] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[02:53:56] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[02:54:06] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[02:54:13] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[02:54:21] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[02:54:29] [WARNING] parameter 'Host' does not seem to be injectable
+[02:54:29] [WARNING] parameter 'User-Agent' does not appear to be dynamic
+[02:54:30] [WARNING] heuristic (basic) test shows that parameter 'User-Agent' might not be injectable
+[02:54:35] [INFO] testing for SQL injection on parameter 'User-Agent'
+[02:54:35] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:00:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[03:03:46] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:09:35] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[03:14:12] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[03:16:02] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[03:17:00] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[03:17:32] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[03:18:32] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[03:21:20] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[03:22:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[03:22:59] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[03:23:06] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[03:23:13] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[03:23:21] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[03:23:29] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[03:23:37] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[03:23:44] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[03:23:59] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[03:24:14] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[03:28:43] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[03:29:34] [INFO] parameter 'User-Agent' appears to be 'Microsoft Access boolean-based blind - Stacked queries' injectable 
+[03:29:34] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[03:29:39] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[03:29:44] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[03:30:31] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[03:31:18] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[03:32:04] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[03:32:51] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[03:33:38] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[03:34:28] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[03:35:15] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[03:36:02] [INFO] checking if the injection point on User-Agent parameter 'User-Agent' is a false positive
+[03:36:06] [WARNING] false positive or unexploitable injection point detected
+[03:36:06] [WARNING] parameter 'User-Agent' does not seem to be injectable
+[03:36:06] [WARNING] parameter 'Referer' does not appear to be dynamic
+[03:36:07] [WARNING] heuristic (basic) test shows that parameter 'Referer' might not be injectable
+[03:36:12] [INFO] testing for SQL injection on parameter 'Referer'
+[03:36:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:42:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[03:45:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:52:01] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[03:56:41] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[03:58:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[04:01:20] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[04:02:42] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[04:05:13] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[04:05:20] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[04:05:27] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[04:05:34] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[04:05:43] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[04:05:50] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[04:10:13] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[04:10:13] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[04:10:13] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[04:10:21] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[04:10:28] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[04:10:43] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[04:10:57] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[04:13:52] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[04:16:42] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[04:19:39] [WARNING] parameter 'Referer' does not seem to be injectable
+[04:19:39] [CRITICAL] all tested parameters do not appear to be injectable. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment') and/or switch '--random-agent'
+[04:19:39] [WARNING] HTTP error codes detected during run:
+400 (Bad Request) - 737 times
+
+[*] ending @ 04:19:39 /2019-06-08/
+
