@@ -41,7 +41,7 @@ proxyFileLock=False
 banningFile="banningIA.txt"
 banningFileLock=False
 
-firefoxDriver='/Users/s-man/Desktop/sqlBot/mac/geckodriver'
+firefoxDriver='/Users/s-man/Desktop/sqlBot/mac'
 
 bannedKeywordsFile="banned.txt"
 bannedKeywordsFileLock=False
@@ -638,9 +638,21 @@ def gets():
 def clean():
 	os.system("rm *.txt")
 	os.system("rm -rf working finished dbs maybe")
+	os.system("rm -rf "+sqlMapPath+"/sqlmap")
 def setup():
-	os.mkdir("db")
-	os.mkdir("maybe")
+	try:
+		os.makedirs(sqlMapPath+"/sqlmap")
+	except:
+		pass
+	os.system('git clone https://github.com/sqlmapproject/sqlmap.git '+sqlMapPath+"/sqlmap")
+	try:
+		os.makedirs("dbs")
+	except:
+		pass
+	try:
+		os.makedirs("maybe")
+	except:
+		pass
 	os.system("export PATH=$PATH:"+firefoxDriver)
 	os.system("touch "+priorityFile+" "+errorFile+" "+sitesFile+" "+dorkListFile+ " "+bannedKeywordsFile+" "+recursiveSitesFile+" "+banningFile)
 	#os.system("echo \"google.\" > "+bannedKeywordsFile)
@@ -713,6 +725,8 @@ def main():
 		recursiveSearch(int(sys.argv[2]))
 	elif(len(sys.argv) == 2 and  sys.argv[1]=="setup"):
 		setup()
+	elif(len(sys.argv) == 2 and  sys.argv[1]=="clean"):
+		clean()
 	elif(len(sys.argv) == 3 and  sys.argv[1]=="gets"):
 		gets()
 		if(int(sys.argv[3])>0):
