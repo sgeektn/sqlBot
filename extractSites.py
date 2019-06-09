@@ -459,7 +459,7 @@ def filter():
 			else:
 				if(len(dbList)>0):
 					print(" Found db\n")
-					with open("db/"+file, "w+") as result:
+					with open("dbs/"+file, "w+") as result:
 						result.write(site+"\n")
 						for db in dbList:
 							result.write("python "+sqlMapPath+"/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch -D "%(site,)+db+"\n")
