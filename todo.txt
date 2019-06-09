@@ -1,3 +1,2 @@
 autoCOnfig ( setup)
 autoCOnfig ( setup) vnc and bashrc
-Filter , only dump the dynamo and the site 
