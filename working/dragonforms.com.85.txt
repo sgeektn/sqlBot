@@ -1039,3 +1039,5 @@ it is recommended to perform only basic UNION tests if there is not at least one
 [13:30:21] [INFO] testing 'SAP MaxDB stacked queries (heavy query)'
 [13:31:09] [INFO] testing 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)'
 [13:31:38] [INFO] testing 'HSQLDB >= 1.7.2 stacked queries (heavy query)'
+[13:32:25] [INFO] testing 'HSQLDB >= 2.0 stacked queries (heavy query - comment)'
+[13:32:54] [INFO] testing 'HSQLDB >= 2.0 stacked queries (heavy query)'

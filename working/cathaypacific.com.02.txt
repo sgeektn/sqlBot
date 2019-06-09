@@ -391,3 +391,5 @@ it looks like the back-end DBMS is 'Firebird'. Do you want to skip test payloads
 [13:31:18] [INFO] testing 'Firebird inline queries'
 [13:31:18] [INFO] testing 'Firebird stacked queries (heavy query - comment)'
 [13:31:40] [INFO] testing 'Firebird stacked queries (heavy query)'
+[13:32:13] [INFO] testing 'Firebird >= 2.0 AND time-based blind (heavy query)'
+[13:32:54] [INFO] testing 'Firebird >= 2.0 OR time-based blind (heavy query)'

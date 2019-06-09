@@ -204,3 +204,4 @@ do you want to try URI injections in the target URL itself? [Y/n/q] Y
 [13:29:12] [INFO] testing 'MySQL <= 5.0.11 OR time-based blind (heavy query)'
 [13:30:43] [INFO] testing 'MySQL <= 5.0.11 AND time-based blind (heavy query - comment)'
 [13:31:44] [INFO] testing 'MySQL <= 5.0.11 OR time-based blind (heavy query - comment)'
+[13:32:45] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
