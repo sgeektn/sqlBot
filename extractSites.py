@@ -653,6 +653,9 @@ def setup():
 		os.makedirs("maybe")
 	except:
 		pass
+	os.system("apt install python3-pip")
+	os.system("pip3 install selenium")
+	os.system("apt install python")
 	os.system("export PATH=$PATH:"+firefoxDriver)
 	os.system("touch "+priorityFile+" "+errorFile+" "+sitesFile+" "+dorkListFile+ " "+bannedKeywordsFile+" "+recursiveSitesFile+" "+banningFile)
 	#os.system("echo \"google.\" > "+bannedKeywordsFile)
