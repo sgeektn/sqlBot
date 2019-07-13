@@ -656,14 +656,12 @@ def setup():
 	os.system("apt install python3-pip")
 	os.system("pip3 install selenium")
 	os.system("apt install python")
-	
+
 	os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
-	os.system("echo \"alias egrep='egrep --color=auto'\" >> ~/.bashrc ")
-	os.system("echo \"alias fgrep='fgrep --color=auto'\" >> ~/.bashrc ")
 	os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
 	os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
 	os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
-	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E '\''/sh -c/d'\'' | sed -E '\''/grep/d'\'' '\" >> ~/.bashrc ")
+	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
 	os.system("echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
 	os.system("echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
 	os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc "%(firefoxDriver,))
