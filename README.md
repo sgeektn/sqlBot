@@ -1,4 +1,17 @@
 # sqlBot
+
+I-Setup
+
+
+	python3 setup.py
+	arguments --vnc : to setup the bot in a vps ( adding vnc server that connects in web browser )
+			  --tor : to setup tor with the bot
+			  --clean : to clean before setting up
+
+
+
+#obsolete
+
 Install vnc like this :
 
 sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal gnome-core

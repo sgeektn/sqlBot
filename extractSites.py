@@ -97,7 +97,7 @@ def valid(link):
     return True
 
 
-def checkExt(url):
+def check_ext(url):
     banned_exts = [".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
     for banned_ext in banned_exts:
         if url.find(banned_ext + "?") != -1:
@@ -122,7 +122,7 @@ def check_ext_for_injection(url):
     return True
 
 
-def filterListOfRecursive(liste):
+def filter_list_of_recursive(liste):
     result = []
     for l in liste:
         add = True
@@ -137,7 +137,7 @@ def filterListOfRecursive(liste):
     return result
 
 
-def getRecursiveUrls(link, recurive_search):
+def get_recursive_urls(link, recurive_search):
     if recurive_search == 0:
         return []
 
@@ -163,7 +163,7 @@ def getRecursiveUrls(link, recurive_search):
 
     urls_filtered = [
         i for i in urls if (
-            get_domain_name(i) != get_domain_name(link) and checkExt(i)) and not bool(
+            get_domain_name(i) != get_domain_name(link) and check_ext(i)) and not bool(
             re.match(
                 r"https*:\/\/[^\/]*\/$",
                 i)) and not bool(
@@ -179,7 +179,7 @@ def getRecursiveUrls(link, recurive_search):
     append_sites_on_file(urls_filtered, SITES_FILE, SITES_FILE_LOCK)
 
     for url in urls_filtered:
-        getRecursiveUrls(url, recurive_search - 1)
+        get_recursive_urls(url, recurive_search - 1)
 
 
 def extract_sites(query):
@@ -620,65 +620,7 @@ def gets():
     print("End get dorks")
 
 
-def clean():
-    os.system("rm *.txt")
-    os.system("rm -rf working finished dbs maybe")
-    os.system("rm -rf " + SQLMAP_PATH + "/sqlmap")
 
-
-def setup():
-    try:
-        os.makedirs(SQLMAP_PATH + "/sqlmap")
-    except BaseException:
-        pass
-    os.system(
-        'git clone https://github.com/sqlmapproject/sqlmap.git ' +
-        SQLMAP_PATH +
-        "/sqlmap")
-    try:
-        os.makedirs("dbs")
-    except BaseException:
-        pass
-    try:
-        os.makedirs("maybe")
-    except BaseException:
-        pass
-    os.system("apt install python3-pip")
-    os.system("pip3 install selenium")
-    os.system("apt install python")
-
-    os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias filter='zeb ; python3 extract_sites.py filter'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias revnc='vncserver -kill :1 ; vncserver'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
-    os.system(
-        "echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %
-        (FIREFOX_DRIVER,))
-
-    os.system(
-        "touch " +
-        PRIORITY_FILE +
-        " " +
-        ERROR_FILE +
-        " " +
-        SITES_FILE +
-        " " +
-        DORK_LIST_FILE +
-        " " +
-        BANNED_KEYWORDS_FILE +
-        " " +
-        RECURSIVE_SITES_FILE +
-        " " +
-        BANNING_FILE)
 
 
 def recursive_search(number):
@@ -701,7 +643,7 @@ def recursive_search(number):
 
         link = get_site(RECURSIVE_SITES_FILE, RECURSIVE_SITES_FILE_LOCK)
 
-        getRecursiveUrls(link, number)
+        get_recursive_urls(link, number)
 
         ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
         sites_number = get_number(
@@ -743,10 +685,6 @@ def main():
         filter()
     elif len(sys.argv) == 3 and sys.argv[1] == "recursive_search":
         recursive_search(int(sys.argv[2]))
-    elif len(sys.argv) == 2 and sys.argv[1] == "setup":
-        setup()
-    elif len(sys.argv) == 2 and sys.argv[1] == "clean":
-        clean()
     elif len(sys.argv) == 3 and sys.argv[1] == "gets":
         gets()
         if int(sys.argv[3]) > 0:
@@ -758,9 +696,7 @@ def main():
         print("usage : " + sys.argv[0] + " gets recursive_search\n")
         print("usage : " + sys.argv[0] + " exploit max_threads\n")
         print("usage : " + sys.argv[0] + " filter\n")
-
         print("usage : " + sys.argv[0] + " recursive_search int\n")
-        print("usage : " + sys.argv[0] + " setup\n")
         print("usage : " + sys.argv[0] + " all max_threads recursive_search\n")
 
 
