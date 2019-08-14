@@ -64,9 +64,9 @@ def setup():
         os.makedirs("maybe")
     except BaseException:
         pass
-    os.system("apt install python3-pip")
+    os.system("apt -y install python3-pip")
     os.system("pip3 install selenium")
-    os.system("apt install python")
+    os.system("apt -y install python")
 
     os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
     os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
