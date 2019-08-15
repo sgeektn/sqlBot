@@ -1,1 +1,2 @@
 add uninstall stuff when clean
+Variables of setup in one file
