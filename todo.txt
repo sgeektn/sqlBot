@@ -2,6 +2,7 @@ Setup
 add uninstall stuff when clean
 Variables of setup in one file
 Alias sites must be ok
+Source after changing basic
 
 Bot
 Add tor to selenium
