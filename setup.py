@@ -25,7 +25,7 @@ DORK_LIST_FILE_LOCK = False
 BANNING_FILE = "banningIA.txt"
 BANNING_FILE_LOCK = False
 
-FIREFOX_DRIVER = '/Users/s-man/Desktop/sqlBot/mac'
+FIREFOX_DRIVER = '/root/sqlBot/linux'
 
 BANNED_KEYWORDS_FILE = "banned.txt"
 BANNED_KEYWORDS_FILE_LOCK = False
@@ -70,7 +70,7 @@ def setup():
 	os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
 	os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
 	os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")	
-	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ") 
+	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \"/sh -c/d\" | sed -E \"/grep/d\" '\" >> ~/.bashrc ") 
 	os.system("echo \"alias zeb='cd /root/sqlBot'\" >> ~/.bashrc ")
 	os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %(FIREFOX_DRIVER,))
 	os.system("touch " +PRIORITY_FILE +" " +ERROR_FILE +" " +SITES_FILE +" " +DORK_LIST_FILE +" " +BANNED_KEYWORDS_FILE +" " +RECURSIVE_SITES_FILE +" " +BANNING_FILE)
@@ -80,7 +80,7 @@ def setup():
 		os.system("apt -y install xfce4 xfce4-goodies")
 		os.system("apt install -y tightvncserver")
 		os.system("apt -y install tigervnc-common")
-        os.system("apt-get -y install dbus-x11")
+		os.system("apt-get -y install dbus-x11")
 		os.system("apt -y install novnc websockify python-numpy")
 		os.system("openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out /etc/ssl/novnc.pem -days 365")
 		os.system("chmod 644 /etc/ssl/novnc.pem")

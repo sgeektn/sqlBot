@@ -2,3 +2,7 @@ Setup
 add uninstall stuff when clean
 Variables of setup in one file
 Alias sites must be ok
+
+Bot
+Add tor to selenium
+Add tor to sqlmap
