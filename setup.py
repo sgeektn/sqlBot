@@ -80,6 +80,7 @@ def setup():
 		os.system("apt -y install xfce4 xfce4-goodies")
 		os.system("apt install -y tightvncserver")
 		os.system("apt -y install tigervnc-common")
+        os.system("apt-get -y install dbus-x11")
 		os.system("apt -y install novnc websockify python-numpy")
 		os.system("openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out /etc/ssl/novnc.pem -days 365")
 		os.system("chmod 644 /etc/ssl/novnc.pem")
