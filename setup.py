@@ -37,11 +37,11 @@ tor=False
 vnc=False
 clean_bot=False
 
-if sys.argv.index("--vnc") != -1:
+if "--vnc" in sys.argv :
 	vnc=True
-if sys.argv.index("--tor") != -1:
+if "--tor" in sys.argv :
 	tor=True
-if sys.argv.index("--clean") != -1:
+if "--clean" in sys.argv :
 	clean_bot=True
 
 
