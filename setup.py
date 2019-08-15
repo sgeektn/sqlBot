@@ -67,25 +67,22 @@ def setup():
     os.system("apt -y install python3-pip")
     os.system("pip3 install selenium")
     os.system("apt -y install python")
-
     os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
     os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
-    os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")
-    if vnc:
-    	os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver ; webvnc'\" >> ~/.bashrc ")
-    os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ")
-    if vnc:
-    	os.system("echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
+    os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")	
+    os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \'/sh -c/d\' | sed -E \'/grep/d\' '\" >> ~/.bashrc ") 
     os.system("echo \"alias zeb='cd /root/Desktop/sqlBot'\" >> ~/.bashrc ")
     os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %(FIREFOX_DRIVER,))
     os.system("touch " +PRIORITY_FILE +" " +ERROR_FILE +" " +SITES_FILE +" " +DORK_LIST_FILE +" " +BANNED_KEYWORDS_FILE +" " +RECURSIVE_SITES_FILE +" " +BANNING_FILE)
     if vnc:
     	os.system("apt -y install vnc4server")
     	os.system("vncpasswd")
-    	os.system("apt -y install novnc websockify python-numpy")
-    	os.system("/etc/ssl/openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out novnc.pem -days 365")
     	os.system("vncserver -kill :1 ; vncserver")
+    	os.system("apt -y install novnc websockify python-numpy")
+    	os.system("openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out novnc.pem -days 365")
     	os.system("websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901")
+    	os.system("echo \"alias webvnc='websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901'\" >> ~/.bashrc ")
+    	os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver ; webvnc'\" >> ~/.bashrc ")
 
 
 if __name__ == '__main__':
