@@ -648,10 +648,10 @@ def main():
 	tor=False
 	if len(sys.argv)==2 and sys.argv[1]=="filter":
 		filter()
-        exit(0)
+		exit(0)
 	if len(sys.argv)==2 and sys.argv[1]=="sites":
 		sites()
-        exit(0)
+		exit(0)
 	if "--tor" in sys.argv :
 		tor=True
 	if "--threads" in sys.argv :
