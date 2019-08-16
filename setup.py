@@ -1,35 +1,6 @@
 import os
 import sys
-
-
-# DO NOT CHANGE THIS
-FALSE = 0
-SQL_ERROR = 1
-SIZE_CHANGE = 2
-BLUE_FONT = '\033[94m'	# getsColor
-YELLOW_FONT = '\033[93m'  # test_sites color
-GREEN_FONT = '\033[92m'   # exploit color
-END_FONT = '\033[0m'	  # end color
-# CONFIGURATION FILES
-SQLMAP_PATH = ".."
-PRIORITY_FILE = "sqlVulnerable.txt"
-PRIORITY_FILE_LOCK = False
-ERROR_FILE = "maybeVulnerable.txt"
-ERROR_FILE_LOCK = False
-SITES_FILE = "google.txt"
-RECURSIVE_SITES_FILE = "googleRecursive.txt"
-RECURSIVE_SITES_FILE_LOCK = False
-SITES_FILE_LOCK = False
-DORK_LIST_FILE = "dorks.txt"
-DORK_LIST_FILE_LOCK = False
-BANNING_FILE = "banningIA.txt"
-BANNING_FILE_LOCK = False
-
-FIREFOX_DRIVER = '/root/sqlBot/linux'
-
-BANNED_KEYWORDS_FILE = "banned.txt"
-BANNED_KEYWORDS_FILE_LOCK = False
-BANNED_KEYWORDS = []
+from extractSites import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE
 
 
 
@@ -70,7 +41,7 @@ def setup():
 	os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
 	os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
 	os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")	
-	os.system("echo \"alias sites='ps aux | grep sqlmap | sed -E \"/sh -c/d\" | sed -E \"/grep/d\" '\" >> ~/.bashrc ") 
+	os.system("echo \"alias sites='zeb; python3 extractSites.py filter") 
 	os.system("echo \"alias zeb='cd /root/sqlBot'\" >> ~/.bashrc ")
 	os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %(FIREFOX_DRIVER,))
 	os.system("touch " +PRIORITY_FILE +" " +ERROR_FILE +" " +SITES_FILE +" " +DORK_LIST_FILE +" " +BANNED_KEYWORDS_FILE +" " +RECURSIVE_SITES_FILE +" " +BANNING_FILE)
@@ -90,8 +61,16 @@ def setup():
 		os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver ; webvnc'\" >> ~/.bashrc ")
 	if tor:
 		os.system("apt -y install tor")
+    os.system("source ~/.bashrc")
+
 
 if __name__ == '__main__':
+    if len(sys.argv) > 4 : 
+        exit(0)
 	if clean_bot:
 		clean()
 	setup()
+
+
+
+

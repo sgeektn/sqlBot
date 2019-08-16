@@ -665,14 +665,19 @@ def recursive_search(number):
 
 
 def get_sqlmap_threads():
-    return int(int(os.popen(
-        "ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d' | wc -l | sed -E 's/ *//'").readline()[0:-1]))
+    return int(int(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d' | wc -l | sed -E 's/ *//'").readline()[0:-1]))
 
+def sites():
 
 def main():
     recursive_search=0
     threads=1
     tor=False
+
+
+    if len(sys.argv)==2 and sys.argv[1]=="filter"
+        filter()
+
     if "--tor" in sys.argv :
         tor=True
     if "--threads" in sys.argv :
