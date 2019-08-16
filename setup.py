@@ -61,12 +61,12 @@ def setup():
 		os.system("echo \"alias revnc='vncserver -kill :1 ; vncserver ; webvnc'\" >> ~/.bashrc ")
 	if tor:
 		os.system("apt -y install tor")
-    os.system("source ~/.bashrc")
+	os.system("source ~/.bashrc")
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 4 : 
-        exit(0)
+	if len(sys.argv) > 4 : 
+		exit(0)
 	if clean_bot:
 		clean()
 	setup()
