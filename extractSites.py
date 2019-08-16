@@ -8,7 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 import _thread
-from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE
+from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
 
 
 # DO NOT CHANGE THIS
