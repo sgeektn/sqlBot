@@ -6,7 +6,7 @@ I-Setup
 	python3 setup.py
 	arguments --vnc : to setup the bot in a vps ( adding vnc server that connects in web browser )
 			  --tor : to setup tor with the bot
-			  --clean : to clean before setting up
+			  --clean : to clean before setting up ( for now just remove files , TODO later uninstall dependencies )
 
 
 

@@ -670,34 +670,44 @@ def get_sqlmap_threads():
 
 
 def main():
+    recursive_search=0
+    threads=1
+    tor=False
+    if "--tor" in sys.argv :
+        tor=True
+    if "--threads" in sys.argv :
+        threads = int(sys.argv[sys.argv.index("--threads")+1])
+    if "--rc" in sys.argv :
+        recursive_search = int(sys.argv[sys.argv.index("--rc")+1])
+    all(threads,recursive_search)   
+   # if len(sys.argv) == 4 and sys.argv[1] == "get":
+   #     get_sites_by_dork(sys.argv[2])
+   #     if int(sys.argv[3]) > 0:
+   #         recursive_search(int(sys.argv[3]))
+   #     test_sites(SITES_FILE_LOCK)
+#
+   # elif len(sys.argv) == 3 and sys.argv[1] == "exploit":
+   #     max_threads = int(sys.argv[2])
+   #     exploit(max_threads)
+#
+   # elif len(sys.argv) == 2 and sys.argv[1] == "filter":
+   #     filter()
+   # elif len(sys.argv) == 3 and sys.argv[1] == "recursive_search":
+   #     recursive_search(int(sys.argv[2]))
+   # elif len(sys.argv) == 3 and sys.argv[1] == "gets":
+   #     gets()
+   #     if int(sys.argv[3]) > 0:
+   #         recursive_search(int(sys.argv[3]))
+   # elif len(sys.argv) == 4 and sys.argv[1] == "all":
+   #     all(int(sys.argv[2]), int(sys.argv[3]))
+   # else:
+   #     print("usage : " + sys.argv[0] + " get dork recursive_search\n")
+   #     print("usage : " + sys.argv[0] + " gets recursive_search\n")
+   #     print("usage : " + sys.argv[0] + " exploit max_threads\n")
+   #     print("usage : " + sys.argv[0] + " filter\n")
+   #     print("usage : " + sys.argv[0] + " recursive_search int\n")
+   #     print("usage : " + sys.argv[0] + " all max_threads recursive_search\n")
 
-    if len(sys.argv) == 4 and sys.argv[1] == "get":
-        get_sites_by_dork(sys.argv[2])
-        if int(sys.argv[3]) > 0:
-            recursive_search(int(sys.argv[3]))
-        test_sites(SITES_FILE_LOCK)
 
-    elif len(sys.argv) == 3 and sys.argv[1] == "exploit":
-        max_threads = int(sys.argv[2])
-        exploit(max_threads)
-
-    elif len(sys.argv) == 2 and sys.argv[1] == "filter":
-        filter()
-    elif len(sys.argv) == 3 and sys.argv[1] == "recursive_search":
-        recursive_search(int(sys.argv[2]))
-    elif len(sys.argv) == 3 and sys.argv[1] == "gets":
-        gets()
-        if int(sys.argv[3]) > 0:
-            recursive_search(int(sys.argv[3]))
-    elif len(sys.argv) == 4 and sys.argv[1] == "all":
-        all(int(sys.argv[2]), int(sys.argv[3]))
-    else:
-        print("usage : " + sys.argv[0] + " get dork recursive_search\n")
-        print("usage : " + sys.argv[0] + " gets recursive_search\n")
-        print("usage : " + sys.argv[0] + " exploit max_threads\n")
-        print("usage : " + sys.argv[0] + " filter\n")
-        print("usage : " + sys.argv[0] + " recursive_search int\n")
-        print("usage : " + sys.argv[0] + " all max_threads recursive_search\n")
-
-
-main()
+if __name__ == '__main__':
+    main()
