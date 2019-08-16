@@ -1,9 +1,9 @@
 Setup
 add uninstall stuff when clean
-Variables of setup in one file
-Alias sites must be ok
-Source after changing basic
+#TOTEST Source after changing basic
+Add fn to get the path of the sqlBot thread
 
 Bot
-Add tor to selenium
-Add tor to sqlmap
+Bypass google captcha
+#TOTEST Add tor to sqlmap
+Launch tor if not started
