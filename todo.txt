@@ -1,16 +1,9 @@
 Setup
 add uninstall stuff when clean
-#TOTEST Variables of setup in one file
-#Alias sites must be ok
 #TOTEST Source after changing basic
 Add fn to get the path of the sqlBot thread
-#TOTEST Check args
-
-
 
 Bot
 Bypass google captcha
 #TOTEST Add tor to sqlmap
-#TOTEST Config start
 Launch tor if not started
-#TOTEST Check args
