@@ -10,7 +10,7 @@ Add fn to get the path of the sqlBot thread
 
 Bot
 Bypass google captcha
-Add tor to sqlmap
+#TOTEST Add tor to sqlmap
 #TOTEST Config start
 Launch tor if not started
 #TOTEST Check args

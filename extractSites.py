@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 import _thread
+from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE
 
 
 # DO NOT CHANGE THIS
@@ -19,23 +20,7 @@ YELLOW_FONT = '\033[93m'  # test_sites color
 GREEN_FONT = '\033[92m'   # exploit color
 END_FONT = '\033[0m'	  # end color
 # CONFIGURATION FILES
-SQLMAP_PATH = ".."
-PRIORITY_FILE = "sqlVulnerable.txt"
-PRIORITY_FILE_LOCK = False
-ERROR_FILE = "maybeVulnerable.txt"
-ERROR_FILE_LOCK = False
-SITES_FILE = "google.txt"
-RECURSIVE_SITES_FILE = "googleRecursive.txt"
-RECURSIVE_SITES_FILE_LOCK = False
-SITES_FILE_LOCK = False
-DORK_LIST_FILE = "dorks.txt"
-DORK_LIST_FILE_LOCK = False
-BANNING_FILE = "banningIA.txt"
-BANNING_FILE_LOCK = False
 
-FIREFOX_DRIVER = '/Users/s-man/Desktop/sqlBot/mac'
-
-BANNED_KEYWORDS_FILE = "banned.txt"
 BANNED_KEYWORDS_FILE_LOCK = False
 BANNED_KEYWORDS = []
 
@@ -656,10 +641,10 @@ def main():
 	recursive_search=0
 	threads=1
 	tor=False
-	if len(sys.argv)==2 and sys.argv[1]=="filter"
+	if len(sys.argv)==2 and sys.argv[1]=="filter":
 		filter()
-	if len(sys.argv)==2 and sys.argv[1]=="sites"
-		filter()
+	if len(sys.argv)==2 and sys.argv[1]=="sites":
+		sites()
 	if "--tor" in sys.argv :
 		tor=True
 	if "--threads" in sys.argv :
