@@ -41,7 +41,7 @@ def setup():
 	os.system("echo \"alias clean='python3 clean.py'\" >> ~/.bashrc ")
 	os.system("echo \"alias filter='zeb ; python3 extractSites.py filter'\" >> ~/.bashrc ")
 	os.system("echo \"alias lss='ls -lia'\" >> ~/.bashrc ")	
-	os.system("echo \"alias sites='zeb; python3 extractSites.py filter") 
+	os.system("echo \"alias sites='zeb ; python3 extractSites.py filter'") 
 	os.system("echo \"alias zeb='cd /root/sqlBot'\" >> ~/.bashrc ")
 	os.system("echo \"export PATH=$PATH:\"%s >> ~/.bashrc " %(FIREFOX_DRIVER,))
 	os.system("touch " +PRIORITY_FILE +" " +ERROR_FILE +" " +SITES_FILE +" " +DORK_LIST_FILE +" " +BANNED_KEYWORDS_FILE +" " +RECURSIVE_SITES_FILE +" " +BANNING_FILE)
