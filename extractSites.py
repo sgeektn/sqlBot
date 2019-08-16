@@ -574,7 +574,7 @@ def all(max_threads, recursive_search_number,tor):
 		pass
 
 
-def gets(tor):
+def gets():
 	print(BLUE_FONT)
 	dorks_number = get_number(DORK_LIST_FILE, DORK_LIST_FILE_LOCK)
 	while dorks_number == 0:
