@@ -3,8 +3,13 @@ add uninstall stuff when clean
 Variables of setup in one file
 Alias sites must be ok
 Source after changing basic
+Check args
+
+
 
 Bot
 Add tor to selenium
 Add tor to sqlmap
-Config sstart
+Config start
+Launch tor if not started
+Check args

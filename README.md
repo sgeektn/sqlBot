@@ -9,7 +9,11 @@ I-Setup
 			  --clean : to clean before setting up ( for now just remove files , TODO later uninstall dependencies )
 
 
-
+II-Bot
+	python3 extractSites.py
+	arguments --tor : to make the google search and sqlmap work with tor
+			  --rc N : to configure recursive search ( if not defined rc will be 0 )
+			  --threads N : to configure sqlmap parralel threads ( if not defined thrads will be 1)
 #obsolete
 
 Install vnc like this :
