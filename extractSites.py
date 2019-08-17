@@ -641,7 +641,7 @@ def get_sqlmap_threads():
 	return int(int(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d' | wc -l | sed -E 's/ *//'").readline()[0:-1]))
 
 def sites():
-	print(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d'").readline())
+	print(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d'").read())
 def main():
 	recursive_search=0
 	threads=1
