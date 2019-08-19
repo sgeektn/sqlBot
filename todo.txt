@@ -7,3 +7,4 @@ Bot
 Bypass google captcha
 #TOTEST Add tor to sqlmap
 Launch tor if not started
+check why test sites stop
