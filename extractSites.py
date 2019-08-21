@@ -291,7 +291,12 @@ def test_sites(SITES_FILE_LOCK):
 		time.sleep(60)
 		sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 
-	while sites_num > 0:
+	while True:
+		while sites_num == 0:
+			print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
+			time.sleep(60)
+			sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
+			
 		site = get_site(SITES_FILE, SITES_FILE_LOCK)
 		if site[len(site) - 1] == '/':
 			site = site[0:len(site) - 1]
@@ -316,10 +321,7 @@ def test_sites(SITES_FILE_LOCK):
 				append_site_on_file(site + "\n", ERROR_FILE, ERROR_FILE_LOCK)
 		sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 		while sites_num == 0:
-			print(
-				YELLOW_FONT +
-				"Waiting for vulnerable sites to come\n" +
-				END_FONT)
+			print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
 			time.sleep(60)
 			sites_num = get_number(SITES_FILE, SITES_FILE_LOCK)
 
@@ -604,9 +606,7 @@ def recursive_search(number):
 	while sites_number == 0:
 		print("Waiting for new sites for recursive_search")
 		time.sleep(60)
-		sites_number = get_number(
-			RECURSIVE_SITES_FILE,
-			RECURSIVE_SITES_FILE_LOCK)
+		sites_number = get_number(RECURSIVE_SITES_FILE,RECURSIVE_SITES_FILE_LOCK)
 	while ready_to_check_number > 1000:
 		print("proirity to readyToCheck_sites")
 		time.sleep(60)
@@ -619,9 +619,7 @@ def recursive_search(number):
 		get_recursive_urls(link, number)
 
 		ready_to_check_number = get_number(SITES_FILE, SITES_FILE_LOCK)
-		sites_number = get_number(
-			RECURSIVE_SITES_FILE,
-			RECURSIVE_SITES_FILE_LOCK)
+		sites_number = get_number(RECURSIVE_SITES_FILE,RECURSIVE_SITES_FILE_LOCK)
 
 		while sites_number == 0:
 			print("Waiting for new sites for recursive_search")
