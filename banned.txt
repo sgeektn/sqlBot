@@ -64,10 +64,8 @@ amazon-adsystem.com
 amazonaws.com
 ambasciatorisorrento.com
 ampak.com.tw
-ampol.co.za
 amtrakvacations.com
 amzn.to
-ana.co.jp
 android.gadgethacks.com
 annoncesfr.top
 anrdoezrs.net
@@ -102,7 +100,6 @@ astorbelluno.com
 astorbelluno.it
 astrojapanproperty.com
 atholbooks-sales.org
-atlantico.fr
 auberge-de-letang-bleu.com
 auboudoirecarlate.forumgratuit.org
 auchan.fr
@@ -225,7 +222,6 @@ chapitre.com
 chapitres.actualitte.com
 chasse-aux-livres.fr
 chateauxhotels.com
-cheaperthanhotels.co.za
 checkout.houstonchronicle.com
 chennaultmuseum.org
 chiangmai.thaiapartments.net
@@ -278,7 +274,6 @@ courrierinternational.com
 coursehero.com
 c-pour-dire.com
 crayons.com.au
-creare.co.uk
 creativecanv.fr
 criteo.com
 crm.abyhom.com
@@ -297,7 +292,6 @@ cybevasion-paris.com
 cypress-inn.com
 cz.revngo.com
 d19wm5yhteu8df.cloudfront.net
-dailymail.co.uk
 dailymotion.com
 dargaud.com
 dassonnleiten.at
@@ -365,7 +359,6 @@ easygosg.com
 easyviaggio.com
 easyviajar.com
 easyvoyage.com
-easyvoyage.co.uk
 easyvoyage.de
 eatacity.com
 ea.wonderbox.fr
@@ -457,7 +450,6 @@ fennegm.edenvaleretreat.ca
 ferruh.mavituna.com
 feryane.com
 fewo-direkt.de
-findtheuk.co.uk
 finerfitness.ca
 flamant.com
 flightdeal.easyvoyage.com
@@ -521,7 +513,6 @@ getaroom.com.au
 getmotopress.com
 getpocket.com
 gillespudlowski.com
-gionee.co.in
 gio.r.worldssl.net
 github.com
 github.io
@@ -585,7 +576,6 @@ holidaycheck.com
 homeadvisor.com
 homeaway.at
 homeaway.ca
-homeaway.co.id
 homeaway.com
 homeaway.com.mx
 homeaway.com.my
@@ -603,7 +593,6 @@ hostinger.ru
 hotelaiguaclarabegur.com
 hotelaparis.groupcorner.com
 hotel-arce.com
-hotelatlantico.es
 hotel-baratxartea.com
 hotel-bastille-speria.com
 hotel-belle-juliette-paris.com
@@ -622,7 +611,6 @@ hotel-dellenazioni-rome.com
 hoteldirectcorporate.com
 hoteldragomanni.com
 hotelederaroma.com
-hotelextranet.co.uk
 hotelforum.com
 hotelgalliaroma.com
 hotelgenioroma.it
@@ -741,7 +729,6 @@ kazabulmartinique.fr
 kbget1-a.akamaihd.net
 kedem.com
 kefu.trip.com
-kemenangan.co.id
 kenwheeler.github.io
 keycdn.com
 kiddotravel.be
@@ -879,7 +866,6 @@ mesculturiosites.wordpress.com
 mesptitslus.com
 metohi-kindelis.gr
 metohikindelis.tumblr.com
-metro.co.uk
 mewe.com
 m.ibooked.in
 micebook.com
@@ -1007,7 +993,6 @@ pilgo.com
 pinpoint.world
 pinterest.at
 pinterest.cl
-pinterest.co.kr
 pinterest.com
 pinterest.com.au
 pinterest.comlonelyplanet.com
@@ -1250,12 +1235,9 @@ tech-monde13.com
 techonthenet.com
 teezily.com
 tekrevue.com
-telegraph.co.uk
 telerama.fr
-teletextholidays.co.uk
 templatemela.com
 templatesfreelance.com
-theatre.hoteldirect.co.uk
 thebeat.travel
 thecollegeinvestor.com
 theconnacht.ie
@@ -1291,7 +1273,6 @@ tools.ietf.org
 tooly.tips
 toptenreviews.com
 torquemag.io
-totalchauffeurs.co.uk
 touchbistro.com
 tourisme.fr
 trabber.
@@ -1363,7 +1344,6 @@ vinted.com
 vinted.es
 vinted.fr
 vinted.lu
-virginholidays.co.uk
 visit-hannover.com
 visitluxembourg.com
 vistaprint.ca
@@ -1382,7 +1362,6 @@ voyage-prive.be
 voyage-prive.es
 vrbo.com
 vry9.destinia.com
-vsco.co
 w3.
 w3-edge.com
 w3programmers.com
@@ -1393,7 +1372,6 @@ wallgiant.com
 wallgiant.pl
 wander.am
 wanderhotels.at
-wantitall.co.za
 wantotravel.be
 warmshowers.org
 warooba.fr
@@ -1477,7 +1455,6 @@ zoo-bordeaux-pessac.com
 zoom.disneynature.fr
 zoo.montpellier.fr
 zoonar.com
-zoover.co.uk
 zopim.com
 js.foundation
 tech.eu
@@ -1555,7 +1532,6 @@ id90travel.com
 goo.gl
 scribdassets.com
 egencia.ch
-vsco.co
 unpkg.com
 enable-javascript.com
 egencia.se
@@ -1768,7 +1744,6 @@ hostinger.com
 agoda.net
 malwarebytes.com
 pinterest.at
-co.kr
 pinterest.pt
 pinterest.nz
 shopinja.com
@@ -1783,7 +1758,6 @@ youtube.com
 com.tw
 obedovice.cz
 mavituna.com
-co.in
 chennaultmuseum.org
 tachyoniq.com
 bradfordshoes.com
@@ -1866,7 +1840,6 @@ bestbuy-jobs.com
 socalskateshop.com
 fastdomain.com
 modernorthodontics.com
-co.za
 heartlandcoop.com
 troyelevatorinc.com
 telex.com
@@ -2112,7 +2085,6 @@ mobil.com
 livewp.site
 premiumlayers.net
 sjv.io
-co.id
 mycleanlink.com
 mobilindustrial.com
 exxonmobil.com
@@ -2130,7 +2102,6 @@ wojoscripts.com
 metrocast.com
 yournorthland.com
 silicon.de
-co.th
 georiot.com
 consolidated.com
 purch.com
@@ -2142,7 +2113,6 @@ com.qa
 amyinthekitchen.com
 fontfabric.com
 photodune.net
-co.mz
 exxonmobil.no
 tutsplus.com
 force.com
