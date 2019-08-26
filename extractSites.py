@@ -288,35 +288,38 @@ def test_sites():
 		sites_num = get_number(SITES_FILE)
 
 	while True:
-		while sites_num == 0:
-			print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
+		#while sites_num == 0:
+		#	print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
+		#	time.sleep(60)
+		#	sites_num = get_number(SITES_FILE)
+		try:
+			site = get_site(SITES_FILE)
+			if site[len(site) - 1] == '/':
+				site = site[0:len(site) - 1]
+			i += 1
+			print((YELLOW_FONT + "Testing site %s of %s %s" + END_FONT) %
+				  (sites_num, str(i), site))
+			if site[-1] == '\n':
+				site = site[0:-1]
+			if check_ext_for_injection(site) and valid(site):
+	
+				res = test_site(site)
+				if res == SQL_ERROR:
+					print(YELLOW_FONT + "sql" + END_FONT)
+					l_sql.append(site)
+					append_site_on_file(site + "\n",PRIORITY_FILE,)
+				elif res == SIZE_CHANGE:
+					print(YELLOW_FONT + "maybe" + END_FONT)
+					l_error.append(site)
+					append_site_on_file(site + "\n", ERROR_FILE)
+		except:
 			time.sleep(60)
-			sites_num = get_number(SITES_FILE)
-			
-		site = get_site(SITES_FILE)
-		if site[len(site) - 1] == '/':
-			site = site[0:len(site) - 1]
-		i += 1
-		print((YELLOW_FONT + "Testing site %s of %s %s" + END_FONT) %
-			  (sites_num, str(i), site))
-		if site[-1] == '\n':
-			site = site[0:-1]
-		if check_ext_for_injection(site) and valid(site):
-
-			res = test_site(site)
-			if res == SQL_ERROR:
-				print(YELLOW_FONT + "sql" + END_FONT)
-				l_sql.append(site)
-				append_site_on_file(site + "\n",PRIORITY_FILE,)
-			elif res == SIZE_CHANGE:
-				print(YELLOW_FONT + "maybe" + END_FONT)
-				l_error.append(site)
-				append_site_on_file(site + "\n", ERROR_FILE)
-		sites_num = get_number(SITES_FILE)
-		while sites_num == 0:
-			print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
-			time.sleep(60)
-			sites_num = get_number(SITES_FILE)
+			pass
+		#sites_num = get_number(SITES_FILE)
+		#while sites_num == 0:
+		#	print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
+		#	time.sleep(60)
+		#	sites_num = get_number(SITES_FILE)
 
 	return (l_sql, l_error)
 
