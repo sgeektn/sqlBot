@@ -1,0 +1,120 @@
+https://www.cruisecritic.co.uk/?setrd=s
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.3.8.13#dev}
+|_ -| . [.]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 22:59:24 /2019-08-25/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[22:59:24] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X; fr-fr) AppleWebKit/312.5 (KHTML, like Gecko) Safari/312.3' from file '/root/sqlmap/data/txt/user-agents.txt'
+[22:59:25] [INFO] testing connection to the target URL
+[22:59:46] [INFO] checking if the target is protected by some kind of WAF/IPS
+[23:00:05] [WARNING] reflective value(s) found and filtering out
+[23:00:11] [INFO] testing if the target URL content is stable
+[23:00:33] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[23:00:35] [INFO] testing if GET parameter 'setrd' is dynamic
+[23:00:58] [WARNING] GET parameter 'setrd' does not appear to be dynamic
+[23:01:20] [WARNING] heuristic (basic) test shows that GET parameter 'setrd' might not be injectable
+[23:01:41] [INFO] heuristic (XSS) test shows that GET parameter 'setrd' might be vulnerable to cross-site scripting (XSS) attacks
+[23:01:50] [INFO] testing for SQL injection on GET parameter 'setrd'
+[23:01:50] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:51:52] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[00:16:12] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[01:09:22] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[01:50:22] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[02:06:25] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[02:13:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[02:17:37] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[02:24:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:41:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:50:28] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[03:06:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[03:23:38] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[03:32:18] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[04:00:08] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[04:30:19] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[04:46:21] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[05:15:08] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[05:31:23] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
+[06:06:43] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
+[06:25:02] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[06:58:45] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[07:16:18] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[07:27:32] [WARNING] there is a possibility that the target (or WAF/IPS) is dropping 'suspicious' requests
+[07:27:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:28:20] [INFO] heuristics detected web page charset 'ascii'
+[07:28:20] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:30:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:32:59] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:33:55] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:35:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:35:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:36:24] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:37:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:38:48] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:38:58] [CRITICAL] unable to connect to the target URL (504 - Gateway Timeout). sqlmap is going to retry the request
+[07:39:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:42:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:44:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:51:45] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:08:39] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[08:09:33] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
+[08:10:21] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
+[08:11:09] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
+[08:11:56] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
+[08:12:43] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
+[08:13:31] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
+[08:14:18] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[08:15:07] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[08:15:53] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[08:16:40] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[08:17:28] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
+[08:18:16] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
+[08:19:02] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
+[08:19:48] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
+[08:20:36] [INFO] testing 'Informix boolean-based blind - Parameter replace'
+[08:21:23] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
+[08:22:11] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[08:22:58] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[08:23:40] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[08:24:29] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[08:25:17] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[08:26:03] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[08:26:49] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[08:28:36] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:30:29] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[08:30:29] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:30:29] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[08:32:14] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[08:34:01] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[08:35:47] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
+[08:37:31] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
+[08:39:17] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
+[08:41:06] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:42:58] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[08:44:52] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:46:48] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
+[08:48:47] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:50:42] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[09:24:20] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
+[09:46:07] [INFO] testing 'MySQL < 5.0 boolean-based blind - Stacked queries'
+[09:46:08] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[10:07:09] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[10:27:55] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
+[10:48:33] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
+[11:08:19] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
+[11:30:15] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[11:50:33] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
+[12:10:05] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[12:21:58] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[12:38:40] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[12:49:58] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[13:00:56] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[13:11:41] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[13:23:03] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[13:34:24] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
