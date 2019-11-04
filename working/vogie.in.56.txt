@@ -867,3 +867,4 @@ it is recommended to perform only basic UNION tests if there is not at least one
 [03:22:06] [CRITICAL] connection reset to the target URL. sqlmap is going to retry the request(s)
 [12:42:51] [WARNING] there is a possibility that the target (or WAF/IPS) is dropping 'suspicious' requests
 [12:42:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:02:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)

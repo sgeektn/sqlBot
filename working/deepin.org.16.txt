@@ -1,0 +1,1698 @@
+https://www.deepin.org/en/original/dde-file-manager/
+        ___
+       __H__
+ ___ ___[.]_____ ___ ___  {1.3.10.26#dev}
+|_ -| . [)]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 18:48:37 /2019-11-03/
+
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[18:48:37] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.7) Gecko/2009030516 Ubuntu/9.04 (jaunty) Firefox/3.0.7 GTB5' from file '/root/sqlmap/data/txt/user-agents.txt'
+[18:48:38] [WARNING] you've provided target URL without any GET parameters (e.g. 'http://www.site.com/article.php?id=1') and without providing any POST parameters through option '--data'
+do you want to try URI injections in the target URL itself? [Y/n/q] Y
+[18:48:38] [INFO] testing connection to the target URL
+you have not declared cookie(s), while server wants to set its own ('deepin_language=en;PHPSESSID=cdhma7m7aln...sapkad1au0'). Do you want to use those [Y/n] Y
+[18:48:41] [INFO] checking if the target is protected by some kind of WAF/IPS
+[18:48:44] [INFO] testing if the target URL content is stable
+[18:48:48] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
+how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
+[18:48:48] [INFO] testing if URI parameter '#1*' is dynamic
+sqlmap got a 301 redirect to 'https://www.deepin.org/en/original/dde-file-manager/8529/'. Do you want to follow? [Y/n] Y
+[18:48:52] [WARNING] URI parameter '#1*' does not appear to be dynamic
+[18:48:56] [WARNING] heuristic (basic) test shows that URI parameter '#1*' might not be injectable
+[18:48:59] [INFO] testing for SQL injection on URI parameter '#1*'
+[18:48:59] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[18:53:29] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[18:56:30] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[19:00:01] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[19:02:45] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[19:04:21] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[19:04:57] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[19:05:29] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[19:06:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[19:07:30] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[19:08:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[19:10:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[19:11:49] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[19:13:17] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[19:16:08] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[19:19:12] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[19:21:54] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[19:24:57] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[19:27:43] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
+[19:30:45] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (bool*int)'
+[19:33:09] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[19:36:19] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[19:38:49] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[19:41:43] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[19:44:19] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[19:44:27] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
+[19:44:34] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
+[19:44:42] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
+[19:44:49] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
+[19:44:56] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
+[19:45:01] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
+[19:45:07] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[19:45:13] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[19:45:21] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[19:45:28] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[19:45:36] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
+[19:45:44] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
+[19:45:51] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
+[19:45:57] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
+[19:46:04] [INFO] testing 'Informix boolean-based blind - Parameter replace'
+[19:46:10] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
+[19:46:16] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[19:46:23] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[19:46:29] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[19:46:35] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[19:46:42] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[19:46:49] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[19:46:55] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[19:47:07] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[19:47:20] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[19:47:20] [INFO] testing 'MySQL < 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[19:47:20] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[19:47:30] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[19:47:42] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[19:47:53] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
+[19:48:05] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
+[19:48:16] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
+[19:48:28] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[19:48:40] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[19:48:50] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[19:49:02] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
+[19:49:14] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[19:49:26] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[19:52:10] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
+[19:53:58] [INFO] testing 'MySQL < 5.0 boolean-based blind - Stacked queries'
+[19:53:58] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[19:55:49] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[19:57:37] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
+[19:59:26] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
+[20:01:23] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
+[20:03:23] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[20:05:20] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
+[20:07:04] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[20:08:56] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[20:10:48] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[20:12:31] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[20:14:19] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[20:16:12] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[20:18:02] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[20:19:57] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[20:21:55] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[20:23:53] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[20:25:58] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[20:28:04] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[20:29:57] [INFO] testing 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[20:31:59] [INFO] testing 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)'
+[20:34:07] [INFO] testing 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)'
+[20:35:01] [INFO] testing 'PostgreSQL AND error-based - WHERE or HAVING clause'
+[20:37:03] [INFO] testing 'PostgreSQL OR error-based - WHERE or HAVING clause'
+[20:38:23] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)'
+[20:40:23] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)'
+[20:41:51] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)'
+[20:44:01] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)'
+[20:45:25] [INFO] testing 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)'
+[20:47:29] [INFO] testing 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)'
+[20:48:59] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (XMLType)'
+[20:50:53] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (XMLType)'
+[20:52:17] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[20:54:13] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)'
+[20:55:41] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[20:57:59] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[20:59:31] [INFO] testing 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)'
+[21:01:22] [INFO] testing 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)'
+[21:02:49] [INFO] testing 'Firebird AND error-based - WHERE or HAVING clause'
+[21:04:32] [INFO] testing 'Firebird OR error-based - WHERE or HAVING clause'
+[21:05:56] [INFO] testing 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[21:07:17] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)'
+[21:07:22] [INFO] testing 'MySQL >= 5.5 error-based - Parameter replace (EXP)'
+[21:07:25] [INFO] testing 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)'
+[21:07:28] [INFO] testing 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)'
+[21:07:32] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)'
+[21:07:36] [INFO] testing 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)'
+[21:07:39] [INFO] testing 'PostgreSQL error-based - Parameter replace'
+[21:07:42] [INFO] testing 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)'
+[21:07:45] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Parameter replace'
+[21:07:49] [INFO] testing 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)'
+[21:07:51] [INFO] testing 'Oracle error-based - Parameter replace'
+[21:07:55] [INFO] testing 'Firebird error-based - Parameter replace'
+[21:07:58] [INFO] testing 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)'
+[21:08:04] [INFO] testing 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)'
+[21:08:10] [INFO] testing 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)'
+[21:08:15] [INFO] testing 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)'
+[21:08:21] [INFO] testing 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)'
+[21:08:26] [INFO] testing 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)'
+[21:08:31] [INFO] testing 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)'
+[21:08:36] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause'
+[21:08:41] [INFO] testing 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)'
+[21:08:46] [INFO] testing 'Microsoft SQL Server/Sybase error-based - ORDER BY clause'
+[21:08:52] [INFO] testing 'Oracle error-based - ORDER BY, GROUP BY clause'
+[21:08:57] [INFO] testing 'Firebird error-based - ORDER BY clause'
+[21:09:01] [INFO] testing 'MySQL inline queries'
+[21:09:04] [INFO] testing 'PostgreSQL inline queries'
+[21:09:08] [INFO] testing 'Microsoft SQL Server/Sybase inline queries'
+[21:09:08] [INFO] testing 'Oracle inline queries'
+[21:09:11] [INFO] testing 'SQLite inline queries'
+[21:09:14] [INFO] testing 'Firebird inline queries'
+[21:09:16] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
+[21:09:16] [CRITICAL] considerable lagging has been detected in connection response(s). Please use as high value for option '--time-sec' as possible (e.g. 10 or more)
+[21:10:04] [INFO] testing 'MySQL >= 5.0.12 stacked queries'
+[21:11:31] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[21:12:27] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[21:13:54] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query - comment)'
+[21:14:48] [INFO] testing 'MySQL < 5.0.12 stacked queries (heavy query)'
+[21:16:22] [INFO] testing 'PostgreSQL > 8.1 stacked queries (comment)'
+[21:17:09] [INFO] testing 'PostgreSQL > 8.1 stacked queries'
+[21:18:32] [INFO] testing 'PostgreSQL stacked queries (heavy query - comment)'
+[21:19:19] [INFO] testing 'PostgreSQL stacked queries (heavy query)'
+[21:20:45] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc - comment)'
+[21:21:35] [INFO] testing 'PostgreSQL < 8.2 stacked queries (Glibc)'
+[21:22:57] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (comment)'
+[21:23:48] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)'
+[21:24:37] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries'
+[21:26:05] [INFO] testing 'Microsoft SQL Server/Sybase stacked queries (DECLARE)'
+[21:27:32] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)'
+[21:28:26] [INFO] testing 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE)'
+[21:29:49] [INFO] testing 'Oracle stacked queries (heavy query - comment)'
+[21:30:38] [INFO] testing 'Oracle stacked queries (heavy query)'
+[21:31:55] [INFO] testing 'Oracle stacked queries (DBMS_LOCK.SLEEP - comment)'
+[21:32:41] [INFO] testing 'Oracle stacked queries (DBMS_LOCK.SLEEP)'
+[21:34:05] [INFO] testing 'Oracle stacked queries (USER_LOCK.SLEEP - comment)'
+[21:34:05] [INFO] testing 'Oracle stacked queries (USER_LOCK.SLEEP)'
+[21:34:05] [INFO] testing 'IBM DB2 stacked queries (heavy query - comment)'
+[21:34:56] [INFO] testing 'IBM DB2 stacked queries (heavy query)'
+[21:36:19] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query - comment)'
+[21:37:08] [INFO] testing 'SQLite > 2.0 stacked queries (heavy query)'
+[21:38:36] [INFO] testing 'Firebird stacked queries (heavy query - comment)'
+[21:39:31] [INFO] testing 'Firebird stacked queries (heavy query)'
+[21:40:53] [INFO] testing 'SAP MaxDB stacked queries (heavy query - comment)'
+[21:41:50] [INFO] testing 'SAP MaxDB stacked queries (heavy query)'
+[21:43:21] [INFO] testing 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)'
+[21:44:08] [INFO] testing 'HSQLDB >= 1.7.2 stacked queries (heavy query)'
+[21:45:32] [INFO] testing 'HSQLDB >= 2.0 stacked queries (heavy query - comment)'
+[21:46:21] [INFO] testing 'HSQLDB >= 2.0 stacked queries (heavy query)'
+[21:47:43] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
+[21:49:35] [INFO] testing 'MySQL >= 5.0.12 OR time-based blind (query SLEEP)'
+[21:51:27] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP)'
+[21:53:16] [INFO] testing 'MySQL >= 5.0.12 OR time-based blind (SLEEP)'
+[21:55:03] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (SLEEP - comment)'
+[21:56:12] [INFO] testing 'MySQL >= 5.0.12 OR time-based blind (SLEEP - comment)'
+[21:57:18] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP - comment)'
+[21:58:24] [INFO] testing 'MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)'
+[21:59:32] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (heavy query)'
+[22:01:19] [INFO] testing 'MySQL < 5.0.12 OR time-based blind (heavy query)'
+[22:03:08] [INFO] testing 'MySQL < 5.0.12 AND time-based blind (heavy query - comment)'
+[22:04:20] [INFO] testing 'MySQL < 5.0.12 OR time-based blind (heavy query - comment)'
+[22:05:31] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind'
+[22:07:17] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind (comment)'
+[22:08:31] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP)'
+[22:10:20] [INFO] testing 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP - comment)'
+[22:11:25] [INFO] testing 'MySQL AND time-based blind (ELT)'
+[22:13:11] [INFO] testing 'MySQL OR time-based blind (ELT)'
+[22:14:58] [INFO] testing 'MySQL AND time-based blind (ELT - comment)'
+[22:16:02] [INFO] testing 'MySQL OR time-based blind (ELT - comment)'
+[22:17:03] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind'
+[22:18:46] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind'
+[22:20:27] [INFO] testing 'PostgreSQL > 8.1 AND time-based blind (comment)'
+[22:21:42] [INFO] testing 'PostgreSQL > 8.1 OR time-based blind (comment)'
+[22:22:51] [INFO] testing 'PostgreSQL AND time-based blind (heavy query)'
+[22:24:37] [INFO] testing 'PostgreSQL OR time-based blind (heavy query)'
+[22:26:14] [INFO] testing 'PostgreSQL AND time-based blind (heavy query - comment)'
+[22:27:23] [INFO] testing 'PostgreSQL OR time-based blind (heavy query - comment)'
+[22:28:31] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF)'
+[22:30:27] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind (IF - comment)'
+[22:31:45] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)'
+[22:33:39] [INFO] testing 'Microsoft SQL Server/Sybase OR time-based blind (heavy query)'
+[22:35:52] [INFO] testing 'Microsoft SQL Server/Sybase AND time-based blind (heavy query - comment)'
+[22:36:58] [INFO] testing 'Microsoft SQL Server/Sybase OR time-based blind (heavy query - comment)'
+[22:38:04] [INFO] testing 'Oracle AND time-based blind'
+[22:39:41] [INFO] testing 'Oracle OR time-based blind'
+[22:41:16] [INFO] testing 'Oracle AND time-based blind (comment)'
+[22:42:16] [INFO] testing 'Oracle OR time-based blind (comment)'
+[22:43:23] [INFO] testing 'Oracle AND time-based blind (heavy query)'
+[22:45:01] [INFO] testing 'Oracle OR time-based blind (heavy query)'
+[22:46:46] [INFO] testing 'Oracle AND time-based blind (heavy query - comment)'
+[22:47:52] [INFO] testing 'Oracle OR time-based blind (heavy query - comment)'
+[22:48:59] [INFO] testing 'IBM DB2 AND time-based blind (heavy query)'
+[22:50:36] [INFO] testing 'IBM DB2 OR time-based blind (heavy query)'
+[22:52:15] [INFO] testing 'IBM DB2 AND time-based blind (heavy query - comment)'
+[22:53:24] [INFO] testing 'IBM DB2 OR time-based blind (heavy query - comment)'
+[22:54:30] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query)'
+[22:56:14] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query)'
+[22:57:48] [INFO] testing 'SQLite > 2.0 AND time-based blind (heavy query - comment)'
+[22:58:51] [INFO] testing 'SQLite > 2.0 OR time-based blind (heavy query - comment)'
+[22:59:57] [INFO] testing 'Firebird >= 2.0 AND time-based blind (heavy query)'
+[23:01:34] [INFO] testing 'Firebird >= 2.0 OR time-based blind (heavy query)'
+[23:03:08] [INFO] testing 'Firebird >= 2.0 AND time-based blind (heavy query - comment)'
+[23:04:12] [INFO] testing 'Firebird >= 2.0 OR time-based blind (heavy query - comment)'
+[23:05:16] [INFO] testing 'SAP MaxDB AND time-based blind (heavy query)'
+[23:06:50] [INFO] testing 'SAP MaxDB OR time-based blind (heavy query)'
+[23:08:28] [INFO] testing 'SAP MaxDB AND time-based blind (heavy query - comment)'
+[23:09:30] [INFO] testing 'SAP MaxDB OR time-based blind (heavy query - comment)'
+[23:10:35] [INFO] testing 'HSQLDB >= 1.7.2 AND time-based blind (heavy query)'
+[23:12:15] [INFO] testing 'HSQLDB >= 1.7.2 OR time-based blind (heavy query)'
+[23:13:54] [INFO] testing 'HSQLDB >= 1.7.2 AND time-based blind (heavy query - comment)'
+[23:14:58] [INFO] testing 'HSQLDB >= 1.7.2 OR time-based blind (heavy query - comment)'
+[23:16:08] [INFO] testing 'HSQLDB > 2.0 AND time-based blind (heavy query)'
+[23:17:48] [INFO] testing 'HSQLDB > 2.0 OR time-based blind (heavy query)'
+[23:19:25] [INFO] testing 'HSQLDB > 2.0 AND time-based blind (heavy query - comment)'
+[23:20:32] [INFO] testing 'HSQLDB > 2.0 OR time-based blind (heavy query - comment)'
+[23:21:36] [INFO] testing 'Informix AND time-based blind (heavy query)'
+[23:23:10] [INFO] testing 'Informix OR time-based blind (heavy query)'
+[23:24:45] [INFO] testing 'Informix AND time-based blind (heavy query - comment)'
+[23:25:46] [INFO] testing 'Informix OR time-based blind (heavy query - comment)'
+[23:26:48] [INFO] testing 'MySQL >= 5.1 time-based blind (heavy query) - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:27:58] [INFO] testing 'MySQL >= 5.1 time-based blind (heavy query - comment) - PROCEDURE ANALYSE (EXTRACTVALUE)'
+[23:28:38] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace'
+[23:28:41] [INFO] testing 'MySQL >= 5.0.12 time-based blind - Parameter replace (substraction)'
+[23:28:44] [INFO] testing 'MySQL < 5.0.12 time-based blind - Parameter replace (heavy queries)'
+[23:28:46] [INFO] testing 'MySQL time-based blind - Parameter replace (bool)'
+[23:28:50] [INFO] testing 'MySQL time-based blind - Parameter replace (ELT)'
+[23:28:53] [INFO] testing 'MySQL time-based blind - Parameter replace (MAKE_SET)'
+[23:28:56] [INFO] testing 'PostgreSQL > 8.1 time-based blind - Parameter replace'
+[23:28:58] [INFO] testing 'PostgreSQL time-based blind - Parameter replace (heavy query)'
+[23:29:02] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind - Parameter replace (heavy queries)'
+[23:29:05] [INFO] testing 'Oracle time-based blind - Parameter replace (DBMS_LOCK.SLEEP)'
+[23:29:08] [INFO] testing 'Oracle time-based blind - Parameter replace (DBMS_PIPE.RECEIVE_MESSAGE)'
+[23:29:11] [INFO] testing 'Oracle time-based blind - Parameter replace (heavy queries)'
+[23:29:14] [INFO] testing 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:29:17] [INFO] testing 'Firebird time-based blind - Parameter replace (heavy query)'
+[23:29:19] [INFO] testing 'SAP MaxDB time-based blind - Parameter replace (heavy query)'
+[23:29:23] [INFO] testing 'IBM DB2 time-based blind - Parameter replace (heavy query)'
+[23:29:26] [INFO] testing 'HSQLDB >= 1.7.2 time-based blind - Parameter replace (heavy query)'
+[23:31:00] [INFO] testing 'HSQLDB > 2.0 time-based blind - Parameter replace (heavy query)'
+[23:32:37] [INFO] testing 'Informix time-based blind - Parameter replace (heavy query)'
+[23:32:40] [INFO] testing 'MySQL >= 5.0.12 time-based blind - ORDER BY, GROUP BY clause'
+[23:32:44] [INFO] testing 'MySQL < 5.0.12 time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[23:32:49] [INFO] testing 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause'
+[23:32:54] [INFO] testing 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[23:32:58] [INFO] testing 'Microsoft SQL Server/Sybase time-based blind - ORDER BY clause (heavy query)'
+[23:33:03] [INFO] testing 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_LOCK.SLEEP)'
+[23:33:08] [INFO] testing 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_PIPE.RECEIVE_MESSAGE)'
+[23:33:13] [INFO] testing 'Oracle time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[23:33:18] [INFO] testing 'HSQLDB >= 1.7.2 time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+[23:33:22] [INFO] testing 'HSQLDB > 2.0 time-based blind - ORDER BY, GROUP BY clause (heavy query)'
+it is recommended to perform only basic UNION tests if there is not at least one other (potential) technique found. Do you want to reduce the number of requests? [Y/n] Y
+[23:33:26] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[23:34:41] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[23:35:57] [INFO] testing 'MySQL UNION query (NULL) - 1 to 10 columns'
+[23:35:59] [WARNING] reflective value(s) found and filtering out
+[23:37:11] [INFO] testing 'MySQL UNION query (random number) - 1 to 10 columns'
+[23:38:24] [WARNING] URI parameter '#1*' does not seem to be injectable
+[23:38:24] [WARNING] parameter 'Host' does not appear to be dynamic
+[23:38:54] [WARNING] there is a possibility that the target (or WAF/IPS) is dropping 'suspicious' requests
+[23:38:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:40:25] [CRITICAL] connection timed out to the target URL
+[23:40:25] [WARNING] heuristic (basic) test shows that parameter 'Host' might not be injectable
+[23:40:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:42:26] [CRITICAL] connection timed out to the target URL
+[23:42:26] [INFO] testing for SQL injection on parameter 'Host'
+[23:42:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[23:42:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:44:27] [CRITICAL] connection timed out to the target URL
+[23:44:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+there seems to be a continuous problem with connection to the target. Are you sure that you want to continue? [y/N] N
+[23:46:28] [CRITICAL] connection timed out to the target URL
+[23:46:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:48:28] [CRITICAL] connection timed out to the target URL
+[23:48:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:50:29] [CRITICAL] connection timed out to the target URL
+[23:50:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:52:30] [CRITICAL] connection timed out to the target URL
+[23:53:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:54:31] [CRITICAL] connection timed out to the target URL
+[23:55:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:56:31] [CRITICAL] connection timed out to the target URL
+[23:57:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[23:58:32] [CRITICAL] connection timed out to the target URL
+[23:59:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:00:33] [CRITICAL] connection timed out to the target URL
+[00:01:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:02:34] [CRITICAL] connection timed out to the target URL
+[00:03:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:04:35] [CRITICAL] connection timed out to the target URL
+[00:05:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:06:35] [CRITICAL] connection timed out to the target URL
+[00:07:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:08:36] [CRITICAL] connection timed out to the target URL
+[00:09:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:10:37] [CRITICAL] connection timed out to the target URL
+[00:11:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:12:38] [CRITICAL] connection timed out to the target URL
+[00:13:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:14:39] [CRITICAL] connection timed out to the target URL
+[00:15:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:16:39] [CRITICAL] connection timed out to the target URL
+[00:17:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:18:40] [CRITICAL] connection timed out to the target URL
+[00:19:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:20:41] [CRITICAL] connection timed out to the target URL
+[00:21:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:22:42] [CRITICAL] connection timed out to the target URL
+[00:23:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:24:43] [CRITICAL] connection timed out to the target URL
+[00:25:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:26:43] [CRITICAL] connection timed out to the target URL
+[00:27:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:28:44] [CRITICAL] connection timed out to the target URL
+[00:29:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:30:45] [CRITICAL] connection timed out to the target URL
+[00:31:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:32:46] [CRITICAL] connection timed out to the target URL
+[00:33:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:34:46] [CRITICAL] connection timed out to the target URL
+[00:35:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:36:47] [CRITICAL] connection timed out to the target URL
+[00:37:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:38:48] [CRITICAL] connection timed out to the target URL
+[00:39:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:40:49] [CRITICAL] connection timed out to the target URL
+[00:41:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:42:50] [CRITICAL] connection timed out to the target URL
+[00:43:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:44:50] [CRITICAL] connection timed out to the target URL
+[00:45:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:46:51] [CRITICAL] connection timed out to the target URL
+[00:47:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:48:52] [CRITICAL] connection timed out to the target URL
+[00:49:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:50:53] [CRITICAL] connection timed out to the target URL
+[00:51:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:52:54] [CRITICAL] connection timed out to the target URL
+[00:53:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:54:54] [CRITICAL] connection timed out to the target URL
+[00:55:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:56:55] [CRITICAL] connection timed out to the target URL
+[00:57:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[00:58:56] [CRITICAL] connection timed out to the target URL
+[00:59:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:00:57] [CRITICAL] connection timed out to the target URL
+[01:01:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:02:58] [CRITICAL] connection timed out to the target URL
+[01:03:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:04:58] [CRITICAL] connection timed out to the target URL
+[01:05:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:06:59] [CRITICAL] connection timed out to the target URL
+[01:07:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:09:00] [CRITICAL] connection timed out to the target URL
+[01:09:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:11:01] [CRITICAL] connection timed out to the target URL
+[01:11:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:13:02] [CRITICAL] connection timed out to the target URL
+[01:13:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:15:02] [CRITICAL] connection timed out to the target URL
+[01:15:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:17:03] [CRITICAL] connection timed out to the target URL
+[01:17:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:19:04] [CRITICAL] connection timed out to the target URL
+[01:19:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:21:05] [CRITICAL] connection timed out to the target URL
+[01:21:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:23:05] [CRITICAL] connection timed out to the target URL
+[01:23:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:25:06] [CRITICAL] connection timed out to the target URL
+[01:25:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:27:07] [CRITICAL] connection timed out to the target URL
+[01:27:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:29:08] [CRITICAL] connection timed out to the target URL
+[01:29:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:31:09] [CRITICAL] connection timed out to the target URL
+[01:31:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:33:09] [CRITICAL] connection timed out to the target URL
+[01:33:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:35:10] [CRITICAL] connection timed out to the target URL
+[01:35:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:37:11] [CRITICAL] connection timed out to the target URL
+[01:37:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:39:12] [CRITICAL] connection timed out to the target URL
+[01:39:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:41:13] [CRITICAL] connection timed out to the target URL
+[01:41:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:43:13] [CRITICAL] connection timed out to the target URL
+[01:43:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:45:14] [CRITICAL] connection timed out to the target URL
+[01:45:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:47:15] [CRITICAL] connection timed out to the target URL
+[01:47:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:49:16] [CRITICAL] connection timed out to the target URL
+[01:49:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:51:17] [CRITICAL] connection timed out to the target URL
+[01:51:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:53:17] [CRITICAL] connection timed out to the target URL
+[01:53:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:55:18] [CRITICAL] connection timed out to the target URL
+[01:55:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:57:19] [CRITICAL] connection timed out to the target URL
+[01:57:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[01:59:20] [CRITICAL] connection timed out to the target URL
+[01:59:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:01:21] [CRITICAL] connection timed out to the target URL
+[02:01:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:03:22] [CRITICAL] connection timed out to the target URL
+[02:03:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:05:22] [CRITICAL] connection timed out to the target URL
+[02:05:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:07:23] [CRITICAL] connection timed out to the target URL
+[02:07:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:09:24] [CRITICAL] connection timed out to the target URL
+[02:09:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:11:25] [CRITICAL] connection timed out to the target URL
+[02:11:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:13:26] [CRITICAL] connection timed out to the target URL
+[02:13:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:15:26] [CRITICAL] connection timed out to the target URL
+[02:15:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:17:27] [CRITICAL] connection timed out to the target URL
+[02:17:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:19:28] [CRITICAL] connection timed out to the target URL
+[02:19:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:21:29] [CRITICAL] connection timed out to the target URL
+[02:21:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:23:30] [CRITICAL] connection timed out to the target URL
+[02:24:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:25:30] [CRITICAL] connection timed out to the target URL
+[02:26:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:27:31] [CRITICAL] connection timed out to the target URL
+[02:28:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:29:32] [CRITICAL] connection timed out to the target URL
+[02:30:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:31:33] [CRITICAL] connection timed out to the target URL
+[02:32:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:33:34] [CRITICAL] connection timed out to the target URL
+[02:34:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:35:35] [CRITICAL] connection timed out to the target URL
+[02:36:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:37:35] [CRITICAL] connection timed out to the target URL
+[02:38:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:39:36] [CRITICAL] connection timed out to the target URL
+[02:40:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:41:37] [CRITICAL] connection timed out to the target URL
+[02:42:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:43:38] [CRITICAL] connection timed out to the target URL
+[02:44:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:45:39] [CRITICAL] connection timed out to the target URL
+[02:46:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:47:39] [CRITICAL] connection timed out to the target URL
+[02:48:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:49:40] [CRITICAL] connection timed out to the target URL
+[02:50:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:51:41] [CRITICAL] connection timed out to the target URL
+[02:51:41] [INFO] heuristics detected web page charset 'ascii'
+[02:52:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:53:47] [CRITICAL] connection timed out to the target URL
+[02:54:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:55:47] [CRITICAL] connection timed out to the target URL
+[02:55:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:56:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:57:48] [CRITICAL] connection timed out to the target URL
+[02:58:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[02:59:49] [CRITICAL] connection timed out to the target URL
+[03:00:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:01:50] [CRITICAL] connection timed out to the target URL
+[03:02:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:03:51] [CRITICAL] connection timed out to the target URL
+[03:04:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:05:51] [CRITICAL] connection timed out to the target URL
+[03:06:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:07:52] [CRITICAL] connection timed out to the target URL
+[03:08:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:09:53] [CRITICAL] connection timed out to the target URL
+[03:10:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:11:54] [CRITICAL] connection timed out to the target URL
+[03:12:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:13:54] [CRITICAL] connection timed out to the target URL
+[03:14:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:15:55] [CRITICAL] connection timed out to the target URL
+[03:16:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:17:56] [CRITICAL] connection timed out to the target URL
+[03:18:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:19:57] [CRITICAL] connection timed out to the target URL
+[03:20:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:21:58] [CRITICAL] connection timed out to the target URL
+[03:22:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:23:59] [CRITICAL] connection timed out to the target URL
+[03:24:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:26:00] [CRITICAL] connection timed out to the target URL
+[03:26:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:28:00] [CRITICAL] connection timed out to the target URL
+[03:28:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:30:01] [CRITICAL] connection timed out to the target URL
+[03:30:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:32:02] [CRITICAL] connection timed out to the target URL
+[03:32:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:34:03] [CRITICAL] connection timed out to the target URL
+[03:34:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:36:03] [CRITICAL] connection timed out to the target URL
+[03:36:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:38:04] [CRITICAL] connection timed out to the target URL
+[03:38:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:40:05] [CRITICAL] connection timed out to the target URL
+[03:40:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:42:06] [CRITICAL] connection timed out to the target URL
+[03:42:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:44:07] [CRITICAL] connection timed out to the target URL
+[03:44:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:46:07] [CRITICAL] connection timed out to the target URL
+[03:46:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:48:08] [CRITICAL] connection timed out to the target URL
+[03:48:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:50:09] [CRITICAL] connection timed out to the target URL
+[03:50:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:52:10] [CRITICAL] connection timed out to the target URL
+[03:52:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:54:11] [CRITICAL] connection timed out to the target URL
+[03:54:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:56:11] [CRITICAL] connection timed out to the target URL
+[03:56:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[03:58:12] [CRITICAL] connection timed out to the target URL
+[03:58:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:00:13] [CRITICAL] connection timed out to the target URL
+[04:00:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:02:14] [CRITICAL] connection timed out to the target URL
+[04:02:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:04:14] [CRITICAL] connection timed out to the target URL
+[04:04:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:06:15] [CRITICAL] connection timed out to the target URL
+[04:06:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:08:16] [CRITICAL] connection timed out to the target URL
+[04:08:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:10:17] [CRITICAL] connection timed out to the target URL
+[04:10:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:12:18] [CRITICAL] connection timed out to the target URL
+[04:12:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:14:18] [CRITICAL] connection timed out to the target URL
+[04:14:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:16:19] [CRITICAL] connection timed out to the target URL
+[04:16:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:18:20] [CRITICAL] connection timed out to the target URL
+[04:18:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:20:21] [CRITICAL] connection timed out to the target URL
+[04:20:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:22:22] [CRITICAL] connection timed out to the target URL
+[04:22:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:24:22] [CRITICAL] connection timed out to the target URL
+[04:24:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:26:23] [CRITICAL] connection timed out to the target URL
+[04:26:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:28:24] [CRITICAL] connection timed out to the target URL
+[04:28:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:30:25] [CRITICAL] connection timed out to the target URL
+[04:30:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:32:25] [CRITICAL] connection timed out to the target URL
+[04:32:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:34:26] [CRITICAL] connection timed out to the target URL
+[04:34:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:36:27] [CRITICAL] connection timed out to the target URL
+[04:36:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:38:28] [CRITICAL] connection timed out to the target URL
+[04:38:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:40:29] [CRITICAL] connection timed out to the target URL
+[04:40:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:42:29] [CRITICAL] connection timed out to the target URL
+[04:43:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:44:30] [CRITICAL] connection timed out to the target URL
+[04:45:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:46:31] [CRITICAL] connection timed out to the target URL
+[04:47:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:48:32] [CRITICAL] connection timed out to the target URL
+[04:49:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:50:33] [CRITICAL] connection timed out to the target URL
+[04:51:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:52:33] [CRITICAL] connection timed out to the target URL
+[04:53:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:54:34] [CRITICAL] connection timed out to the target URL
+[04:55:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:56:35] [CRITICAL] connection timed out to the target URL
+[04:57:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[04:58:36] [CRITICAL] connection timed out to the target URL
+[04:59:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:00:36] [CRITICAL] connection timed out to the target URL
+[05:01:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:02:37] [CRITICAL] connection timed out to the target URL
+[05:03:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:04:38] [CRITICAL] connection timed out to the target URL
+[05:05:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:06:39] [CRITICAL] connection timed out to the target URL
+[05:07:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:08:40] [CRITICAL] connection timed out to the target URL
+[05:09:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:10:40] [CRITICAL] connection timed out to the target URL
+[05:11:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:12:41] [CRITICAL] connection timed out to the target URL
+[05:13:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:14:42] [CRITICAL] connection timed out to the target URL
+[05:15:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:16:43] [CRITICAL] connection timed out to the target URL
+[05:17:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:18:44] [CRITICAL] connection timed out to the target URL
+[05:19:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:20:45] [CRITICAL] connection timed out to the target URL
+[05:21:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:22:45] [CRITICAL] connection timed out to the target URL
+[05:23:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:24:46] [CRITICAL] connection timed out to the target URL
+[05:25:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:26:47] [CRITICAL] connection timed out to the target URL
+[05:27:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:28:48] [CRITICAL] connection timed out to the target URL
+[05:29:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:30:49] [CRITICAL] connection timed out to the target URL
+[05:31:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:32:49] [CRITICAL] connection timed out to the target URL
+[05:33:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:34:50] [CRITICAL] connection timed out to the target URL
+[05:34:50] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[05:35:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:36:51] [CRITICAL] connection timed out to the target URL
+[05:37:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:38:52] [CRITICAL] connection timed out to the target URL
+[05:39:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:40:53] [CRITICAL] connection timed out to the target URL
+[05:41:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:42:54] [CRITICAL] connection timed out to the target URL
+[05:43:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:44:54] [CRITICAL] connection timed out to the target URL
+[05:45:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:46:55] [CRITICAL] connection timed out to the target URL
+[05:47:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:48:57] [CRITICAL] connection timed out to the target URL
+[05:49:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:50:58] [CRITICAL] connection timed out to the target URL
+[05:51:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:52:58] [CRITICAL] connection timed out to the target URL
+[05:53:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:54:59] [CRITICAL] connection timed out to the target URL
+[05:55:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:57:00] [CRITICAL] connection timed out to the target URL
+[05:57:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[05:59:01] [CRITICAL] connection timed out to the target URL
+[05:59:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:01:02] [CRITICAL] connection timed out to the target URL
+[06:01:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:03:03] [CRITICAL] connection timed out to the target URL
+[06:03:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:05:03] [CRITICAL] connection timed out to the target URL
+[06:05:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:07:04] [CRITICAL] connection timed out to the target URL
+[06:07:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:09:05] [CRITICAL] connection timed out to the target URL
+[06:09:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:11:06] [CRITICAL] connection timed out to the target URL
+[06:11:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:13:07] [CRITICAL] connection timed out to the target URL
+[06:13:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:15:08] [CRITICAL] connection timed out to the target URL
+[06:15:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:17:08] [CRITICAL] connection timed out to the target URL
+[06:17:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:19:09] [CRITICAL] connection timed out to the target URL
+[06:19:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:21:10] [CRITICAL] connection timed out to the target URL
+[06:21:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:23:11] [CRITICAL] connection timed out to the target URL
+[06:23:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:25:12] [CRITICAL] connection timed out to the target URL
+[06:25:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:27:13] [CRITICAL] connection timed out to the target URL
+[06:27:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:29:13] [CRITICAL] connection timed out to the target URL
+[06:29:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:31:14] [CRITICAL] connection timed out to the target URL
+[06:31:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:33:15] [CRITICAL] connection timed out to the target URL
+[06:33:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:35:16] [CRITICAL] connection timed out to the target URL
+[06:35:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:37:17] [CRITICAL] connection timed out to the target URL
+[06:37:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:39:17] [CRITICAL] connection timed out to the target URL
+[06:39:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:41:18] [CRITICAL] connection timed out to the target URL
+[06:41:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:43:19] [CRITICAL] connection timed out to the target URL
+[06:43:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:45:20] [CRITICAL] connection timed out to the target URL
+[06:45:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:47:21] [CRITICAL] connection timed out to the target URL
+[06:47:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:49:22] [CRITICAL] connection timed out to the target URL
+[06:49:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:51:22] [CRITICAL] connection timed out to the target URL
+[06:51:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:53:23] [CRITICAL] connection timed out to the target URL
+[06:53:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:55:24] [CRITICAL] connection timed out to the target URL
+[06:55:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:57:25] [CRITICAL] connection timed out to the target URL
+[06:57:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[06:59:26] [CRITICAL] connection timed out to the target URL
+[06:59:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:01:26] [CRITICAL] connection timed out to the target URL
+[07:01:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:03:27] [CRITICAL] connection timed out to the target URL
+[07:03:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:05:28] [CRITICAL] connection timed out to the target URL
+[07:05:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:07:29] [CRITICAL] connection timed out to the target URL
+[07:08:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:09:30] [CRITICAL] connection timed out to the target URL
+[07:10:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:11:31] [CRITICAL] connection timed out to the target URL
+[07:12:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:13:32] [CRITICAL] connection timed out to the target URL
+[07:14:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:15:33] [CRITICAL] connection timed out to the target URL
+[07:16:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:17:33] [CRITICAL] connection timed out to the target URL
+[07:18:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:19:34] [CRITICAL] connection timed out to the target URL
+[07:20:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:21:35] [CRITICAL] connection timed out to the target URL
+[07:22:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:23:36] [CRITICAL] connection timed out to the target URL
+[07:24:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:25:37] [CRITICAL] connection timed out to the target URL
+[07:26:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:27:38] [CRITICAL] connection timed out to the target URL
+[07:28:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:29:39] [CRITICAL] connection timed out to the target URL
+[07:30:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:31:40] [CRITICAL] connection timed out to the target URL
+[07:32:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:33:40] [CRITICAL] connection timed out to the target URL
+[07:34:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:35:41] [CRITICAL] connection timed out to the target URL
+[07:36:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:37:42] [CRITICAL] connection timed out to the target URL
+[07:38:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:39:43] [CRITICAL] connection timed out to the target URL
+[07:40:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:41:44] [CRITICAL] connection timed out to the target URL
+[07:42:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:43:44] [CRITICAL] connection timed out to the target URL
+[07:44:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:45:45] [CRITICAL] connection timed out to the target URL
+[07:46:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:47:46] [CRITICAL] connection timed out to the target URL
+[07:48:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:49:47] [CRITICAL] connection timed out to the target URL
+[07:50:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:51:48] [CRITICAL] connection timed out to the target URL
+[07:52:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:53:49] [CRITICAL] connection timed out to the target URL
+[07:54:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:55:49] [CRITICAL] connection timed out to the target URL
+[07:56:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:57:50] [CRITICAL] connection timed out to the target URL
+[07:58:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[07:59:51] [CRITICAL] connection timed out to the target URL
+[08:00:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:01:52] [CRITICAL] connection timed out to the target URL
+[08:02:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:03:53] [CRITICAL] connection timed out to the target URL
+[08:04:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:05:53] [CRITICAL] connection timed out to the target URL
+[08:06:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:07:54] [CRITICAL] connection timed out to the target URL
+[08:08:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:09:55] [CRITICAL] connection timed out to the target URL
+[08:10:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:11:56] [CRITICAL] connection timed out to the target URL
+[08:12:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:13:57] [CRITICAL] connection timed out to the target URL
+[08:14:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:15:57] [CRITICAL] connection timed out to the target URL
+[08:16:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:17:58] [CRITICAL] connection timed out to the target URL
+[08:18:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:19:59] [CRITICAL] connection timed out to the target URL
+[08:20:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:22:00] [CRITICAL] connection timed out to the target URL
+[08:22:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:24:01] [CRITICAL] connection timed out to the target URL
+[08:24:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:26:02] [CRITICAL] connection timed out to the target URL
+[08:26:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:28:02] [CRITICAL] connection timed out to the target URL
+[08:28:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:30:03] [CRITICAL] connection timed out to the target URL
+[08:30:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:32:04] [CRITICAL] connection timed out to the target URL
+[08:32:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:34:05] [CRITICAL] connection timed out to the target URL
+[08:34:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:36:06] [CRITICAL] connection timed out to the target URL
+[08:36:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:38:07] [CRITICAL] connection timed out to the target URL
+[08:38:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:40:07] [CRITICAL] connection timed out to the target URL
+[08:40:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:42:08] [CRITICAL] connection timed out to the target URL
+[08:42:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:44:09] [CRITICAL] connection timed out to the target URL
+[08:44:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:46:10] [CRITICAL] connection timed out to the target URL
+[08:46:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:48:11] [CRITICAL] connection timed out to the target URL
+[08:48:11] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:48:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:50:12] [CRITICAL] connection timed out to the target URL
+[08:50:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:52:13] [CRITICAL] connection timed out to the target URL
+[08:52:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:54:13] [CRITICAL] connection timed out to the target URL
+[08:54:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:56:14] [CRITICAL] connection timed out to the target URL
+[08:56:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[08:58:15] [CRITICAL] connection timed out to the target URL
+[08:58:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:00:16] [CRITICAL] connection timed out to the target URL
+[09:00:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:02:17] [CRITICAL] connection timed out to the target URL
+[09:02:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:04:17] [CRITICAL] connection timed out to the target URL
+[09:04:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:06:18] [CRITICAL] connection timed out to the target URL
+[09:06:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:08:19] [CRITICAL] connection timed out to the target URL
+[09:08:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:10:20] [CRITICAL] connection timed out to the target URL
+[09:10:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:12:21] [CRITICAL] connection timed out to the target URL
+[09:12:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:14:21] [CRITICAL] connection timed out to the target URL
+[09:14:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:16:22] [CRITICAL] connection timed out to the target URL
+[09:16:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:18:23] [CRITICAL] connection timed out to the target URL
+[09:18:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:20:24] [CRITICAL] connection timed out to the target URL
+[09:20:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:22:25] [CRITICAL] connection timed out to the target URL
+[09:22:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:24:26] [CRITICAL] connection timed out to the target URL
+[09:24:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:26:26] [CRITICAL] connection timed out to the target URL
+[09:26:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:28:27] [CRITICAL] connection timed out to the target URL
+[09:28:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:30:28] [CRITICAL] connection timed out to the target URL
+[09:30:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:32:29] [CRITICAL] connection timed out to the target URL
+[09:32:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:34:30] [CRITICAL] connection timed out to the target URL
+[09:35:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:36:30] [CRITICAL] connection timed out to the target URL
+[09:37:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:38:31] [CRITICAL] connection timed out to the target URL
+[09:39:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:40:32] [CRITICAL] connection timed out to the target URL
+[09:41:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:42:33] [CRITICAL] connection timed out to the target URL
+[09:43:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:44:34] [CRITICAL] connection timed out to the target URL
+[09:45:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:46:35] [CRITICAL] connection timed out to the target URL
+[09:47:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:48:35] [CRITICAL] connection timed out to the target URL
+[09:49:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:50:36] [CRITICAL] connection timed out to the target URL
+[09:51:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:52:37] [CRITICAL] connection timed out to the target URL
+[09:53:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:54:38] [CRITICAL] connection timed out to the target URL
+[09:55:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:56:39] [CRITICAL] connection timed out to the target URL
+[09:57:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[09:58:39] [CRITICAL] connection timed out to the target URL
+[09:59:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:00:40] [CRITICAL] connection timed out to the target URL
+[10:01:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:02:41] [CRITICAL] connection timed out to the target URL
+[10:03:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:04:42] [CRITICAL] connection timed out to the target URL
+[10:05:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:06:43] [CRITICAL] connection timed out to the target URL
+[10:07:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:08:44] [CRITICAL] connection timed out to the target URL
+[10:09:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:10:44] [CRITICAL] connection timed out to the target URL
+[10:11:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:12:45] [CRITICAL] connection timed out to the target URL
+[10:13:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:14:46] [CRITICAL] connection timed out to the target URL
+[10:15:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:16:47] [CRITICAL] connection timed out to the target URL
+[10:17:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:18:48] [CRITICAL] connection timed out to the target URL
+[10:19:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:20:48] [CRITICAL] connection timed out to the target URL
+[10:21:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:22:49] [CRITICAL] connection timed out to the target URL
+[10:23:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:24:50] [CRITICAL] connection timed out to the target URL
+[10:25:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:26:51] [CRITICAL] connection timed out to the target URL
+[10:27:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:28:52] [CRITICAL] connection timed out to the target URL
+[10:29:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:30:52] [CRITICAL] connection timed out to the target URL
+[10:31:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:32:53] [CRITICAL] connection timed out to the target URL
+[10:33:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:34:54] [CRITICAL] connection timed out to the target URL
+[10:35:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:36:55] [CRITICAL] connection timed out to the target URL
+[10:37:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:38:56] [CRITICAL] connection timed out to the target URL
+[10:39:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:40:57] [CRITICAL] connection timed out to the target URL
+[10:41:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:42:57] [CRITICAL] connection timed out to the target URL
+[10:43:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:44:58] [CRITICAL] connection timed out to the target URL
+[10:45:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:46:59] [CRITICAL] connection timed out to the target URL
+[10:47:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:49:00] [CRITICAL] connection timed out to the target URL
+[10:49:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:51:01] [CRITICAL] connection timed out to the target URL
+[10:51:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:53:01] [CRITICAL] connection timed out to the target URL
+[10:53:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:55:02] [CRITICAL] connection timed out to the target URL
+[10:55:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:57:03] [CRITICAL] connection timed out to the target URL
+[10:57:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[10:59:04] [CRITICAL] connection timed out to the target URL
+[10:59:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:01:05] [CRITICAL] connection timed out to the target URL
+[11:01:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:03:05] [CRITICAL] connection timed out to the target URL
+[11:03:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:05:06] [CRITICAL] connection timed out to the target URL
+[11:05:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:07:07] [CRITICAL] connection timed out to the target URL
+[11:07:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:09:08] [CRITICAL] connection timed out to the target URL
+[11:09:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:11:09] [CRITICAL] connection timed out to the target URL
+[11:11:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:13:09] [CRITICAL] connection timed out to the target URL
+[11:13:09] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[11:13:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:15:10] [CRITICAL] connection timed out to the target URL
+[11:15:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:17:11] [CRITICAL] connection timed out to the target URL
+[11:17:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:19:12] [CRITICAL] connection timed out to the target URL
+[11:19:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:21:13] [CRITICAL] connection timed out to the target URL
+[11:21:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:23:13] [CRITICAL] connection timed out to the target URL
+[11:23:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:25:14] [CRITICAL] connection timed out to the target URL
+[11:25:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:27:15] [CRITICAL] connection timed out to the target URL
+[11:27:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:29:16] [CRITICAL] connection timed out to the target URL
+[11:29:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:31:17] [CRITICAL] connection timed out to the target URL
+[11:31:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:33:18] [CRITICAL] connection timed out to the target URL
+[11:33:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:35:18] [CRITICAL] connection timed out to the target URL
+[11:35:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:37:19] [CRITICAL] connection timed out to the target URL
+[11:37:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:39:20] [CRITICAL] connection timed out to the target URL
+[11:39:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:41:21] [CRITICAL] connection timed out to the target URL
+[11:41:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:43:22] [CRITICAL] connection timed out to the target URL
+[11:43:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:45:22] [CRITICAL] connection timed out to the target URL
+[11:45:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:47:23] [CRITICAL] connection timed out to the target URL
+[11:47:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:49:24] [CRITICAL] connection timed out to the target URL
+[11:49:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:51:25] [CRITICAL] connection timed out to the target URL
+[11:51:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:53:26] [CRITICAL] connection timed out to the target URL
+[11:53:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:55:26] [CRITICAL] connection timed out to the target URL
+[11:55:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:57:27] [CRITICAL] connection timed out to the target URL
+[11:57:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[11:59:28] [CRITICAL] connection timed out to the target URL
+[11:59:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:01:29] [CRITICAL] connection timed out to the target URL
+[12:01:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:03:30] [CRITICAL] connection timed out to the target URL
+[12:04:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:05:30] [CRITICAL] connection timed out to the target URL
+[12:06:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:07:31] [CRITICAL] connection timed out to the target URL
+[12:08:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:09:32] [CRITICAL] connection timed out to the target URL
+[12:10:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:11:33] [CRITICAL] connection timed out to the target URL
+[12:12:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:13:33] [CRITICAL] connection timed out to the target URL
+[12:14:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:15:34] [CRITICAL] connection timed out to the target URL
+[12:16:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:17:35] [CRITICAL] connection timed out to the target URL
+[12:18:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:19:36] [CRITICAL] connection timed out to the target URL
+[12:20:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:21:37] [CRITICAL] connection timed out to the target URL
+[12:22:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:23:38] [CRITICAL] connection timed out to the target URL
+[12:24:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:25:38] [CRITICAL] connection timed out to the target URL
+[12:26:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:27:39] [CRITICAL] connection timed out to the target URL
+[12:28:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:29:40] [CRITICAL] connection timed out to the target URL
+[12:30:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:31:41] [CRITICAL] connection timed out to the target URL
+[12:32:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:33:42] [CRITICAL] connection timed out to the target URL
+[12:34:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:35:42] [CRITICAL] connection timed out to the target URL
+[12:36:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:37:43] [CRITICAL] connection timed out to the target URL
+[12:38:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:39:44] [CRITICAL] connection timed out to the target URL
+[12:40:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:41:45] [CRITICAL] connection timed out to the target URL
+[12:42:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:43:46] [CRITICAL] connection timed out to the target URL
+[12:44:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:45:47] [CRITICAL] connection timed out to the target URL
+[12:46:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:47:48] [CRITICAL] connection timed out to the target URL
+[12:48:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:49:49] [CRITICAL] connection timed out to the target URL
+[12:49:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[12:50:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:51:50] [CRITICAL] connection timed out to the target URL
+[12:52:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:53:50] [CRITICAL] connection timed out to the target URL
+[12:54:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:55:51] [CRITICAL] connection timed out to the target URL
+[12:56:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:57:52] [CRITICAL] connection timed out to the target URL
+[12:58:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[12:59:53] [CRITICAL] connection timed out to the target URL
+[13:00:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:01:54] [CRITICAL] connection timed out to the target URL
+[13:02:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:03:54] [CRITICAL] connection timed out to the target URL
+[13:04:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:05:55] [CRITICAL] connection timed out to the target URL
+[13:06:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:07:56] [CRITICAL] connection timed out to the target URL
+[13:08:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:09:57] [CRITICAL] connection timed out to the target URL
+[13:10:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:11:58] [CRITICAL] connection timed out to the target URL
+[13:12:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:13:58] [CRITICAL] connection timed out to the target URL
+[13:14:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:15:59] [CRITICAL] connection timed out to the target URL
+[13:16:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:18:00] [CRITICAL] connection timed out to the target URL
+[13:18:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:20:01] [CRITICAL] connection timed out to the target URL
+[13:20:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:22:02] [CRITICAL] connection timed out to the target URL
+[13:22:02] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[13:22:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:24:02] [CRITICAL] connection timed out to the target URL
+[13:24:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:26:03] [CRITICAL] connection timed out to the target URL
+[13:26:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:28:04] [CRITICAL] connection timed out to the target URL
+[13:28:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:30:05] [CRITICAL] connection timed out to the target URL
+[13:30:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:32:06] [CRITICAL] connection timed out to the target URL
+[13:32:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:34:06] [CRITICAL] connection timed out to the target URL
+[13:34:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:36:07] [CRITICAL] connection timed out to the target URL
+[13:36:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:38:13] [CRITICAL] connection timed out to the target URL
+[13:38:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:40:14] [CRITICAL] connection timed out to the target URL
+[13:40:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:42:14] [CRITICAL] connection timed out to the target URL
+[13:42:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:44:15] [CRITICAL] connection timed out to the target URL
+[13:44:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:46:16] [CRITICAL] connection timed out to the target URL
+[13:46:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:48:17] [CRITICAL] connection timed out to the target URL
+[13:48:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:50:18] [CRITICAL] connection timed out to the target URL
+[13:50:18] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[13:50:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:52:19] [CRITICAL] connection timed out to the target URL
+[13:52:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:54:20] [CRITICAL] connection timed out to the target URL
+[13:54:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:56:20] [CRITICAL] connection timed out to the target URL
+[13:56:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[13:58:21] [CRITICAL] connection timed out to the target URL
+[13:58:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:00:22] [CRITICAL] connection timed out to the target URL
+[14:00:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:02:23] [CRITICAL] connection timed out to the target URL
+[14:02:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:04:24] [CRITICAL] connection timed out to the target URL
+[14:04:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:06:24] [CRITICAL] connection timed out to the target URL
+[14:06:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:08:25] [CRITICAL] connection timed out to the target URL
+[14:08:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:10:26] [CRITICAL] connection timed out to the target URL
+[14:10:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:12:27] [CRITICAL] connection timed out to the target URL
+[14:12:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:14:28] [CRITICAL] connection timed out to the target URL
+[14:14:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:16:29] [CRITICAL] connection timed out to the target URL
+[14:16:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:18:30] [CRITICAL] connection timed out to the target URL
+[14:19:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:20:30] [CRITICAL] connection timed out to the target URL
+[14:21:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:22:31] [CRITICAL] connection timed out to the target URL
+[14:22:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[14:23:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:24:32] [CRITICAL] connection timed out to the target URL
+[14:25:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:26:33] [CRITICAL] connection timed out to the target URL
+[14:27:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:28:34] [CRITICAL] connection timed out to the target URL
+[14:29:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:30:34] [CRITICAL] connection timed out to the target URL
+[14:31:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:32:35] [CRITICAL] connection timed out to the target URL
+[14:33:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:34:36] [CRITICAL] connection timed out to the target URL
+[14:35:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:36:37] [CRITICAL] connection timed out to the target URL
+[14:37:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:38:38] [CRITICAL] connection timed out to the target URL
+[14:39:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:40:39] [CRITICAL] connection timed out to the target URL
+[14:41:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:42:39] [CRITICAL] connection timed out to the target URL
+[14:43:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:44:40] [CRITICAL] connection timed out to the target URL
+[14:45:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:46:41] [CRITICAL] connection timed out to the target URL
+[14:47:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:48:42] [CRITICAL] connection timed out to the target URL
+[14:49:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:50:43] [CRITICAL] connection timed out to the target URL
+[14:51:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:52:43] [CRITICAL] connection timed out to the target URL
+[14:53:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:54:44] [CRITICAL] connection timed out to the target URL
+[14:55:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:56:45] [CRITICAL] connection timed out to the target URL
+[14:57:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[14:58:46] [CRITICAL] connection timed out to the target URL
+[14:59:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:00:47] [CRITICAL] connection timed out to the target URL
+[15:01:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:02:48] [CRITICAL] connection timed out to the target URL
+[15:03:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:04:49] [CRITICAL] connection timed out to the target URL
+[15:05:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:06:49] [CRITICAL] connection timed out to the target URL
+[15:07:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:08:51] [CRITICAL] connection timed out to the target URL
+[15:09:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:10:52] [CRITICAL] connection timed out to the target URL
+[15:11:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:12:53] [CRITICAL] connection timed out to the target URL
+[15:13:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:14:54] [CRITICAL] connection timed out to the target URL
+[15:15:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:16:55] [CRITICAL] connection timed out to the target URL
+[15:17:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:18:55] [CRITICAL] connection timed out to the target URL
+[15:19:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:20:56] [CRITICAL] connection timed out to the target URL
+[15:21:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:22:57] [CRITICAL] connection timed out to the target URL
+[15:23:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:24:58] [CRITICAL] connection timed out to the target URL
+[15:25:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:26:59] [CRITICAL] connection timed out to the target URL
+[15:27:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:28:59] [CRITICAL] connection timed out to the target URL
+[15:29:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:31:00] [CRITICAL] connection timed out to the target URL
+[15:31:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:33:01] [CRITICAL] connection timed out to the target URL
+[15:33:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:35:02] [CRITICAL] connection timed out to the target URL
+[15:35:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:37:03] [CRITICAL] connection timed out to the target URL
+[15:37:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:39:03] [CRITICAL] connection timed out to the target URL
+[15:39:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:41:04] [CRITICAL] connection timed out to the target URL
+[15:41:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:43:05] [CRITICAL] connection timed out to the target URL
+[15:43:05] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[15:43:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:45:06] [CRITICAL] connection timed out to the target URL
+[15:45:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:47:07] [CRITICAL] connection timed out to the target URL
+[15:47:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:49:08] [CRITICAL] connection timed out to the target URL
+[15:49:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:51:08] [CRITICAL] connection timed out to the target URL
+[15:51:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:53:09] [CRITICAL] connection timed out to the target URL
+[15:53:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:55:10] [CRITICAL] connection timed out to the target URL
+[15:55:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:57:11] [CRITICAL] connection timed out to the target URL
+[15:57:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[15:59:12] [CRITICAL] connection timed out to the target URL
+[15:59:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:01:12] [CRITICAL] connection timed out to the target URL
+[16:01:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:03:13] [CRITICAL] connection timed out to the target URL
+[16:03:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:05:14] [CRITICAL] connection timed out to the target URL
+[16:05:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:07:15] [CRITICAL] connection timed out to the target URL
+[16:07:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:09:16] [CRITICAL] connection timed out to the target URL
+[16:09:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:11:17] [CRITICAL] connection timed out to the target URL
+[16:11:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:13:18] [CRITICAL] connection timed out to the target URL
+[16:13:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:15:19] [CRITICAL] connection timed out to the target URL
+[16:15:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:17:19] [CRITICAL] connection timed out to the target URL
+[16:17:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:19:20] [CRITICAL] connection timed out to the target URL
+[16:19:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:21:21] [CRITICAL] connection timed out to the target URL
+[16:21:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:23:22] [CRITICAL] connection timed out to the target URL
+[16:23:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:25:23] [CRITICAL] connection timed out to the target URL
+[16:25:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:27:23] [CRITICAL] connection timed out to the target URL
+[16:27:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:29:24] [CRITICAL] connection timed out to the target URL
+[16:29:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:31:25] [CRITICAL] connection timed out to the target URL
+[16:31:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:33:26] [CRITICAL] connection timed out to the target URL
+[16:33:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:35:27] [CRITICAL] connection timed out to the target URL
+[16:35:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:37:27] [CRITICAL] connection timed out to the target URL
+[16:37:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:39:28] [CRITICAL] connection timed out to the target URL
+[16:39:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:41:29] [CRITICAL] connection timed out to the target URL
+[16:41:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:43:30] [CRITICAL] connection timed out to the target URL
+[16:44:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:45:30] [CRITICAL] connection timed out to the target URL
+[16:46:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:47:31] [CRITICAL] connection timed out to the target URL
+[16:48:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:49:32] [CRITICAL] connection timed out to the target URL
+[16:50:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:51:33] [CRITICAL] connection timed out to the target URL
+[16:52:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:53:34] [CRITICAL] connection timed out to the target URL
+[16:54:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:55:34] [CRITICAL] connection timed out to the target URL
+[16:55:34] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[16:56:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:57:35] [CRITICAL] connection timed out to the target URL
+[16:58:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[16:59:36] [CRITICAL] connection timed out to the target URL
+[17:00:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:01:37] [CRITICAL] connection timed out to the target URL
+[17:02:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:03:38] [CRITICAL] connection timed out to the target URL
+[17:04:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:05:38] [CRITICAL] connection timed out to the target URL
+[17:06:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:07:39] [CRITICAL] connection timed out to the target URL
+[17:08:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:09:40] [CRITICAL] connection timed out to the target URL
+[17:10:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:11:41] [CRITICAL] connection timed out to the target URL
+[17:12:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:13:42] [CRITICAL] connection timed out to the target URL
+[17:14:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:15:43] [CRITICAL] connection timed out to the target URL
+[17:16:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:17:43] [CRITICAL] connection timed out to the target URL
+[17:18:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:19:44] [CRITICAL] connection timed out to the target URL
+[17:20:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:21:45] [CRITICAL] connection timed out to the target URL
+[17:22:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:23:46] [CRITICAL] connection timed out to the target URL
+[17:24:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:25:47] [CRITICAL] connection timed out to the target URL
+[17:26:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:27:47] [CRITICAL] connection timed out to the target URL
+[17:28:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:29:48] [CRITICAL] connection timed out to the target URL
+[17:30:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:31:49] [CRITICAL] connection timed out to the target URL
+[17:32:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:33:50] [CRITICAL] connection timed out to the target URL
+[17:34:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:35:51] [CRITICAL] connection timed out to the target URL
+[17:36:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:37:51] [CRITICAL] connection timed out to the target URL
+[17:38:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:39:52] [CRITICAL] connection timed out to the target URL
+[17:40:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:41:53] [CRITICAL] connection timed out to the target URL
+[17:42:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:43:54] [CRITICAL] connection timed out to the target URL
+[17:44:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:45:55] [CRITICAL] connection timed out to the target URL
+[17:46:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:47:55] [CRITICAL] connection timed out to the target URL
+[17:48:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:49:56] [CRITICAL] connection timed out to the target URL
+[17:50:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:51:57] [CRITICAL] connection timed out to the target URL
+[17:52:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:53:58] [CRITICAL] connection timed out to the target URL
+[17:54:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:55:59] [CRITICAL] connection timed out to the target URL
+[17:56:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[17:57:59] [CRITICAL] connection timed out to the target URL
+[17:58:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:00:00] [CRITICAL] connection timed out to the target URL
+[18:00:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:02:01] [CRITICAL] connection timed out to the target URL
+[18:02:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:04:02] [CRITICAL] connection timed out to the target URL
+[18:04:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:06:03] [CRITICAL] connection timed out to the target URL
+[18:06:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:08:03] [CRITICAL] connection timed out to the target URL
+[18:08:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:10:04] [CRITICAL] connection timed out to the target URL
+[18:10:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:12:05] [CRITICAL] connection timed out to the target URL
+[18:12:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:14:06] [CRITICAL] connection timed out to the target URL
+[18:14:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:16:07] [CRITICAL] connection timed out to the target URL
+[18:16:07] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[18:16:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:18:07] [CRITICAL] connection timed out to the target URL
+[18:18:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:20:08] [CRITICAL] connection timed out to the target URL
+[18:20:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:22:09] [CRITICAL] connection timed out to the target URL
+[18:22:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:24:10] [CRITICAL] connection timed out to the target URL
+[18:24:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:26:10] [CRITICAL] connection timed out to the target URL
+[18:26:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:28:11] [CRITICAL] connection timed out to the target URL
+[18:28:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:30:12] [CRITICAL] connection timed out to the target URL
+[18:30:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:32:13] [CRITICAL] connection timed out to the target URL
+[18:32:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:34:14] [CRITICAL] connection timed out to the target URL
+[18:34:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:36:14] [CRITICAL] connection timed out to the target URL
+[18:36:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:38:15] [CRITICAL] connection timed out to the target URL
+[18:38:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:40:16] [CRITICAL] connection timed out to the target URL
+[18:40:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:42:17] [CRITICAL] connection timed out to the target URL
+[18:42:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:44:18] [CRITICAL] connection timed out to the target URL
+[18:44:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:46:18] [CRITICAL] connection timed out to the target URL
+[18:46:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:48:19] [CRITICAL] connection timed out to the target URL
+[18:48:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:50:20] [CRITICAL] connection timed out to the target URL
+[18:50:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:52:21] [CRITICAL] connection timed out to the target URL
+[18:52:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:54:22] [CRITICAL] connection timed out to the target URL
+[18:54:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:56:22] [CRITICAL] connection timed out to the target URL
+[18:56:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[18:58:23] [CRITICAL] connection timed out to the target URL
+[18:58:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:00:24] [CRITICAL] connection timed out to the target URL
+[19:00:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:02:25] [CRITICAL] connection timed out to the target URL
+[19:02:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:04:26] [CRITICAL] connection timed out to the target URL
+[19:04:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:06:26] [CRITICAL] connection timed out to the target URL
+[19:06:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:08:27] [CRITICAL] connection timed out to the target URL
+[19:08:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:10:28] [CRITICAL] connection timed out to the target URL
+[19:10:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:12:29] [CRITICAL] connection timed out to the target URL
+[19:12:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:14:29] [CRITICAL] connection timed out to the target URL
+[19:15:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:16:30] [CRITICAL] connection timed out to the target URL
+[19:17:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:18:31] [CRITICAL] connection timed out to the target URL
+[19:19:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:20:32] [CRITICAL] connection timed out to the target URL
+[19:21:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:22:33] [CRITICAL] connection timed out to the target URL
+[19:23:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:24:33] [CRITICAL] connection timed out to the target URL
+[19:25:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:26:34] [CRITICAL] connection timed out to the target URL
+[19:27:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:28:35] [CRITICAL] connection timed out to the target URL
+[19:29:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:30:36] [CRITICAL] connection timed out to the target URL
+[19:31:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:32:37] [CRITICAL] connection timed out to the target URL
+[19:33:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:34:37] [CRITICAL] connection timed out to the target URL
+[19:35:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:36:38] [CRITICAL] connection timed out to the target URL
+[19:37:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:38:39] [CRITICAL] connection timed out to the target URL
+[19:39:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:40:40] [CRITICAL] connection timed out to the target URL
+[19:40:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[19:41:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:42:41] [CRITICAL] connection timed out to the target URL
+[19:43:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:44:41] [CRITICAL] connection timed out to the target URL
+[19:45:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:46:42] [CRITICAL] connection timed out to the target URL
+[19:47:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:48:43] [CRITICAL] connection timed out to the target URL
+[19:49:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:50:44] [CRITICAL] connection timed out to the target URL
+[19:51:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:52:44] [CRITICAL] connection timed out to the target URL
+[19:53:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:54:45] [CRITICAL] connection timed out to the target URL
+[19:55:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:56:46] [CRITICAL] connection timed out to the target URL
+[19:57:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[19:58:47] [CRITICAL] connection timed out to the target URL
+[19:59:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:00:48] [CRITICAL] connection timed out to the target URL
+[20:01:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:02:48] [CRITICAL] connection timed out to the target URL
+[20:03:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:04:49] [CRITICAL] connection timed out to the target URL
+[20:05:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:06:50] [CRITICAL] connection timed out to the target URL
+[20:07:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:08:51] [CRITICAL] connection timed out to the target URL
+[20:09:21] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:10:51] [CRITICAL] connection timed out to the target URL
+[20:11:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:12:52] [CRITICAL] connection timed out to the target URL
+[20:13:22] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:14:53] [CRITICAL] connection timed out to the target URL
+[20:15:23] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:16:54] [CRITICAL] connection timed out to the target URL
+[20:17:24] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:18:55] [CRITICAL] connection timed out to the target URL
+[20:19:25] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:20:55] [CRITICAL] connection timed out to the target URL
+[20:21:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:22:56] [CRITICAL] connection timed out to the target URL
+[20:23:26] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:24:57] [CRITICAL] connection timed out to the target URL
+[20:25:27] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:26:58] [CRITICAL] connection timed out to the target URL
+[20:27:28] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:28:58] [CRITICAL] connection timed out to the target URL
+[20:29:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:30:59] [CRITICAL] connection timed out to the target URL
+[20:31:29] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:33:00] [CRITICAL] connection timed out to the target URL
+[20:33:30] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:35:01] [CRITICAL] connection timed out to the target URL
+[20:35:31] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:37:02] [CRITICAL] connection timed out to the target URL
+[20:37:32] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:39:02] [CRITICAL] connection timed out to the target URL
+[20:39:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:41:03] [CRITICAL] connection timed out to the target URL
+[20:41:33] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:43:04] [CRITICAL] connection timed out to the target URL
+[20:43:34] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:45:05] [CRITICAL] connection timed out to the target URL
+[20:45:35] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:47:05] [CRITICAL] connection timed out to the target URL
+[20:47:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:49:06] [CRITICAL] connection timed out to the target URL
+[20:49:36] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:51:07] [CRITICAL] connection timed out to the target URL
+[20:51:37] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:53:08] [CRITICAL] connection timed out to the target URL
+[20:53:08] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[20:53:38] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:55:09] [CRITICAL] connection timed out to the target URL
+[20:55:39] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:57:09] [CRITICAL] connection timed out to the target URL
+[20:57:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[20:59:10] [CRITICAL] connection timed out to the target URL
+[20:59:40] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:01:11] [CRITICAL] connection timed out to the target URL
+[21:01:41] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:03:12] [CRITICAL] connection timed out to the target URL
+[21:03:42] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:05:13] [CRITICAL] connection timed out to the target URL
+[21:05:43] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:07:13] [CRITICAL] connection timed out to the target URL
+[21:07:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:09:14] [CRITICAL] connection timed out to the target URL
+[21:09:44] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:11:15] [CRITICAL] connection timed out to the target URL
+[21:11:45] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:13:16] [CRITICAL] connection timed out to the target URL
+[21:13:46] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:15:17] [CRITICAL] connection timed out to the target URL
+[21:15:47] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:17:17] [CRITICAL] connection timed out to the target URL
+[21:17:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:19:18] [CRITICAL] connection timed out to the target URL
+[21:19:48] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:21:19] [CRITICAL] connection timed out to the target URL
+[21:21:49] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:23:20] [CRITICAL] connection timed out to the target URL
+[21:23:50] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:25:20] [CRITICAL] connection timed out to the target URL
+[21:25:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:27:21] [CRITICAL] connection timed out to the target URL
+[21:27:51] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:29:22] [CRITICAL] connection timed out to the target URL
+[21:29:52] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:31:23] [CRITICAL] connection timed out to the target URL
+[21:31:53] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:33:24] [CRITICAL] connection timed out to the target URL
+[21:33:54] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:35:25] [CRITICAL] connection timed out to the target URL
+[21:35:55] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:37:25] [CRITICAL] connection timed out to the target URL
+[21:37:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:39:26] [CRITICAL] connection timed out to the target URL
+[21:39:56] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:41:27] [CRITICAL] connection timed out to the target URL
+[21:41:57] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:43:28] [CRITICAL] connection timed out to the target URL
+[21:43:58] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:45:29] [CRITICAL] connection timed out to the target URL
+[21:45:59] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:47:29] [CRITICAL] connection timed out to the target URL
+[21:48:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:49:30] [CRITICAL] connection timed out to the target URL
+[21:50:00] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:51:31] [CRITICAL] connection timed out to the target URL
+[21:52:01] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:53:32] [CRITICAL] connection timed out to the target URL
+[21:54:02] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:55:33] [CRITICAL] connection timed out to the target URL
+[21:56:03] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:57:33] [CRITICAL] connection timed out to the target URL
+[21:58:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[21:59:34] [CRITICAL] connection timed out to the target URL
+[22:00:04] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:01:35] [CRITICAL] connection timed out to the target URL
+[22:02:05] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:03:36] [CRITICAL] connection timed out to the target URL
+[22:04:06] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:05:37] [CRITICAL] connection timed out to the target URL
+[22:06:07] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:07:37] [CRITICAL] connection timed out to the target URL
+[22:08:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:09:38] [CRITICAL] connection timed out to the target URL
+[22:10:08] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:11:39] [CRITICAL] connection timed out to the target URL
+[22:12:09] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:13:40] [CRITICAL] connection timed out to the target URL
+[22:14:10] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:15:41] [CRITICAL] connection timed out to the target URL
+[22:16:11] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:17:41] [CRITICAL] connection timed out to the target URL
+[22:18:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:19:42] [CRITICAL] connection timed out to the target URL
+[22:20:12] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:21:43] [CRITICAL] connection timed out to the target URL
+[22:22:13] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:23:44] [CRITICAL] connection timed out to the target URL
+[22:24:14] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:25:44] [CRITICAL] connection timed out to the target URL
+[22:26:15] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:27:45] [CRITICAL] connection timed out to the target URL
+[22:28:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:29:46] [CRITICAL] connection timed out to the target URL
+[22:30:16] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:31:47] [CRITICAL] connection timed out to the target URL
+[22:32:17] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:33:48] [CRITICAL] connection timed out to the target URL
+[22:34:18] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:35:48] [CRITICAL] connection timed out to the target URL
+[22:36:19] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:37:49] [CRITICAL] connection timed out to the target URL
+[22:38:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
