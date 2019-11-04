@@ -190,4 +190,4 @@ back-end DBMS: MySQL >= 5.0.12
 [22:37:52] [INFO] retrieved: 5
 [22:38:01] [INFO] retrieving the length of query output
 [22:38:01] [INFO] retrieved: 22
-[22:38:13] [INFO] retrieved: ______________________[22:38:13] [INFO] retrieved: 
+[22:38:13] [INFO] retrieved: ______________________[22:38:13] [INFO] retrieved: [22:38:30] [INFO] retrieved: ___e__________________ 1/22 (4%)[22:38:31] [INFO] retrieved: __ie__________________ 2/22 (9%)[22:38:33] [INFO] retrieved: S_ie__________________ 3/22 (13%)[22:38:34] [INFO] retrieved: Scie__________________ 4/22 (18%)[22:38:42] [INFO] retrieved: Scie_c________________ 5/22 (22%)[22:38:44] [INFO] retrieved: Scie_ce_______________ 6/22 (27%)[22:38:44] [INFO] retrieved: Science_______________ 7/22 (31%)[22:38:52] [INFO] retrieved: Sciences______________ 8/22 (36%)

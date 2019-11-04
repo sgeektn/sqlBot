@@ -3698,3 +3698,4 @@ there seems to be a continuous problem with connection to the target. Are you su
 [22:35:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
 [22:36:50] [CRITICAL] connection timed out to the target URL
 [22:37:20] [CRITICAL] connection timed out to the target URL. sqlmap is going to retry the request(s)
+[22:38:51] [CRITICAL] connection timed out to the target URL
