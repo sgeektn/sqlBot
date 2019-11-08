@@ -190,7 +190,6 @@ gocomics.com:1
 redwood.hk:1
 missoulamarathon.org:1
 dbs.com:1
-theguardian.com:1
 local.com:1
 optotaiwan.com:1
 asclepion.com:1
@@ -947,7 +946,6 @@ cabinetvanlint.be:1
 pwc.be:1
 bdronline.be:1
 uclouvain.be:3
-moodle.com:2
 education-environnement.be:1
 armb.be:1
 yelp.be:1
@@ -1041,7 +1039,6 @@ k2mservices.fr:1
 it-insider.ru:1
 smilecakeshop.in:1
 org.br:1
-thewarren.restaurant:1
 philippinecannabis.com:1
 lp-system.se:1
 devopsunion.com:1
@@ -1656,7 +1653,6 @@ sanatanvidyalay.org:2
 webmascon.com:1
 bol.com:2
 marktplaats.nl:1
-wp.com:3
 alphr.com:5
 true.nl:1
 infogr.am:1
@@ -1742,3 +1738,25 @@ vueschool.io:1
 24daysindecember.net:1
 roots.io:1
 rybczak.net:1
+jetbrains.com:1
+vogie.in:1
+thewarren.restaurant:2
+duckduckgo.com:1
+animint.net:1
+moodle.com:3
+gatesnotes.com:1
+moodle.org:1
+wp.com:4
+dokuwiki.org:1
+wesbos.com:1
+magazynek.org:1
+baby-g.eu:1
+insa-lyon.fr:1
+splitbrain.org:1
+cornell.edu:1
+theguardian.com:2
+ieee.org:1
+unit.eu:1
+archives-ouvertes.fr:1
+gravatar.com:1
+anstia.fr:1
