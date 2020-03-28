@@ -1,0 +1,2 @@
+http://hasacad.info/wp-content/pdrmu.php?id=life-motivational-essay-speech-about
+/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file '../sqlmap/sqlmap.py': [Errno 2] No such file or directory
