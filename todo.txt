@@ -7,5 +7,4 @@ check why test sites stop
 add os shell to maybe  #TOTEST
 __________________________________________________
 NEW for separateThread
-Check selenium
 Add captcha solver

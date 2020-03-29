@@ -8,7 +8,13 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 import _thread
-from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
+#from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
+
+
+
+DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
+SITES_FILE=os.getenv("SITES_FILE")
+RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
 
 
 
@@ -108,7 +114,31 @@ def get_number(file_name):
 	files.close()
 	return len(sites)
 
-def gets(DORK_LIST_FILE):
+def main():
+
+	
+
+	if DORK_LIST_FILE==None:
+		print("Error : You need to set DORK_LIST_FILE\nTry : export DORK_LIST_FILE=\"dorks.txt\"")
+		exit_err=True
+	if SITES_FILE==None:
+		print("Error : You need to set SITES_FILE\nTry : export SITES_FILE=\"sites.txt\"")
+		exit_err=True
+	if RECURSIVE_SITES_FILE==None:
+		print("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
+		exit_err=True
+	try:
+		test_selenium=webdriver.Firefox()
+		test_selenium.close()
+	except selenium.common.exceptions.WebDriverException:
+		print("Error : Firefox Selenium driver needs to be in path")
+		exit_err=True
+		pass
+
+	if exit_err:
+		exit(-1)
+		
+
 	dorks_number = get_number(DORK_LIST_FILE)
 	while dorks_number == 0:
 		print("Waiting for new dorks")
@@ -124,14 +154,7 @@ def gets(DORK_LIST_FILE):
 			dorks_number = get_number(DORK_LIST_FILE)
 	print("End get dorks")
 
-def main():
-	DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
-	if DORK_LIST_FILE==None:
-		print("Error : You need to set DORK_LIST_FILE\nTry : export DORK_LIST_FILE=\"dorks.txt\"")
-		exit(-1)
-	
-	gets(DORK_LIST_FILE)
-		
+
 
 if __name__ == '__main__':
 	main()
