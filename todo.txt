@@ -7,4 +7,16 @@ check why test sites stop
 add os shell to maybe  #TOTEST
 __________________________________________________
 NEW for separateThread
-Add captcha solver
+
+getSites.py
+Add captcha auto solver
+Add strategy for captcha with headless browser
+Add env vars to readme
+
+
+
+
+ALL
+thinks about filter location
+factorise code
+create files if not exists

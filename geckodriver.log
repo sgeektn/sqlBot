@@ -64,3 +64,30 @@ console.error: BroadcastService:
 1585506744772	Marionette	INFO	Listening on port 56762
 1585506744800	Marionette	WARN	TLS certificate errors will be ignored for this session
 1585506744841	Marionette	INFO	Stopped listening on port 56762
+1585516054172	Marionette	INFO	Stopped listening on port 54425
+1585516057802	Marionette	INFO	Stopped listening on port 56710
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1585591971610	Marionette	INFO	Stopped listening on port 56638

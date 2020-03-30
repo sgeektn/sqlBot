@@ -117,7 +117,7 @@ def get_number(file_name):
 def main():
 
 	
-
+	exit_err=False
 	if DORK_LIST_FILE==None:
 		print("Error : You need to set DORK_LIST_FILE\nTry : export DORK_LIST_FILE=\"dorks.txt\"")
 		exit_err=True

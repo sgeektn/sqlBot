@@ -41,3 +41,4 @@ sudo apt-get install vnc4server
 branch separateThreads
 
 getSites.py ( get sites from google )
+testSites.py ( test if sites in VAR are sql vulnerable )
