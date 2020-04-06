@@ -1,0 +1,2 @@
+http://mini-lening.org/wp-content/7u5ld.php?id=samples-undergraduate-essay
+/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file './sqlmap/sqlmap.py': [Errno 2] No such file or directory

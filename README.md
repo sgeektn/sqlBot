@@ -42,3 +42,4 @@ branch separateThreads
 
 getSites.py ( get sites from google )
 testSites.py ( test if sites in VAR are sql vulnerable )
+exploit.py ( test sqlmap)

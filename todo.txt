@@ -13,10 +13,13 @@ Add captcha auto solver
 Add strategy for captcha with headless browser
 Add env vars to readme
 
-
+exploit.py
+update sqlmap
+check tor
 
 
 ALL
 thinks about filter location
 factorise code
 create files if not exists
+get site pop after finish
