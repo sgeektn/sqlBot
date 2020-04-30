@@ -1,2 +1,0 @@
-http://senzaquausa.com/wp-content/es46a.php?id=case-fire-buncefield-study
-/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file './sqlmap/sqlmap.py': [Errno 2] No such file or directory

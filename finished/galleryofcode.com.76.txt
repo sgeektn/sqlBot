@@ -1,2 +1,0 @@
-http://galleryofcode.com/wp-content/x07a8.php?id=for-written-paper-me-a-research-i-need
-/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file '../sqlmap/sqlmap.py': [Errno 2] No such file or directory

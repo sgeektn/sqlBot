@@ -1,2 +1,0 @@
-http://restnrent.com/wp-content/skwhp.php?id=requirements-dissertation-mba
-/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file '../sqlmap/sqlmap.py': [Errno 2] No such file or directory

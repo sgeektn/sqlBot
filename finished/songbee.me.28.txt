@@ -1,2 +1,0 @@
-http://songbee.me/wp-content/6iuve.php?id=letter-cadet-application-gso-2018
-/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python: can't open file './sqlmap/sqlmap.py': [Errno 2] No such file or directory

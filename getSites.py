@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 import _thread
+from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 #from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
 
 
@@ -15,7 +16,7 @@ import _thread
 DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
 SITES_FILE=os.getenv("SITES_FILE")
 RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
-
+ANTI_CAPTCHA_API_KEY=os.getenv("ANTI_CAPTCHA_API_KEY")
 
 
 def extract_sites(query):
@@ -40,6 +41,26 @@ def extract_sites(query):
 			pass
 
 		while source != -1:
+			if ANTI_CAPTCHA_API_KEY=="DISABLED":
+				print("You need to solve a captcha and add the response hash to ANTI_CAPTCHA_RESPONSE env")
+				ANTI_CAPTCHA_RESPONSE=os.getenv("ANTI_CAPTCHA_RESPONSE")
+				while(ANTI_CAPTCHA_RESPONSE==None):
+					print("Waiting for captcha hash")
+					time.sleep(30)
+				ANTI_CAPTCHA_RESPONSE=None
+			else:
+				print("Auto solving captcha")
+				api_key = ANTI_CAPTCHA_API_KEY
+				site_key = browser.find_element_by_id("recaptcha").get_attribute("data-sitekey")
+				url = 'https://www.google.com'
+				client = AnticaptchaClient(api_key)
+				task = NoCaptchaTaskProxylessTask(url, site_key)
+				job = client.createTask(task)
+				job.join()
+				ANTI_CAPTCHA_RESPONSE = job.get_solution_response()
+			browser.execute_script('document.getElementById("g-recaptcha-response").innerHTML="'+ANTI_CAPTCHA_RESPONSE+'"')
+			browser.execute_script('document.getElementById("captcha-form").submit()')
+			print("captcha ok")
 			time.sleep(60)
 			try:
 				source = browser.page_source.find('g-recaptcha-response')
@@ -127,6 +148,23 @@ def main():
 	if RECURSIVE_SITES_FILE==None:
 		print("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
 		exit_err=True
+	if ANTI_CAPTCHA_API_KEY==None:
+		print("Error : You need to set ANTI_CAPTCHA_API_KEY\nTry : export ANTI_CAPTCHA_API_KEY=\"DISABLED\"")
+		exit_err=True
+
+	if not os.path.isfile(DORK_LIST_FILE):
+		with open(DORK_LIST_FILE,mode="w") as new_file:
+			new_file.close() 
+
+	if not os.path.isfile(SITES_FILE):
+		with open(SITES_FILE,mode="w") as new_file:
+			new_file.close() 
+
+	if not os.path.isfile(RECURSIVE_SITES_FILE):
+		with open(RECURSIVE_SITES_FILE,mode="w") as new_file:
+			new_file.close() 
+
+
 	try:
 		test_selenium=webdriver.Firefox()
 		test_selenium.close()
