@@ -5,13 +5,13 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
 from functions import get_site,get_number,append_sites_on_file,myprint
-
+import sys
 
 DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
 SITES_FILE=os.getenv("SITES_FILE")
 RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
 ANTI_CAPTCHA_API_KEY=os.getenv("ANTI_CAPTCHA_API_KEY")
-
+ANTI_CAPTCHA_RESPONSE_FILE=os.getenv("ANTI_CAPTCHA_RESPONSE_FILE")
 
 def extract_sites(query):
 	page = 0
@@ -34,11 +34,19 @@ def extract_sites(query):
 
 		while source != -1:
 			if ANTI_CAPTCHA_API_KEY=="DISABLED":
-				myprint("You need to solve a captcha and add the response hash to ANTI_CAPTCHA_RESPONSE env")
-				ANTI_CAPTCHA_RESPONSE=os.getenv("ANTI_CAPTCHA_RESPONSE")
+				myprint("You need to solve a captcha and add the response hash to "+ANTI_CAPTCHA_RESPONSE_FILE+" file")
+				ANTI_CAPTCHA_RESPONSE=None
 				while(ANTI_CAPTCHA_RESPONSE==None):
+					with open(ANTI_CAPTCHA_RESPONSE_FILE,"r") as captcha_file:
+						ANTI_CAPTCHA_RESPONSE=captcha_file.read()
+						captcha_file.close()
+					if ANTI_CAPTCHA_RESPONSE=="":
+						ANTI_CAPTCHA_RESPONSE=None
 					myprint("Waiting for captcha hash")
 					time.sleep(30)
+				#RESET FILE
+				with open(ANTI_CAPTCHA_RESPONSE_FILE,"w") as captcha_file:
+					captcha_file.close()
 				ANTI_CAPTCHA_RESPONSE=None
 			else:
 				myprint("Auto solving captcha")
@@ -112,7 +120,16 @@ def main():
 	if ANTI_CAPTCHA_API_KEY==None:
 		myprint("Error : You need to set ANTI_CAPTCHA_API_KEY\nTry : export ANTI_CAPTCHA_API_KEY=\"DISABLED\"")
 		exit_err=True
+	if ANTI_CAPTCHA_API_KEY=="DISABLED" and ANTI_CAPTCHA_RESPONSE_FILE==None:
+		myprint("Error : You need to set ANTI_CAPTCHA_RESPONSE_FILE\nTry : export ANTI_CAPTCHA_RESPONSE_FILE=\"captcha.txt\"")
+		exit_err=True
 
+	if exit_err:
+		exit(-1)
+		
+	if ANTI_CAPTCHA_RESPONSE_FILE!=None and not os.path.isfile(ANTI_CAPTCHA_RESPONSE_FILE):
+		with open(ANTI_CAPTCHA_RESPONSE_FILE,mode="w") as new_file:
+			new_file.close() 
 	if not os.path.isfile(DORK_LIST_FILE):
 		with open(DORK_LIST_FILE,mode="w") as new_file:
 			new_file.close() 
@@ -133,9 +150,7 @@ def main():
 		myprint("Error : Firefox Selenium driver needs to be in path")
 		exit_err=True
 
-	if exit_err:
-		exit(-1)
-		
+
 
 	dorks_number = get_number(DORK_LIST_FILE)
 	while dorks_number == 0:

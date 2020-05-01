@@ -41,6 +41,7 @@
 	MAX_THREADS : number of parallel sqlmap threads
 	PRIORITY_FILE : sites that explicitly shows sql error 
 	ERROR_FILE : sites that change content when bot tries to test sql injection
+	ANTI_CAPTCHA_RESPONSE_FILE : file where you must put your captcha hash if you choose to solve mannualy
 
 You can set all the variables by executing the command that will be printed if you execute:
 python3 utils.py setenv

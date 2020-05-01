@@ -72,7 +72,10 @@ def append_site_on_file(site, file_name):
 
 def myprint(string):
 	"""This functino print to stdin if peocess is not daemon else to file"""
-	os.makedirs("outputs")
+	try:
+		os.makedirs("outputs")
+	except:
+		pass
 	if len(sys.argv)==2 and (sys.argv[1]=="-d" or sys.argv[1]=="--daemon") :
 		with open("outputs/"+sys.argv[0]+".txt","a+") as output:
 			output.write(str(string)+"\n")

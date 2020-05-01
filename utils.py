@@ -165,6 +165,7 @@ def get_env():
 	print("MAX_THREADS="+os.getenv("MAX_THREADS"))
 	print("PRIORITY_FILE="+os.getenv("PRIORITY_FILE"))
 	print("ERROR_FILE="+os.getenv("ERROR_FILE"))
+	print("ANTI_CAPTCHA_RESPONSE_FILE="+os.getenv("ANTI_CAPTCHA_RESPONSE_FILE"))
 def set_env():
 	print("#EXECUTE THIS SHELL SCRIPT")
 	print("export RECURSIVE_SITES_FILE=googleRecursive.txt")
@@ -177,6 +178,7 @@ def set_env():
 	print("export MAX_THREADS=4")
 	print("export PRIORITY_FILE=sqlVulnerable.txt")
 	print("export ERROR_FILE=maybeVulnerable.txt")
+	print("export ANTI_CAPTCHA_RESPONSE_FILE=captcha.txt")
 def clean():
 	os.system("mv requirements.txt requirements.txt.bkp")
 	os.system("rm *.txt")
