@@ -182,6 +182,7 @@ def set_env():
 def clean():
 	os.system("mv requirements.txt requirements.txt.bkp")
 	os.system("rm *.txt")
+	os.system("rm outputs/*.txt")
 	os.system("rm -rf working finished maybe dbs")
 	os.system("mv requirements.txt.bkp requirements.txt")
 def usage():
