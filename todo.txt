@@ -1,7 +1,10 @@
-Setup
-add uninstall stuff when clean
+getSites.py
+doc the solution to manual solve captcha
+add funds checker and switch to manual if error
 
-Bot
-Bypass google captcha
-check why test sites stop
-add os shell to maybe  #TOTEST
+
+
+ALL
+pop sites after ok 
+add dashboard
+

