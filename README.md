@@ -1,6 +1,7 @@
+
 # sqlBot
 
-##I-Setup
+## I-Setup
 
 
 	1 - pip install -r requirements.txt
@@ -11,7 +12,7 @@
 	
 
 
-##II-Bot
+## II-Bot
 	This application is an automated bot for searching sql injection vulnerable sites via sqlmap, all you need to do is to install it , add dorks in a file and launch it 
 	it is composed by 5 python scripts :
 		1 - getSites.py : will open file specified in DORK_LIST_FILE environement variable and loop all dorks on it
@@ -28,7 +29,7 @@
 				clean : clean bot files
 
 
-##III-ENV variables :
+## III-ENV variables :
 
 	RECURSIVE_SITES_FILE : file where are stored the sites to do recursive search
 	RECUSIVE_SEARCH : recursive search deep ( 0 for disable )
@@ -44,7 +45,7 @@
 You can set all the variables by executing the command that will be printed if you execute:
 python3 utils.py setenv
 
-##IV-Usage
+## IV-Usage
 
 	1 first setup ( See I )
 	2.a You can launch each service alone by executing the python script and following instruction .
@@ -53,4 +54,7 @@ python3 utils.py setenv
 	2.b.2 Launch command "python3 getSites.py -d & python3 testSites.py -d & python3 exploit.py -d & python3 recursiveSearch.py -d"
 	3. Add dorks or sites to recursiveSearch or sites to exploit 
 	4. Enjoy
-Please note : if you dont want to detach the threads from terminal and make them stop when you exit terminal or close ssh session juste remove the "-d"'s from 2.b.2
+Please note : if you dont want to detach the threads from terminal and make them stop when you exit terminal or close ssh session juste remove the "-d"'s from command in 2.b.2
+
+## Troubleshoot
+	If you have an issue or a question or a difficulty to use , mail me and i will add here a solution
