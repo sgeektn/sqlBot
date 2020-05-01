@@ -3,59 +3,32 @@
 I-Setup
 
 
-	python3 setup.py
-	arguments --vnc : to setup the bot in a vps ( adding vnc server that connects in web browser )
-			  --tor : to setup tor with the bot
-			  --clean : to clean before setting up ( for now just remove files , TODO later uninstall dependencies )
+	1 - pip install -r requirements.txt
+	2 - install firefox
+	3 - download geckodriver https://github.com/mozilla/geckodriver/releases/tag/v0.26.0
+	4 - set geckodriver in PATH
+	5 - if you want to use tor , install it
+	
 
 
 II-Bot
-	python3 extractSites.py
-	arguments --tor : to make the google search and sqlmap work with tor
-			  --rc N : to configure recursive search ( if not defined rc will be 0 )
-			  --threads N : to configure sqlmap parralel threads ( if not defined thrads will be 1)
-	python3 extractSites.py filter ( or only filter )
-			  filter the results and make all sqlmap commands to mannually execute in [PATH]/dbs/* , 
-			  sites that are vulnerable but cannot extract dbs in [PATH]/maybe/*
-			  remove others and puts them in banning ia ( site will be banned after 5 tests )
-	python3 extractSites.py sites  ( or only sites )
-		      get sites that are in sqlmap threads
+	This application is an automated bot for searching sql injection vulnerable sites via sqlmap, all you need to do is to install it , add dorks in a file and launch it 
+	it is composed by 5 python scripts :
+		1 - getSites.py : will open file specified in DORK_LIST_FILE environement variable and loop all dorks on it
+		2 - testSites.py : will test if sites reterived by getSites.py are sql injectable
+		3 - exploit.py : will launch sqlmap on each vulnerable site
+		4 - recursiveSearch.py : will search sites on the sites reterived by getSites.py with specified deep
+		5 - utils.py : utils functions to manipulate bot
+		Usage : utils.py action
+			action :
+				filter : filter results
+				clean_sites_file : remove non injectable sites from list
+				threads : print all sqlmap threads
+				getenv : print all env variables
+				clean : clean bot files
 
 
-#obsolete
-
-Install vnc like this :
-
-sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal gnome-core
-
-sudo apt-get install vnc4server
-
- sudo apt-get install tigervnc-common
- 
- root@dlp:~# apt -y install novnc websockify python-numpy
- root@dlp:~# cd /etc/ssl 
- root@dlp:/etc/ssl# openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out novnc.pem -days 365 
-
-
-
-branch separateThreads
-
-getSites.py ( get sites from google )
-testSites.py ( test if sites in VAR are sql vulnerable )
-exploit.py ( test sqlmap)
-filter.py ( filter results )
-recursiveSearch.py ( activate recursive search )
-utils.py ( util functinos )
-
-Usage : utils.py action
-	action :
-		filter : filter results
-		clean_sites_file : remove non injectable sites from list
-		threads : print all sqlmap threads
-		getenv : print all env variables
-
-
-ENV variables :
+III-ENV variables :
 
 RECURSIVE_SITES_FILE : file where are stored the sites to do recursive search
 RECUSIVE_SEARCH : recursive search deep ( 0 for disable )
@@ -71,3 +44,13 @@ ERROR_FILE : sites that change content when bot tries to test sql injection
 You can set all the variables by executing the command that will be printed if you execute:
 python3 utils.py setenv
 
+IV-Usage
+
+	1 first setup ( See I )
+	2.a You can launch each service alone by executing the python script and following instruction .
+							OR
+	2.b.1 Launch command "python3 utils.py setenv" copy the result and execute it or edit the params that you want
+	2.b.2 Launch command "python3 getSites.py -d & python3 testSites.py -d & python3 exploit.py -d & python3 recursiveSearch.py -d"
+	3. Add dorks or sites to recursiveSearch or sites to exploit 
+	4. Enjoy
+Please note : if you dont want to detach the threads from terminal and make them stop when you exit terminal or close ssh session juste remove the "-d"'s from 2.b.2

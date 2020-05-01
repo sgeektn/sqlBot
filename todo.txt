@@ -1,0 +1,10 @@
+getSites.py
+doc the solution to manual solve captcha
+add funds checker and switch to manual if error
+
+
+
+ALL
+pop sites after ok 
+add dashboard
+
