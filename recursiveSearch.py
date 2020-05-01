@@ -194,6 +194,12 @@ def main():
 	
 	if exit_err:
 		exit(-1)
+
+
+	if not os.path.isfile(RECUSIVE_SEARCH):
+		with open(RECUSIVE_SEARCH,mode="w") as new_file:
+			new_file.close() 
+			
 	recursive_search(RECUSIVE_SEARCH)
 
 if __name__ == '__main__':

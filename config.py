@@ -1,9 +1,0 @@
-SQLMAP_PATH = ".."
-PRIORITY_FILE = "sqlVulnerable.txt"
-ERROR_FILE = "maybeVulnerable.txt"
-SITES_FILE = "google.txt"
-RECURSIVE_SITES_FILE = "googleRecursive.txt"
-DORK_LIST_FILE = "dorks.txt"
-BANNING_FILE = "banningIA.txt"
-FIREFOX_DRIVER = '/root/sqlBot/linux'
-BANNED_KEYWORDS_FILE = "banned.txt"

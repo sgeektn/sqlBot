@@ -10,9 +10,10 @@ from selenium.common.exceptions import NoSuchWindowException
 import _thread
 
 
+SITES_FILE=os.getenv("SITES_FILE")
 BANNING_FILE=os.getenv("BANNING_FILE")
 BANNED_KEYWORDS_FILE=os.getenv("BANNED_KEYWORDS_FILE")
-SQLMAP_PATH=os.getenv("BANNING_FILE")
+SQLMAP_PATH=os.getenv("SQLMAP_PATH")
 
 def append_site_on_file(site, file_name):
 
@@ -63,7 +64,7 @@ def test_if_ban(liste, site):
 	return result
 
 
-def filter():
+def filter_results():
 	files = os.listdir("finished")
 	for file in files:
 		db_list = []
@@ -133,8 +134,24 @@ def get_sites(file_name):
 
 	return sites
 
+def clean_sites_file():
 
-def main():
+
+	if SITES_FILE==None:
+		print("Error : You need to set SITES_FILE\nTry : export SITES_FILE=\"sites.txt\"")
+		exit_err=True
+
+	if not os.path.isfile(SITES_FILE):
+		with open(SITES_FILE,mode="w") as new_file:
+			new_file.close() 
+
+	os.system("wc -l "+SITES_FILE)
+	os.system("vi "+SITES_FILE+" -c ':g/https*:\/\/[^\/]*\/$/d' -c ':wq!'")
+	os.system("wc -l "+SITES_FILE)
+
+
+
+def filter():
 	exit_err=False
 	if BANNING_FILE==None:
 		print("Error : You need to set BANNING_FILE\nTry : export BANNING_FILE=\"banned.txt\"")
@@ -146,10 +163,28 @@ def main():
 		print("Error : You need to set SQLMAP_PATH\nTry : export SQLMAP_PATH=\"..\"")
 		exit_err=True
 
-
 	if exit_err:
 		exit(-1)
-	filter()
+
+	if not os.path.exists(SQLMAP_PATH+"/sqlmap"):
+		print("Getting sqlmap in "+SQLMAP_PATH+"/sqlmap")
+		os.system("git clone https://github.com/sqlmapproject/sqlmap.git "+SQLMAP_PATH+"/sqlmap")
+	else:
+		print("Updating sqlmap")
+		os.system("git -C "+SQLMAP_PATH+"/sqlmap pull")
+
+	filter_results()
 
 if __name__ == '__main__':
-	main()
+	if len(sys.argv) != 2:
+		print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file s: remove non injectable sites from list")
+		exit(-1)
+	elif sys.argv[1]=="filter":
+		filter()
+	elif sys.argv[1]=="clean_sites_file":
+		clean_sites_file()
+	elif sys.argv[1]=="threads":
+		print(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d'").read())
+	else:
+		print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file : remove non injectable sites from list\n\t\tthreads : print all sqlmap threads")
+		exit(-1)

@@ -276,6 +276,20 @@ def main():
 
 	if exit_err:
 		exit(-1)
+
+	if not os.path.isfile(BANNED_KEYWORDS_FILE):
+		with open(BANNED_KEYWORDS_FILE,mode="w") as new_file:
+			new_file.close() 
+	if not os.path.isfile(PRIORITY_FILE):
+		with open(PRIORITY_FILE,mode="w") as new_file:
+			new_file.close() 
+	if not os.path.isfile(ERROR_FILE):
+		with open(ERROR_FILE,mode="w") as new_file:
+			new_file.close() 
+	if not os.path.isfile(SITES_FILE):
+		with open(SITES_FILE,mode="w") as new_file:
+			new_file.close() 
+			
 	test_sites()
 
 if __name__ == '__main__':
