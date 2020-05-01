@@ -1,15 +1,9 @@
 import time
-import sys
 import os
-import re
-from random import randint
-from urllib import request
 from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
-import _thread
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
-#from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
 
 
 
@@ -32,13 +26,11 @@ def extract_sites(query):
 			source = browser.page_source.find('g-recaptcha-response')
 		except TimeoutException:
 			print("Network error")
-			pass
 		except BaseException:
 			browser.close()
 			browser = webdriver.Firefox()
 			browser.get(url)
 			source = browser.page_source.find('g-recaptcha-response')
-			pass
 
 		while source != -1:
 			if ANTI_CAPTCHA_API_KEY=="DISABLED":
@@ -66,13 +58,11 @@ def extract_sites(query):
 				source = browser.page_source.find('g-recaptcha-response')
 			except TimeoutException:
 				print("Network error")
-				pass
 			except NoSuchWindowException:
 				browser.close()
 				browser = webdriver.Firefox()
 				browser.get(url)
 				source = browser.page_source.find('g-recaptcha-response')
-				pass
 
 		else:
 			for site in browser.find_elements_by_class_name('r'):
@@ -81,7 +71,6 @@ def extract_sites(query):
 						'a').get_attribute('href')
 				except BaseException:
 					link = "https://www.google.fr/"
-					pass
 				if link[len(link) - 1] == '/':
 					link = link[0:len(link) - 1]
 				# GET SITES ON SITE
@@ -101,15 +90,7 @@ def append_sites_on_file(l, file):
 	files.writelines('\n'.join(l))
 	files.close()
 
-def append_site_on_file(site, file_name):
-	file = open(file_name, "a")
-	file.write('%s' % site)
-	file.close()
 
-def get_sites(file_name):
-	files = open(file_name, "r")
-	sites = files.readlines()
-	return sites
 
 def get_site(file_name):
 	files = open(file_name, "r")
@@ -171,7 +152,6 @@ def main():
 	except selenium.common.exceptions.WebDriverException:
 		print("Error : Firefox Selenium driver needs to be in path")
 		exit_err=True
-		pass
 
 	if exit_err:
 		exit(-1)

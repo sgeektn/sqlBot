@@ -1,17 +1,8 @@
 import time
-import sys
 import os
-import re
-from random import randint
 from urllib import request
-from selenium.common.exceptions import TimeoutException
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchWindowException
-import _thread
-#from config import PRIORITY_FILE,ERROR_FILE,SITES_FILE,DORK_LIST_FILE,RECURSIVE_SITES_FILE,SQLMAP_PATH,FIREFOX_DRIVER,BANNING_FILE,BANNED_KEYWORDS_FILE
 
 
-FALSE = 0
 SQL_ERROR = 1
 SIZE_CHANGE = 2
 
@@ -80,16 +71,6 @@ def valid(link):#
 	return True
 
 
-def check_ext(url):
-	banned_exts = [".jpg", ".jpeg", ".png", ".pdf", ");", ".js"]
-	for banned_ext in banned_exts:
-		if url.find(banned_ext + "?") != -1:
-
-			return False
-		elif url[len(url) - len(banned_ext):] == banned_ext:
-
-			return False
-	return True
 
 
 def check_ext_for_injection(url):#

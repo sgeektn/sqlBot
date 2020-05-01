@@ -1,13 +1,5 @@
-import time
 import sys
 import os
-import re
-from random import randint
-from urllib import request
-from selenium.common.exceptions import TimeoutException
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchWindowException
-import _thread
 
 
 SITES_FILE=os.getenv("SITES_FILE")
@@ -139,7 +131,6 @@ def clean_sites_file():
 
 	if SITES_FILE==None:
 		print("Error : You need to set SITES_FILE\nTry : export SITES_FILE=\"sites.txt\"")
-		exit_err=True
 
 	if not os.path.isfile(SITES_FILE):
 		with open(SITES_FILE,mode="w") as new_file:

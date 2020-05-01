@@ -1,14 +1,7 @@
 import time
-import sys
 import os
 import re
-from random import randint
 from urllib import request
-from selenium.common.exceptions import TimeoutException
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchWindowException
-import _thread
-
 
 RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
 RECUSIVE_SEARCH=os.getenv("RECUSIVE_SEARCH")
