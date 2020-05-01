@@ -177,9 +177,13 @@ def set_env():
 	print("export MAX_THREADS=4")
 	print("export PRIORITY_FILE=sqlVulnerable.txt")
 	print("export ERROR_FILE=maybeVulnerable.txt")
-
+def clean():
+	os.system("mv requirements.txt requirements.txt.bkp")
+	os.system("rm *.txt")
+	os.system("rm -rf working finished maybe dbs")
+	os.system("mv requirements.txt.bkp requirements.txt")
 def usage():
-	print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file : remove non injectable sites from list\n\t\tthreads : print all sqlmap threads\n\t\tgetenv : print all env variables")
+	print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file : remove non injectable sites from list\n\t\tthreads : print all sqlmap threads\n\t\tgetenv : print all env variables\n\t\tclean : clean bot files")
 		
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
@@ -195,6 +199,8 @@ if __name__ == '__main__':
 		get_env()	
 	elif sys.argv[1]=="setenv":
 		set_env()
+	elif sys.argv[1]=="clean":
+		clean()
 	else:
 		usage()
 		exit(-1)

