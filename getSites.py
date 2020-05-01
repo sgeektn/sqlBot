@@ -33,7 +33,16 @@ def extract_sites(query):
 			source = browser.page_source.find('g-recaptcha-response')
 
 		while source != -1:
-			if ANTI_CAPTCHA_API_KEY=="DISABLED":
+			disable_auto=False
+			if ANTI_CAPTCHA_API_KEY!="DISABLED":
+				api_key = ANTI_CAPTCHA_API_KEY
+				client = AnticaptchaClient(api_key)
+				if client.getBalance()<0.05:
+					print("Warning : TOPUP your balance")
+				elif client.getBalance()<0.01:
+					print("Warning : auto anti captcha DISABLED by force , TOPUP your account")
+					disable_auto=True
+			if ANTI_CAPTCHA_API_KEY=="DISABLED" or disable_auto==True:
 				myprint("You need to solve a captcha and add the response hash to "+ANTI_CAPTCHA_RESPONSE_FILE+" file")
 				ANTI_CAPTCHA_RESPONSE=None
 				while(ANTI_CAPTCHA_RESPONSE==None):
@@ -58,6 +67,7 @@ def extract_sites(query):
 				job = client.createTask(task)
 				job.join()
 				ANTI_CAPTCHA_RESPONSE = job.get_solution_response()
+
 			browser.execute_script('document.getElementById("g-recaptcha-response").innerHTML="'+ANTI_CAPTCHA_RESPONSE+'"')
 			browser.execute_script('document.getElementById("captcha-form").submit()')
 			myprint("captcha ok")
