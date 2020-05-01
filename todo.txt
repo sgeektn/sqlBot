@@ -1,11 +1,8 @@
 getSites.py
 doc the solution to manual solve captcha
 
-utils.py
-get outputs
 
 ALL
-pop sites after ok 
 add dashboard
 
 
