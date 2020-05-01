@@ -1,7 +1,7 @@
 import time
 import os
 from urllib import request
-
+from functions import get_site,append_site_on_file,get_sites,get_number
 
 SQL_ERROR = 1
 SIZE_CHANGE = 2
@@ -14,27 +14,6 @@ BANNED_KEYWORDS_FILE=os.getenv("BANNED_KEYWORDS_FILE")
 PRIORITY_FILE=os.getenv("PRIORITY_FILE")
 ERROR_FILE=os.getenv("ERROR_FILE")
 
-
-def get_domain_name(link):
-	if link[-1] == '\n':
-		link = link[:-1]
-	x = link
-	x = x[x.find('//') + 2:]
-	if x.find('/') != -1:
-		x = x[:x.find('/')]
-
-	if x[0:4] == 'www.':
-		x = x[4:]
-
-	result = x[x.rfind("."):]
-
-	x = x[0:x.rfind(".")]
-
-	if x.rfind(".") == -1:
-		result = x + result
-	else:
-		result = x[x.rfind(".") + 1:] + result
-	return result
 
 
 def valid(link):#
@@ -160,6 +139,7 @@ def test_sites():#
 	
 		
 		site = get_site(SITES_FILE)
+		sites_num = get_number(SITES_FILE)
 		if site[len(site) - 1] == '/':
 			site = site[0:len(site) - 1]
 		i += 1
@@ -187,56 +167,6 @@ def test_sites():#
 
 
 
-def append_site_on_file(site, file_name):#
-
-	#while lock:
-	#	print("waiting for %s To be Unlocked" % (file))
-	#lock = True
-
-	file = open(file_name, "a")
-
-	file.write('%s' % site)
-	file.close()
-
-	#lock = False
-
-def get_sites(file_name):
-	files = open(file_name, "r")
-	sites = files.readlines()
-	return sites
-
-def get_site(file_name):#
-
-	#while lock:
-	#	print("waiting for %s To be Unlocked" % (file_name))
-	#lock = True
-
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
-	site = sites[0]
-	del sites[0]
-
-	files = open(file_name, "w")
-	if len(sites) > 0:
-		files.writelines(sites)
-	files.close()
-
-	#lock = False
-
-	return site
-
-
-
-def get_number(file_name):#
-
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
-
-	#lock = False
-
-	return len(sites)
 
 
 
@@ -274,4 +204,10 @@ def main():
 	test_sites()
 
 if __name__ == '__main__':
+	if len(sys.argv)==2 and (sys.argv[1]=="-d" or sys.argv[1]=="--daemon") :
+		pid=os.fork()
+		
+		if pid!=0:
+			exit(0)		
+	print(os.getpid())
 	main()

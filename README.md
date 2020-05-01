@@ -45,3 +45,29 @@ testSites.py ( test if sites in VAR are sql vulnerable )
 exploit.py ( test sqlmap)
 filter.py ( filter results )
 recursiveSearch.py ( activate recursive search )
+utils.py ( util functinos )
+
+Usage : utils.py action
+	action :
+		filter : filter results
+		clean_sites_file : remove non injectable sites from list
+		threads : print all sqlmap threads
+		getenv : print all env variables
+
+
+ENV variables :
+
+RECURSIVE_SITES_FILE : file where are stored the sites to do recursive search
+RECUSIVE_SEARCH : recursive search deep ( 0 for disable )
+SITES_FILE : file where are stored sites to be tested if there are sql injectable
+BANNED_KEYWORDS_FILE : file where will be stored each failed injection site that will be banned after 5 attempts
+DORK_LIST_FILE : file where stored dorks to be searched from google
+ANTI_CAPTCHA_API_KEY : API KEY FOR ANTI-CAPTCHA.com to bypass google captcha ( set to DISABLED if you want to manually do the captcha )
+TOR : if you want to make sqlmap request with tor set to "True" else set to "False"
+MAX_THREADS : number of parallel sqlmap threads
+PRIORITY_FILE : sites that explicitly shows sql error 
+ERROR_FILE : sites that change content when bot tries to test sql injection
+
+You can set all the variables by executing the command that will be printed if you execute:
+python3 utils.py setenv
+

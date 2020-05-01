@@ -4,7 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
-
+from functions import get_site,get_number,append_sites_on_file
 
 
 DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
@@ -85,35 +85,15 @@ def extract_sites(query):
 	append_sites_on_file(liste,RECURSIVE_SITES_FILE)
 	browser.close()
 
-def append_sites_on_file(l, file):
-	files = open(file, "a")
-	files.writelines('\n'.join(l))
-	files.close()
 
 
-
-def get_site(file_name):
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
-	site = sites[0]
-	del sites[0]
-
-	files = open(file_name, "w")
-	if len(sites) > 0:
-		files.writelines(sites)
-	files.close()
-	return site
 
 def get_sites_by_dork(dork):
 	dork = dork.replace('&', '%26')
 	dork = dork.replace(' ', '+')
 	extract_sites(dork)
 
-def get_number(file_name):
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
+
 	return len(sites)
 
 def main():
@@ -175,4 +155,10 @@ def main():
 
 
 if __name__ == '__main__':
+	if len(sys.argv)==2 and (sys.argv[1]=="-d" or sys.argv[1]=="--daemon") :
+		pid=os.fork()
+		
+		if pid!=0:
+			exit(0)		
+	print(os.getpid())
 	main()

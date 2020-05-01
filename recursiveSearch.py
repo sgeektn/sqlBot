@@ -1,31 +1,12 @@
 import time
 import os
 import re
+import sys
 from urllib import request
+from functions import get_number,get_site,append_sites_on_file 
 
 RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
 RECUSIVE_SEARCH=os.getenv("RECUSIVE_SEARCH")
-
-def get_domain_name(link):#
-	if link[-1] == '\n':
-		link = link[:-1]
-	x = link
-	x = x[x.find('//') + 2:]
-	if x.find('/') != -1:
-		x = x[:x.find('/')]
-
-	if x[0:4] == 'www.':
-		x = x[4:]
-
-	result = x[x.rfind("."):]
-
-	x = x[0:x.rfind(".")]
-
-	if x.rfind(".") == -1:
-		result = x + result
-	else:
-		result = x[x.rfind(".") + 1:] + result
-	return result
 
 
 def check_ext(url):#
@@ -76,64 +57,6 @@ def get_recursive_urls(link, recurive_search):#
 		get_recursive_urls(url, recurive_search - 1)
 
 
-
-
-def append_sites_on_file(l, file):#
-
-	#while lock:
-	#	print("Waiting for %s To be unlocked" % (file))
-	#lock = True
-
-	files = open(file, "a")
-
-	files.writelines('\n'.join(l))
-	files.close()
-
-	#lock = False
-
-
-
-
-
-
-def get_site(file_name):#
-
-	#while lock:
-	#	print("waiting for %s To be Unlocked" % (file_name))
-	#lock = True
-
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
-	site = sites[0]
-	del sites[0]
-
-	files = open(file_name, "w")
-	if len(sites) > 0:
-		files.writelines(sites)
-	files.close()
-
-	#lock = False
-
-	return site
-
-
-
-
-
-def get_number(file_name):#
-
-	#while lock:
-	#	print("waiting for %d To be Unlocked" % (file_name))
-	#lock = True
-#
-	files = open(file_name, "r")
-	sites = files.readlines()
-	files.close()
-
-	#lock = False
-
-	return len(sites)
 
 
 def recursive_search(number):
@@ -189,11 +112,17 @@ def main():
 		exit(-1)
 
 
-	if not os.path.isfile(RECUSIVE_SEARCH):
-		with open(RECUSIVE_SEARCH,mode="w") as new_file:
+	if not os.path.isfile(RECURSIVE_SITES_FILE):
+		with open(RECURSIVE_SITES_FILE,mode="w") as new_file:
 			new_file.close() 
 			
 	recursive_search(RECUSIVE_SEARCH)
 
 if __name__ == '__main__':
+	if len(sys.argv)==2 and (sys.argv[1]=="-d" or sys.argv[1]=="--daemon") :
+		pid=os.fork()
+		
+		if pid!=0:
+			exit(0)		
+	print(os.getpid())
 	main()

@@ -1,24 +1,11 @@
 import sys
 import os
-
+from functions import append_site_on_file
 
 SITES_FILE=os.getenv("SITES_FILE")
 BANNING_FILE=os.getenv("BANNING_FILE")
 BANNED_KEYWORDS_FILE=os.getenv("BANNED_KEYWORDS_FILE")
 SQLMAP_PATH=os.getenv("SQLMAP_PATH")
-
-def append_site_on_file(site, file_name):
-
-	#while lock:
-	#	print("waiting for %s To be Unlocked" % (file))
-	#lock = True
-
-	file = open(file_name, "a")
-
-	file.write('%s' % site)
-	file.close()
-
-	#lock = False
 
 
 def test_if_ban(liste, site):
@@ -166,9 +153,37 @@ def filter():
 
 	filter_results()
 
+
+def get_env():
+	print("RECURSIVE_SITES_FILE="+os.getenv("RECURSIVE_SITES_FILE"))
+	print("RECUSIVE_SEARCH="+os.getenv("RECUSIVE_SEARCH"))
+	print("SITES_FILE="+os.getenv("SITES_FILE"))
+	print("BANNED_KEYWORDS_FILE="+os.getenv("BANNED_KEYWORDS_FILE"))
+	print("DORK_LIST_FILE="+os.getenv("DORK_LIST_FILE"))
+	print("ANTI_CAPTCHA_API_KEY="+os.getenv("ANTI_CAPTCHA_API_KEY"))
+	print("TOR="+os.getenv("TOR"))
+	print("MAX_THREADS="+os.getenv("MAX_THREADS"))
+	print("PRIORITY_FILE="+os.getenv("PRIORITY_FILE"))
+	print("ERROR_FILE="+os.getenv("ERROR_FILE"))
+def set_env():
+	print("#EXECUTE THIS SHELL SCRIPT")
+	print("export RECURSIVE_SITES_FILE=googleRecursive.txt")
+	print("export RECUSIVE_SEARCH=1")
+	print("export SITES_FILE=sites.txt")
+	print("export BANNED_KEYWORDS_FILE=banningIA.txt")
+	print("export DORK_LIST_FILE=dorks.txt")
+	print("export ANTI_CAPTCHA_API_KEY=DISABLED")
+	print("export TOR=False")
+	print("export MAX_THREADS=4")
+	print("export PRIORITY_FILE=sqlVulnerable.txt")
+	print("export ERROR_FILE=maybeVulnerable.txt")
+
+def usage():
+	print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file : remove non injectable sites from list\n\t\tthreads : print all sqlmap threads\n\t\tgetenv : print all env variables")
+		
 if __name__ == '__main__':
 	if len(sys.argv) != 2:
-		print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file s: remove non injectable sites from list")
+		usage()
 		exit(-1)
 	elif sys.argv[1]=="filter":
 		filter()
@@ -176,6 +191,10 @@ if __name__ == '__main__':
 		clean_sites_file()
 	elif sys.argv[1]=="threads":
 		print(os.popen("ps aux | grep sqlmap | sed -E '/sh -c/d' | sed -E '/grep/d'").read())
+	elif sys.argv[1]=="getenv":
+		get_env()	
+	elif sys.argv[1]=="setenv":
+		set_env()
 	else:
-		print("Usage : utils.py action\n\taction :\n\t\tfilter : filter results\n\t\tclean_sites_file : remove non injectable sites from list\n\t\tthreads : print all sqlmap threads")
+		usage()
 		exit(-1)
