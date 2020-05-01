@@ -1,3 +1,4 @@
+import sys
 
 def get_domain_name(link):
 	"""Extract domain name from link"""
@@ -68,4 +69,13 @@ def append_site_on_file(site, file_name):
 
 	file.write('%s' % site)
 	file.close()
+
+def myprint(string):
+	"""This functino print to stdin if peocess is not daemon else to file"""
+	if len(sys.argv)==2 and (sys.argv[1]=="-d" or sys.argv[1]=="--daemon") :
+		with open(sys.argv[0]+".txt","a+") as output:
+			output.write(str(string)+"\n")
+			output.close()
+	else:
+		print(string)
 

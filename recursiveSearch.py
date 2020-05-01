@@ -3,7 +3,7 @@ import os
 import re
 import sys
 from urllib import request
-from functions import get_number,get_site,append_sites_on_file 
+from functions import get_number,get_site,append_sites_on_file,myprint
 
 RECURSIVE_SITES_FILE=os.getenv("RECURSIVE_SITES_FILE")
 RECUSIVE_SEARCH=os.getenv("RECUSIVE_SEARCH")
@@ -33,13 +33,13 @@ def get_recursive_urls(link, recurive_search):#
 	}
 
 	try:
-		print("recursive for " + link)
+		myprint("recursive for " + link)
 		req = request.Request(link, headers=headers)
 		response = request.urlopen(req)
 		text = response.read().decode("utf-8")
 		# site_len=len(page_source)
 	except BaseException:
-		print("error opening site" + link)
+		myprint("error opening site" + link)
 		text = ""
 
 	urls = re.findall(
@@ -50,7 +50,7 @@ def get_recursive_urls(link, recurive_search):#
 		i for i in urls if (
 			get_domain_name(i) != get_domain_name(link) and check_ext(i)) and not bool(re.match(r"https*:\/\/[^\/]*\/$",i)) and not bool(re.match(r"https*:\/\/[^\/]*$",i))]
 
-	print("extracted %s filtred %s" % (str(len(urls)), str(len(urls_filtered))))
+	myprint("extracted %s filtred %s" % (str(len(urls)), str(len(urls_filtered))))
 	append_sites_on_file(urls_filtered, SITES_FILE)
 
 	for url in urls_filtered:
@@ -61,15 +61,15 @@ def get_recursive_urls(link, recurive_search):#
 
 def recursive_search(number):
 
-	print("recurive_search")
+	myprint("recurive_search")
 	#ready_to_check_number = get_number(SITES_FILE)
 	sites_number = get_number(RECURSIVE_SITES_FILE)
 	while sites_number == 0:
-		print("Waiting for new sites for recursive_search")
+		myprint("Waiting for new sites for recursive_search")
 		time.sleep(60)
 		sites_number = get_number(RECURSIVE_SITES_FILE)
 #	while ready_to_check_number > 1000:
-#		print("proirity to readyToCheck_sites")
+#		myprint("proirity to readyToCheck_sites")
 #		time.sleep(60)
 #		ready_to_check_number = get_number(SITES_FILE)
 
@@ -83,29 +83,29 @@ def recursive_search(number):
 		sites_number = get_number(RECURSIVE_SITES_FILE)
 
 		while sites_number == 0:
-			print("Waiting for new sites for recursive_search")
+			myprint("Waiting for new sites for recursive_search")
 			time.sleep(60)
 			sites_number = get_number(RECURSIVE_SITES_FILE)
 #		while ready_to_check_number > 1000:
-#			print("proirity to readyToCheck_sites")
+#			myprint("proirity to readyToCheck_sites")
 #			time.sleep(60)
 #			ready_to_check_number = get_number(SITES_FILE)
 
-	print("end recurive_search")
+	myprint("end recurive_search")
 
 
 def main():
 	exit_err=False
 	RECUSIVE_SEARCH=os.getenv("RECUSIVE_SEARCH")
 	if RECUSIVE_SEARCH==None:
-		print("Error : You need to set RECUSIVE_SEARCH\nTry : export RECUSIVE_SEARCH=\"0\"")
+		myprint("Error : You need to set RECUSIVE_SEARCH\nTry : export RECUSIVE_SEARCH=\"0\"")
 		exit_err=True
 	elif RECUSIVE_SEARCH=="0":
-		print("Error : You need to set RECUSIVE_SEARCH > 0")
+		myprint("Error : You need to set RECUSIVE_SEARCH > 0")
 	else:
 		RECUSIVE_SEARCH=int(RECUSIVE_SEARCH)
 	if RECURSIVE_SITES_FILE==None:
-		print("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
+		myprint("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
 		exit_err=True
 	
 	if exit_err:
@@ -124,5 +124,5 @@ if __name__ == '__main__':
 		
 		if pid!=0:
 			exit(0)		
-	print(os.getpid())
+	myprint(os.getpid())
 	main()

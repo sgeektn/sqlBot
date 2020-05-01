@@ -4,7 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchWindowException
 from python_anticaptcha import AnticaptchaClient, NoCaptchaTaskProxylessTask
-from functions import get_site,get_number,append_sites_on_file
+from functions import get_site,get_number,append_sites_on_file,myprint
 
 
 DORK_LIST_FILE=os.getenv("DORK_LIST_FILE")
@@ -25,7 +25,7 @@ def extract_sites(query):
 			browser.get(url)
 			source = browser.page_source.find('g-recaptcha-response')
 		except TimeoutException:
-			print("Network error")
+			myprint("Network error")
 		except BaseException:
 			browser.close()
 			browser = webdriver.Firefox()
@@ -34,14 +34,14 @@ def extract_sites(query):
 
 		while source != -1:
 			if ANTI_CAPTCHA_API_KEY=="DISABLED":
-				print("You need to solve a captcha and add the response hash to ANTI_CAPTCHA_RESPONSE env")
+				myprint("You need to solve a captcha and add the response hash to ANTI_CAPTCHA_RESPONSE env")
 				ANTI_CAPTCHA_RESPONSE=os.getenv("ANTI_CAPTCHA_RESPONSE")
 				while(ANTI_CAPTCHA_RESPONSE==None):
-					print("Waiting for captcha hash")
+					myprint("Waiting for captcha hash")
 					time.sleep(30)
 				ANTI_CAPTCHA_RESPONSE=None
 			else:
-				print("Auto solving captcha")
+				myprint("Auto solving captcha")
 				api_key = ANTI_CAPTCHA_API_KEY
 				site_key = browser.find_element_by_id("recaptcha").get_attribute("data-sitekey")
 				url = 'https://www.google.com'
@@ -52,12 +52,12 @@ def extract_sites(query):
 				ANTI_CAPTCHA_RESPONSE = job.get_solution_response()
 			browser.execute_script('document.getElementById("g-recaptcha-response").innerHTML="'+ANTI_CAPTCHA_RESPONSE+'"')
 			browser.execute_script('document.getElementById("captcha-form").submit()')
-			print("captcha ok")
+			myprint("captcha ok")
 			time.sleep(60)
 			try:
 				source = browser.page_source.find('g-recaptcha-response')
 			except TimeoutException:
-				print("Network error")
+				myprint("Network error")
 			except NoSuchWindowException:
 				browser.close()
 				browser = webdriver.Firefox()
@@ -80,7 +80,7 @@ def extract_sites(query):
 			results = len(browser.find_elements_by_class_name('r'))
 			page += 10
 
-	print("%s sites extracted \n" % str(len(liste)))
+	myprint("%s sites extracted \n" % str(len(liste)))
 	append_sites_on_file(liste, SITES_FILE)
 	append_sites_on_file(liste,RECURSIVE_SITES_FILE)
 	browser.close()
@@ -101,16 +101,16 @@ def main():
 	
 	exit_err=False
 	if DORK_LIST_FILE==None:
-		print("Error : You need to set DORK_LIST_FILE\nTry : export DORK_LIST_FILE=\"dorks.txt\"")
+		myprint("Error : You need to set DORK_LIST_FILE\nTry : export DORK_LIST_FILE=\"dorks.txt\"")
 		exit_err=True
 	if SITES_FILE==None:
-		print("Error : You need to set SITES_FILE\nTry : export SITES_FILE=\"sites.txt\"")
+		myprint("Error : You need to set SITES_FILE\nTry : export SITES_FILE=\"sites.txt\"")
 		exit_err=True
 	if RECURSIVE_SITES_FILE==None:
-		print("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
+		myprint("Error : You need to set RECURSIVE_SITES_FILE\nTry : export RECURSIVE_SITES_FILE=\"googleRecursive.txt\"")
 		exit_err=True
 	if ANTI_CAPTCHA_API_KEY==None:
-		print("Error : You need to set ANTI_CAPTCHA_API_KEY\nTry : export ANTI_CAPTCHA_API_KEY=\"DISABLED\"")
+		myprint("Error : You need to set ANTI_CAPTCHA_API_KEY\nTry : export ANTI_CAPTCHA_API_KEY=\"DISABLED\"")
 		exit_err=True
 
 	if not os.path.isfile(DORK_LIST_FILE):
@@ -130,7 +130,7 @@ def main():
 		test_selenium=webdriver.Firefox()
 		test_selenium.close()
 	except selenium.common.exceptions.WebDriverException:
-		print("Error : Firefox Selenium driver needs to be in path")
+		myprint("Error : Firefox Selenium driver needs to be in path")
 		exit_err=True
 
 	if exit_err:
@@ -139,7 +139,7 @@ def main():
 
 	dorks_number = get_number(DORK_LIST_FILE)
 	while dorks_number == 0:
-		print("Waiting for new dorks")
+		myprint("Waiting for new dorks")
 		time.sleep(60)
 		dorks_number = get_number(DORK_LIST_FILE)
 	while dorks_number > 0:
@@ -147,10 +147,10 @@ def main():
 		get_sites_by_dork(dork)
 		dorks_number = get_number(DORK_LIST_FILE)
 		while dorks_number == 0:
-			print("Waiting for new dorks")
+			myprint("Waiting for new dorks")
 			time.sleep(60)
 			dorks_number = get_number(DORK_LIST_FILE)
-	print("End get dorks")
+	myprint("End get dorks")
 
 
 
@@ -160,5 +160,5 @@ if __name__ == '__main__':
 		
 		if pid!=0:
 			exit(0)		
-	print(os.getpid())
+	myprint(os.getpid())
 	main()
